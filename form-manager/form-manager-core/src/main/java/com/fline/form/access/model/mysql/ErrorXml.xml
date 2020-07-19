@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ErrorXml">
+	<typeAlias alias="errorXml" type="com.fline.form.access.model.ErrorXml" />
+	<resultMap id="errorXmlResult" class="errorXml">
+		<!-- NamespaceModel -->
+		<result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<!-- ErrorXml -->
+		<result property="innerCode" column="innerCode" javaType="string" jdbcType="VARCHAR"/>
+		<result property="isSolve" column="isSolve" javaType="java.lang.Integer" jdbcType="NUMBER" />
+		<result property="createDate" column="createDate" javaType="date" jdbcType="datetime"  />
+		<result property="solveDate" column="solveDate" javaType="date" jdbcType="datetime"  />
+		<result property="errorType" column="errorType" javaType="java.lang.Integer" jdbcType="NUMBER" />
+	</resultMap>
+	
+	<!--  -->
+	<insert id="create" parameterClass="errorXml">
+		INSERT INTO c_error_xml (
+			innerCode,createDate,errorType
+		) VALUES (
+			#innerCode#,now(),1
+		)
+	</insert>
+	
+	<!-- 增加模板重复绑定的数据，需要人工处理  -->
+	<insert id="createByRepeat">
+    	INSERT INTO c_error_xml ( innerCode, createDate, errorType, situationId, tempId, count ) 
+    		SELECT ci.innerCode, NOW() AS createDate, 2 errorType, cs.id AS situationId, ct.id AS tempId, 
+    			count(rm.tempId) AS count FROM c_item ci, c_situation cs, c_material cm, r_material_temp rm, 
+    				c_cert_temp ct WHERE ci.id = cs.itemId AND cs.id = cm.situationId AND cm.id = rm.materialId 
+    					AND rm.tempId = ct.id and ci.innerCode not in ( SELECT innerCode from c_error_xml ) GROUP 
+    						BY cs.id, rm.tempId HAVING count > 1
+    </insert>
+	
+</sqlMap>

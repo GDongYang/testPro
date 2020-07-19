@@ -1,0 +1,35 @@
+.base_dashboard-head { width:100%; height:70px; line-height:70px; color:#fff; background-color:rgb(10,44,84); }
+.bgBlue{background:rgb(18,60,112)}
+.base_dataBlock-title { height:45px; line-height:45px; padding:0px 10px; font-size:16px;color:#fff;background:rgb(12,40,76)}
+.base_dataBlock-title img{vertical-align:sub;margin-right:8px;}
+ul{ list-style:none; }
+.base_position-relative{position:relative;}
+.base_dashboard-head .text_time{position:absolute;top:-9px;right:20px;}
+.base_dashboard-head a{position:absolute;top:10px;right:0px;}
+.base_width-percent-25{float:left;background:rgb(14,44,84);height:49%;margin-bottom:10px;}
+.base_width-percent-48{float:left;background:rgb(14,44,84);margin:0px 1%;height:49%;margin-bottom:10px;}
+.week { width:auto; height:30px; line-height:30px; margin-top:7px; border:1px solid rgb(71,153,192); border-radius:3px; }
+.week ul { list-style:none; margin:0px; padding:0px; }
+.week li { width:43px; height:29px; line-height:30px; float:left; color:rgb(71,153,192); padding-top:0px; text-align:center; cursor:pointer; }
+.week a { width:100%; height:94%; color:#666; display:block; text-align:center; }
+.week a:hover {background-color:#f4f4f4;color:rgb(71,153,192); }
+.week a:active {background-color:#437BD0;}
+.week .selectWeek { color:#fff; }
+.bg-info{background:rgb(71,153,192)}
+.base_statementTabel{color:rgb(71,153,192)}
+.base_statementTabel td{padding:10px 0;}
+.base_viewTable th{background:transparent;color:#fff;border:none;}
+.base_viewTable{border-left:none;border-right:none;border-top:1px solid rgb(18,60,112);border-bottom:1px solid rgb(18,60,112)}
+.base_viewTable tbody tr{border-top:1px solid rgb(18,60,112);height:30px;line-height:30px;}
+.base_viewTable td{border:none;color:#fff;height:30px;min-width: 60px;}
+.base_viewTable tbody tr:nth-child(1) td{color:rgb(220,102,176)}
+.base_viewTable tbody tr:nth-child(2) td{color:rgb(245,213,94)}
+.base_viewTable tbody tr:nth-child(3) td{color:rgb(106,213,223)}
+#dayShow td{overflow: hidden;text-overflow: ellipsis; white-space: nowrap;max-width:120px;cursor:pointer;}
+.titleBox{width:42%;margin:10px 4%;height:70px;line-height:60px;background:rgb(12,40,76);float:left;padding:5px 10px;}
+.titleBox div{color:#fff;font-size:24px;float:left;text-align:center;font-weight:bolder;}
+.titleBox div:nth-child(1){width:70%;border-right:1px solid rgb(53,75,103);}
+.titleBox div:nth-child(2){width:30%;color:rgb(71,153,192)}
+.noData{color:#fff;font-size:20px;font-weight:bold;text-align:center;position:absolute;top:95px;left:35%;}
+.base_dataBlock-title select{width: 65px;background: transparent;font-size: 12px;height: 24px;float:right;border:1px solid rgb(71,153,192);margin-top:10px;}
+.selectColor{background-color:rgb(12,40,76);}

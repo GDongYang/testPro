@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="reg" namespace="" extends="default-package">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+	<!-- system -->
+		<action name="userSessionAction" class="com.fline.form.action.UserSessionAction">
+			<result name="loginSuccess" type="json">
+				<param name="root">redirectPage</param>
+			</result>
+			<result name="loginFailed" type="json">
+				<param name="root">redirectPage</param>
+			</result>
+			<result name="currentUser" type="json">
+				<param name="root">user</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+
+		<action name="menuAction" class="com.fline.form.action.MenuAction">
+			<result name="menuList" type="json">
+				<param name="root">menuList</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">menuPage</param>
+			</result>
+			<result name="menuTree" type="json">
+				<param name="root">menuTree</param>
+			</result>
+			<result name="findById" type="json">
+				<param name="root">dataMap</param>
+			</result>
+			<result name="updateResult" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="saveResult" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="removeResult" type="json">
+				<param name="root">result</param>
+			</result>
+   		</action>
+
+		<action name="userAction" class="com.fline.form.action.UserAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+
+		<action name="roleAction" class="com.fline.form.action.RoleAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="accessLogAction" class="com.fline.form.action.AccessLogAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+
+		<action name="positionAction" class="com.fline.form.action.PositionAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+
+		<action name="departmentAction" class="com.fline.form.action.DepartmentAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="itemAction" class="com.fline.form.action.ItemAction">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="resultMap" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="approveItemAction" class="com.fline.form.action.ApproveItemAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="serviceItemAction" class="com.fline.form.action.ServiceItemAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="catalogAction" class="com.fline.form.action.CatalogAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="businessAction" class="com.fline.form.action.BusinessAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="businessToExcelAction" class="com.fline.form.action.BusinessAction" method="businessToExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;fileName="${fileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="error">/comm/error.jsp</result>         
+		</action>
+		
+	<!-- service -->
+	
+		<action name="serviceAccountAction" class="com.fline.form.action.ServiceAccountAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="certTempAction" class="com.fline.form.action.CertTempAction">
+			<result name="findAll" type="json">
+				<param name="root">dataMap</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+			<result name="stream" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">
+					filename=${fileName}
+			    </param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="tempDetailAction" class="com.fline.form.action.TempDetailAction">
+		   <result name="success" type="json">
+		      <param name="root">dataMap</param>
+		   </result>
+		</action>
+
+		<action name="securityCodeAction" class="com.fline.form.action.SecurityCodeAction">
+			<result name="success" type="json">
+                <param name="root">responseResult</param>
+			</result>
+			
+		</action>
+		
+	    <action name="ssoLogin" class="com.fline.form.action.SsoLoginAction" method="ssoLogin">
+        </action>      
+	    <action name="fileAction" class="com.fline.form.action.FileAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="sealInfoAction" class="com.fline.form.action.SealInfoAction">
+		   <result name="success" type="json">
+		      <param name="root">responseData</param>
+		   </result>
+		      <result name="stream" type="stream">
+				<param name="contentType">application/pdf</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">
+					filename=${fileName}
+			    </param>
+				<param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="imageStream" type="stream">
+				<param name="contentType">image/png</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">
+					filename=${fileName}
+			    </param>
+				<param name="bufferSize">65535</param>
+			</result>
+		</action>
+		
+		<action name="dataSourceAction" class="com.fline.form.action.DataSourceAction">
+		   <result name="success" type="json">
+		      <param name="root">dataMap</param>
+		   </result>
+		</action>
+		
+		<action name="opinionAction" class="com.fline.form.action.OpinionAction">
+		   <result name="success" type="json">
+		      <param name="root">dataMap</param>
+		   </result>
+		   <result name="stream" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">
+					filename=${abcName}
+			    </param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="sealLogAction" class="com.fline.form.action.SealLogAction">
+		   <result name="success" type="json">
+		      <param name="root">dataMap</param>
+		   </result>
+		</action>
+		
+		<action name="fileDisplayAction" class="com.fline.form.action.FileDisplayAction">
+		   <result name="success" type="json">
+		      <param name="root">dataMap</param>
+		   </result>
+		   <result name="stream" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">
+					filename=${abcName}
+			    </param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="questionAction" class="com.fline.form.action.QuestionAction">
+		   <result name="success" type="json">
+		      <param name="root">responseData</param>
+		   </result>
+		      
+		</action>
+		
+		<action name="certResourceAction" class="com.fline.form.action.CertResourceAction">
+		   <result name="success" type="json">
+		      <param name="root">responseData</param>
+		   </result>
+		      
+		</action>
+		
+		<action name="cacheInfoAction" class="com.fline.form.action.CacheInfoAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+
+        <action name="tempInfoAction" class="com.fline.form.action.TempInfoAction">
+            <result name="success" type="json">
+                <param name="root">responseResult</param>
+            </result>
+            <result name="stream" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">
+                    filename=${fileName}
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <result name="download" type="stream">
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">
+                    attachment;filename=${fileName}
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+		<action name="materialAction" class="com.fline.form.action.MaterialAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		<action name="situationAction" class="com.fline.form.action.SituationAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="formDataAction" class="com.fline.form.action.FormDataAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="seniorCertAction" class="com.fline.form.action.SeniorCertAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="secretAction" class="com.fline.form.action.SecretAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="formInfoAction" class="com.fline.form.action.FormInfoAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		<action name="formDataSolrAction" class="com.fline.form.action.FormDataSolrAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="projectInfoAction" class="com.fline.form.action.ProjectInfoAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="formPageAction" class="com.fline.form.action.FormPageAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="smsAction" class="com.fline.form.action.SmsAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="sqlSearchAction" class="com.fline.form.action.SqlSearchAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="qlItemAction" class="com.fline.form.action.QlItemAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		
+		<action name="projectRepeatAction" class="com.fline.form.action.ProjectRepeatAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		<action name="itemConfirmAction" class="com.fline.form.action.ItemConfirmAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		<action name="dataElementAction" class="com.fline.form.action.DataElementAction">
+			<result name="success" type="json">
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+
+        <action name="requestInfoAction" class="com.fline.form.action.RequestInfoAction">
+            <result name="success" type="json">
+                <param name="root">dataMap</param>
+            </result>
+        </action>
+	</package>
+</struts>

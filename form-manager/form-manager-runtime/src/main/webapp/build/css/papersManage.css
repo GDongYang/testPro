@@ -1,0 +1,76 @@
+.rightBox .tableHead {
+	background: -webkit-linear-gradient(left,#EFF6FC, #EFF6FC);
+}
+.rightBox .tableHead .tableHeaderBtn {
+	display:inline-block;
+	width:88px;
+	height:32px;
+	line-height: 32px;
+	background:rgba(24,144,255,1);
+	border-radius:4px;
+	margin-right: 3px;
+}
+.rightBox {
+	background: -webkit-linear-gradient(left,#EFF6FC, #EFF6FC);
+}
+.rightBox .papersManageClearBtn {
+	width:82px;
+	height:34px !important;
+}
+.rightBox .tableHead .papersManageClearBtn .clearIcon1 {
+	padding: 0px 8px 0px 0px;
+}
+.papersManageForm1 input {
+	width: 260px !important;
+	height:34px !important;
+	background:rgba(255,255,255,1) !important;
+	border-radius:4px !important;
+	border:1px solid rgba(51,51,51,0.15) !important;
+}
+.papersManageForm1 .papersManageClearBtn1 {
+	margin-left: -7px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-right: 11px;
+}
+.papersManageForm2{
+	background: -webkit-linear-gradient(left,#EFF6FC, #EFF6FC);
+	margin: 0 !important;
+	padding: 20px 0 20px 20px;
+}
+#searchForm {
+	margin: 0 !important;
+}
+.papersManageTable2 tr:nth-of-type(odd) button {
+	background-color: #F7F7F7 !important;
+	color: #00A7FF;
+	border: none;
+	
+}
+.papersManageTable2 tr:nth-of-type(even) button  {
+	background-color: #fff !important;
+	color: #00A7FF;
+	border: none;
+	
+}
+.papersManageTable2 font {
+	color: #000 !important;
+}
+
+/* ¸²¸ÇÑùÊ½ */
+.base_text-blue {
+	color: #000 !important;
+}
+.tableBtns {
+	margin-right: 0px;	
+}
+.tableHead {
+	margin: 10px 0 !important;
+}
+.base_margin-r-35{
+	margin-right: 0px;
+	margin-left: 30px;
+}
+.tableName i {
+	padding-right: 0px;
+}

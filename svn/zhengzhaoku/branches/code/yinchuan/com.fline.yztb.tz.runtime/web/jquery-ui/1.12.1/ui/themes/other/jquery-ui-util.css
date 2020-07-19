@@ -1,0 +1,156 @@
+@CHARSET "UTF-8";
+.dialog-content-ident { width:60px; height:60px; margin:5px; float:left; background:url(images/ident.png); background-repeat:no-repeat; background-size:contain; -moz-background-size:contain; -webkit-background-size:contain; -ms-behavior:url(backgroundsize.min.htc); behavior:url(backgroundsize.min.htc); }
+.dialog-content-caution { width:60px; height:60px; margin:5px; float:left; background:url(images/caution.png); background-repeat:no-repeat; background-size:contain; -moz-background-size:contain; -webkit-background-size:contain; -ms-behavior:url(backgroundsize.min.htc); behavior:url(backgroundsize.min.htc); }
+.dialog-content-error { width:60px; height:60px; margin:5px; float:left; background:url(images/error.png); background-repeat:no-repeat; background-size:contain; -moz-background-size:contain; -webkit-background-size:contain; -ms-behavior:url(backgroundsize.min.htc); behavior:url(backgroundsize.min.htc); }
+.dialog-content-query { width:60px; height:60px; margin:5px; float:left; background:url(images/query.png); background-repeat:no-repeat; background-size:contain; -moz-background-size:contain; -webkit-background-size:contain; -ms-behavior:url(backgroundsize.min.htc); behavior:url(backgroundsize.min.htc); }
+.dialog-content-remind { width:60px; height:60px; margin:5px; float:left; background:url(images/remind.png); background-repeat:no-repeat; background-size:contain; -moz-background-size:contain; -webkit-background-size:contain; -ms-behavior:url(backgroundsize.min.htc); behavior:url(backgroundsize.min.htc); }
+.dialog-content-correct { width:60px; height:60px; margin:5px; float:left; background:url(images/correct.png); background-repeat:no-repeat; background-size:contain; -moz-background-size:contain; -webkit-background-size:contain; -ms-behavior:url(backgroundsize.min.htc); behavior:url(backgroundsize.min.htc); }
+.dialog-content-img-area { width:60px; height:60px; margin:5px; float:left; }
+
+/** modal-aqua **/
+.modal-aqua.ui-widget { overflow:hidden; border:1px solid #00c0ef; background:url("aqua/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; color:#1e1b1d; }
+.modal-aqua > .ui-widget-header { border:1px solid #00c0ef; border-radius:0px; background:url("aqua/ui-bg_glass_25_6dd2fd_1x400.png") 50% 50% repeat-x; color:#fff; font-weight:bold; }
+.modal-aqua > .ui-widget-content { overflow-x:hidden; overflow-y:auto; border:1px solid #00c0ef; padding:0px; background:#fff; color:#1e1b1d; }
+.modal-aqua > .ui-widget-content iframe { height:99%; }
+.modal-aqua .ui-dialog-buttonpane { padding:0px; background:transparent url("aqua/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; }
+.modal-aqua .ui-dialog-buttonpane button { border:1px solid #cdc3b7; border-radius:0px; padding:.4em 1em; background:transparent url("aqua/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; font-weight:normal; color:#3f3731; }
+.modal-aqua .ui-dialog-buttonpane button:link,.modal-aqua .ui-dialog-buttonpane button:visited { background:transparent url("aqua/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; }
+.modal-aqua .ui-dialog-buttonpane button:hover,.modal-aqua .ui-dialog-buttonpane button:focus { background:red; }
+.modal-aqua .ui-dialog-buttonpane button:active { background:green; }
+.modal-aqua.ui-corner-all,.modal-aqua.ui-corner-top,.modal-aqua.ui-corner-left,.modal-aqua.ui-corner-tl { border-top-left-radius:0px; }
+.modal-aqua.ui-corner-all,.modal-aqua.ui-corner-top,.modal-aqua.ui-corner-right,.modal-aqua.ui-corner-tr { border-top-right-radius:0px; }
+.modal-aqua.ui-corner-all,.modal-aqua.ui-corner-bottom,.modal-aqua.ui-corner-left,.modal-aqua.ui-corner-bl { border-bottom-left-radius:0px; }
+.modal-aqua.ui-corner-all,.modal-aqua.ui-corner-bottom,.modal-aqua.ui-corner-right,.modal-aqua.ui-corner-br { border-bottom-right-radius:0px; }
+
+.modal-aqua > .ui-widget-header p.ui-xlgwr { position:absolute; top:-0.4em; padding:0; right:0; display:inline; }
+.modal-aqua > .ui-widget-header p.ui-xlgwr span { position:relative; float:left; margin:0.4em 0.2em 0 0.2em; cursor:pointer; z-index:999; }
+.modal-aqua > .ui-widget-header .dialog-tab-control-area { position:absolute; left:0px; text-align:center; }
+.modal-aqua > .ui-widget-header .dialog-tab-control-area .dialog-tab-control { background-color:#9a7e57; border-radius:5px 5px 0px 0px; float:left; margin-left:10px; padding:5px 10px; cursor:pointer; }
+.modal-aqua > .ui-widget-header .dialog-tab-control-area .over { background-color:brown; color:#6dd2fd; }
+.modal-aqua > .ui-widget-header .dialog-tab-control-area .dialog-tab-control:hover { background-color:brown; }
+.modal-aqua > .ui-widget-header ._dialogMin { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('aqua/dialog_minbtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogMin:focus,.modal-aqua > .ui-widget-header ._dialogMin:hover { background-image:url('aqua/dialog_minbtn_over.png'); }
+.modal-aqua > .ui-widget-header ._dialogMin:before,.modal-aqua > .ui-widget-header ._dialogMin:after { background-image:url('aqua/dialog_minbtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogMax { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('aqua/dialog_maxbtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogMax:focus,.modal-aqua > .ui-widget-header ._dialogMax:hover { background-image:url('aqua/dialog_maxbtn_over.png'); }
+.modal-aqua > .ui-widget-header ._dialogMax:before,.modal-aqua > .ui-widget-header ._dialogMax:after { background-image:url('aqua/dialog_maxbtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogMaxsel { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('aqua/dialog_maxselbtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogMaxsel:focus,.modal-aqua > .ui-widget-header ._dialogMaxsel:hover { background-image:url('aqua/dialog_maxselbtn_over.png'); }
+.modal-aqua > .ui-widget-header ._dialogMaxsel:before,.modal-aqua > .ui-widget-header ._dialogMaxsel:after { background-image:url('aqua/dialog_maxselbtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogClose { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('aqua/dialog_closebtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogClose:focus,.modal-aqua > .ui-widget-header ._dialogClose:hover { background-image:url('aqua/dialog_closebtn_over.png'); }
+.modal-aqua > .ui-widget-header ._dialogClose:before,.modal-aqua > .ui-widget-header ._dialogClose:after { background-image:url('aqua/dialog_closebtn.png'); }
+.modal-aqua > .ui-widget-header ._dialogBtnText { width:auto; font-size:16px; background-image:none; padding:0px 2px; }
+.modal-aqua > .ui-widget-header ._dialogBtnText:focus,.modal-aqua > .ui-widget-header ._dialogBtnText:hover { color:red; background-image:none; }
+.modal-aqua > .ui-widget-header ._dialogBtnText:before,.modal-aqua > .ui-widget-header ._dialogBtnText:after { color:#fff; background-image:none; }
+
+/** modal-red **/
+.modal-red.ui-widget { overflow:hidden; border:1px solid #dd4b39; background:url("red/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; color:#1e1b1d; }
+.modal-red > .ui-widget-header { border:1px solid #dd4b39; border-radius:0px; background:url("red/ui-bg_glass_25_6dd2fd_1x400.png") 50% 50% repeat-x; color:#fff; font-weight:bold; }
+.modal-red > .ui-widget-content { overflow-x:hidden; overflow-y:auto; border:1px solid #dd4b39; padding:0px; background:#fff; color:#1e1b1d; }
+.modal-red > .ui-widget-content iframe { height:99%; }
+.modal-red .ui-dialog-buttonpane { padding:0px; background:transparent url("red/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; }
+.modal-red .ui-dialog-buttonpane button { border:1px solid #cdc3b7; border-radius:0px; padding:.4em 1em; background:transparent url("red/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; font-weight:normal; color:#3f3731; }
+.modal-red .ui-dialog-buttonpane button:link,.modal-red .ui-dialog-buttonpane button:visited { background:transparent url("red/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; }
+.modal-red .ui-dialog-buttonpane button:hover,.modal-red .ui-dialog-buttonpane button:focus { background:red; }
+.modal-red .ui-dialog-buttonpane button:active { background:green; }
+.modal-red.ui-corner-all,.modal-red.ui-corner-top,.modal-red.ui-corner-left,.modal-red.ui-corner-tl { border-top-left-radius:0px; }
+.modal-red.ui-corner-all,.modal-red.ui-corner-top,.modal-red.ui-corner-right,.modal-red.ui-corner-tr { border-top-right-radius:0px; }
+.modal-red.ui-corner-all,.modal-red.ui-corner-bottom,.modal-red.ui-corner-left,.modal-red.ui-corner-bl { border-bottom-left-radius:0px; }
+.modal-red.ui-corner-all,.modal-red.ui-corner-bottom,.modal-red.ui-corner-right,.modal-red.ui-corner-br { border-bottom-right-radius:0px; }
+
+.modal-red > .ui-widget-header p.ui-xlgwr { position:absolute; top:-0.4em; padding:0; right:0; display:inline; }
+.modal-red > .ui-widget-header p.ui-xlgwr span { position:relative; float:left; margin:0.4em 0.2em 0 0.2em; cursor:pointer; z-index:999; }
+.modal-red > .ui-widget-header .dialog-tab-control-area { position:absolute; left:0px; text-align:center; }
+.modal-red > .ui-widget-header .dialog-tab-control-area .dialog-tab-control { background-color:#9a7e57; border-radius:5px 5px 0px 0px; float:left; margin-left:10px; padding:5px 10px; cursor:pointer; }
+.modal-red > .ui-widget-header .dialog-tab-control-area .over { background-color:brown; color:#6dd2fd; }
+.modal-red > .ui-widget-header .dialog-tab-control-area .dialog-tab-control:hover { background-color:brown; }
+.modal-red > .ui-widget-header ._dialogMin { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('red/dialog_minbtn.png'); }
+.modal-red > .ui-widget-header ._dialogMin:focus,.modal-red > .ui-widget-header ._dialogMin:hover { background-image:url('red/dialog_minbtn_over.png'); }
+.modal-red > .ui-widget-header ._dialogMin:before,.modal-red > .ui-widget-header ._dialogMin:after { background-image:url('red/dialog_minbtn.png'); }
+.modal-red > .ui-widget-header ._dialogMax { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('red/dialog_maxbtn.png'); }
+.modal-red > .ui-widget-header ._dialogMax:focus,.modal-red > .ui-widget-header ._dialogMax:hover { background-image:url('red/dialog_maxbtn_over.png'); }
+.modal-red > .ui-widget-header ._dialogMax:before,.modal-red > .ui-widget-header ._dialogMax:after { background-image:url('red/dialog_maxbtn.png'); }
+.modal-red > .ui-widget-header ._dialogMaxsel { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('red/dialog_maxselbtn.png'); }
+.modal-red > .ui-widget-header ._dialogMaxsel:focus,.modal-red > .ui-widget-header ._dialogMaxsel:hover { background-image:url('red/dialog_maxselbtn_over.png'); }
+.modal-red > .ui-widget-header ._dialogMaxsel:before,.modal-red > .ui-widget-header ._dialogMaxsel:after { background-image:url('red/dialog_maxselbtn.png'); }
+.modal-red > .ui-widget-header ._dialogClose { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('red/dialog_closebtn.png'); }
+.modal-red > .ui-widget-header ._dialogClose:focus,.modal-red > .ui-widget-header ._dialogClose:hover { background-image:url('red/dialog_closebtn_over.png'); }
+.modal-red > .ui-widget-header ._dialogClose:before,.modal-red > .ui-widget-header ._dialogClose:after { background-image:url('red/dialog_closebtn.png'); }
+.modal-red > .ui-widget-header ._dialogBtnText { width:auto; font-size:16px; background-image:none; padding:0px 2px; }
+.modal-red > .ui-widget-header ._dialogBtnText:focus,.modal-red > .ui-widget-header ._dialogBtnText:hover { color:red; background-image:none; }
+.modal-red > .ui-widget-header ._dialogBtnText:before,.modal-red > .ui-widget-header ._dialogBtnText:after { color:#fff; background-image:none; }
+
+/** modal-gray **/
+.modal-gray.ui-widget { overflow:hidden; border:1px solid #d2d6de; background:url("gray/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; color:#1e1b1d; }
+.modal-gray > .ui-widget-header { border:1px solid #d2d6de; border-radius:0px; background:url("gray/ui-bg_glass_25_6dd2fd_1x400.png") 50% 50% repeat-x; color:#fff; font-weight:bold; }
+.modal-gray > .ui-widget-content { overflow-x:hidden; overflow-y:auto; border:1px solid #d2d6de; padding:0px; background:#fff; color:#1e1b1d; }
+.modal-gray > .ui-widget-content iframe { height:99%; }
+.modal-gray .ui-dialog-buttonpane { padding:0px; background:transparent url("gray/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; }
+.modal-gray .ui-dialog-buttonpane button { border:1px solid #cdc3b7; border-radius:0px; padding:.4em 1em; background:transparent url("gray/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; font-weight:normal; color:#3f3731; }
+.modal-gray .ui-dialog-buttonpane button:link,.modal-gray .ui-dialog-buttonpane button:visited { background:transparent url("gray/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; }
+.modal-gray .ui-dialog-buttonpane button:hover,.modal-gray .ui-dialog-buttonpane button:focus { background:red; }
+.modal-gray .ui-dialog-buttonpane button:active { background:green; }
+.modal-gray.ui-corner-all,.modal-gray.ui-corner-top,.modal-gray.ui-corner-left,.modal-gray.ui-corner-tl { border-top-left-radius:0px; }
+.modal-gray.ui-corner-all,.modal-gray.ui-corner-top,.modal-gray.ui-corner-right,.modal-gray.ui-corner-tr { border-top-right-radius:0px; }
+.modal-gray.ui-corner-all,.modal-gray.ui-corner-bottom,.modal-gray.ui-corner-left,.modal-gray.ui-corner-bl { border-bottom-left-radius:0px; }
+.modal-gray.ui-corner-all,.modal-gray.ui-corner-bottom,.modal-gray.ui-corner-right,.modal-gray.ui-corner-br { border-bottom-right-radius:0px; }
+
+.modal-gray > .ui-widget-header p.ui-xlgwr { position:absolute; top:-0.4em; padding:0; right:0; display:inline; }
+.modal-gray > .ui-widget-header p.ui-xlgwr span { position:relative; float:left; margin:0.4em 0.2em 0 0.2em; cursor:pointer; z-index:999; }
+.modal-gray > .ui-widget-header .dialog-tab-control-area { position:absolute; left:0px; text-align:center; }
+.modal-gray > .ui-widget-header .dialog-tab-control-area .dialog-tab-control { background-color:#9a7e57; border-radius:5px 5px 0px 0px; float:left; margin-left:10px; padding:5px 10px; cursor:pointer; }
+.modal-gray > .ui-widget-header .dialog-tab-control-area .over { background-color:brown; color:#6dd2fd; }
+.modal-gray > .ui-widget-header .dialog-tab-control-area .dialog-tab-control:hover { background-color:brown; }
+.modal-gray > .ui-widget-header ._dialogMin { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray/dialog_minbtn.png'); }
+.modal-gray > .ui-widget-header ._dialogMin:focus,.modal-gray > .ui-widget-header ._dialogMin:hover { background-image:url('gray/dialog_minbtn_over.png'); }
+.modal-gray > .ui-widget-header ._dialogMin:before,.modal-gray > .ui-widget-header ._dialogMin:after { background-image:url('gray/dialog_minbtn.png'); }
+.modal-gray > .ui-widget-header ._dialogMax { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray/dialog_maxbtn.png'); }
+.modal-gray > .ui-widget-header ._dialogMax:focus,.modal-gray > .ui-widget-header ._dialogMax:hover { background-image:url('gray/dialog_maxbtn_over.png'); }
+.modal-gray > .ui-widget-header ._dialogMax:before,.modal-gray > .ui-widget-header ._dialogMax:after { background-image:url('gray/dialog_maxbtn.png'); }
+.modal-gray > .ui-widget-header ._dialogMaxsel { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray/dialog_maxselbtn.png'); }
+.modal-gray > .ui-widget-header ._dialogMaxsel:focus,.modal-gray > .ui-widget-header ._dialogMaxsel:hover { background-image:url('gray/dialog_maxselbtn_over.png'); }
+.modal-gray > .ui-widget-header ._dialogMaxsel:before,.modal-gray > .ui-widget-header ._dialogMaxsel:after { background-image:url('gray/dialog_maxselbtn.png'); }
+.modal-gray > .ui-widget-header ._dialogClose { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray/dialog_closebtn.png'); }
+.modal-gray > .ui-widget-header ._dialogClose:focus,.modal-gray > .ui-widget-header ._dialogClose:hover { background-image:url('gray/dialog_closebtn_over.png'); }
+.modal-gray > .ui-widget-header ._dialogClose:before,.modal-gray > .ui-widget-header ._dialogClose:after { background-image:url('gray/dialog_closebtn.png'); }
+.modal-gray > .ui-widget-header ._dialogBtnText { width:auto; font-size:16px; background-image:none; padding:0px 2px; }
+.modal-gray > .ui-widget-header ._dialogBtnText:focus,.modal-gray > .ui-widget-header ._dialogBtnText:hover { color:red; background-image:none; }
+.modal-gray > .ui-widget-header ._dialogBtnText:before,.modal-gray > .ui-widget-header ._dialogBtnText:after { color:#fff; background-image:none; }
+
+/** modal-gray3d **/
+.modal-gray3d.ui-widget { overflow:hidden; border:1px solid #d2d6de; background:url("gray3d/ui-bg_inset-soft_100_6dd2fd_1x100.png") 100% bottom repeat; background-size:100% 100%; color:#1e1b1d; }
+.modal-gray3d > .ui-widget-header { border:1px solid #d2d6de; border-radius:0px; background:url("gray3d/ui-bg_glass_25_6dd2fd_1x400.png") 50% 50% repeat-x; color:#fff; font-weight:bold; }
+.modal-gray3d > .ui-widget-content { overflow-x:hidden; overflow-y:auto; border:1px solid #d2d6de; padding:0px; background:#fff; color:#1e1b1d; }
+.modal-gray3d > .ui-widget-content iframe { height:99%; }
+.modal-gray3d .ui-dialog-buttonpane { padding:0px; background:transparent url("gray3d/ui-bg_inset-soft_100_6dd2fd_1x100.png") 50% bottom repeat; }
+.modal-gray3d .ui-dialog-buttonpane button { border:1px solid #cdc3b7; border-radius:0px; padding:.4em 1em; background:transparent url("gray3d/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; font-weight:normal; color:#3f3731; }
+.modal-gray3d .ui-dialog-buttonpane button:link,.modal-gray3d .ui-dialog-buttonpane button:visited { background:transparent url("gray3d/ui-bg_highlight-hard_100_6dd2fd_1x100.png") 50% 50% repeat-x; }
+.modal-gray3d .ui-dialog-buttonpane button:hover,.modal-gray3d .ui-dialog-buttonpane button:focus { background:red; }
+.modal-gray3d .ui-dialog-buttonpane button:active { background:green; }
+.modal-gray3d.ui-corner-all,.modal-gray3d.ui-corner-top,.modal-gray3d.ui-corner-left,.modal-gray3d.ui-corner-tl { border-top-left-radius:0px; }
+.modal-gray3d.ui-corner-all,.modal-gray3d.ui-corner-top,.modal-gray3d.ui-corner-right,.modal-gray3d.ui-corner-tr { border-top-right-radius:0px; }
+.modal-gray3d.ui-corner-all,.modal-gray3d.ui-corner-bottom,.modal-gray3d.ui-corner-left,.modal-gray3d.ui-corner-bl { border-bottom-left-radius:0px; }
+.modal-gray3d.ui-corner-all,.modal-gray3d.ui-corner-bottom,.modal-gray3d.ui-corner-right,.modal-gray3d.ui-corner-br { border-bottom-right-radius:0px; }
+
+.modal-gray3d > .ui-widget-header p.ui-xlgwr { position:absolute; top:-0.4em; padding:0; right:0; display:inline; }
+.modal-gray3d > .ui-widget-header p.ui-xlgwr span { position:relative; float:left; margin:0.4em 0.2em 0 0.2em; cursor:pointer; z-index:999; }
+.modal-gray3d > .ui-widget-header .dialog-tab-control-area { position:absolute; left:0px; text-align:center; }
+.modal-gray3d > .ui-widget-header .dialog-tab-control-area .dialog-tab-control { background-color:#9a7e57; border-radius:5px 5px 0px 0px; float:left; margin-left:10px; padding:5px 10px; cursor:pointer; }
+.modal-gray3d > .ui-widget-header .dialog-tab-control-area .over { background-color:brown; color:#6dd2fd; }
+.modal-gray3d > .ui-widget-header .dialog-tab-control-area .dialog-tab-control:hover { background-color:brown; }
+.modal-gray3d > .ui-widget-header ._dialogMin { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray3d/dialog_minbtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMin:focus,.modal-gray3d > .ui-widget-header ._dialogMin:hover { background-image:url('gray3d/dialog_minbtn_over.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMin:before,.modal-gray3d > .ui-widget-header ._dialogMin:after { background-image:url('gray3d/dialog_minbtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMax { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray3d/dialog_maxbtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMax:focus,.modal-gray3d > .ui-widget-header ._dialogMax:hover { background-image:url('gray3d/dialog_maxbtn_over.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMax:before,.modal-gray3d > .ui-widget-header ._dialogMax:after { background-image:url('gray3d/dialog_maxbtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMaxsel { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray3d/dialog_maxselbtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMaxsel:focus,.modal-gray3d > .ui-widget-header ._dialogMaxsel:hover { background-image:url('gray3d/dialog_maxselbtn_over.png'); }
+.modal-gray3d > .ui-widget-header ._dialogMaxsel:before,.modal-gray3d > .ui-widget-header ._dialogMaxsel:after { background-image:url('gray3d/dialog_maxselbtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogClose { float:left; position:relative; cursor:pointer; height:17px; width:28px; text-align:center; line-height:17px; background-image:url('gray3d/dialog_closebtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogClose:focus,.modal-gray3d > .ui-widget-header ._dialogClose:hover { background-image:url('gray3d/dialog_closebtn_over.png'); }
+.modal-gray3d > .ui-widget-header ._dialogClose:before,.modal-gray3d > .ui-widget-header ._dialogClose:after { background-image:url('gray3d/dialog_closebtn.png'); }
+.modal-gray3d > .ui-widget-header ._dialogBtnText { width:auto; font-size:16px; background-image:none; padding:0px 2px; }
+.modal-gray3d > .ui-widget-header ._dialogBtnText:focus,.modal-gray3d > .ui-widget-header ._dialogBtnText:hover { color:red; background-image:none; }
+.modal-gray3d > .ui-widget-header ._dialogBtnText:before,.modal-gray3d > .ui-widget-header ._dialogBtnText:after { color:#fff; background-image:none; }

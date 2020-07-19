@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:flex="http://www.springframework.org/schema/flex"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/flex 
+                           http://www.springframework.org/schema/flex/spring-flex-1.5.xsd">
+
+   	<!-- ostensibly we could put these in the bean definitions in data-service.xml, but the beans get processed before the above flex:message-broker creates the _messageBroker -->
+	<flex:remoting-destination channels="main-amf, main-amf-secure" ref="formPageMgmtService" />
+	<flex:remoting-destination channels="main-amf, main-amf-secure" ref="certTempMgmtService" />
+	<flex:remoting-destination channels="main-amf, main-amf-secure" ref="resourceCatalogMgmtService" />
+	<flex:remoting-destination channels="main-amf, main-amf-secure" ref="itemMgmtService" />
+	<flex:remoting-destination channels="main-amf, main-amf-secure" ref="situationMgmtService" />
+
+</beans>

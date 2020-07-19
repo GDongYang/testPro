@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.base_fs-xx-small,.base_fs-xx-small * { font-size:xx-small; }
+.base_fs-x-small,.base_fs-x-small * { font-size:x-small; }
+.base_fs-small,.base_fs-small * { font-size:small; }
+.base_fs-medium,.base_fs-medium * { font-size:medium; }
+.base_fs-large,.base_fs-large * { font-size:large; }
+.base_fs-x-large,.base_fs-x-large * { font-size:x-large; }
+.base_fs-xx-large,.base_fs-xx-large * { font-size:xx-large; }
+.base_fs-smaller,.base_fs-smaller * { font-size:smaller; }
+.base_fs-larger,.base_fs-larger * { font-size:larger; }
+.base_fs-inherit,.base_fs-inherit * { font-size:inherit; }
+
+.base_fs-imp-xx-small,.base_fs-imp-xx-small * { font-size:xx-small !important; }
+.base_fs-imp-x-small,.base_fs-imp-x-small * { font-size:x-small !important; }
+.base_fs-imp-small,.base_fs-imp-small * { font-size:small !important; }
+.base_fs-imp-medium,.base_fs-imp-medium * { font-size:medium !important; }
+.base_fs-imp-large,.base_fs-imp-large * { font-size:large !important; }
+.base_fs-imp-x-large,.base_fs-imp-x-large * { font-size:x-large !important; }
+.base_fs-imp-xx-large,.base_fs-imp-xx-large * { font-size:xx-large !important; }
+.base_fs-imp-smaller,.base_fs-imp-smaller * { font-size:smaller !important; }
+.base_fs-imp-larger,.base_fs-imp-larger * { font-size:larger !important; }
+.base_fs-imp-inherit,.base_fs-imp-inherit * { font-size:inherit !important; }

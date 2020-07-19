@@ -1,0 +1,86 @@
+#searchForm .form-control{height:30px;padding:4px 12px}
+/*卡片*/
+.cardBox{background:#fff;}
+.cardBox:hover{box-shadow:5px 0px 10px #ccc;cursor:pointer}
+.cardBody{height:150px;padding:15px 0px;}
+.cardFooter{
+	height:40px;
+	background: -webkit-linear-gradient(#0072FF, #00C6FF); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#0072FF, #00C6FF); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#0072FF, #00C6FF); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#0072FF, #00C6FF); /* 标准的语法 */
+    text-align:center;
+    line-height:20px;
+    padding:10px 0px;
+}
+.cardBoxNofotter{height:140px;padding:20px;background:#fff;}
+.cardBoxNofotter:hover{box-shadow:5px 0px 10px #ccc}
+.cardFooter i{color:#fff;font-size:16px;cursor:pointer;}
+.cardTitle{font-size:16px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.cardTitleSmall{font-size:12px;color:#adadad;margin:10px 0px 5px 0px;}
+.cardMsg{font-size:14px;color:#0072FF;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.cardMemo{background-color:rgb(239,246,252);height:40px;padding:5px;margin-top:10px;}
+.border-r-fff{border-right:1px solid #fff;}
+.cardFooter.disabled{
+	background: -webkit-linear-gradient(#A2A2A2, #B8B8B8); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#A2A2A2, #B8B8B8); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#A2A2A2, #B8B8B8); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#A2A2A2, #B8B8B8); /* 标准的语法 */
+}
+/*角色左边弹窗*/
+.sideAddModal{position:fixed;top:0px;right:0px;width:25%;height:100%;background:#fff;}
+.sideAddModal div{height:80%;padding:15px;overflow:auto;}
+.sideAddModal h4{border-bottom:1px solid #ccc;padding-bottom:10px;text-align:left;}
+.sideAddModal button{margin-top:30px;}
+.userCradBodyBlue::after ,.userCradBodyGrey::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 15px;
+    border-color: transparent;
+    border-style: solid;
+/*     border-radius: 0.4em; */
+    border-width: 30px;
+    border-right-color: #338AF8;
+    border-top-color: #338AF8;
+}
+.userCradBodyGrey::after{
+	border-right-color: #A0A0A0;
+    border-top-color: #A0A0A0;
+}
+.userCradBox::after{
+	content:'分配';
+	color:#fff;
+	font-size:12px;
+	background:transparent;
+	position: absolute;
+    top: 10px;
+    right: 22px;
+    transform: rotate(45deg);
+}
+#noAddCard{
+	background:url(../image/nodata.png) no-repeat 100%;
+	background-position: center;
+}
+/*组织树无数据时占位符图片*/
+.treeBoxImage{background:url(../image/noTreeData.png) no-repeat 100%;background-position:center;background-size:50%;}
+.ztree *{font-size:14px;}
+.ztree li{padding:5px 0px;}
+.ztree li span.button.ico_close{background-position:0 0;background-image:url(../image/close.png);margin-right: 6px;}
+.ztree li span.button.ico_docu{background-image:url(../image/document.png);background-position:0 0;margin-right: 6px;}
+.ztree li span.button.noline_open{background-image:url(../image/up.png);background-position:0 0;margin-top:5px}
+.ztree li span.button.noline_close{background-image:url(../image/down.png);background-position:0 0;margin-top:5px}
+.ztree li span.button.ico_open{background-image:url(../image/open.png);background-position:0 0;margin-right: 6px;}
+.ztree{overflow:hidden;}
+.ztree li a.curSelectedNode{background:transparent;border:none;}
+.ztree>li>a{margin-bottom:5px;}
+.ztree>li>a li:hover,.ztree>li>a li:focus{background:#f7f7f7}
+
+/*证件统计*/
+.optionText{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.daterangepicker .ranges .input-mini{padding:0;}
+
+/*chosen-select单选框*/
+.chosen-container-single{width:100%!important;}
+.chosen-container-single .chosen-single{height:34px!important;line-height:34px!important;}
+.chosen-container-single .chosen-single div{top:6px;}

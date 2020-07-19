@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="NoticeUser">
+	<typeAlias alias="noticeUser" type="com.fline.form.access.model.NoticeUser" />
+	<resultMap id="noticeUserResult" class="noticeUser">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="name" column="name" javaType="String" />
+		<result property="mobile" column="mobile" javaType="String" />
+	</resultMap>
+
+	<insert id="create" parameterClass="noticeUser">
+		INSERT INTO C_NOTICE_USER (
+			name
+			,mobile
+		) VALUES (
+			#name#
+			,#mobile#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="noticeUser">
+		UPDATE C_NOTICE_USER SET
+			name=#name#
+			, mobile=#mobile#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="noticeUser">
+		<![CDATA[
+			DELETE FROM C_NOTICE_USER WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="noticeUserResult">
+		<![CDATA[
+			SELECT * FROM C_NOTICE_USER A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="noticeUserResult">
+		SELECT * FROM C_NOTICE_USER
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM C_NOTICE_USER A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="noticeUserResult">
+		<![CDATA[ SELECT * ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+
+	<select id="findMobiles" resultClass="java.lang.String">
+		SELECT mobile FROM C_NOTICE_USER
+	</select>
+</sqlMap>

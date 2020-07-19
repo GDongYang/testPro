@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+//定义
+@explain: 0;//起始数值
+@explainUnit: pc;//单位标注：cm、em、ex、in、mm、pc、pct、pt、px
+@start: unit(@explain,replace(@explainUnit,'pct','%'));//单位应用：cm、em、ex、in、mm、pc、%、pt、px
+@name1: base_btw;
+@parmName1: border-top-width;
+@name2: base_bbw;
+@parmName2: border-bottom-width;
+@name3: base_blw;
+@parmName3: border-left-width;
+@name4: base_brw;
+@parmName4: border-right-width;
+@name5: base_btbw;
+@parmName5_1: border-top-width;
+@parmName5_2: border-bottom-width;
+@name6: base_blrw;
+@parmName6_1: border-left-width;
+@parmName6_2: border-right-width;
+@name7: base_bw;
+@parmName7_1: border-top-width;
+@parmName7_2: border-bottom-width;
+@parmName7_3: border-left-width;
+@parmName7_4: border-right-width;
+
+.init1(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name1}-@{j}@{explainUnit} { @{parmName1}:(0 + @i); }
+	& when (@i < 100) {
+		.init1(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init1(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init1(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp1(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name1}-imp-@{j}@{explainUnit} { @{parmName1}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp1(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp1(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp1(@n, (@i + 50), (@j + 50));
+	}
+}
+.init2(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name2}-@{j}@{explainUnit} { @{parmName2}:(0 + @i); }
+	& when (@i < 100) {
+		.init2(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init2(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init2(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp2(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name2}-imp-@{j}@{explainUnit} { @{parmName2}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp2(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp2(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp2(@n, (@i + 50), (@j + 50));
+	}
+}
+.init3(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name3}-@{j}@{explainUnit} { @{parmName3}:(0 + @i); }
+	& when (@i < 100) {
+		.init3(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init3(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init3(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp3(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name3}-imp-@{j}@{explainUnit} { @{parmName3}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp3(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp3(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp3(@n, (@i + 50), (@j + 50));
+	}
+}
+.init4(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name4}-@{j}@{explainUnit} { @{parmName4}:(0 + @i); }
+	& when (@i < 100) {
+		.init4(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init4(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init4(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp4(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name4}-imp-@{j}@{explainUnit} { @{parmName4}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp4(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp4(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp4(@n, (@i + 50), (@j + 50));
+	}
+}
+.init5(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name5}-@{j}@{explainUnit} { @{parmName5_1}:(0 + @i); @{parmName5_2}:(0 + @i); }
+	& when (@i < 100) {
+		.init5(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init5(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init5(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp5(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name5}-imp-@{j}@{explainUnit} { @{parmName5_1}:(0 + @i) !important; @{parmName5_2}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp5(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp5(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp5(@n, (@i + 50), (@j + 50));
+	}
+}
+.init6(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name6}-@{j}@{explainUnit} { @{parmName6_1}:(0 + @i); @{parmName6_2}:(0 + @i); }
+	& when (@i < 100) {
+		.init6(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init6(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init6(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp6(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name6}-imp-@{j}@{explainUnit} { @{parmName6_1}:(0 + @i) !important; @{parmName6_2}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp6(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp6(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp6(@n, (@i + 50), (@j + 50));
+	}
+}
+.init7(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name7}-@{j}@{explainUnit} { @{parmName7_1}:(0 + @i); @{parmName7_2}:(0 + @i); @{parmName7_3}:(0 + @i); @{parmName7_4}:(0 + @i); }
+	& when (@i < 100) {
+		.init7(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init7(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init7(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp7(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name7}-imp-@{j}@{explainUnit} { @{parmName7_1}:(0 + @i) !important; @{parmName7_2}:(0 + @i) !important; @{parmName7_3}:(0 + @i) !important; @{parmName7_4}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp7(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp7(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp7(@n, (@i + 50), (@j + 50));
+	}
+}
+
+//执行
+.init1(1000);
+.init_imp1(1000);
+.init2(1000);
+.init_imp2(1000);
+.init3(1000);
+.init_imp3(1000);
+.init4(1000);
+.init_imp4(1000);
+.init5(1000);
+.init_imp5(1000);
+.init6(1000);
+.init_imp6(1000);
+.init7(1000);
+.init_imp7(1000);

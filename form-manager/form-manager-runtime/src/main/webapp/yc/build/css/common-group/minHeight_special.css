@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.base_minh-none { min-height:none; }
+.base_minh-inherit { min-height:inherit; }
+
+.base_minh-imp-none { min-height:none !important; }
+.base_minh-imp-inherit { min-height:inherit !important; }

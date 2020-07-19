@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd" default-lazy-init="false">
+
+	<tx:advice id="transactionInterceptor" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" timeout="300" />
+			<tx:method name="notify*" propagation="SUPPORTS" read-only="true" timeout="300" />
+			<tx:method name="batch*" propagation="REQUIRED" isolation="READ_COMMITTED" timeout="1800" rollback-for="Throwable" />
+			<tx:method name="audit*" propagation="REQUIRES_NEW" isolation="READ_COMMITTED" timeout="600" rollback-for="Throwable" />
+			<tx:method name="auto*" propagation="REQUIRES_NEW" isolation="READ_COMMITTED" timeout="1600" rollback-for="Throwable" />
+			<!-- tx:method name="alert*" propagation="NEVER" / -->
+			<tx:method name="*" propagation="REQUIRED" isolation="READ_COMMITTED" timeout="6000" rollback-for="Throwable" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:advisor advice-ref="transactionInterceptor" pointcut="execution(* com.feixian.aip..service..*.*(..))" order="40" />
+		<aop:advisor advice-ref="transactionInterceptor" pointcut="execution(* com.fline.form..service..*.*(..))" order="40" />
+	</aop:config>
+
+</beans>

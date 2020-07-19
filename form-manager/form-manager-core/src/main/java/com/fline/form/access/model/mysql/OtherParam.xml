@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="OtherParam">
+	<typeAlias alias="otherParam" type="com.fline.form.access.model.OtherParam" />
+	<resultMap id="otherParamResult" class="otherParam">
+		<!-- NamespaceModel -->
+		<result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="certCode" column="certCode" javaType="String" />
+		<result property="paramName" column="paramName" javaType="String" />
+		<result property="paramField" column="paramField" javaType="String" />
+	</resultMap>
+	
+	<insert id="create" parameterClass="otherParam">
+		INSERT INTO C_OTHER_PARAM (
+			certCode
+			,paramName
+			,paramField
+		) VALUES (
+			#certCode#
+			,#paramName#
+			,#paramField#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="otherParam">
+		UPDATE C_OTHER_PARAM SET
+			certCode=#certCode#
+			, paramName=#paramName#
+			, paramField=#paramField#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="otherParam">
+		<![CDATA[
+			DELETE FROM C_OTHER_PARAM WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="otherParamResult">
+		<![CDATA[
+			SELECT
+			 id,
+			certCode,
+			paramName,
+			paramField
+			 FROM C_OTHER_PARAM A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="otherParamResult">
+		SELECT
+		 id,
+		certCode,
+		paramName,
+		paramField
+		 FROM C_OTHER_PARAM
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull property="certCode" prepend="and" >
+                certCode = #certCode#
+            </isNotNull>
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM C_OTHER_PARAM A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="otherParamResult">
+		<![CDATA[ SELECT
+ 			id,
+			certCode,
+			paramName,
+			paramField
+ 		 ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

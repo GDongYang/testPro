@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<alias name="ehcache" alias="cache"/>
+<!-- 	<alias name="memcached" alias="clusterCache"/>
+
+	<bean id="methodCacheInterceptor" parent="abstractMethodCacheInterceptor">
+		<property name="excludeParameterType" value="com.pktech.aip.platform.usercontext.vo.UserContext" />
+	</bean>
+
+-->
+	<import resource="classpath:applicationContext-tp-cache-ehcache.xml" />
+<!--	<import resource="classpath:applicationContext-tp-cache-oscache.xml" />-->
+<!-- 	<import resource="classpath:applicationContext-tp-cache-mapcache.xml" /> -->
+
+
+<!--	<import resource="classpath:applicationContext-tp-cache-memcached-danga.xml" />-->
+<!--	<import resource="classpath:applicationContext-tp-cache-memcached-spy.xml" />-->
+<!--	<import resource="classpath:applicationContext-tp-cache-memcached-x.xml" />-->
+
+</beans>

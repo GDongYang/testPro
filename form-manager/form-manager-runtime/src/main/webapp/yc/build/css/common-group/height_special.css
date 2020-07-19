@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.base_h-auto { height:auto; }
+.base_h-inherit { height:inherit; }
+
+.base_h-imp-auto { height:auto !important; }
+.base_h-imp-inherit { height:inherit !important; }

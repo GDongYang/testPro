@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>公告</title>
+    <style type="text/css">
+        h3 {
+            text-align: center;
+        }
+
+        #p1 {
+            text-align: left;
+            text-indent: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<h3>公告</h3>
+<p id="p1">
+    为了加强信息系统的安全和管理，一证通办系统即日起登陆地址变更为:<a id="path" href="" target="_blank"></a> ,原登陆地址将于近日停止使用，给您带来不便，敬请谅解！<br/>
+     
+    受信任站点设置，具体操作如下:<br/>
+    （1）IE浏览器打开设置---Internet选项---安全---受信任站点---站点---将该网站添加到区域---点击添加保存---刷新页面.<br/>
+    （2）360浏览器打开设置---工具---Internet选项---安全---受信任站点---站点---将该网站添加到区域---点击添加保存---刷新页面.
+
+</p>
+</body>
+<script>
+    var path = window.opener.location.pathname;
+    document.getElementById("path").innerHTML = "http://172.26.24.109" + path;
+    document.getElementById("path").setAttribute("href","http://172.26.24.109" + path);
+</script>
+
+
+</html>

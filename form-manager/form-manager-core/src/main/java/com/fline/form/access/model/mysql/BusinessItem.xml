@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="BusinessItem">
+
+	<typeAlias alias="businessitem" type="com.fline.form.access.model.BusinessItem" />
+
+	<resultMap id="businessitemResult" class="businessitem">
+
+		<result property="id" column="ID" javaType="long" jdbcType="NUMBER" />
+		<result property="name" column="NAME" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="code" column="CODE" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="memo" column="MEMO" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="status" column="STATUS" javaType="long"
+			jdbcType="NUMBER" />
+		<result property="cerno" column="CERNO" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="businessId" column="businessId" javaType="long"
+			jdbcType="NUMBER" />
+		<result property="certCode" column="certTempCode" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="createDate" column="createDate" javaType="date"
+			jdbcType="DATE" />
+		<result property="timeConsuming" column="timeConsuming" javaType="long"
+			jdbcType="NUMBER" />
+	</resultMap>
+	<resultMap id="businessitemLeftJoin" class="businessitem" extends="businessitemResult">
+		<result property="certName" column="certName" javaType="string"
+			jdbcType="VARCHAR2" />
+	</resultMap>
+
+	<insert id="create" parameterClass="businessitem">
+		<![CDATA[
+			INSERT INTO C_BUSINESS_ITEM(
+				NAME,CODE,MEMO,STATUS,
+				CERNO,businessId,certTempCode,createDate,timeConsuming
+			) VALUES (
+				#name#,#code#,#memo#,#status#,
+				#cerno#,#businessId#,#certCode#,#createDate#,#timeConsuming#
+			)
+		]]>
+		<selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as ID
+	  	</selectKey>
+	</insert>
+	<update id="update" parameterClass="businessitem">
+		<![CDATA[
+		UPDATE C_BUSINESS_ITEM SET
+			ID=#id#,
+			NAME=#name#,
+			CODE=#code#,
+			MEMO=#memo#,
+			STATUS=#status#,
+			CERNO=#cerno#,
+			businessId=#businessId#,
+			certTempCode=#certCode#
+		WHERE ID=#id#
+		]]>
+	</update>
+	<delete id="remove" parameterClass="businessitem">
+		<![CDATA[
+		DELETE FROM C_BUSINESS_ITEM WHERE ID=#id#
+		]]>
+	</delete>
+	<select id="findAll" resultMap="businessitemResult">
+		<![CDATA[ SELECT * FROM C_BUSINESS_ITEM ]]>
+	</select>
+	<select id="findById" resultMap="businessitemResult"
+		parameterClass="long">
+		<![CDATA[
+		SELECT * FROM C_BUSINESS_ITEM WHERE ID=#value#
+		]]>
+	</select>
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull property="id">
+				<isGreaterThan prepend="AND" property="id"
+					compareValue="0"> B.ID=#id#</isGreaterThan>
+			</isNotNull>
+			<isNotNull prepend="AND" property="code"> B.CODE=#code# </isNotNull>
+			<isNotNull property="businessId" >
+				<isGreaterThan prepend="AND" property="businessId"
+					compareValue="0">B.businessId = #businessId#</isGreaterThan>
+			</isNotNull>
+			<isNotNull property="inspection" prepend="and">
+					B.businessId = (select max(id) from c_business where type= 4)
+			</isNotNull>
+		</dynamic>
+	</sql>
+	<sql id="sql_from">
+		FROM C_BUSINESS_ITEM B
+		LEFT JOIN C_CERT_TEMP C ON C.CODE = B.certTempCode
+		<include refid="sql_where" />
+	</sql>
+	<select id="find" resultMap="businessitemLeftJoin">
+	  <![CDATA[
+ 		SELECT
+ 		B.id,
+		B.NAME,
+		B.CODE,
+		B.MEMO,
+		B.STATUS,
+		B.CERNO,
+		B.businessId,
+		B.certTempCode,
+		B.createDate,
+		B.timeConsuming,
+ 		C.NAME AS certName]]>
+	  <include refid="sql_from" />
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY B.$_orderBy$ ]]></isNotNull>
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map"
+		resultClass="int">
+		<![CDATA[ SELECT COUNT(1) ]]>
+		<include refid="sql_from" />
+	</select>
+	
+	<select id="findByCodeAndID" resultMap="businessitemResult">
+	 	<![CDATA[
+	 		SELECT
+	 		id,
+			NAME,
+			CODE,
+			MEMO,
+			STATUS,
+			CERNO,
+			businessId,
+			certTempCode,
+			createDate,
+			timeConsuming
+	 		 FROM C_BUSINESS_ITEM WHERE 1=1
+	 		AND certTempCode = #certCode#
+	   		AND businessId = (select id from C_BUSINESS WHERE CODE = #businessCode#)
+	   ]]> 	
+	</select>
+	
+	<select id="findByBusinessId" resultMap="businessitemLeftJoin">
+		<![CDATA[
+	 		SELECT
+	 		id,
+			NAME,
+			CODE,
+			MEMO,
+			STATUS,
+			CERNO,
+			businessId,
+			certTempCode,
+			createDate,
+			timeConsuming ,
+	 		(select name from c_cert_temp where CODE = certTempCode) as certName FROM C_BUSINESS_ITEM WHERE 1=1
+	 	]]>
+	 	<isNotNull property="businessId" prepend="and">
+	    	<![CDATA[
+	   			businessId = #businessId#
+	   		]]>
+	    </isNotNull>
+	</select>
+	
+	<delete id="deleteTest">
+		delete from c_business_item where id in (
+		select id from (
+		select i.id from c_business_item i LEFT JOIN c_business b on i.businessId = b.ID where b.id is null
+		) result
+		)
+	</delete>
+</sqlMap>

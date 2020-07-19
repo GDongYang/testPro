@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/** ◆元素内边距 **/
+@import url("common-group/min/padding_px.css");
+@import url("common-group/min/padding_pct.css");
+@import url("common-group/min/padding_special.css");
+/** ◆元素外边距 **/
+@import url("common-group/min/margin_px.css");
+@import url("common-group/min/margin_pct.css");
+@import url("common-group/min/margin_special.css");
+/** ◆元素边框颜色 **/
+@import url("common-group/min/borderColor.css");
+/** ◆元素边框样式和大小 **/
+@import url("common-group/min/border_px.css");
+@import url("common-group/min/border_pct.css");
+@import url("common-group/min/border_special.css");

@@ -1,0 +1,523 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>对象 TGPDFPlugInCtrl 的 ATL 测试页</title>
+    <script type="text/javascript">
+        var TGPDFPlugIn;
+        var SignContext;
+
+        function load() {
+            TGPDFPlugIn = getPluginObjcet("TGPDFPlugIn");
+            attach_event();
+            var path;
+            var certType = "CSP证书|UKey证书|云端证书";
+            var certTypeList = certType.split("|");
+            for (i = 0; i < certTypeList.length ; i++) {
+                document.getElementById("certTypeList").add(new Option(certTypeList[i], i * 3));
+            }
+
+            var signWay = "电子签章|手写签章|文档批注";
+            var signWayList = signWay.split("|");
+            for (i = 0; i < signWayList.length ; i++) {
+                document.getElementById("signWayList").add(new Option(signWayList[i], i));
+            }
+
+            var signType = "单页|多页|骑缝|关键字";
+            var signTypeList = signType.split("|");
+            for (i = 0; i < signTypeList.length ; i++) {
+                document.getElementById("signTypeList").add(new Option(signTypeList[i], i + 1));
+            }
+
+            var approveType = "不弹框|弹框";
+            var approveTypeList = approveType.split("|");
+            for (i = 0; i < approveTypeList.length ; i++) {
+                document.getElementById("approveTypeList").add(new Option(approveTypeList[i], 2 - i));
+            }
+
+            var approveFont = "仿宋|黑体|宋体";
+            var approveFontList = approveFont.split("|");
+            for (i = 0; i < approveFontList.length ; i++) {
+                document.getElementById("approveFontList").add(new Option(approveFontList[i], i));
+            }
+
+            var accountType = "账号/口令|账号/指纹|手机/验证码|证书登陆";
+            var accountTypeList = accountType.split("|");
+            for (i = 0; i < accountTypeList.length ; i++) {
+                document.getElementById("accountTypeList").add(new Option(accountTypeList[i], i + 1));
+            }
+
+            var signParam = "关键字|证书过滤|印章类型|UKEY索引|是否使用鼠标定位|是否付费用户|批注背景图片|批注颜色|全局过滤清除|全局印章类型|全局印章ID";
+            var signParamID = "1|5|6|8|9|13|15|16|10000|10001|10002";
+            var signParamList = signParam.split("|");
+            var signParamIDList = signParamID.split("|");
+            for (i = 0; i < signParamList.length ; i++) {
+                document.getElementById("signParamList").add(new Option(signParamList[i], signParamIDList[i]));
+            }
+
+            var docInfo = "当前文档路径|文档缓存路径|文档总页数|文档当前页码|签章个数|签章信息字符串形式|签章信息文件形式，输出保存签章信息的文件路径";
+            var docInfoList = docInfo.split("|");
+            for (i = 0; i < docInfoList.length ; i++) {
+                document.getElementById("docInfoList").add(new Option(docInfoList[i], i + 1));
+            }
+
+            var print = "弹框|不弹框";
+            var printList = print.split("|");
+            for (i = 0; i < printList.length ; i++) {
+                document.getElementById("printList").add(new Option(printList[i], 1 - i));
+            }
+
+            var controlPDF = "打开,1|关闭,2|转到第一页,3|转到前一页,4|转到后一页,5|转到最后一页,6|以单页单独模式查看,7|以单页连续模式查看,8|以双页单独模式查看,9|以双页连续模式查看,10|查找,11|查找下一个,12|打印,13\
+|保存,205|另存为,402|适合宽度显示,3026|适合页面显示,3027|缩小,3013|放大,3012|向左旋转,415|向右旋转,416|显示书签栏,417|显示/隐藏工具栏,100|电子签章,483|云端签章,492|批量验证,484|指纹签名,4001\
+|单页电子签章,801|骑缝章,485|多页签章,488|手写签章,487|关键字签章,489|云端单页签章,805|云端骑缝章,806|云端手写签章,807|云端多页签章,808|云端关键字签章,810";
+            var controlPDFList = controlPDF.split("|");
+            for (i = 0; i < controlPDFList.length ; i++) {
+                var list = controlPDFList[i].split(",");
+                document.getElementById("controlPDFList").add(new Option(list[0], list[1]));
+            }
+        }
+
+        function isIEBrowser() {
+            var isAtLeastIE11 = !!(navigator.userAgent.match(/Trident/) && !navigator.userAgent.match(/MSIE/));
+
+            if (isAtLeastIE11) {
+                return true;
+            }
+
+            return (navigator.appName.indexOf("Microsoft Internet") != -1);
+        }
+
+        function getPluginObjcet(objname) {
+            if (!isIEBrowser()) {
+                if (document.embeds && document.embeds[objname])
+                    return document.embeds[objname];
+            }
+            else {
+                return document.getElementById(objname);
+            }
+        }
+
+        function attach_event() {
+            try {
+                if (!isIEBrowser()) {
+                    TGPDFPlugIn.attachEvent("OnEventFinish", "jsOnEventFinish");
+                }
+                else {
+                    TGPDFPlugIn.attachEvent("OnEventFinish", jsOnEventFinish);
+                }
+            }
+            catch (e) {
+                return false;
+            }
+            return true;
+        }
+
+        function ShowResultMessage(msg, result) {
+            var resultMsg = "";
+            try{
+                resultMsg = TGPDFPlugIn.GetErrorMsg(result);
+            }catch(e){
+
+            }
+            document.form1.Result.value += msg + ":" + result.toString() + resultMsg + "\n";
+            document.getElementById('Result').scrollTop = document.getElementById('Result').scrollHeight;
+        }
+
+        function jsOnEventFinish(eventID, errorCode, result)
+        {
+            switch(eventID)
+            {
+                case 11201:
+                    ShowResultMessage("获取当前文件路径" + errorCode, result)
+                    break;
+                case 11202:
+					document.form1.filepath.value = result;
+                    ShowResultMessage("文档缓存路径" + errorCode, result)
+                    break;
+                case 11203:
+                    ShowResultMessage("文档总页数" + errorCode, result)
+                    break;
+                case 11204:
+                    ShowResultMessage("文档当前页码" + errorCode, result)
+                    break;
+                case 11205:
+                    ShowResultMessage("签章个数" + errorCode, result)
+                    break;
+                case 11206:
+                    ShowResultMessage("签章信息字符串形式" + errorCode, result)
+                    break;
+                case 11207:
+                    ShowResultMessage("签章信息文件路径" + errorCode, result)
+                    break;
+                case 11300:
+                    SignContext = errorCode;
+                    ShowResultMessage("签名环境", errorCode)
+                    break;
+                case 12600:
+                    ShowResultMessage("上传文件" + errorCode, result)
+                    break;
+                case 12700:
+                    ShowResultMessage("转换文件" + errorCode, result)
+                    break;
+                default:
+                    ShowResultMessage("结果" + errorCode, result)
+                    break;
+            }
+        }
+
+        //设置项目;
+        function SetProjectInfo() {
+            var Res = TGPDFPlugIn.SetProjectInfo(document.form1.projectname.value, document.form1.projectpassword.value);
+            ShowResultMessage("SetProjectInfo", Res);
+        }
+
+        //隐藏关键字
+        function SetHideKeywords() {
+            var Res = TGPDFPlugIn.SetHideKeywords(document.form1.keywords.value);
+            ShowResultMessage("SetHideKeywords", Res);
+        }
+
+        //加载本地PDF文档
+        function OnLoadPDF() {
+            var Res = TGPDFPlugIn.LoadPDF(document.form1.localFilePath.value);
+            ShowResultMessage("OnLoadPDF", Res);
+        }
+
+        //加载网络PDF文档
+        function OpenWebFile() {
+            var Res = TGPDFPlugIn.LoadPDF(document.form1.webFilePath.value);
+            ShowResultMessage("OpenWebFile", Res);
+        }
+
+        //初始化签名环境
+        function InitSign() {
+            var Res = TGPDFPlugIn.InitSign(SignContext);
+            ShowResultMessage("InitSign", Res);
+        }
+
+        //隐藏工具栏
+        function DisplayToolBar() {
+            var Res = TGPDFPlugIn.DisplayToolBar(0, 0);
+            ShowResultMessage("DisplayToolBar", Res);
+        }
+
+        //显示工具栏
+        function PlayToolBar() {
+            var Res = TGPDFPlugIn.DisplayToolBar(1, 0);
+            ShowResultMessage("PlayToolBar", Res);
+        }
+
+        //关闭PDF文档
+        function ClosePDFFile() {
+            var Res = TGPDFPlugIn.CloseCurrentDoc();
+            ShowResultMessage("ClosePDFFile", Res);
+        }
+
+        //隐藏文件中的签章和水印
+        function DisplaySealAndWater() {
+            var Res = TGPDFPlugIn.SetSignImgVisiable(2, 0);
+            ShowResultMessage("ClosePDFFile", Res);
+        }
+
+        //显示文件中的签章和水印
+        function PlaySealAndWater() {
+            var Res = TGPDFPlugIn.SetSignImgVisiable(2, 1);
+            ShowResultMessage("PlaySealAndWater", Res);
+        }
+
+        //显示书签
+        function PlayBookmark() {
+            var Res = TGPDFPlugIn.DisplayBookmark(1);
+            ShowResultMessage("PlayBookmark", Res);
+        }
+
+        //隐藏书签
+        function DisplayBookmark() {
+            var Res = TGPDFPlugIn.DisplayBookmark(0);
+            ShowResultMessage("DisplayBookmark", Res);
+        }
+
+        function ToolBarButton() {
+            var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, document.form1.buttonID.value);
+            /*var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, 400);
+            var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, 402);
+            var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, 403);
+            var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, 483);
+            var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, 484);
+            var Res = TGPDFPlugIn.DisplayToolBar(document.form1.lDisplayFlag.value, 492);*/
+            ShowResultMessage("ToolBarButton", Res);
+        }
+
+        //签名类型
+        function SetSignType() {
+            var Res = TGPDFPlugIn.SetSignType(SignContext, document.form1.signTypeList.value, Number(document.form1.certTypeList.value) + Number(document.form1.signWayList.value));
+            ShowResultMessage("SetSignType", Res);
+        }
+
+        //签名位置
+        function SetSignPos() {
+            var Res = TGPDFPlugIn.SetSignPos(SignContext, document.form1.signPage.value, document.form1.signPosX.value, document.form1.signPosY.value);
+            ShowResultMessage("SetSignPos", Res);
+        }
+
+        //批注信息
+        function SetApproveInfo() {
+            var Res = TGPDFPlugIn.SetApproveInfo(SignContext, document.form1.approveTypeList.value, document.form1.approveText.value, document.form1.approveFontSize.value, 
+                document.form1.approveFontList.value, document.form1.approveWidth.value, document.form1.approveHeight.value);
+            ShowResultMessage("SetApproveInfo", Res);
+        }
+
+        //云端账号
+        function SetSignAccount() {
+            var Res = TGPDFPlugIn.SetSignAccount(SignContext, document.form1.accountTypeList.value, document.form1.username.value, document.form1.password.value);
+            ShowResultMessage("SetSignAccount", Res);
+        }
+
+        //其他参数
+        function AddedSignParam() {
+            var Res = TGPDFPlugIn.AddedSignParam(SignContext, document.form1.signParamList.value, document.form1.signParam.value);
+            ShowResultMessage("AddedSignParam", Res);
+        }
+
+        //PDF签名
+        function Sign() {
+            var SignRes = 0;
+            var Res = TGPDFPlugIn.SignPDF(SignContext, SignRes);
+            ShowResultMessage("Sign", Res);
+        }
+
+        //验证签名
+        function VerifySign() {
+            var Res = TGPDFPlugIn.VerifyPDF(document.form1.verifyPage.value, 0);
+            ShowResultMessage("VerifySign", Res);
+        }
+
+        //获取当前文档的信息
+        function GetCurrentFileInfo() {
+            var outInfo;
+            var outInfoLen;
+            var Res = TGPDFPlugIn.GetCurrentDocInfo(document.form1.docInfoList.value, outInfo, outInfoLen);
+            ShowResultMessage("GetCurrentFileInfo", Res);
+        }
+
+        //设置文档视图缩放比例
+        function SetFileZoom() {
+            var Res = TGPDFPlugIn.SetDocViewZoom(document.form1.fileZoom.value);
+            ShowResultMessage("SetFileZoom", Res);
+        }
+
+        //跳转到指定页码
+        function GotoPage() {
+            var Res = TGPDFPlugIn.GotoPage(document.form1.gotoPage.value);
+            ShowResultMessage("GotoPage", Res);
+        }
+
+        //跳转到指定文本
+        function GotoText() {
+            var Res = TGPDFPlugIn.GotoText(document.form1.gotoText.value, 1);
+            ShowResultMessage("GotoText", Res);
+        }
+
+        //跳转到书签
+        function GotoBookMark() {
+            var Res = TGPDFPlugIn.GotoBookMark(document.form1.gotoBookMark.value);
+            ShowResultMessage("GotoBookMark", Res);
+        }
+
+        //打印控件中当前文件
+        function PrintFile() {
+            var Res = TGPDFPlugIn.PrintFile(document.form1.printList.value);
+            ShowResultMessage("PrintFile", Res);
+        }
+
+        //中间件操作
+        function ControlPDF() {
+            TGPDFPlugIn.ControlPDF(document.form1.controlPDFList.value);
+        }
+
+        function changeControlPDFList() {
+            TGPDFPlugIn.ControlPDF(document.form1.controlPDFList.value);
+        }
+
+        //设置窗口位置
+        function ResizePlugin() {
+            var Res = TGPDFPlugIn.ResizePlugin(840, 10, 1640, 610);
+            ShowResultMessage("ResizePlugin", Res);
+        }
+        //上传文件;
+        function UploadFileToServer() {
+			var outInfo;
+            var outInfoLen;
+            TGPDFPlugIn.GetCurrentDocInfo(2, outInfo, outInfoLen);
+            //TGPDFPlugIn.SetAsynchronous(6, 1);
+            //document.form1.serverUrl.value = "http://192.168.7.193:8080/tgsign/rest/pdf!pdfToImage";
+			//document.form1.filepath.value = "\\Users\\MaxChen\\AppData\\Local\\Temp\\TimevalePDF_00113839918.tmp";
+			//document.form1.fileForm.value = "%E6%B5%99%E6%B1%9F%E7%9C%81%E6%B5%8B%E7%BB%98%E4%B8%8E%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E5%B1%80%E5%85%B3%E4%BA%8E%E8%A6%81%E6%B1%82%E5%8F%AC%E5%BC%80%E2%80%9C%E5%8D%81%E4%BA%8C%E4%BA%94%E2%80%9D%E6%B5%8B%E7%BB%98%E4%B8%8E%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E6%8A%80%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E6%9A%A82016%E5%B9%B4%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%85%A8%E7%9C%81%E6%B5%8B%E7%BB%98%E4%B8%8E%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E7%9A%84%E5%87%BD.pdf";
+			//document.form1.extraParam.value = "%7Bmethod:'sealPdf',tableKeyId:'d4b330a398ef4b3fbf65f7af5c5ac409',id:'o_1aono9bg61g4v1r3h14cne7e116e7',name:'%E6%B5%99%E6%B1%9F%E7%9C%81%E6%B5%8B%E7%BB%98%E4%B8%8E%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E5%B1%80%E5%85%B3%E4%BA%8E%E8%A6%81%E6%B1%82%E5%8F%AC%E5%BC%80%E2%80%9C%E5%8D%81%E4%BA%8C%E4%BA%94%E2%80%9D%E6%B5%8B%E7%BB%98%E4%B8%8E%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E6%8A%80%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E6%9A%A82016%E5%B9%B4%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%85%A8%E7%9C%81%E6%B5%8B%E7%BB%98%E4%B8%8E%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E7%9A%84%E5%87%BD.pdf',size:'221164',userid:'sjyt',tableName:'oa_meeting_info'%7D";
+            var Res = TGPDFPlugIn.UploadFileToServer(document.form1.serverUrl.value, document.form1.filepath.value, document.form1.fileForm.value, document.form1.extraParam.value);
+            ShowResultMessage("UploadFileToServer", Res);
+        }
+        function ConvertToPDF() {
+            var Res = TGPDFPlugIn.ConvertToPDF(document.form1.convSrcFile.value, document.form1.convDespFile.value);
+            ShowResultMessage("ConvertToPDF", Res);
+        }
+
+        function AddQRCode() {
+            var Res = TGPDFPlugIn.AddQRCode(document.form1.QRCodePage.value, document.form1.QRCodeContext.value, document.form1.QRCodeXPos.value, document.form1.QRCodeYPos.value, 100, 3, 0);
+            ShowResultMessage("ConvertToPDF", Res);
+        }
+
+    </script>
+</head>
+<body onload="load();">
+    <form name="form1">
+        <table>
+            <tr>
+                <td><input type="button" value="设置项目信息" onclick="SetProjectInfo()" /></td>
+                <td>
+                    项目ID:<input type="text" id="projectname" name="projectname" value="1111563425" size="30" />
+                    项目密码:<input type="text" id="projectpassword" name="projectpassword" value="e762bda455290ef8e73b3ec2aa9b7896" size="30" />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="隐藏关键字" onclick="SetHideKeywords()" /></td>
+                <td>关键字:<input type="text" id="keywords" name="keywords" value="keywords" size="60" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="打开本地文档" onclick="OnLoadPDF()" /></td>
+                <td>本地文档:<input type="text" id="localFilePath" name="localFilePath" value="C:\Users\shwl\Desktop\conv\A.PDF" size="60" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="打开网络文档" onclick="OpenWebFile()" /></td>
+                <td>网络文件:<input type="text" id="webFilePath" name="webFilePath" value="http://www.sdpc.gov.cn/zcfb/zcfbtz/201403/W020140317384287461932.pdf" size="60" /></td>
+            </tr>
+
+        </table>
+
+        <table>
+            <tr>
+                <td><input type="button" value="（1）初始化签名环境" onclick="InitSign()" /></td>
+                <td><input type="button" value="隐藏工具栏" onclick="DisplayToolBar()" /></td>
+                <td><input type="button" value="显示工具栏" onclick="PlayToolBar()" /></td>
+                <td><input type="button" value="关闭文档" onclick="ClosePDFFile()" /></td>
+                <td><input type="button" value="显示印章和水印" onclick="PlaySealAndWater()" /></td>
+                <td><input type="button" value="隐藏印章和水印" onclick="DisplaySealAndWater()" /></td>
+                <td><input type="button" value="显示书签" onclick="PlayBookmark()" /></td>
+                <td><input type="button" value="隐藏书签" onclick="DisplayBookmark()" /></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><input type="button" value="（2）签名类型" onclick="SetSignType()" /></td>
+                <td>证书类型:<select name="certTypeList" id="certTypeList" style="width:90px" onchange=""></select></td>
+                <td>签章方式:<select name="signWayList" id="signWayList" style="width:90px" onchange=""></select></td>
+                <td>签章类型:<select name="signTypeList" id="signTypeList" style="width:90px" onchange=""></select></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="（2）签名位置" onclick="SetSignPos()" /></td>
+                <td>页码:<input type="text" id="signPage" name="signPage" value="1" size="10" /></td>
+                <td>X坐标:<input type="text" id="signPosX" name="signPosX" value="200" size="10" /></td>
+                <td>Y坐标:<input type="text" id="signPosY" name="signPosY" value="300" size="10" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="（3）批注信息" onclick="SetApproveInfo()" /></td>
+                <td>批注弹框:<select name="approveTypeList" id="approveTypeList" style="width:90px" onchange=""></select></td>
+                <td>批注:<input type="text" id="approveText" name="approveText" value="approveText" size="10" /></td>
+                <td>
+                    字体:<select name="approveFontList" id="approveFontList" style="width:60px" onchange=""></select>
+                    字体大小:<input type="text" id="approveFontSize" name="approveFontSize" value="20" size="5" />
+                </td>
+                <td>宽度:<input type="text" id="approveWidth" name="approveWidth" value="200" size="5" /></td>
+                <td>高度:<input type="text" id="approveHeight" name="approveHeight" value="160" size="5" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="（3）云端账号" onclick="SetSignAccount()" /></td>
+                <td>账号类型:<select name="accountTypeList" id="accountTypeList" style="width:90px" onchange=""></select></td>
+                <td>名称:<input type="text" id="username" name="username" value="401451101@qq.com" size="10" /></td>
+                <td>密码:<input type="password" id="password" name="password" value="111111" size="10" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="（3）其他参数" onclick="AddedSignParam()" /></td>
+                <td>参数标识:<select name="signParamList" id="signParamList" style="width:90px" onchange=""></select></td>
+                <td>参数:<input type="text" id="signParam" name="signParam" value="signParam" size="10" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="（4）PDF签名" onclick="Sign()" /></td>
+                <td><input type="button" value="签名验证" onclick="VerifySign()" /></td>
+                <td>验证页码:<input type="text" id="verifyPage" name="verifyPage" value="0" size="10" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="上传文件" onclick="UploadFileToServer()" /></td>
+                <td>服务器:<input type="text" id="serverUrl" name="serverUrl" value="http://192.168.7.193:8080/tgsign/rest/pdf!pdfToImage" size="10" /></td>
+                <td>文件路径:<input type="text" id="filepath" name="filepath" value="C:\Users\shwl\Desktop\B.pdf" size="10" /></td>
+                <td>文件表单项:<input type="text" id="fileForm" name="fileForm" value="fileInput" size="10" /></td>
+                <td>附加参数:<input type="text" id="extraParam" name="extraParam" value="extraParam" size="10" /></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="文档信息" onclick="GetCurrentFileInfo()" />
+                    信息标识:<select name="docInfoList" id="docInfoList" style="width:120px" onchange=""></select>
+                </td>
+                <td>
+                    <input type="button" value="设置缩放比例" onclick="SetFileZoom()" />
+                    缩放比例:<input type="text" id="fileZoom" name="fileZoom" value="100" size="10" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="跳转到指定页码" onclick="GotoPage()" />
+                    页码:<input type="text" id="gotoPage" name="gotoPage" value="1" size="10" />
+                </td>
+                <td>
+                    <input type="button" value="跳转到指定文本" onclick="GotoText()" />
+                    文本:<input type="text" id="gotoText" name="gotoText" value="1" size="10" />
+                </td>
+                <td>
+                    <input type="button" value="跳转到书签" onclick="GotoBookMark()" />
+                    书签:<input type="text" id="gotoBookMark" name="gotoBookMark" value="1" size="10" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="打印" onclick="PrintFile()" />
+                    打印弹框:<select name="printList" id="printList" style="width:90px" onchange=""></select>
+                </td>
+                <td>
+                    <input type="button" value="中间件控制" onclick="ControlPDF()" />
+                    指令索引:<select name="controlPDFList" id="controlPDFList" style="width:90px" onchange="changeControlPDFList()"></select>
+                </td>
+                <td><input type="button" value="设置控件位置" onclick="ResizePlugin()" /></td>
+            </tr>
+            
+        </table>
+        <table>
+            <tr>
+                <td><input type="button" value="工具栏按钮" onclick="ToolBarButton()" /></td>
+                <td>操作标识:<input type="text" id="lDisplayFlag" name="lDisplayFlag" value="2" size="10" /></td>
+                <td>按钮ID:<input type="text" id="buttonID" name="buttonID" value="205" size="10" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="文档转换" onclick="ConvertToPDF()" /></td>
+                <td>源文件:<input type="text" id="convSrcFile" name="convSrcFile" value="C:\Users\shwl\Desktop\F.docx" size="10" /></td>
+                <td>PDF文件:<input type="text" id="convDespFile" name="convDespFile" value="C:\Users\shwl\Desktop\F.pdf" size="10" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="添加二维码" onclick="AddQRCode()" /></td>
+                <td>二维码内容:<input type="text" id="QRCodeContext" name="QRCodeContext" value="QRCode测试内容" size="20" /></td>
+                <td>页码:<input type="text" id="QRCodePage" name="QRCodePage" value="1" size="5" /></td>
+                <td>X坐标:<input type="text" id="QRCodeXPos" name="QRCodeXPos" value="300" size="5" /></td>
+                <td>Y坐标:<input type="text" id="QRCodeYPos" name="QRCodeYPos" value="400" size="5" /></td>
+            </tr>
+        </table>
+        <table><tr><td><textarea rows="6" cols="90" id="Result" name="Result"></textarea></td></tr></table>
+
+        <object id="TGPDFPlugIn" classid="clsid:04DDDFAA-0AC0-4D47-9315-9F442F65D403" width="800" height="800">
+            <embed name="TGPDFPlugIn" type="application/nptgpdfplugin" width="900" height="800"></embed>
+        </object>
+    </form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+			.dialog-title-box {
+				position: relative;
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 14px;
+				background-color: #fff;
+			}
+			.dialog-title-box::after {
+				position: absolute;
+				top: 25px;
+				left: 350px;		
+				content: '';
+				width:190px;
+				height:1px;
+				background-color: #ccc;
+			}
+			.dialog-title-box::before {
+				position: absolute;
+				top: 25px;
+				right: 350px;		
+				content: '';
+				width:190px;
+				height:1px;
+				background-color: #ccc;
+			}
+			.dialog-title-box span:nth-of-type(1) {
+				color: #333;
+			}
+			.dialog-title-box span:nth-of-type(2) {
+				color: #1890FF;
+			}
+			.createDate {
+				padding: 30px 0;
+			}
+			.doSomthingContent,
+			.defeatedReason {
+				padding: 25px;
+			}
+			.createDate,
+			.doSomthingContent,
+			.defeatedReason {
+				width: 80%;				
+				background-color: #F5F5F5;
+				margin-bottom: 0;
+				margin-left: 60px !important;
+			}
+			.createDate label,
+			.doSomthingContent label,
+			.defeatedReason label {
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(36,41,46,1);
+				padding: 0 !important;
+				margin-top: 7px !important;
+			}
+			.createDate input,
+			.doSomthingContent textarea,
+			.defeatedReason textarea {
+				width: 290px;
+			}
+			.itemName,
+			.itemCode {
+				display: none;
+				width: 80%;
+				padding: 15px 0;			
+				margin-bottom: 0;
+				margin-left: 60px !important;
+			}
+			.itemName label,
+			.itemCode label {
+				font-size:14px;
+				font-family:MicrosoftYaHei;
+				color:rgba(51,51,51,0.85);
+				font-weight:400;
+				padding: 0 !important;
+				margin-top: 7px !important;
+			}
+			.itemName input,
+			.itemCode input {
+				width: 290px;
+			}
+			.projectInfoForm1 input {
+				width: 280px !important;
+			}
+			.projectInfoForm1 button {
+				width: 100px !important;
+				margin-left: 15px;
+			}
+			#projectIdSearch {
+				margin-left: 2px;
+			}
+			/*¸²¸ÇÑùÊ½ */
+			.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+				background-color: #fff !important;
+			}
+			.modal-footer button {
+				width: 100px;
+			}
+			

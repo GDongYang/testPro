@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.ibatis:ibatis:2.3.4.726ex">
+    <CLASSES>
+      <root url="jar://G:/flinemaven/org/apache/ibatis/ibatis/2.3.4.726ex/ibatis-2.3.4.726ex.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://G:/flinemaven/org/apache/ibatis/ibatis/2.3.4.726ex/ibatis-2.3.4.726ex-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://G:/flinemaven/org/apache/ibatis/ibatis/2.3.4.726ex/ibatis-2.3.4.726ex-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

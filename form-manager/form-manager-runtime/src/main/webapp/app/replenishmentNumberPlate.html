@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	    <link rel="stylesheet" href="../plugins/mui/css/mui.min.css">
+	    <link rel="stylesheet" href="../plugins/mui/css/mui.picker.css">
+	    <link rel="stylesheet" href="../plugins/mui/css/mui.poppicker.css">
+	    <link rel="stylesheet" href="../build/css/app.css">
+	    <title>补领号牌</title>
+	</head>
+	<body>
+		<div class='header'>
+			<div class="step">        	
+                <ul>
+                   <li class="col-xs-4 on">
+                       <span class="num"><em class="f-r5"></em></span>                	
+                       <span class="line_bg lbg-r"></span>
+                       <p class="lbg-txt">用户须知</p>
+                   </li>
+                   <li class="col-xs-4">
+                       <span class="num"><em class="f-r5"></em></span>
+                       <span class="line_bg lbg-l"></span>
+                       <span class="line_bg lbg-r"></span>
+                       <p class="lbg-txt">在线填表</p>
+                   </li>
+                   <li class="col-xs-4">
+                       <span class="num"><em class="f-r5"></em></span>
+                       <span class="line_bg lbg-l"></span>
+                       <span class="line_bg lbg-r"></span>
+                       <p class="lbg-txt">材料申报</p>
+                   </li>
+                   <li class="col-xs-4">
+                       <span class="num"><em class="f-r5"></em></span>
+                       <span class="line_bg lbg-l"></span>
+                       <p class="lbg-txt">确认提交</p>
+                   </li>
+                </ul>
+            </div>
+		</div>
+		<div class='content'>
+			<form class="mui-input-group">
+				<div id='step1'>
+					<div>
+						<p>温馨提示：</p>
+						<p>1、机动车号牌丢失、灭失的机动车所有人可以申请换机动车号牌，申请人确认身份证在有效期限内且信息未发生变化。</p>
+						<p>2、机动车号牌一年内在网上仅可补换领一次。</p>
+						<p>3、未收到新牌证前，请不要驾驶该机动车上路行驶。</p>
+						<p>4、因号牌制作原因，该业务可能存在两次快递情况（第一次快递临时行驶车号牌，第二次快递机动车号牌）。</p>
+						<p>5、您在系统使用过程中遇到任何问题，都可拨打交管部门咨询电话：12123（工作时间在线）。</p>
+					</div>
+					<div class='bgF1F5F8'>
+						<div class="mui-input-row mui-radio">
+							<label class='f_pl60'>我已阅读或确认授权等操作</label>
+							<input name="radio1" class='itemRadio' type="radio" value='item1'>
+						</div>
+					</div>
+				</div>
+				<div id='step2'>
+					<div class='bgF1F5F8 f_h10'></div>
+					<div class='contentTitle'>补领号牌</div>
+					<div class='bgEFEFF4 f_plr10 f_pb1'>
+						<p>温馨提示：</p>
+						<p>请确认您的驾驶证信息，确认无误后请点击下一步。</p>
+					</div>
+					<div class='f_p10'>
+						<div class="mui-input-row">
+					        <label>办理车辆</label>
+					    	<input type='text' id='showUserPicker' class="mui-input-clear" placeholder="请选择办理车辆"/>
+					    </div>
+						<div class="mui-input-row">
+					        <label>号牌种类</label>
+					        <div data-field='HPZL' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>号牌号码</label>
+					        <div data-field='HPHM' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>机动车状态</label>
+					        <div data-field='ZT' class='f_lh40'></div>
+					    </div>
+					    <div class='formTitle'><span></span>取件信息</div>
+					    <div class="mui-input-row">
+					        <label>取件方式</label>
+					        <div class='f_lh40'>
+					        	<input name="radio1" class='typeRadio' type="radio" value='1'>窗口
+					       		<input name="radio1" class='typeRadio' type="radio" value='2'>邮寄
+					        </div>
+					    </div>
+					    <div class='sendAddress'>
+					    	<div class="mui-input-row">
+						        <label>收件人</label>
+						        <input type="text" name='SYR' class="mui-input-clear" placeholder="请输入收件人"/>
+						    </div>
+						    <div class="mui-input-row">
+						        <label>联系方式</label>
+						        <input type="text" id='newPhone' name='SJHM' class="mui-input-clear" placeholder="请输入联系方式"/>
+						    </div>
+						    <div class="mui-input-row">
+						        <label>收件地址</label>
+						        <input type="text" name='zsxxdz' id='newAddress' class="mui-input-clear" placeholder="请输入收件地址"/>
+						    </div>
+					    </div>
+					</div>
+				</div>
+				<div id='step3'>
+					<div class='bgF1F5F8 f_lh40 f_te4B99D3'>
+						请核对您的材料，如有错误请到线下更正办理！
+					</div>
+					<div id='docList'>
+					</div>
+				</div>
+				<div id='step4'>
+					<div class='bgF1F5F8 f_h10'></div>
+					<div class='f_p10'>
+						<div class='formTitle'><span></span>机动车号牌补领信息核对</div>
+						<div class="mui-input-row">
+					        <label>号牌种类</label>
+					        <div data-field='HPZL' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>号牌号码</label>
+					        <div data-field='HPHM' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>邮寄方式</label>
+					        <div id='yjfs' class='f_lh40'></div>
+					    </div>
+					    <div class='sendAddress'>
+					    	<div class="mui-input-row">
+						        <label>收件人</label>
+						        <div id='SYR' class='f_lh40'></div>
+						    </div>
+							<div class="mui-input-row">
+						        <label>联系电话</label>
+						        <div id='sjhm' class='f_lh40'></div>
+						    </div>
+						    <div class="mui-input-row">
+						        <label>收件地址</label>
+						        <div id='zsxxdz' class='f_lh40'></div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+				<div id='step5'>
+					<div class='f_pt60 f_pb15'>
+						<div class='completeBox'><span class='mui-icon mui-icon-checkmarkempty'></span></div>
+						<div class='f_te20 f_lh40 text-center'>申报完成</div>
+						<div class='text-center f_lh40'>您申报的办件已申报成功！</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class='footer'>
+			<button type='button' id='stepBtn1' class='f_btnBlock stepBtn'>下一步</button>
+			<button type='button' id='stepBtn2' class='f_btnBlock stepBtn'>下一步</button>
+			<button type='button' id='stepBtn3' class='f_btnBlock stepBtn'>下一步</button>
+			<button type='button' id='stepBtn4' class='f_btnBlock stepBtn'>确&nbsp;&nbsp;认</button>
+		</div>
+        <script src='../jquery/3.2.1/jquery-3.2.1.min.js'></script>
+        <script src='../plugins/mui/js/mui.min.js'></script>
+        <script src='../plugins/mui/js/mui.picker.js'></script>
+        <script src='../plugins/mui/js/mui.poppicker.js'></script>
+        <script type="text/javascript" src="../js/jquery-form.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KyKYGhKT1DYisflH6Lk8OeGxEUYrFKRS"></script>
+        <!--引入表单提交js-->
+        <script type="text/javascript">
+	        mui.init();
+	    	$(function(){
+	    		var windowHeight=window.innerHeight;
+		    	$(".content").css("height",windowHeight-130);
+		    	$('#stepBtn1').siblings().hide();
+		    	$('#step1').siblings().hide();
+		    	getInfo();
+		    	$('.typeRadio').eq(0).click();
+	    	})
+	    	$('.typeRadio').change(function(){
+	    		var res=getRadioRes('typeRadio');
+	    		if(res==1){
+	    			$('.sendAddress').hide();
+	    			$('#yjfs').text('窗口');
+	    		}else{
+	    			$('#yjfs').text('邮寄');
+	    			$('.sendAddress').show();
+	    		}
+	    	});
+	    	$('.stepBtn').each(function(i){
+	    		$(this).click(function(){
+	    			if(i==1){
+	    				var material=getMaterial();
+	    				next($(this));
+	    			}else if(i==0){
+	    				var res=getRadioRes('itemRadio')
+	            		if(res!=null){
+	            			next($(this));
+	            		}else{
+	            			mui.toast('请阅读须知！'); 
+	            		}
+	    			}else if(i==2){
+	    				$('#SYR').text($('input[name="SYR"]').val());
+	    				$('#sjhm').text($('input[name="SJHM"]').val());
+	    				$('#zsxxdz').text($('input[name="zsxxdz"]').val());
+	    				if(!material){
+	    					next($(this));
+	    				}else{
+	    					next($(this));
+	    					mui.toast('无需提交材料，为您直接办理！'); 
+	    					$('#stepBtn3').click();
+	    				}
+	    				next($(this));
+	    			}else{
+	    				$('.footer').hide();
+	    				next($(this));
+	    			}
+	        	});
+	    	})
+	    	$('#newPhone').blur(function(){
+	    		checkPhone($(this).val(),$(this));
+	    	});
+	    	function getInfo(){
+	    		var url='tempInfoAction!getCertData.action?itemCode=111&sfId=331004199308022518&sfName=梁益&certCode=zjs_cer_006';
+	    		$.ajax({
+					url:url,
+					type:"get",
+					dataType:"json",
+					error:function(request,textStatus, errorThrown){
+					},
+					success:function(data){
+						if(data.returnCode==0){
+							var datas=data.data;
+							var selectArry=[];
+							if(datas.length>0){
+								for(var i=0;i<datas.length;i++){
+									var selectObj={};
+									selectObj['value']=datas[i].HPHM;
+									selectObj['text']=datas[i].HPHM;
+									selectArry.push(selectObj);
+									for(var item in datas[0]){
+										$('div[data-field="'+item+'"]').text(datas[0][item]);
+										$('input[name="'+item+'"]').val(datas[0][item]);
+									}
+								}
+								getAddress(datas[0].HPZLCODE,datas[0].HPHM);
+								var userPicker = new mui.PopPicker();
+								userPicker.setData(selectArry);
+								$('#showUserPicker').val(selectArry[0].text);
+								$('#showUserPicker').click(function(event) {
+									userPicker.show(function(items) {
+										$('#showUserPicker').val(items[0].text);
+										for(var i=0;i<datas.length;i++){
+											for(var item in datas[i]){
+												if(datas[i].HPHM==items[0].text){
+													$('div[data-field="'+item+'"]').text(datas[i][item]);
+													$('input[name="'+item+'"]').val(datas[i][item]);
+												}
+											}
+										}
+									});
+								});
+							}
+						}else{
+							mui.toast(data.returnMessage); 
+						}
+					}
+				});
+	    	}
+	    	function getAddress(HPZL,HPHM){
+        		var url='tempInfoAction!checkXsz.action?sfId=331004199308022518&sfName=梁益&certCode=zjs_cer_006&hpzl='+HPZL+'&hphm=' + encodeURI(encodeURI("浙"))+HPHM;
+        		$.ajax({
+					url:url,
+					type:"get",
+					dataType:"json",
+					error:function(request,textStatus, errorThrown){
+					},
+					success:function(data){
+						if(data.returnCode==0){
+							var datas=data.data;
+							$('input[name="zsxxdz"]').val(datas[0].zsxxdz);
+						}else{
+							mui.toast(data.returnMessage); 
+						}
+					}
+				});
+        	}
+	    	function checkPhone(phone,obj){ 
+	    	    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+	    	        mui.toast('手机号码有误，请重填！'); 
+	    	        $(obj).val('');
+	    	    } 
+	    	}
+	    	function next(obj){
+	    		$(obj).hide();
+				$(obj).siblings().hide();
+				$(obj).next().show();
+				var idStr=$(obj).attr('id');
+				var idNum=Number(idStr.substring(idStr.length-1));
+				$('#step'+idNum).hide();
+				$('#step'+idNum).siblings().hide();
+				$('#step'+idNum).next().show();
+				$(".step li").eq(idNum).addClass("on");
+	    	}
+	    	function getMaterial(){
+	    		var flag=false;
+	    		var itemCode='18f413c5-9273-4a07-a542-efd4051af9b1';
+	    		var url = 'tempInfoAction!findTempInfoAll.action?sfName=梁益&sfId=331004199308022518&itemCode=' + itemCode;
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    error: function(request, textStatus, errorThrown) {},
+                    success: function(data) {
+                        $('#docList').empty();
+                        if (data.returnCode == 0) {
+                            var datas = data.data;
+                            if (datas != null) {
+                            	flag=true;
+                                var dataStr = '';
+                                for (var i = 0; i < datas.length; i++) {
+                                    if (datas[i].certName != null) {
+                                        if (datas[i].code == 0) {
+                                            dataStr += '';
+                                        } else {
+                                            dataStr += '<img src="data:image/png;base64,'+datas[i].certFile+'" />'
+                                        }
+                                    }
+                                }
+                                $('#docList').append(dataStr);
+                            }
+                        }
+                    }
+                });
+                console.log(flag)
+                return flag;
+	    	}
+	    	function getRadioRes(className) {
+	    		var rdsObj = document.getElementsByClassName(className);
+	    		var chackVal = null;
+	    		for(i = 0; i < rdsObj.length; i++) {
+	    			if (rdsObj[i].checked) {
+	    				chackVal = rdsObj[i].value;
+	    			}
+	    		}
+	    		return chackVal;
+	    	}
+	    	(function() {
+                // 百度地图API功能
+                function G(id) {
+                    return document.getElementById(id);
+                }
+                var map = new BMap.Map("l-map");
+                var lng = G('lng');
+                var lat = G('lat');
+                var searchBtn = G('search-btn');
+                var myValue;
+                var fromValue;
+                var toValue;
+                var local = null;
+                var to = null;
+                var geolocation = new BMap.Geolocation();
+                //获取当前位置
+                geolocation.getCurrentPosition(function(r) {
+                    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                        mk = new BMap.Marker(r.point);
+                        mk.addEventListener("dragend", showInfo);
+                        mk.enableDragging(); //可拖拽
+                        getAddress(r.point);
+                        map.addOverlay(mk); //把点添加到地图上  
+                        map.panTo(r.point);
+                    } else {
+                        alert('failed' + this.getStatus());
+                    }
+                });
+                //获取地址信息，设置地址label
+                function getAddress(point) {
+                    var gc = new BMap.Geocoder();
+                    gc.getLocation(point, function(rs) {
+                        var addComp = rs.addressComponents;
+                        var address = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber; //获取地址
+                        //画图 ---》显示地址信息
+                        var label = new BMap.Label(address, {
+                            offset: new BMap.Size(20, -10)
+                        });
+                        map.removeOverlay(mk.getLabel()); //删除之前的label 
+                        mk.setLabel(label);
+                    });
+                }
+                to = new BMap.Autocomplete({
+                    "input": "newAddress",
+                    "location": map
+                });
+                geolocation.getCurrentPosition(function(r) {
+                    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                        point = new BMap.Point(r.point.lng, +r.point.lat);
+                        map.centerAndZoom(point, 15);
+                    }
+                })
+                function myFun() {
+                    var pp = local.getResults().getPoi(0).point; //获取第一个智能搜索的结果
+                    map.centerAndZoom(pp, 18);
+                    map.addOverlay(new BMap.Marker(pp)); //添加标注
+                }
+
+                function setPlace(value) {
+                	console.log(value)
+                    map.clearOverlays(); //清除地图上所有覆盖物
+                    local = new BMap.LocalSearch(map, { //智能搜索
+                        onSearchComplete: myFun
+                    });
+                    local.search(value);
+                }
+                function showInfo(e) {
+                    lng.value = e.point.lng;
+                    lat.value = e.point.lat;
+                }
+                to.addEventListener("onconfirm", function(e) { //鼠标点击下拉列表后的事件
+                    var _value = e.item.value;
+                    myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+                    getPostcode(_value.province, _value.city, myValue, 2);
+                });
+                map.addEventListener("click", showInfo); //搜索事件
+                function getPostcode(_province, city, areaname, type) {
+                    var url = 'http://api.k780.com/?app=life.postcode&areaname=' + _province + city + areaname + '&appkey=43059&sign=50c6d74aaefca5f6a37f8c3e38f6f528&format=json&jsoncallback=data'
+                    $.ajax({
+                        type: 'get',
+                        async: false,
+                        url: url,
+                        dataType: 'jsonp',
+                        jsonp: 'callback',
+                        jsonpCallback: 'data',
+                        success: function(data) {
+                            if (data.success != '1') {
+                                alert(data.msgid + ' ' + data.msg);
+                                exit;
+                            }
+                            //遍历
+                            var description = "";
+                            var result = data.result.lists[0];
+                            postCode = result.postcode;
+                            province = result.areanm.split(',')[1];
+                            var tvalue = "";
+                            if (_province == "" && city != province) {
+                                tvalue = province + areaname;
+                            }else if(city == province){
+                                tvalue = areaname;
+                            }
+                            if (type == 1) {
+                            	$("#oldAddress").val(tvalue);
+                                newProvince = province;
+                            } else {
+                                $("#newAddress").val(tvalue);
+                                newProvince1 = province;
+                            }
+                        },
+                        error: function() {
+                            alert('fail');
+                        }
+                    });
+                }
+            })()
+        </script>
+	</body>
+</html>

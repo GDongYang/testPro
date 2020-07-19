@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/form-common/form-common.iml" filepath="$PROJECT_DIR$/form-common/form-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/form-manager/form-manager.iml" filepath="$PROJECT_DIR$/form-manager/form-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/form-manager/form-manager-core/form-manager-core.iml" filepath="$PROJECT_DIR$/form-manager/form-manager-core/form-manager-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/form-manager/form-manager-runtime/form-manager-runtime.iml" filepath="$PROJECT_DIR$/form-manager/form-manager-runtime/form-manager-runtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/form-parent.iml" filepath="$PROJECT_DIR$/form-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/form-server/form-server.iml" filepath="$PROJECT_DIR$/form-server/form-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/form-zlb/form-zlb.iml" filepath="$PROJECT_DIR$/form-zlb/form-zlb.iml" />
+      <module fileurl="file://F:\nginx-1.16.0\yztb_form_web\yztb_form_web.iml" filepath="F:\nginx-1.16.0\yztb_form_web\yztb_form_web.iml" />
+    </modules>
+  </component>
+</project>

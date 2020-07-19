@@ -1,0 +1,31 @@
+.menuListBox{
+	background: -webkit-linear-gradient(#0072FF, #00C6FF); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#0072FF, #00C6FF); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#0072FF, #00C6FF); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#0072FF, #00C6FF); /* 标准的语法 */
+    width:18%;
+    display:inline-block;
+    overflow-y:auto;
+}
+.mainBody{
+	width:81.5%;
+	display:inline-block;
+	vertical-align:top;
+}
+.systemTitle{font-size: 16px;color: #fff;line-height: 60px;text-align: center;margin-bottom:15px;}
+ul{list-style:none;padding-left:0px;}
+li a{display:block;border-radius:4px;padding:0px 20px;color:rgba(255,255,255,.7);}
+ul li{line-height:48px;cursor:pointer;border-radius:4px;}
+.second_menu li{padding:0px 20px;}
+.third_menu li{padding-left:20px;padding-right:0px;}
+.third_menu li a{padding-right:0px;}
+li.dropdown.active>a,li.dropdown:hover>a{color:#fff;}
+.second_menu li.active>a,.second_menu li>a:hover{background:rgba(255,255,255,.3);color:#fff;}
+.third_menu li.active a,.third_menu li a:hover{background:#007FDF;color:#fff;}
+#menuList span{font-size:14px;margin-left:10px;}
+#menuList i{font-size:16px;}
+.headerBox{line-height:60px;border-bottom:1px solid #F4F5F8;}
+.headerBox span{color:#9C9C9C;font-size:12px;}
+.parentBread{color:#A8A8A8}
+#mainFrame{width:100%;border-style:none;}
+.childrenLen{margin-top:16px;width:16px;border-radius:50%;background:#fff!important;color:#00C6FF!important;font-size:12px;line-height:16px;text-align:center;}

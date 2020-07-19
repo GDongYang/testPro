@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+  <!-- properties -->
+  <import resource="classpath:applicationContext-tp-common-properties.xml" />
+  <import resource="classpath:applicationContext-tp-common-properties.extensionpoint.xml" />
+
+  <!-- scriptengine -->
+  <import resource="classpath:applicationContext-tp-scriptengine.xml" />
+
+  <!-- cache -->
+  <import resource="classpath:applicationContext-tp-cache-common.xml" />
+  <import resource="classpath:applicationContext-tp-cache-common.extensionpoint.xml" />
+
+  <!-- datasource -->
+  <import resource="classpath:applicationContext-system-datasource.xml" />
+  <import resource="classpath:applicationContext-tp-datasource-common.xml" />
+  <import resource="classpath:applicationContext-tp-datasource-common.extensionpoint.xml" />
+
+  <!-- transaction -->
+  <import resource="classpath:applicationContext-tp-transaction-common.xml" />
+  <import resource="classpath:applicationContext-tp-transaction-common.extensionpoint.xml" />
+
+  <!-- orm -->
+  <import resource="classpath:applicationContext-tp-orm-index.xml" />
+  <import resource="classpath:applicationContext-tp-orm-ibatis.extensionpoint.xml" />
+
+  <import resource="classpath:applicationContext-platform-access-index.xml" />
+
+    <import resource="classpath:applicationContext-aic-redis.xml" />
+    <import resource="classpath:applicationContext-access-core.xml" />
+    <import resource="classpath:applicationContext-business-core.xml" />
+    <import resource="classpath:applicationContext-aop.xml" />
+    <import resource="classpath:applicationContext-job.xml" />
+
+</beans>

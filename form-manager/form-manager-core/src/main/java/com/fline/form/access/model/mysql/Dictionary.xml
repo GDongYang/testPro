@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Dictionary">
+	<typeAlias alias="dictionary" type="com.fline.form.access.model.Dictionary" />
+	<resultMap id="dictionaryResult" class="dictionary">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="code" column="code" javaType="String" />
+		<result property="name" column="name" javaType="String" />
+		<result property="field" column="field" javaType="String" />
+		<result property="memo" column="memo" javaType="String" />
+		<result property="type" column="type" javaType="Integer" />
+	</resultMap>
+	
+	<insert id="create" parameterClass="dictionary">
+		INSERT INTO c_dictionary (
+			code
+			,name
+			,field
+			,memo
+			,type
+		) VALUES (
+			#code#
+			,#name#
+			,#field#
+			,#memo#
+			,#type#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="dictionary">
+		UPDATE c_dictionary SET
+			code=#code#
+			, name=#name#
+			, field=#field#
+			, memo=#memo#
+			, type=#type#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="dictionary">
+		<![CDATA[
+			DELETE FROM c_dictionary WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="dictionaryResult">
+		<![CDATA[
+			SELECT
+			 id,
+			code,
+			name,
+			field,
+			memo,
+			orderNum ,
+			type
+			 FROM c_dictionary A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="dictionaryResult">
+		SELECT
+		id,
+			code,
+			name,
+			field,
+			memo,
+			orderNum ,
+			type
+		FROM c_dictionary
+	</select>
+	
+	<select id="findAllVo" resultClass="com.fline.form.vo.DictionaryVo">
+		SELECT
+		 	id,
+			code,
+			name,
+			field,
+			memo,
+			orderNum ,
+			type
+		 FROM c_dictionary
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_dictionary A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="dictionaryResult">
+		<![CDATA[ SELECT
+ 			id,
+			code,
+			name,
+			field,
+			memo,
+			orderNum ,
+			type
+  		]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

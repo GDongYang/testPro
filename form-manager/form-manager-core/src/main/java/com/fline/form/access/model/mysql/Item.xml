@@ -1,0 +1,1111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Item">
+   <typeAlias alias="item" type="com.fline.form.access.model.Item" />
+   <resultMap id="itemResult" class="item">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <!-- Item -->
+      <result property="active" column="active" javaType="string" jdbcType="NUMBER" />
+      <result property="departmentId" column="departmentId" javaType="string" jdbcType="NUMBER" />
+      <result property="departmentName" column="deptName" javaType="string" jdbcType="VARCHAR" />
+      <result property="type" column="type" javaType="int" jdbcType="NUMBER" />
+      <result property="parent" column="parent" javaType="string" jdbcType="VARCHAR" />
+      <result property="innerCode" column="innerCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="executable" column="executable" javaType="int" jdbcType="NUMBER" nullValue="0"/>
+      <result property="areaCode" column="areaCode" javaType="string" jdbcType="VARCHAR"/>
+      <result property="area" column="area" javaType="string" jdbcType="VARCHAR"/>
+      <result property="ougUid" column="ougUid" javaType="string" jdbcType="VARCHAR"/>
+      <result property="formCode" column="formCode" javaType="string" jdbcType="VARCHAR"/>
+      <result property="affaitType" column="affaitType" javaType="string" jdbcType="VARCHAR"/>
+      <result property="bizType" column="bizType" javaType="string" jdbcType="VARCHAR"/>
+      <result property="projectNature" column="projectNature" javaType="string" jdbcType="VARCHAR"/>
+      <result property="serviceId" column="serviceId" javaType="string" jdbcType="VARCHAR"/>
+      <result property="approveType" column="approveType" javaType="string" jdbcType="string"/>
+      <result property="starLevel" column="starLevel" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="notice" column="notice" javaType="string" jdbcType="string"/>
+      <result property="theme" column="theme" javaType="string" jdbcType="NUMBER"/>
+      <result property="alias" column="alias" javaType="string" jdbcType="VARCHAR"/>
+      <result property="orderNum" column="orderNum" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="handleFrequency" column="handleFrequency" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="deptClassify" column="deptClassify" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="confirmStatus" column="confirmStatus" javaType="Integer" jdbcType="int"/>
+   </resultMap>
+   
+   <resultMap id="itemResultTable" class="item">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <!-- Item -->
+      <result property="active" column="active" javaType="string" jdbcType="NUMBER" />
+      <result property="departmentId" column="departmentId" javaType="string" jdbcType="NUMBER" />
+      <result property="innerCode" column="innerCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="departmentName" column="deptName" javaType="string" jdbcType="VARCHAR" />
+      <result property="executable" column="executable" javaType="java.lang.Integer" jdbcType="NUMBER" nullValue="0" />
+      <result property="formCode" column="formCode" javaType="string" jdbcType="VARCHAR"/>
+      <!-- <result property="positionId" column="position_id" javaType="string" jdbcType="NUMBER" />
+      <result property="positionName" column="positionName" javaType="string" jdbcType="VARCHAR" /> -->
+      <result property="affaitType" column="affaitType" javaType="string" jdbcType="VARCHAR"/>
+      <result property="bizType" column="bizType" javaType="string" jdbcType="VARCHAR"/>
+      <result property="projectNature" column="projectNature" javaType="string" jdbcType="VARCHAR"/>
+      <result property="serviceId" column="serviceId" javaType="string" jdbcType="VARCHAR"/>
+      <result property="approveType" column="approveType" javaType="string" jdbcType="string"/>
+      <result property="notice" column="notice" javaType="string" jdbcType="string"/>
+      <result property="starLevel" column="starLevel" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="alias" column="alias" javaType="string" jdbcType="VARCHAR"/>
+      <result property="orderNum" column="orderNum" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="handleFrequency" column="handleFrequency" javaType="Integer" jdbcType="tinyInt"/>
+      <result property="deptClassify" column="deptClassify" javaType="Integer" jdbcType="tinyInt"/>
+   </resultMap>
+   
+   <resultMap class="item" id="itemResult2" extends="itemResult">
+   		 <result property="departmentCode" column="departmentCode" javaType="string"></result>
+   </resultMap>
+   
+   <resultMap class="item" id="itemResultTable3" extends="itemResultTable">
+      <result property="parent" column="parent" javaType="string" jdbcType="VARCHAR"/>
+      <result property="type" column="type" javaType="int" jdbcType="NUMERIC" nullValue="0"/>
+      <result property="confirmStatus" column="confirmStatus" javaType="Integer" jdbcType="int"/>
+      <result property="hasImg" column="hasImg" javaType="Integer" jdbcType="int"/>
+   </resultMap>
+   
+   <resultMap id="itemAppResult" class="item">
+   	  <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+	  <result property="innerCode" column="innerCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="departmentId" column="departmentId" javaType="string" jdbcType="NUMBER" />
+   </resultMap>
+   <resultMap class="item" id="itemInfoResult" extends="itemAppResult">
+      <result property="departmentName" column="deptName" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+
+    <resultMap id="imgResult" class="item" >
+        <result property="formImg" column="formImg" javaType="[B" jdbcType="blob" />
+    </resultMap>
+  
+  <!--  <sql id="SEQ_CODE">
+      <![CDATA[
+         SELECT lpad(nextval('SEQ_C_ITEM_CODE'),5,'0')  AS code FROM　DUAL
+      ]]>
+   </sql> -->
+
+   <insert id="create" parameterClass="item">
+         INSERT INTO C_ITEM (
+            code, name, memo,active,departmentId,type,innerCode,deptName,executable,updateTime,deptClassify,serviceId,formCode,affaitType,bizType,projectNature,approveType,notice,handleFrequency,starLevel,theme,alias,orderNum,parent
+         ) 
+         <isEmpty property="code">
+         	VALUES (CONCAT('yc_it_',lpad(nextval('SEQ_C_ITEM_CODE'),5,'0')),#name#, #memo#, #active#, #departmentId#,#type#,#innerCode#,#departmentName#,#executable#,NOW(),#deptClassify#,#serviceId#,#formCode#,#affaitType#,#bizType#,#projectNature#,#approveType#,#notice#,#handleFrequency#,#starLevel#,#theme#,#alias#,#orderNum#,#parent# )
+         </isEmpty>
+         <isNotEmpty property="code">
+            VALUES (#code#,#name#, #memo#, #active#, #departmentId#,#type#,#innerCode#,#departmentName#,#executable#,NOW(),#deptClassify#,#serviceId#,#formCode#,#affaitType#,#bizType#,#projectNature#,#approveType#,#notice#,#handleFrequency#,#starLevel#,#theme#,#alias#,#orderNum# ,#parent#)
+         </isNotEmpty>
+	     <selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as id
+		 </selectKey>
+   </insert>
+   
+   <insert id="createPositionItem" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_POSITION_ITEM (
+            positionId,itemId
+         ) VALUES (#POSITION_ID#, #ITEM_ID# )
+      ]]>
+	  <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+   
+   <insert id="createItemTemp" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_ITEM_TEMP (
+            itemId,tempId,isMust
+         ) VALUES (
+            #ITEM_ID#, #TEMP_ID#,#IS_MUST#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+   
+   <insert id="deletePositionItem" parameterClass="java.util.Map">
+   	  DELETE FROM R_POSITION_ITEM 
+         WHERE
+         	itemId=#ITEM_ID#
+   </insert>
+   
+   <insert id="deleteItemTemp" parameterClass="java.util.Map">
+      <![CDATA[
+      	DELETE FROM R_ITEM_TEMP 
+         WHERE
+         	itemId=#ITEM_ID#
+      ]]>
+   </insert>
+
+   <update id="update" parameterClass="item">
+         UPDATE C_ITEM SET
+            name=#name#,
+            memo=#memo#,
+            active=#active#,
+            departmentId=#departmentId#,
+            innerCode=#innerCode#,
+            code = #code#,
+            deptName = #departmentName#,
+            executable = #executable#,
+            updateTime = NOW()
+            <dynamic>
+         	   <isNotNull property="parent" prepend=",">parent=#parent#</isNotNull>
+            	<isNotNull property="deptClassify" prepend=",">deptClassify=#deptClassify#</isNotNull>
+            	<isNotNull property="serviceId" prepend=",">serviceId=#serviceId#</isNotNull>
+            	<isNotNull property="formCode" prepend=",">formCode=#formCode#</isNotNull>
+            	<isNotNull property="affaitType" prepend=",">affaitType=#affaitType#</isNotNull>
+            	<isNotNull property="bizType" prepend=",">bizType=#bizType#</isNotNull>
+            	<isNotNull property="projectNature" prepend=",">projectNature=#projectNature#</isNotNull>
+            	<isNotNull property="approveType" prepend=",">approveType=#approveType#</isNotNull>
+            	<isNotNull property="notice" prepend=",">notice=#notice#</isNotNull>
+            	<isNotNull property="handleFrequency" prepend=",">handleFrequency=#handleFrequency#</isNotNull>
+            	<isNotNull property="starLevel" prepend=",">starLevel=#starLevel#</isNotNull>
+            	<isNotNull property="theme" prepend=",">theme=#theme#</isNotNull>
+            	<isNotNull property="alias" prepend=",">alias=#alias#</isNotNull>
+            	<isNotNull property="orderNum" prepend=",">orderNum=#orderNum#</isNotNull>
+            </dynamic>
+         WHERE
+         	id=#id#
+   </update>
+   <delete id="remove" parameterClass="item">
+      <![CDATA[
+         DELETE FROM C_ITEM WHERE id=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="itemResult2">
+      <![CDATA[
+         SELECT d.code as departmentCode, d.uniquecoding as areaCode,i.* from c_item i
+        LEFT JOIN c_department d on i.departmentId = d.id  WHERE i.id=#id#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="itemResult">
+      <![CDATA[
+         SELECT
+            c.id,
+           c.name,
+           c.alias,
+           c.innerCode,
+           c.code,
+           c.active,
+           c.departmentId,
+           c.deptName,
+           c.deptClassify,
+           c.areaCode,
+           c.area,
+           c.ougUid,
+           c.type,
+           c.memo,
+           c.parent,
+           c.executable,
+           c.updateTime,
+           c.serviceId,
+           c.formCode,
+           c.affaitType,
+           c.bizType,
+           c.projectNature,
+           c.approveType,
+           c.notice,
+           c.handleFrequency,
+           c.starLevel,
+           c.theme,
+           c.orderNum,
+           c.change,
+           c.confirmStatus,
+           c.formImg,
+           c.hasImg
+          FROM C_ITEM c WHERE id IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   
+   <select id="findAll" resultMap="itemResult">
+      <![CDATA[ SELECT
+            c.id,
+            c.name,
+            c.alias,
+            c.innerCode,
+            c.code,
+            c.active,
+            c.departmentId,
+            c.deptName,
+            c.deptClassify,
+            c.areaCode,
+            c.area,
+            c.ougUid,
+            c.type,
+            c.memo,
+            c.parent,
+            c.executable,
+            c.updateTime,
+            c.serviceId,
+            c.formCode,
+            c.affaitType,
+            c.bizType,
+            c.projectNature,
+            c.approveType,
+            c.notice,
+            c.handleFrequency,
+            c.starLevel,
+            c.theme,
+            c.orderNum,
+            c.change,
+            c.confirmStatus,
+            c.formImg,
+            c.hasImg
+          FROM C_ITEM c]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+
+    <select id="findAllVo" resultClass="com.fline.yztb.vo.ItemVo">
+        select
+        i.id,
+        i.name,
+        i.alias,
+        i.innerCode,
+        i.code,
+        i.active,
+        i.departmentId,
+        i.deptName,
+        i.deptClassify,
+        i.areaCode,
+        i.area,
+        i.ougUid,
+        i.type,
+        i.memo,
+        i.parent,
+        i.executable,
+        i.updateTime,
+        i.serviceId,
+        i.formCode,
+        i.affaitType,
+        i.bizType,
+        i.projectNature,
+        i.approveType,
+        i.notice,
+        i.handleFrequency,
+        i.starLevel,
+        i.theme,
+        i.orderNum,
+        i.change,
+        i.confirmStatus,
+        i.formImg,
+        i.hasImg,d.code as departmentCode, (select name from d_theme dt where dt.code = i.theme) as themeName from c_item i
+        LEFT JOIN c_department d on i.departmentId = d.id
+        where i.active !=0 order by orderNum asc
+    </select>
+	
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> id=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="nameLike1"> upper(name) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(name) like upper('%$nameLike$%') or upper(code) like upper('%$nameLike$%') or upper(innerCode) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="name"> name=#name# </isNotNull>
+		 <isNotEmpty prepend="AND" property="departmentId">
+	          departmentId in (
+          		select id from C_DEPARTMENT where code like
+          		CONCAT((select code from C_DEPARTMENT where id = #departmentId#),'%')
+          	)
+         </isNotEmpty>
+         <isNotNull prepend="AND" property="deptIdSingle">
+         	departmentId = #deptIdSingle#
+         </isNotNull>
+         <isNotEmpty prepend="AND" property="type">
+               departmentId in (
+          		select id from c_department where code like CONCAT(
+				(SELECT LEFT(code,6) from c_department where id = #deptId#),'%')
+          	) 
+         </isNotEmpty>
+         <isNotNull prepend="AND" property="innerCode"> innerCode = #innerCode# </isNotNull>
+         <isNotNull prepend="AND" property="innerCodes"> innerCode IN
+         	 <iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate>
+         </isNotNull>
+          <isNotNull prepend="AND" property="codes"> code IN
+         	 <iterate property="codes" open="(" close=")" conjunction=","> #codes[]#</iterate>
+         </isNotNull>
+          <isNotEmpty prepend="AND" property="deptIdLike">
+              departmentId IN (
+              select id from C_DEPARTMENT
+              where code like CONCAT((SELECT code from c_department where id = #deptIdLike#) ,'%')
+              )
+          </isNotEmpty>
+          <isEqual prepend="AND" compareValue="1" property="executable">
+          		executable = 1
+          </isEqual>
+          <isNotNull prepend="AND" property="code">
+         	code = #code#
+         </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_tablewhere">
+      <dynamic prepend="WHERE">
+         <isNotEmpty prepend="AND" property="departmentId">
+            ci.departmentId in (
+          		select id from C_DEPARTMENT where uniquecoding like 
+          		CONCAT('%',(select uniquecoding from C_DEPARTMENT where id = #departmentId#),'%')
+          	)
+         </isNotEmpty>
+         <isNotEmpty prepend="AND" property="name"> 
+            upper(ci.name) like upper('%$name$%')
+         </isNotEmpty>
+         <isNotEmpty prepend="AND" property="nameLike"> (upper(ci.name) like upper('%$nameLike$%') or upper(ci.code) like upper('%$nameLike$%') or upper(ci.innerCode) like upper('%$nameLike$%') )</isNotEmpty>
+         <isNotEmpty prepend="AND" property="type">
+			type = #type#
+		 </isNotEmpty>
+		 <isNotEmpty prepend="AND" property="userId">
+			ru.USER_ID = #userId#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="deptIds">
+			ci.departmentId IN
+			<iterate open="(" close=")" conjunction="," property="deptIds">
+				#deptIds[]#
+			</iterate>
+		</isNotEmpty>
+		<isNotNull prepend="AND" property="innerCodes"> ci.innerCode IN
+         	 <iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate>
+         </isNotNull>
+         <isNotNull prepend="AND" property="codes"> ci.code IN
+         	 <iterate property="codes" open="(" close=")" conjunction=","> #codes[]#</iterate>
+         </isNotNull>
+         <isNotNull prepend="AND" property="innerCode">
+         	ci.innerCode = #innerCode#
+         </isNotNull>
+         <isNotNull prepend="AND" property="code">
+         	ci.code = #code#
+         </isNotNull>
+         <isNotNull property="executable" prepend="AND">
+         	ci.executable = #executable#
+         </isNotNull>
+         <isNotEmpty property="active" prepend="AND">
+         	ci.active = #active#
+         </isNotEmpty>
+         <isNotEmpty prepend="AND" property="deptIdLike">
+              ci.departmentId IN (
+                select id from C_DEPARTMENT
+                where code like CONCAT((SELECT code from c_department where id = #deptIdLike#) ,'%')
+             )
+         </isNotEmpty>
+      </dynamic>
+   </sql>
+   
+   
+   <sql id="sql_from">
+      FROM C_ITEM c
+      <include refid="sql_where" />
+   </sql>
+   
+	<select id="findTable" resultMap="itemResultTable3">
+		<![CDATA[ select ci.confirmStatus,ci.id,ci.name,ci.innerCode,ci.code,ci.memo,ci.active,CI.departmentId as departmentId,ci.deptName ,ci.type,ci.parent,ci.executable,
+		ci.formCode,ci.affaitType,ci.bizType,ci.projectNature,ci.approveType,ci.serviceId,ci.notice,ci.theme,ci.orderNum,ci.alias,ci.handleFrequency,ci.deptClassify,ci.starLevel,
+		if(ci.formImg is not null ,1,0) AS hasImg
+		from C_ITEM ci left join C_DEPARTMENT cd on ci.departmentId = cd.id  ]]>
+		<isNotEmpty  prepend="" property="repeat">
+		RIGHT JOIN ( select distinct b.innerCode  from ( SELECT ci.innerCode, count(rm.tempId) AS count 
+		FROM c_item ci, c_situation cs, c_material cm, r_material_temp rm, c_cert_temp ct WHERE ci.id = cs.itemId AND cs.id = cm.situationId 
+		AND cm.id = rm.materialId AND rm.tempId = ct.id GROUP BY cs.id, rm.tempId HAVING count > 1) b ) a ON a.innerCode = ci.innerCode
+		</isNotEmpty>
+		<include refid="sql_tablewhere" />
+		<![CDATA[ order by ci.id DESC ]]>
+		<isGreaterThan property="_maxResult" compareValue="0">
+		  <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	
+	<select id="findTable_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[
+	select COUNT(1) from C_ITEM ci left join C_DEPARTMENT cd on ci.departmentId = cd.id
+	]]>
+	<isNotEmpty  prepend="" property="repeat">
+	 <![CDATA[
+		RIGHT JOIN ( select distinct b.innerCode  from ( SELECT ci.innerCode, count(rm.tempId) AS count 
+		FROM c_item ci, c_situation cs, c_material cm, r_material_temp rm, c_cert_temp ct WHERE ci.id = cs.itemId AND cs.id = cm.situationId 
+		AND cm.id = rm.materialId AND rm.tempId = ct.id GROUP BY cs.id, rm.tempId HAVING count > 1) b ) a ON a.innerCode = ci.innerCode
+	]]>
+	</isNotEmpty>
+	<include refid="sql_tablewhere" />
+   </select>
+	
+   <select id="findRTemp" resultClass="java.lang.String" parameterClass="java.util.Map">
+      <![CDATA[ select tempId from R_ITEM_TEMP where itemId=#itemId#]]>
+       <isNotEmpty prepend="AND" property="isMust"> isMust=#isMust#</isNotEmpty>
+   </select>
+
+    <select id="findRTempWithName" resultClass="java.util.HashMap" parameterClass="java.util.Map">
+        select id,name from c_cert_temp where id in (
+            select tempId from R_ITEM_TEMP where itemId=#itemId#
+            <isNotEmpty prepend="AND" property="isMust"> isMust=#isMust#</isNotEmpty>
+        )
+    </select>
+   
+   <select id="findItemByPositionId" resultMap="itemResult" parameterClass="java.util.Map">
+      <![CDATA[ select  i.* from C_ITEM i left join R_POSITION_ITEM p on i.id=p.itemId where p.positionId=#positionId#]]>
+   </select>
+	
+   <select id="findPositionName" parameterClass="java.util.Map" resultClass="String">
+      <![CDATA[
+	   select CP.name from R_POSITION_ITEM rpi left join C_POSITION cp on RPI.positionId=CP.id
+		where RPI.itemId=#ITEM_ID#
+	]]>
+	<include refid="sql_tablewhere" />
+   </select>
+   
+   <select id="findPositionId" parameterClass="java.util.Map" resultClass="String">
+      <![CDATA[
+	  select positionId from R_POSITION_ITEM where itemId=#ITEM_ID#
+	]]>
+	<include refid="sql_tablewhere" />
+   </select>
+   
+   <select id="find" resultMap="itemResult">
+		<![CDATA[ SELECT
+            c.id,
+            c.name,
+            c.alias,
+            c.innerCode,
+            c.code,
+            c.active,
+            c.departmentId,
+            c.deptName,
+            c.deptClassify,
+            c.areaCode,
+            c.area,
+            c.ougUid,
+            c.type,
+            c.memo,
+            c.parent,
+            c.executable,
+            c.updateTime,
+            c.serviceId,
+            c.formCode,
+            c.affaitType,
+            c.bizType,
+            c.projectNature,
+            c.approveType,
+            c.notice,
+            c.handleFrequency,
+            c.starLevel,
+            c.theme,
+            c.orderNum,
+            c.change,
+            c.confirmStatus,
+            c.formImg,
+            c.hasImg
+               ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+   
+   <select id="findItemCount" parameterClass="java.util.Map" resultMap="itemResult">
+   	SELECT
+   	C.id,
+    C.name,
+    C.alias,
+    C.innerCode,
+    C.code,
+    C.active,
+    C.departmentId,
+    C.deptName,
+    C.deptClassify,
+    C.areaCode,
+    C.area,
+    C.ougUid,
+    C.type,
+    C.memo,
+    C.parent,
+    C.executable,
+    C.updateTime,
+    C.serviceId,
+    C.formCode,
+    C.affaitType,
+    C.bizType,
+    C.projectNature,
+    C.approveType,
+    C.notice,
+    C.handleFrequency,
+    C.starLevel,
+    C.theme,
+    C.orderNum,
+    C.change,
+    C.confirmStatus,
+    C.formImg,
+    C.hasImg
+	FROM C_ITEM C,
+	R_POSITION_ITEM PI
+	WHERE C.id = PI.itemId
+	AND PI.positionId = #positionId#
+	AND C.code = #itemCode#
+   </select>
+   
+  <select id="findItemCountByInner" parameterClass="java.util.Map" resultMap="itemResult">
+   	SELECT
+    C.id,
+    C.name,
+    C.alias,
+    C.innerCode,
+    C.code,
+    C.active,
+    C.departmentId,
+    C.deptName,
+    C.deptClassify,
+    C.areaCode,
+    C.area,
+    C.ougUid,
+    C.type,
+    C.memo,
+    C.parent,
+    C.executable,
+    C.updateTime,
+    C.serviceId,
+    C.formCode,
+    C.affaitType,
+    C.bizType,
+    C.projectNature,
+    C.approveType,
+    C.notice,
+    C.handleFrequency,
+    C.starLevel,
+    C.theme,
+    C.orderNum,
+    C.change,
+    C.confirmStatus,
+    C.formImg,
+    C.hasImg
+	FROM C_ITEM C,
+	R_POSITION_ITEM PI
+	WHERE C.id = PI.itemId
+	AND PI.positionId = #positionId#
+	AND C.innerCode = #innerCode#
+   </select>
+   
+    <insert id="createNanWeiItem" parameterClass="item">
+      <![CDATA[
+         INSERT INTO C_ITEM (
+            code, name, memo,active,departmentId
+         ) VALUES (
+     	    #code#, #name#, #memo#, #active#, #departmentId#)
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+   
+   <select id="findByCode" parameterClass="java.util.Map" resultMap="itemResult">
+   	 <![CDATA[ SELECT
+    c.id,
+    c.name,
+    c.alias,
+    c.innerCode,
+    c.code,
+    c.active,
+    c.departmentId,
+    c.deptName,
+    c.deptClassify,
+    c.areaCode,
+    c.area,
+    c.ougUid,
+    c.type,
+    c.memo,
+    c.parent,
+    c.executable,
+    c.updateTime,
+    c.serviceId,
+    c.formCode,
+    c.affaitType,
+    c.bizType,
+    c.projectNature,
+    c.approveType,
+    c.notice,
+    c.handleFrequency,
+    c.starLevel,
+    c.theme,
+    c.orderNum,
+    c.change,
+    c.confirmStatus,
+    c.formImg,
+    c.hasImg
+  FROM C_ITEM c WHERE code = #code#  ]]>
+   </select>
+   
+	<select id="findItemTemp_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM c_item i, r_item_temp it, c_cert_temp ct
+			WHERE i.id = it.itemId AND it.tempId= ct.id
+			AND i.innerCode = #innerCode# AND ct.code = #certCode#
+		]]>
+	</select>
+	
+   <select id="findByUser" resultMap="itemResult" parameterClass="java.util.Map">
+		select
+		c.id,
+        c.name,
+        c.alias,
+        c.innerCode,
+        c.code,
+        c.active,
+        c.departmentId,
+        c.deptName,
+        c.deptClassify,
+        c.areaCode,
+        c.area,
+        c.ougUid,
+        c.type,
+        c.memo,
+        c.parent,
+        c.executable,
+        c.updateTime,
+        c.serviceId,
+        c.formCode,
+        c.affaitType,
+        c.bizType,
+        c.projectNature,
+        c.approveType,
+        c.notice,
+        c.handleFrequency,
+        c.starLevel,
+        c.theme,
+        c.orderNum,
+        c.change,
+        c.confirmStatus,
+        c.formImg,
+        c.hasImg
+		from C_ITEM c where id in (
+		select item_id from R_POSITION_ITEM WHERE positionId in (
+		select position_id from C_USER where id = #userId#))
+   </select>
+   
+   <select id="findByZh" resultMap="itemResult" parameterClass="java.util.Map">
+		select
+		i.id,
+        i.name,
+        i.alias,
+        i.innerCode,
+        i.code,
+        i.active,
+        i.departmentId,
+        i.deptName,
+        i.deptClassify,
+        i.areaCode,
+        i.area,
+        i.ougUid,
+        i.type,
+        i.memo,
+        i.parent,
+        i.executable,
+        i.updateTime,
+        i.serviceId,
+        i.formCode,
+        i.affaitType,
+        i.bizType,
+        i.projectNature,
+        i.approveType,
+        i.notice,
+        i.handleFrequency,
+        i.starLevel,
+        i.theme,
+        i.orderNum,
+        i.change,
+        i.confirmStatus,
+        i.formImg,
+        i.hasImg
+		from c_item i where departmentId in (
+		select id from c_department where uniquecoding like CONCAT(
+		(SELECT LEFT(uniquecoding,6) from c_department where id = #deptId#),'%')
+		) and i.code = #itemCode# and departmentId != #deptId# LIMIT 0,1
+   </select>
+    
+    <select id="findItemTemp" resultClass="java.util.HashMap" parameterClass="java.util.Map">
+        select r.itemId as itemId, ct.code as tempCode  from r_item_temp r, c_cert_temp ct
+        where r.tempId = ct.id
+    </select>
+    
+    <sql id="itemTempVo_where">
+    	<dynamic prepend="WHERE">
+    		<isNotNull property="itemId" prepend="AND">r.itemId = #itemId#</isNotNull>
+    	</dynamic>
+    </sql>
+    
+    <select id="findItemTempByMap" resultClass="java.util.HashMap" parameterClass="java.util.Map">
+        select r.itemId as itemId, ct.code as tempCode  
+        from r_item_temp r join c_cert_temp ct on r.tempId = ct.id
+        <include refid="itemTempVo_where"/>
+    </select>
+    
+    <insert id="saveItemByQzk" parameterClass="java.util.List">
+      <![CDATA[
+         INSERT INTO c_item (
+            name, memo, departmentId, innerCode,deptName,code,areaCode,active
+         ) VALUES ]]> 
+         <iterate conjunction =",">
+       <![CDATA[
+         (
+            #list[].name#, #list[].memo#,#list[].departmentId#,#list[].innerCode#,#list[].deptName#,
+            #list[].code#,#list[].areaCode#,#list[].active#
+         )
+        ]]>
+      </iterate>
+    </insert>
+    
+    <select id="findIdByInnerCode" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+    	<![CDATA[
+    	select id,innerCode from c_item where innerCode IN 
+    	]]>
+    	<iterate open="(" close=")" conjunction="," property="listInnerCode">
+          <![CDATA[      
+            #listInnerCode[]#
+          ]]>
+        </iterate>
+    </select>    
+    
+    <select id="findAllInnerCode" resultClass="String" >
+    	<![CDATA[ 
+    	   select innerCode from c_item
+    	 ]]>
+    </select>
+    
+    <select id="findAllDict" resultClass="java.util.HashMap">
+    	<![CDATA[ 
+           SELECT c.key,c.`value`value FROM c_dict c
+         ]]>
+    </select>
+    
+    <delete id="deleteItemByInnerCode" parameterClass="java.util.HashMap">
+    	   DELETE FROM c_item WHERE innerCode in 
+    	   <iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate>  
+    </delete>
+    
+    <update id="updateActive" parameterClass="java.util.HashMap">
+    	update c_item set active = 0 where active != 2 and innerCode in
+    		<iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate>  
+    </update>
+    
+    <!-- 根据部门ID列表获取事项ID列表 -->
+    <select id="findItemIdsByDeptIds" parameterClass="java.util.HashMap" resultClass="java.lang.Long">
+        SELECT id from c_item 
+        <dynamic prepend="WHERE">
+            <isNotNull property="deptIds" prepend="AND">
+                departmentId  in  
+                <iterate open="(" close=")" conjunction="," property="deptIds">
+                    #deptIds[]#
+                </iterate>
+            </isNotNull>
+        </dynamic>
+    </select>
+    
+    <!-- 获取情形->证明->材料 的数量 -->
+    <select id="findRelateCounts" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+    SELECT
+	COUNT(DISTINCT mId) as 'mCnt',COUNT(DISTINCT sId) as 'sCnt',COUNT(tempId) as 'tCnt',sItemId as 'itemId'
+		FROM
+			(SELECT * from r_material_temp  where tempId in (select id from c_cert_temp))r
+		RIGHT JOIN (
+			SELECT
+				m.id AS mId,
+				s.id AS sId,
+				s.iId as sItemId		
+			FROM
+				c_material m
+			RIGHT JOIN (
+				SELECT
+					s.id,
+					i.id as iId
+				FROM
+					c_situation s RIGHT JOIN (SELECT id from c_item where id in
+					<iterate property="itemIds" open="(" close=")" conjunction=","> #itemIds[]#</iterate>  
+					) i on s.itemId = i.id
+			) s ON m.situationId = s.id
+		) ms ON ms.mId = r.materialId 
+		GROUP BY itemId ORDER BY itemId DESC
+    </select>
+    
+    <select id="findItemNameByinnercode" parameterClass="java.lang.String" resultClass="java.lang.String">
+    	SELECT `name` from c_item where innerCode = #innerCode#
+    </select>
+
+    <update id="bindFormTemp" parameterClass="java.util.HashMap">
+    	UPDATE C_ITEM SET formCode = #formCode# 
+    	<dynamic prepend="WHERE">
+    		<isNotNull prepend="AND" property="itemId">id = #itemId# </isNotNull>
+    		<isNotNull prepend="AND" property="formCodeDel"> formCode = #formCodeDel#</isNotNull>
+    	</dynamic>
+    </update>
+    
+    <select id="findItemByFormCode" parameterClass="java.util.Map" resultMap="itemResult">
+    	SELECT
+    	c.id,
+        c.name,
+        c.alias,
+        c.innerCode,
+        c.code,
+        c.active,
+        c.departmentId,
+        c.deptName,
+        c.deptClassify,
+        c.areaCode,
+        c.area,
+        c.ougUid,
+        c.type,
+        c.memo,
+        c.parent,
+        c.executable,
+        c.updateTime,
+        c.serviceId,
+        c.formCode,
+        c.affaitType,
+        c.bizType,
+        c.projectNature,
+        c.approveType,
+        c.notice,
+        c.handleFrequency,
+        c.starLevel,
+        c.theme,
+        c.orderNum,
+        c.change,
+        c.confirmStatus,
+        c.formImg,
+        c.hasImg
+    	 from c_item c where formCode = #formCode#
+    </select>
+    
+    <select id="findDeptInfo" resultClass="java.util.HashMap">
+    	select departmentId,deptName,innerCode from c_item 
+    	<dynamic prepend="WHERE">
+    		<isNotNull property="departmentIds" prepend="AND" >
+    			departmentId in
+    			 <iterate open="(" close=")" conjunction="," property="departmentIds">
+                    #departmentIds[]#
+                </iterate>
+    		</isNotNull>
+    	</dynamic>
+    </select>
+    
+    <select id="findAllAppItem" resultMap="itemAppResult">
+    	SELECT id,name,innerCode,code,departmentId from c_item where theme is not null
+    </select>
+    
+    <update id="updateInnerCode" parameterClass="java.util.HashMap">
+    	UPDATE c_item set innerCode = #newInnerCode#, `change` = 2, parent = null where innerCode = #oldInnerCode# AND departmentId=#deptId#
+    </update>
+    
+    <select id="getSameItems" resultClass="java.lang.Long" parameterClass="java.util.Map">
+    	SELECT
+			s.itemId
+		FROM
+			(
+				SELECT
+					`name`,itemId
+				FROM
+					c_situation
+				<dynamic prepend="WHERE">
+					itemId IN (
+						SELECT
+							id
+						FROM
+							c_item
+						WHERE
+							CODE = #code#
+					)
+					<isNotNull  property="situations">
+					 AND `name` IN (			
+						<iterate property="situations" conjunction=",">
+						#situations[].name#						
+						</iterate>
+					)
+					</isNotNull>
+				</dynamic>
+				GROUP BY
+					NAME,
+					itemId
+			) s
+		GROUP BY
+			s.itemId
+		HAVING
+			COUNT(1) = #count#
+    </select>
+    
+    <select id="findSameDefaultSituationsMaterialItems" parameterClass="java.util.Map" resultClass="java.lang.Long">
+	    SELECT
+			sim.iId
+		FROM
+			(
+				SELECT
+					si.iId,
+					si.sId,
+					m1.`name`
+				FROM
+					c_material m1
+				JOIN (
+					SELECT
+						i.id AS 'iId',
+						s.id AS 'sId'
+					FROM
+						c_situation s
+					JOIN (
+						SELECT
+							id
+						FROM
+							c_item
+						WHERE
+							id in(
+							<iterate property="itemIds" conjunction=",">
+								#itemIds[]#						
+							</iterate>
+							)
+							
+					) i ON s.itemId = i.id
+					WHERE
+						s.`name` = '缺省情形'
+				) si ON m1.situationId = si.sId
+			) sim
+		LEFT JOIN (
+			SELECT
+				`name`
+			FROM
+				c_material
+			WHERE
+				situationId = (
+					SELECT
+						id
+					FROM
+						c_situation
+					WHERE
+						itemId = #itemId#
+					AND `name` = '缺省情形'
+				)
+		) m2 ON sim.`name` = m2.`name`
+		WHERE m2.`name` is not null
+		GROUP BY
+			sim.sId
+		HAVING
+			count(1) = #count#
+    </select>
+    
+    <select id="findEmptyMaterialItems" parameterClass="java.util.Map" resultClass="java.lang.Long">
+    	SELECT
+			i.id AS 'iId'
+		FROM
+			c_situation s
+		JOIN (
+			SELECT
+				id
+			FROM
+				c_item
+			WHERE
+				id in(
+					<iterate property="itemIds" conjunction=",">
+						#itemIds[]#						
+					</iterate>
+					)
+		) i ON s.itemId = i.id
+		WHERE
+			s.id NOT IN (
+				SELECT
+					situationId
+				FROM
+					c_material
+			)
+    </select>
+    
+    <update id="updteDeptNameByInnerCode" parameterClass="java.util.Map">
+    	update c_item set deptName=#deptName#,departmentId=#departmentId#, active = 1 where innerCode = #innerCode# and active = 0
+    </update>
+    
+    <select id="findItemByInnerCode" parameterClass="java.util.Map" resultMap="itemResult">
+    	select
+    	c.id,
+        c.name,
+        c.alias,
+        c.innerCode,
+        c.code,
+        c.active,
+        c.departmentId,
+        c.deptName,
+        c.deptClassify,
+        c.areaCode,
+        c.area,
+        c.ougUid,
+        c.type,
+        c.memo,
+        c.parent,
+        c.executable,
+        c.updateTime,
+        c.serviceId,
+        c.formCode,
+        c.affaitType,
+        c.bizType,
+        c.projectNature,
+        c.approveType,
+        c.notice,
+        c.handleFrequency,
+        c.starLevel,
+        c.theme,
+        c.orderNum,
+        c.change,
+        c.confirmStatus,
+        c.formImg,
+        c.hasImg
+    	 from c_item c where  active = 0 and  innerCode=#innerCode#
+    </select>
+    
+    <select id="findItemInfoList" parameterClass="java.util.Map" resultMap="itemInfoResult" >
+    	SELECT id,name,code,innercode,departmentId,deptName FROM c_item 
+    	<dynamic prepend="WHERE">
+    		<isNotNull prepend="AND" property="innerCodes">
+    			innerCode in
+    			<iterate open="(" close=")" conjunction="," property="innerCodes">
+                    #innerCodes[]#
+                </iterate>
+    		</isNotNull>
+    		<isNotNull prepend="AND" property="code">
+    			code = #code#
+    		</isNotNull>
+    		<isNotNull prepend="AND" property="departmentId">
+    			departmentId = #departmentId#
+    		</isNotNull>
+    	</dynamic> 
+    </select>
+    
+    <select id="findAppItem" resultMap="itemAppResult" parameterClass="java.util.Map">
+    	SELECT id,name,innerCode,code,departmentId from c_item WHERE active = #active# and code = #code#
+    	<isNotNull prepend="AND" property="departmentId">
+    		departmentId=#departmentId# 
+    	</isNotNull>
+    </select>
+
+    <update id="updateConfirmStatus" parameterClass="java.util.Map">
+        update c_item set confirmStatus = #confirmStatus# where id = #id#
+    </update>
+
+    <update id="updateImg" parameterClass="java.util.Map">
+        update c_item set formImg = #formImg# where id = #id#
+    </update>
+
+    <select id="findImg" resultMap="imgResult" parameterClass="java.util.Map">
+        select formImg from c_item where id = #id#
+    </select>
+    
+</sqlMap>

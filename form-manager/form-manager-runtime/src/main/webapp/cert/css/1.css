@@ -1,0 +1,162 @@
+body{
+    font-family: "Microsoft YaHei";
+}
+.obt{
+    background-image: url(../images/bordert.png);
+    width:439px;
+    height:90px;
+}
+.obs{
+    background-image: url(../images/borders.png);
+    width:439px;
+}
+.obb{
+    background-image: url(../images/borderb.png);
+    width:439px;
+    height:51px;
+}
+.sameWindow a{
+    color: #50709a;
+    text-decoration: none;
+}
+.atitle{
+    position: relative;
+    width: 391px;
+    top:24px;
+    left:25px;
+    bottom: 14px;
+    color:#003399;
+    height: 29px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.cin{
+    position: relative;
+    left: 20px;
+    width: 381px;
+    height: 80px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.h16{
+    height:16px;
+}
+.fs16{
+    font-size: 16px;
+}
+.cinfo{
+    font-size: 12px;
+    display:inline-block;
+    position: relative;
+    left:16px;
+}
+.cinfot{
+    margin:0px;
+    margin-bottom:2px;
+}
+.clogo{
+    width: 61px;
+    height: 61px;
+    background-image: url(../images/clogo.png);
+    display:inline-block;
+    left:6px;
+    position: relative;
+}
+.obbb{
+    width: 423px;
+    height: 42px;
+    background: #f0f0f0;
+    margin: 0px auto;
+    border-top: 1px solid #dfdfdf;
+}
+.btna{
+    display:inline-block;
+    width:71px;
+    height:21px;
+    background-image: url(../images/btnbg.png);
+    text-align: center;
+    line-height: 21px;
+    font-size: 12px;
+    border: 1px solid #707070;
+    border-radius:3px; 
+    margin-left: 8px;
+    top: 8px;
+    position: relative;
+    left:107px;
+    cursor: pointer;
+}
+
+.btna:hover{
+    line-height: 23px;
+    top: 8px;
+    width:73px;
+    height:23px;
+    background-image: url(../images/btnh.png);
+    border-radius:0px; 
+    border: 0px solid #707070;
+}
+.btna:active{
+    line-height: 23px;
+    top: 8px;
+    width:73px;
+    height:23px;
+    background-image: url(../images/btnb.png);
+    border-radius:0px; 
+    border: 0px solid #707070;
+}
+.cin:hover{
+    border: 1px solid #84acdd;
+    background: #dfeeff;
+    border-radius:3px; 
+}
+.cinh{
+    border: 1px solid #84acdd;
+    background: #dfeeff;
+    border-radius:3px; 
+}
+#selectcert:checked{
+    border: 1px solid #84acdd;
+    background: #dfeeff;
+    border-radius:3px; 
+}
+.closeicon{
+    width: 47px;
+    height: 19px;
+    left:385px;
+    position: relative;
+    top: 1px;
+}
+.closeicon:hover{
+    width: 47px;
+    height: 19px;
+    border-radius:0px 0px 3px 3px; 
+    background-image: url(../images/closeh.png);
+    box-shadow:0px 0px 10px #c6260a;
+}
+
+.closeicon:active{
+    width: 47px;
+    height: 19px;
+    border-radius:0px 0px 3px 3px; 
+    background-image: url(../images/closea.png);
+    box-shadow:0px 0px 10px #771508;
+}
+#owidow .obs p,#owidow div.obt,#owidow .obs div{
+    text-align: left;
+}
+
+.sameWindow{
+    position: fixed;
+    top: 50%;
+    margin-top: -220px;
+    left: 50%;
+    margin-left: -162px;
+    background-color: #fff;
+    display: none;
+    border-radius: 5px;
+    z-index:9999;
+}
+
+#selectcert{
+    margin-left: 3em;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,58 @@
+html, body{width:100%;height:100%;margin:0;padding:0;}
+.base_hidden{display:none;}
+#humanWrap{width:100%;height:100%;position:relative;}
+.humanHead{width:100%;height: 103px;position: relative;box-shadow: 0 4px 25px 0 rgba(0,0,0,0.10);}
+.headContent{width: 1000px;height: 100%;margin: 0 auto;}
+.information{text-align:right;}
+.information a{display: block;height: 25px;padding-left: 19px;font-size: 12px;font-family: '宋体';line-height: 26px;color: #666;text-decoration: none;}
+.information img{display:inline-block;vertical-align:sub;}
+.userSearch{display:inline-block;float:right;margin-top:5px;}
+.searchBox{display:inline-block;vertical-align:text-bottom;}
+.searchBox input{display:inline-block;width:280px;border-radius:4px 0 0 4px;height:36px;border:1px solid #ddd;text-indent:5px;}
+.searchBox img{display:inline-block;height:36px; vertical-align:top;cursor:pointer}
+.userBox{display:inline-block;margin-left:10px}
+.userText{display:inline-block;line-height:16px;vertical-align:2px;font-size:16px}
+.userName{display:block;color:#0072FF;font-size:12px}
+/*查询表单*/
+.humanBody{width:100%;background:#F3F3F3;overflow:hidden;}
+.formWrap{width:502px;height:296px;margin:30px auto 0;background:#FFF;}
+#searchForm{width:100%;height:100%;text-align:center;overflow:hidden;}
+.nameWrap{margin:70px 0 15px 0}
+.nameInputWrap{display:inline-block;border-bottom:1px solid #ddd;vertical-align:baseline;width:240px;margin-left:20px;}
+.nameInput{border:none;outline:none;width:240px;}
+.certInput{width:240px;border: none;}
+.certInput:focus{border: none;outline:none}
+.labelName{font-weight:400;margin-bottom:0}
+.btnPrimary{border:none;background:#1392FF;display:inline-block;width:269px;height:40px;border-radius:3px;color:#FFF;margin-top:40px}
+/*查询结果*/
+.resultWrap{width:100%;height:100%;overflow-x:hidden;overflow-y:auto;}
+.cardContain{margin:20px auto 0;width:1025px;}
+.cardBox{background:#FFF;box-sizing:border-box;padding:26px 0 35px;width:490px;height:356px;display:inline-block;margin:0 20px 20px 0}
+.certTitle{padding:0 38px}
+.certTitle>span{font-size:18px;line-height:25px;color:#333333;font-weight:700;}
+.certTitle>button{float:right;border:none;background:#0072FF;display:inline-block;width:60px;height:32px;border-radius:4px;color:#FFF;}
+.certContent{padding:0 38px;}
+.certContent>div{margin-top:20px}
+.certName{display:inline-block;width:120px;font-size:14px;line-height:20px;}
+.noCert{margin: 130px auto 0;width:121px;}
+
+/*打印*/
+.returnListBox{margin:20px 0 0 20%}
+.returnList{cursor:pointer;font-size:14px;color:#666666;line-height:20px}
+.returnList img{vertical-align:sub;}
+.certImgBox{margin: 5px auto 0;width:800px;height:290px;overflow-y:auto;overflow-x:hidden;}
+.certImgBox iframe{width:800px;height:1000px;}
+/*底部*/
+.humanFoot{position:fixed;bottom:0;width:100%;height:235px;background: #E7E7E7;}
+.humanFootMain{width:1020px;height:100%;margin:0 auto;text-align:center;box-sizing:border-box;padding:30px;}
+.footText{font-size:18px;color:#333;}
+.footText a{font-size:16px;padding:0 20px;line-height:20px;color:#339;cursor:pointer;}
+.footText a:hover{color:#1492FF}
+.humanFootMain>img{margin:10px 0}
+.remarksInfo{display:inline-block;vertical-align:bottom;}
+.remarksInfo a{color:#333;cursor:pointer;}
+.remarksInfo img{display:inline-block;vertical-align:bottom;}
+.paddingRight{padding-left:10px}
+.footBottom>a{display:inline-block;cursor:pointer;}
+.govImg{margin-left:15px}
+.errorImg{margin-left:15px}

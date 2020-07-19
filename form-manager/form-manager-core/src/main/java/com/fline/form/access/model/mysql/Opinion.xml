@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Opinion">
+   <typeAlias alias="opinion" type="com.fline.form.access.model.Opinion" />
+   <resultMap id="opinionResult" class="opinion">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <result property="username" column="username" javaType="string" jdbcType="VARCHAR" />
+      <result property="phone" column="phone" javaType="string" jdbcType="VARCHAR" />
+	  <result property="certName" column="certName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="type" column="type" javaType="string" jdbcType="VARCHAR" />
+	  <result property="content" column="content" javaType="string" jdbcType="VARCHAR" />
+	  <result property="sfId" column="sfId" javaType="string" jdbcType="VARCHAR" />
+	  <result property="createDate" column="createDate" javaType="date" />
+	  <result property="fileKey" column="fileKey" javaType="string" jdbcType="VARCHAR" />
+	  <result property="certCode" column="certCode" javaType="string" jdbcType="VARCHAR" />
+	  <result property="fileName" column="fileName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="busiCode" column="busiCode" javaType="string" jdbcType="VARCHAR" />
+	  <result property="status" column="status" javaType="string" jdbcType="VARCHAR" />
+	  <result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+	  <result property="excuteKey" column="excuteKey" javaType="string" jdbcType="VARCHAR" />
+	  <result property="active" column="active" javaType="int" jdbcType="NUMERIC" nullValue="1"/>
+   </resultMap>
+   
+   <resultMap id="opinionL" class="opinion" extends="opinionResult">
+   	  <result property="deptName" column="deptName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="itemName" column="itemName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="interfaceName" column="interfaceName" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+   <insert id="create" parameterClass="opinion">
+      <![CDATA[
+         INSERT INTO C_OPINION (
+            username,phone, certName, type,
+            content, sfId,createDate ,fileKey,certCode,fileName, busiCode,status,active
+         ) VALUES (
+            #username#, #phone#, #certName#, #type#,
+            #content#, #sfId#,  now() ,#fileKey#,#certCode#,#fileName# ,#busiCode#,#status#,#active#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="opinion">
+      <![CDATA[
+         UPDATE C_OPINION SET
+            status=#status#,
+            memo = #memo#,
+            excuteKey = #excuteKey#
+         WHERE id =#id#
+      ]]>
+   </update>
+   
+   <delete id="remove" parameterClass="opinion">
+      <![CDATA[
+          UPDATE C_OPINION SET
+            active = 0
+         WHERE id =#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="opinionResult">
+      <![CDATA[
+         SELECT
+            id,
+            username,
+            phone,
+            certName,
+            type,
+            content,
+            sfId,
+            createDate,
+            fileKey,
+            certCode,
+            fileName,
+            busiCode,
+            status,
+            memo,
+            excuteKey,
+            active
+          FROM C_OPINION A WHERE id=#value#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="opinionResult">
+      <![CDATA[
+         SELECT
+            id,
+            username,
+            phone,
+            certName,
+            type,
+            content,
+            sfId,
+            createDate,
+            fileKey,
+            certCode,
+            fileName,
+            busiCode,
+            status,
+            memo,
+            excuteKey,
+            active
+          FROM C_OPINION WHERE id IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   <select id="findAll" resultMap="opinionL">
+     select (select name from c_cert_temp c where c.code = o.certCode) as certName,
+		o.id,
+        o.username,
+        o.phone,
+        o.certName,
+        o.type,
+        o.content,
+        o.sfId,
+        o.createDate,
+        o.fileKey,
+        o.certCode,
+        o.fileName,
+        o.busiCode,
+        o.status,
+        o.memo,
+        o.excuteKey,
+        o.active,
+		(select name from c_department d where d.id = b.departmentId) AS deptName,
+		(select name from c_item i where b.itemInnerCode = i.innerCode) as itemName,
+		(select interfaceName from c_cert_temp c where c.code = o.certCode) as interfaceName
+		 from c_opinion o,c_business b 
+		where o.busiCode = b.code 
+		order by id desc
+   </select>
+   <sql id="sql_where">
+        <isNotNull property="sfId" prepend="and" > 
+        		o.sfId = #sfId#
+        </isNotNull>
+        <isNotNull property="username" prepend="and" > 
+        		o.username = #username#
+        </isNotNull>        
+        <isNotNull property="searchDate" prepend="and" > 
+        		date_format(o.create_date,'%y-%m-%d') = date_format(#searchDate#,'%y-%m-%d')
+        </isNotNull>
+         <isNotNull property="loginId" prepend="and" > 
+        		b.user_id = #loginId#
+        </isNotNull>              
+         <isNotNull property="deptId" prepend="and" > 
+        		b.department_id = #deptId#
+        </isNotNull>              
+   </sql>
+   <sql id="sql_from">
+      FROM C_OPINION 
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="opinionL">
+		select (select name from c_cert_temp c where c.code = o.certCode) as certName,
+       o.id,
+       o.username,
+       o.phone,
+       o.certName,
+       o.type,
+       o.content,
+       o.sfId,
+       o.createDate,
+       o.fileKey,
+       o.certCode,
+       o.fileName,
+       o.busiCode,
+       o.status,
+       o.memo,
+       o.excuteKey,
+       o.active,
+		(select name from c_department d where d.id = b.departmentId) AS deptName,
+		(select name from c_item i where b.itemInnerCode = i.innerCode) as itemName,
+		(select interfaceName from c_cert_temp c where c.code = o.certCode) as interfaceName
+		 from c_opinion o,c_business b 
+		where o.busiCode = b.code and o.active = 1
+		<include refid="sql_where"/>
+		order by id desc
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+     SELECT COUNT(1)
+	 from c_opinion o,c_business b 
+	 where o.busiCode = b.code and o.active = 1
+	 <include refid="sql_where"/>
+   </select>
+
+</sqlMap>

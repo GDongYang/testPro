@@ -1,0 +1,295 @@
+[form-manager] 2020-02-15 11:38:48.365 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-02-15 11:38:48.401 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-02-15 11:38:48.763 < INFO> [main] /form-manager.info(67) | Set web app root system property: 'webapp.root' = [D:\workspace\form-yinchuan\form-manager\form-manager-runtime\src\main\webapp]
+[form-manager] 2020-02-15 11:38:48.764 < INFO> [main] /form-manager.info(67) | Initializing log4j from [classpath:log4j.properties]
+[form-manager] 2020-02-15 11:38:48.773 < INFO> [main] /form-manager.info(67) | Initializing Spring root WebApplicationContext
+[form-manager] 2020-02-15 11:38:48.774 < INFO> [main] ContextLoader.initWebApplicationContext(305) | Root WebApplicationContext: initialization started
+[form-manager] 2020-02-15 11:38:48.876 < INFO> [main] XmlWebApplicationContext.prepareRefresh(581) | Refreshing Root WebApplicationContext: startup date [Sat Feb 15 11:38:48 CST 2020]; root of context hierarchy
+[form-manager] 2020-02-15 11:38:48.927 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-server-index.xml]
+[form-manager] 2020-02-15 11:38:49.132 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-core-index.xml]
+[form-manager] 2020-02-15 11:38:49.147 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-common-properties.xml]
+[form-manager] 2020-02-15 11:38:49.212 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-common-properties.extensionpoint.xml]
+[form-manager] 2020-02-15 11:38:49.229 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-scriptengine.xml]
+[form-manager] 2020-02-15 11:38:49.253 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-cache-common.xml]
+[form-manager] 2020-02-15 11:38:49.264 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-cache-common.extensionpoint.xml]
+[form-manager] 2020-02-15 11:38:49.275 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-cache-ehcache.xml]
+[form-manager] 2020-02-15 11:38:49.282 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-system-datasource.xml]
+[form-manager] 2020-02-15 11:38:49.290 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-datasource-dbcp.xml]
+[form-manager] 2020-02-15 11:38:49.299 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-datasource-common.xml]
+[form-manager] 2020-02-15 11:38:49.305 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-datasource-common.extensionpoint.xml]
+[form-manager] 2020-02-15 11:38:49.311 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-transaction-common.xml]
+[form-manager] 2020-02-15 11:38:49.320 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-transaction-common.extensionpoint.xml]
+[form-manager] 2020-02-15 11:38:49.451 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-orm-index.xml]
+[form-manager] 2020-02-15 11:38:49.462 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-orm-common.xml]
+[form-manager] 2020-02-15 11:38:49.497 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-orm-jdbctemplate.xml]
+[form-manager] 2020-02-15 11:38:49.504 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-orm-ibatis.xml]
+[form-manager] 2020-02-15 11:38:49.510 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-orm-ibatis.extensionpoint.xml]
+[form-manager] 2020-02-15 11:38:49.525 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-platform-access-index.xml]
+[form-manager] 2020-02-15 11:38:49.534 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-platform-access-common.xml]
+[form-manager] 2020-02-15 11:38:49.541 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-platform-access-ibatis.xml]
+[form-manager] 2020-02-15 11:38:49.547 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-platform-access-database.xml]
+[form-manager] 2020-02-15 11:38:49.554 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-platform-access-jdbctemplate.xml]
+[form-manager] 2020-02-15 11:38:49.560 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-aic-redis.xml]
+[form-manager] 2020-02-15 11:38:49.645 < INFO> [main] DefaultListableBeanFactory.registerBeanDefinition(818) | Overriding bean definition for bean 'jedisClientFactory' with a different definition: replacing [Generic bean: class [com.fline.aic.redis.factory.JedisClientFactory]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/G:/flinemaven/com/fline/aic/aic-manager-redis/3.2.1-SNAPSHOT/aic-manager-redis-3.2.1-20190730.021118-11.jar!/com/fline/aic/redis/factory/JedisClientFactory.class]] with [Generic bean: class [com.fline.aic.redis.factory.JedisClientFactory]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-aic-redis.xml]]
+[form-manager] 2020-02-15 11:38:49.646 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-access-core.xml]
+[form-manager] 2020-02-15 11:38:49.656 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-business-core.xml]
+[form-manager] 2020-02-15 11:38:49.852 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-aop.xml]
+[form-manager] 2020-02-15 11:38:49.869 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-job.xml]
+[form-manager] 2020-02-15 11:38:49.897 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-web-index.xml]
+[form-manager] 2020-02-15 11:38:49.917 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-web-remotingdestination-com-fline-yztb-flex-remoting.xml]
+[form-manager] 2020-02-15 11:38:50.793 < INFO> [main] PropertyPlaceholderConfigurer.loadProperties(172) | Loading properties file from class path resource [applicationContext-tp-datasource-dbcp.extensionpoint.properties]
+[form-manager] 2020-02-15 11:38:50.794 < INFO> [main] PropertyPlaceholderConfigurer.loadProperties(172) | Loading properties file from class path resource [applicationContext-tp-orm-jdbctemplate.extensionpoint.properties]
+[form-manager] 2020-02-15 11:38:50.795 < INFO> [main] PropertyPlaceholderConfigurer.loadProperties(172) | Loading properties file from class path resource [applicationContext.properties]
+[form-manager] 2020-02-15 11:38:50.938 < INFO> [main] ThreadPoolTaskScheduler.initialize(165) | Initializing ExecutorService  'poolTaskScheduler'
+[form-manager] 2020-02-15 11:38:50.940 < INFO> [main] PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(328) | Bean 'poolTaskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[form-manager] 2020-02-15 11:38:50.964 < INFO> [main] PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(328) | Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[form-manager] 2020-02-15 11:38:50.969 < INFO> [main] PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(328) | Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[form-manager] 2020-02-15 11:38:50.969 < INFO> [main] PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(328) | Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#2' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[form-manager] 2020-02-15 11:38:50.970 < INFO> [main] PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(328) | Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#3' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[form-manager] 2020-02-15 11:38:51.175 < INFO> [main] EhCacheManagerFactoryBean.afterPropertiesSet(130) | Initializing EhCache CacheManager
+[form-manager] 2020-02-15 11:38:51.194 < WARN> [main] CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(868) | Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[form-manager] 2020-02-15 11:38:51.194 < WARN> [main] CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(868) | Cache 'com.feixian.tp.CACHE' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'com.feixian.tp.CACHE' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[form-manager] 2020-02-15 11:38:53.478 <DEBUG> [main] NameMatchTransactionAttributeSource.addTransactionalMethod(94) | Adding transactional method [find*] with attribute [PROPAGATION_SUPPORTS,ISOLATION_DEFAULT,timeout_300,readOnly]
+[form-manager] 2020-02-15 11:38:53.478 <DEBUG> [main] NameMatchTransactionAttributeSource.addTransactionalMethod(94) | Adding transactional method [notify*] with attribute [PROPAGATION_SUPPORTS,ISOLATION_DEFAULT,timeout_300,readOnly]
+[form-manager] 2020-02-15 11:38:53.478 <DEBUG> [main] NameMatchTransactionAttributeSource.addTransactionalMethod(94) | Adding transactional method [batch*] with attribute [PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED,timeout_1800,-Throwable]
+[form-manager] 2020-02-15 11:38:53.479 <DEBUG> [main] NameMatchTransactionAttributeSource.addTransactionalMethod(94) | Adding transactional method [audit*] with attribute [PROPAGATION_REQUIRES_NEW,ISOLATION_READ_COMMITTED,timeout_600,-Throwable]
+[form-manager] 2020-02-15 11:38:53.479 <DEBUG> [main] NameMatchTransactionAttributeSource.addTransactionalMethod(94) | Adding transactional method [auto*] with attribute [PROPAGATION_REQUIRES_NEW,ISOLATION_READ_COMMITTED,timeout_1600,-Throwable]
+[form-manager] 2020-02-15 11:38:53.479 <DEBUG> [main] NameMatchTransactionAttributeSource.addTransactionalMethod(94) | Adding transactional method [*] with attribute [PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED,timeout_6000,-Throwable]
+[form-manager] 2020-02-15 11:38:56.288 < WARN> [main] XmlWebApplicationContext.refresh(549) | Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jedisClientFactory': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+[form-manager] 2020-02-15 11:38:56.291 < INFO> [main] EhCacheManagerFactoryBean.destroy(187) | Shutting down EhCache CacheManager
+[form-manager] 2020-02-15 11:38:56.546 < INFO> [main] ThreadPoolTaskScheduler.shutdown(203) | Shutting down ExecutorService 'poolTaskScheduler'
+[form-manager] 2020-02-15 11:38:56.549 <ERROR> [main] ContextLoader.initWebApplicationContext(351) | Context initialization failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jedisClientFactory': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:548)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1272)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:517)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:489)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1231)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 39 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:207)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:126)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:117)
+	at redis.clients.jedis.BinaryClient.auth(BinaryClient.java:564)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2138)
+	at redis.clients.jedis.JedisClusterConnectionHandler.initializeSlotsCache(JedisClusterConnectionHandler.java:36)
+	at redis.clients.jedis.JedisClusterConnectionHandler.<init>(JedisClusterConnectionHandler.java:17)
+	at redis.clients.jedis.JedisSlotBasedConnectionHandler.<init>(JedisSlotBasedConnectionHandler.java:24)
+	at redis.clients.jedis.BinaryJedisCluster.<init>(BinaryJedisCluster.java:54)
+	at redis.clients.jedis.JedisCluster.<init>(JedisCluster.java:93)
+	at com.fline.aic.redis.factory.JedisClusterFactory.afterPropertiesSet(JedisClusterFactory.java:79)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 46 more
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	... 59 more
+[form-manager] 2020-02-15 11:38:56.556 <ERROR> [main] log.warn(87) | Failed startup of context org.mortbay.jetty.webapp.WebAppContext@35e8316e{/form-manager,src/main/webapp}
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jedisClientFactory': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:548)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1272)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:517)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:489)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1231)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 39 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:207)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:126)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:117)
+	at redis.clients.jedis.BinaryClient.auth(BinaryClient.java:564)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2138)
+	at redis.clients.jedis.JedisClusterConnectionHandler.initializeSlotsCache(JedisClusterConnectionHandler.java:36)
+	at redis.clients.jedis.JedisClusterConnectionHandler.<init>(JedisClusterConnectionHandler.java:17)
+	at redis.clients.jedis.JedisSlotBasedConnectionHandler.<init>(JedisSlotBasedConnectionHandler.java:24)
+	at redis.clients.jedis.BinaryJedisCluster.<init>(BinaryJedisCluster.java:54)
+	at redis.clients.jedis.JedisCluster.<init>(JedisCluster.java:93)
+	at com.fline.aic.redis.factory.JedisClusterFactory.afterPropertiesSet(JedisClusterFactory.java:79)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 46 more
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	... 59 more
+[form-manager] 2020-02-15 11:38:56.561 < WARN> [main] log.warn(89) | Nested in org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jedisClientFactory': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out:
+java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:126)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:117)
+	at redis.clients.jedis.BinaryClient.auth(BinaryClient.java:564)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2138)
+	at redis.clients.jedis.JedisClusterConnectionHandler.initializeSlotsCache(JedisClusterConnectionHandler.java:36)
+	at redis.clients.jedis.JedisClusterConnectionHandler.<init>(JedisClusterConnectionHandler.java:17)
+	at redis.clients.jedis.JedisSlotBasedConnectionHandler.<init>(JedisSlotBasedConnectionHandler.java:24)
+	at redis.clients.jedis.BinaryJedisCluster.<init>(BinaryJedisCluster.java:54)
+	at redis.clients.jedis.JedisCluster.<init>(JedisCluster.java:93)
+	at com.fline.aic.redis.factory.JedisClusterFactory.afterPropertiesSet(JedisClusterFactory.java:79)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1231)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:548)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1272)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:517)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:489)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+[form-manager] 2020-02-15 11:38:56.601 < INFO> [main] log.info(67) | Started SelectChannelConnector@0.0.0.0:8000

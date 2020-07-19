@@ -1,0 +1,80 @@
+[form-manager] 2020-02-13 09:06:17.658 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-02-13 09:06:17.687 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-02-13 09:06:17.732 < WARN> [main] log.warn(76) | Web application not found src/main/webapp
+[form-manager] 2020-02-13 09:06:17.733 < WARN> [main] log.warn(89) | Failed startup of context org.mortbay.jetty.webapp.WebAppContext@67b64c45{/form-manager,src/main/webapp}
+java.io.FileNotFoundException: src/main/webapp
+	at org.mortbay.jetty.webapp.WebAppContext.resolveWebApp(WebAppContext.java:987)
+	at org.mortbay.jetty.webapp.WebAppContext.getWebInf(WebAppContext.java:822)
+	at org.mortbay.jetty.webapp.WebInfConfiguration.configureClassLoader(WebInfConfiguration.java:62)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:479)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+[form-manager] 2020-02-13 09:06:18.422 < INFO> [main] log.info(67) | Started SelectChannelConnector@0.0.0.0:8000
+[form-manager] 2020-02-13 09:14:52.090 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-02-13 09:14:52.124 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-02-13 09:14:52.166 < WARN> [main] log.warn(76) | Web application not found src/main/webapp
+[form-manager] 2020-02-13 09:14:52.169 < WARN> [main] log.warn(89) | Failed startup of context org.mortbay.jetty.webapp.WebAppContext@96532d6{/form-manager,src/main/webapp}
+java.io.FileNotFoundException: src/main/webapp
+	at org.mortbay.jetty.webapp.WebAppContext.resolveWebApp(WebAppContext.java:987)
+	at org.mortbay.jetty.webapp.WebAppContext.getWebInf(WebAppContext.java:822)
+	at org.mortbay.jetty.webapp.WebInfConfiguration.configureClassLoader(WebInfConfiguration.java:62)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:479)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+[form-manager] 2020-02-13 09:14:52.869 < INFO> [main] log.info(67) | Started SelectChannelConnector@0.0.0.0:8000
+[form-manager] 2020-02-13 09:27:32.045 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-02-13 09:27:32.578 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-02-13 09:27:32.699 < WARN> [main] log.warn(76) | Web application not found src/main/webapp
+[form-manager] 2020-02-13 09:27:32.707 < WARN> [main] log.warn(89) | Failed startup of context org.mortbay.jetty.webapp.WebAppContext@96532d6{/form-manager,src/main/webapp}
+java.io.FileNotFoundException: src/main/webapp
+	at org.mortbay.jetty.webapp.WebAppContext.resolveWebApp(WebAppContext.java:987)
+	at org.mortbay.jetty.webapp.WebAppContext.getWebInf(WebAppContext.java:822)
+	at org.mortbay.jetty.webapp.WebInfConfiguration.configureClassLoader(WebInfConfiguration.java:62)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:479)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+[form-manager] 2020-02-13 09:27:33.381 < INFO> [main] log.info(67) | Started SelectChannelConnector@0.0.0.0:8000
+[form-manager] 2020-02-13 09:31:19.396 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-02-13 09:31:19.427 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-02-13 09:31:19.471 < WARN> [main] log.warn(76) | Web application not found src/main/webapp
+[form-manager] 2020-02-13 09:31:19.471 < WARN> [main] log.warn(89) | Failed startup of context org.mortbay.jetty.webapp.WebAppContext@6442b0a6{/form-manager,src/main/webapp}
+java.io.FileNotFoundException: src/main/webapp
+	at org.mortbay.jetty.webapp.WebAppContext.resolveWebApp(WebAppContext.java:987)
+	at org.mortbay.jetty.webapp.WebAppContext.getWebInf(WebAppContext.java:822)
+	at org.mortbay.jetty.webapp.WebInfConfiguration.configureClassLoader(WebInfConfiguration.java:62)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:479)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+[form-manager] 2020-02-13 09:31:20.171 < INFO> [main] log.info(67) | Started SelectChannelConnector@0.0.0.0:8000
+[form-manager] 2020-02-13 09:36:55.460 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-02-13 09:36:55.493 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-02-13 09:36:55.539 < WARN> [main] log.warn(76) | Web application not found src/main/webapp
+[form-manager] 2020-02-13 09:36:55.540 < WARN> [main] log.warn(89) | Failed startup of context org.mortbay.jetty.webapp.WebAppContext@6442b0a6{/form-manager,src/main/webapp}
+java.io.FileNotFoundException: src/main/webapp
+	at org.mortbay.jetty.webapp.WebAppContext.resolveWebApp(WebAppContext.java:987)
+	at org.mortbay.jetty.webapp.WebAppContext.getWebInf(WebAppContext.java:822)
+	at org.mortbay.jetty.webapp.WebInfConfiguration.configureClassLoader(WebInfConfiguration.java:62)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:479)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at com.fline.form.RuntimeServer.start(RuntimeServer.java:40)
+	at com.fline.form.FormManagerStarter.main(FormManagerStarter.java:9)
+[form-manager] 2020-02-13 09:36:56.281 < INFO> [main] log.info(67) | Started SelectChannelConnector@0.0.0.0:8000

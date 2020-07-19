@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Situation">
+	<typeAlias alias="situation" type="com.fline.form.access.model.Situation" />
+	<resultMap id="situationResult" class="situation">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="name" column="name" javaType="String" />
+		<result property="code" column="code" javaType="String" />
+		<result property="itemId" column="itemId" javaType="Integer" />
+		<result property="confirm" column="confirm" javaType="Integer"/>
+		<result property="type" column="type" javaType="Integer"/>
+		<result property="describe" column="describe" javaType="String" jdbcType="VARCHAR" nullValue=""/>
+	</resultMap>
+	
+	<insert id="create" parameterClass="situation">
+		INSERT INTO c_situation (
+			name
+			,code
+			,itemId
+			,confirm
+			,type
+			,`describe`
+		) VALUES (
+			#name#
+			,#code#
+			,#itemId#
+			,#confirm#
+			,#type#
+			,#describe#
+			
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="situation">
+		UPDATE c_situation SET
+			name=#name#
+			, code=#code#
+			, itemId=#itemId#
+			, confirm=#confirm#
+			, type=#type#
+			<dynamic>
+				<isNotNull property="describe" prepend=",">`describe` =#describe#</isNotNull>
+			</dynamic>
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="situation">
+		<![CDATA[
+			DELETE FROM c_situation WHERE id=#id#
+		]]>
+	</delete>
+	
+	<delete id="removeByMap" parameterClass="java.util.HashMap">
+			DELETE FROM c_situation 
+			<dynamic prepend="WHERE">
+	            <isNotNull property="situationIds" prepend="AND">
+	                id in  
+	                <iterate open="(" close=")" conjunction="," property="situationIds">
+	                    #situationIds[]#
+	                </iterate>
+	            </isNotNull>
+       		</dynamic>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="situationResult">
+		<![CDATA[
+			SELECT
+			A.id,
+			A.name,
+			A.describe,
+			A.code,
+			A.itemId,
+			A.confirm,
+			A.type
+			 FROM c_situation A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="situationResult">
+		SELECT
+		A.id,
+		A.name,
+		A.describe,
+		A.code,
+		A.itemId,
+		A.confirm,
+		A.type
+		 FROM c_situation A
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="code"> code = #code#</isNotNull>
+			<isNotNull prepend="AND" property="name"> name = #name#</isNotNull>
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_situation A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="situationResult">
+		<![CDATA[ SELECT
+			 id,
+			name,
+			describe,
+			code,
+			itemId,
+			confirm,
+			type
+ 		 ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+	
+	<select id="findSituationByItemId" parameterClass="java.util.Map" resultMap="situationResult"> 
+	    <![CDATA[
+	    SELECT
+	    A.id,
+		A.name,
+		A.describe,
+		A.code,
+		A.itemId,
+		A.confirm,
+		A.type
+	     FROM  c_situation  A]]>
+	    <dynamic prepend="WHERE">
+	       <isNotNull prepend="AND" property="itemId">
+	  	 	  itemId = #itemId# 
+	  	   </isNotNull>
+	  	   <isNotEmpty prepend="AND" property="name">
+	  	   	  name = #name#
+	  	   </isNotEmpty>
+	  	   <isNotEmpty prepend="AND" property="exceptName">
+	  	   	 name != #exceptName#
+	  	   </isNotEmpty>
+	    </dynamic>
+	  	<![CDATA[
+	    	ORDER BY `name` <> '缺省情形'
+	     ]]>
+	</select>
+	
+	<!-- 根据事项id删除情形 -->
+	<delete id="removeByItemId" parameterClass="java.util.Map">
+		 DELETE FROM c_situation 
+		 <dynamic prepend="WHERE">
+	       <isNotNull prepend="AND" property="itemId">
+	      	 itemId = #itemId# 
+	       </isNotNull>
+	       <isNotEmpty prepend="AND" property="exceptName">
+	       	 name != #exceptName#
+	       </isNotEmpty>
+	     </dynamic>
+	</delete>
+	
+	<delete id="deleteSituationByInnerCode" parameterClass="java.util.Map">
+		DELETE FROM c_situation WHERE itemId 
+			IN ( SELECT id FROM c_item WHERE innerCode in
+			<iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate>   
+			)
+	</delete>
+    <select id="findSituationIdByItemIds" parameterClass="java.util.Map" resultClass="java.lang.Long">
+        SELECT id from c_situation 
+        <dynamic prepend="WHERE">
+            <isNotNull property="itemIds" prepend="AND">
+                itemId  in  
+                <iterate open="(" close=")" conjunction="," property="itemIds">
+                    #itemIds[]#
+                </iterate>
+            </isNotNull>
+        </dynamic>
+    </select>
+    
+    <select id="findSituationIdByInnerCode" parameterClass="java.util.Map" resultClass="java.lang.Long">
+    	SELECT cs.id from c_situation cs LEFT JOIN c_item ci ON cs.itemId = ci.id 
+    	<dynamic prepend="WHERE">
+    		<isNotNull property="innerCodes" prepend="AND">
+               ci.innerCode in  
+               <iterate open="(" close=")" conjunction="," property="innerCodes">
+                   #innerCodes[]#
+               </iterate>
+           </isNotNull>
+        </dynamic>
+    </select>
+    
+    <update id="updateSituationCode">
+    	UPDATE c_situation cs JOIN c_item ci ON cs.itemId = ci.id SET cs. CODE = ci.innerCode WHERE cs. NAME = '缺省情形'
+    </update>
+ </sqlMap>

@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.base_pt-inherit { padding-top:inherit; }
+.base_pb-inherit { padding-bottom:inherit; }
+.base_pl-inherit { padding-left:inherit; }
+.base_pr-inherit { padding-right:inherit; }
+.base_ptb-inherit { padding-top:inherit; padding-bottom:inherit; }
+.base_plr-inherit { padding-left:inherit; padding-right:inherit; }
+.base_p-inherit { padding:inherit; }
+
+.base_pt-imp-inherit { padding-top:inherit !important; }
+.base_pb-imp-inherit { padding-bottom:inherit !important; }
+.base_pl-imp-inherit { padding-left:inherit !important; }
+.base_pr-imp-inherit { padding-right:inherit !important; }
+.base_ptb-imp-inherit { padding-top:inherit !important; padding-bottom:inherit !important; }
+.base_plr-imp-inherit { padding-left:inherit !important; padding-right:inherit !important; }
+.base_p-imp-inherit { padding:inherit !important; }

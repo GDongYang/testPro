@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.base_minw-none { min-width:none; }
+.base_minw-inherit { min-width:inherit; }
+
+.base_minw-imp-none { min-width:none !important; }
+.base_minw-imp-inherit { min-width:inherit !important; }

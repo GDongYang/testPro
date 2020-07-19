@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DataSource">
+   <typeAlias alias="dataSource" type="com.fline.form.access.model.DataSource" />
+   <resultMap id="dataSourceResult" class="dataSource">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <!-- DataSource -->
+      <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR" />
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="parentCode" column="PARENT_CODE" javaType="string" jdbcType="VARCHAR" />
+	  <result property="type" column="TYPE" javaType="int" jdbcType="NUMERIC" nullValue="0" />
+   </resultMap>
+   
+   <select id="findAll" resultMap="dataSourceResult">
+      <![CDATA[ SELECT
+                 ID,
+                  NAME,
+                  CODE,
+                  TYPE,
+                  PARENT_CODE
+                FROM c_data_source
+      ]]>
+   </select>
+   
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+          <isNotNull property="type">
+            <isGreaterThan prepend="AND" property="type" compareValue="0"> TYPE=#type# </isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="code"> CODE = #code# </isNotNull>
+         <isNotNull prepend="AND" property="parentCode"> PARENT_CODE = #parentCode# </isNotNull>
+      </dynamic>
+   </sql>
+   
+   <sql id="sql_from">
+      FROM c_data_source 
+      <include refid="sql_where" />
+   </sql>
+   
+   <select id="find" resultMap="dataSourceResult">
+	  <![CDATA[ SELECT
+               ID,
+               NAME,
+               CODE,
+               TYPE,
+               PARENT_CODE
+        ]]>
+	  <include refid="sql_from" />
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+   </select>
+   
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+</sqlMap>

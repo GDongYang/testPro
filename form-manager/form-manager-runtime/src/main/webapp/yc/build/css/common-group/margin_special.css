@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.base_mt-auto { margin-top:auto; }
+.base_mb-auto { margin-bottom:auto; }
+.base_ml-auto { margin-left:auto; }
+.base_mr-auto { margin-right:auto; }
+.base_mtb-auto { margin-top:auto; margin-bottom:auto; }
+.base_mlr-auto { margin-left:auto; margin-right:auto; }
+.base_m-auto { margin:auto; }
+
+.base_mt-imp-auto { margin-top:auto !important; }
+.base_mb-imp-auto { margin-bottom:auto !important; }
+.base_ml-imp-auto { margin-left:auto !important; }
+.base_mr-imp-auto { margin-right:auto !important; }
+.base_mtb-imp-auto { margin-top:auto !important; margin-bottom:auto !important; }
+.base_mlr-imp-auto { margin-left:auto !important; margin-right:auto !important; }
+.base_m-imp-auto { margin:auto !important; }

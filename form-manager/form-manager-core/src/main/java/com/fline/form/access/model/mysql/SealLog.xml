@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SealLog">
+   <typeAlias alias="sealLog" type="com.fline.form.access.model.SealLog" />
+   <resultMap id="sealLogResult" class="sealLog">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="deptId" column="deptId" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="sealId" column="sealId" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="createDate" column="createDate" javaType="date" />
+	  <result property="itemName" column="itemName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="certName" column="certName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="cerNo" column="cerNo" javaType="string" jdbcType="VARCHAR" />
+	  <result property="busiCode" column="busiCode" javaType="string" jdbcType="VARCHAR" />
+	  <result property="deptName" column="deptName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="sealName" column="sealName" javaType="string" jdbcType="VARCHAR" />
+	  <result property="username" column="username" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+   <insert id="create" parameterClass="sealLog">
+      <![CDATA[
+         INSERT INTO C_SEALLOG (
+            deptId,sealId, createDate, itemName,
+            certName, cerNo,busiCode,username
+         ) VALUES (
+            #deptId#, #sealId#, now(), #itemName#,
+            #certName#, #cerNo#,  #busiCode#,#username#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="sealLog">
+      <![CDATA[
+         UPDATE C_SEALLOG SET
+            itemName=#itemName#
+         WHERE id=#id#
+      ]]>
+   </update>
+   
+   <delete id="remove" parameterClass="sealLog">
+      <![CDATA[
+         DELETE FROM C_SEALLOG WHERE id=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="sealLogResult">
+      <![CDATA[
+         SELECT
+          id,
+            deptId,
+            sealId,
+            itemName,
+            certName,
+            busiCode,
+            createDate,
+            cerNo,
+            username
+          FROM C_SEALLOG A WHERE id=#value#
+      ]]>
+   </select>
+
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="sealLogResult">
+      <![CDATA[
+         SELECT
+          id,
+            deptId,
+            sealId,
+            itemName,
+            certName,
+            busiCode,
+            createDate,
+            cerNo,
+            username
+          FROM C_SEALLOG WHERE id IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   <select id="findAll" resultMap="sealLogResult">
+      <![CDATA[ SELECT
+              id,
+            deptId,
+            sealId,
+            itemName,
+            certName,
+            busiCode,
+            createDate,
+            cerNo,
+            username
+              FROM C_SEALLOG ]]>
+   </select>
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> id=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="createDate"> date_format(createDate,'%Y-%m-%d') = #createDate#</isNotNull>
+     	 <isNotNull prepend="AND" property="deptIds">
+        	s.deptId IN
+         	<iterate property="deptIds" open="(" conjunction="," close=")">
+         		#deptIds[]#
+         	</iterate>
+         </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_SEALLOG s
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="sealLogResult">
+	  <![CDATA[ SELECT
+             s.id,
+            s.deptId,
+            s.sealId,
+            s.itemName,
+            s.certName,
+            s.busiCode,
+            s.createDate,
+            s.cerNo,
+            s.username,
+                  (select name from c_department d where d.id = s.deptId ) as deptName,
+	 			 (select name from c_seal sl where sl.id = s.sealId ) as sealName
+	   ]]>
+	  <include refid="sql_from" />
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+</sqlMap>

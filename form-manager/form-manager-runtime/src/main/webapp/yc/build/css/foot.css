@@ -1,0 +1,38 @@
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: #e7e7e7;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 18px;
+    color: #1e82f4;
+    font-weight: 700;
+    text-align: center;
+}
+
+.footer h2 span {
+    font-size: 14px;
+    padding-left: 25px;
+}
+
+.footer p {
+    color: #666;
+    font-size: 14px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.footer p:nth-child(2) {
+    margin-top: 20px;
+}
+
+.footer>span {
+    display: block;
+    margin-top: 20px;
+    color: #999;
+    font-size: 14px;
+    padding-bottom: 80px;
+}

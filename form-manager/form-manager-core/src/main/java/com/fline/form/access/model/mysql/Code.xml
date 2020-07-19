@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Code">
+<typeAlias alias="code" type="com.fline.form.access.model.Code" />
+   <resultMap id="codeResult" class="code">
+      <result property="fieldName" column="fieldName" javaType="string" jdbcType="VARCHAR" />
+      <result property="fieldCN" column="fieldCn" javaType="string" jdbcType="VARCHAR" />
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="contents" column="contents" javaType="string" jdbcType="VARCHAR"  />
+   </resultMap>
+
+	<select id="findContents" parameterClass="Map" resultMap = "codeResult">
+		<![CDATA[
+         	SELECT
+         	 id,
+            fieldCn,
+            fieldName,
+            code,
+            contents
+         	 FROM c_code WHERE fieldName = #fieldName# and code=#code#
+      	]]>
+	</select>
+
+  
+</sqlMap>

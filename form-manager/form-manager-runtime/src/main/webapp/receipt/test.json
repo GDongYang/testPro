@@ -1,0 +1,43 @@
+{
+	"result": [{
+		"code": "其他-03026-004",
+		"deptName": "杭州市人社局",
+		"itemName": "灵活就业登记",
+		"innerCode": "ed30b5bd-f992-41b0-9323-fed8b51cbbfb"
+	},{
+		"code": "其他-05589-000",
+		"deptName": "杭州市卫计局",
+		"itemName": "生育登记",
+		"innerCode": "3d257dc4-ac8c-41b4-be9f-e185d2e0a3e3"
+	},{
+		"code": "许可-00396-000",
+		"deptName": "杭州市卫计局",
+		"itemName": "再生育审批",
+		"innerCode": "08dbb54b-7c81-48fd-b9cf-73c300ccb107"
+	},{
+		"code": "确认-00761-000",
+		"deptName": "杭州市民政局",
+		"itemName": "老年人优待证办理",
+		"innerCode": "d3634ca7-5b31-460f-9df1-1810d1307e08"
+	},{
+		"code": "给付-00107-000",
+		"deptName": "杭州市民政局",
+		"itemName": "养老服务补贴给付",
+		"innerCode": "2647acf7-7f24-43f8-bd47-cc033ce37e2a"
+	},{
+		"code": "给付-00131-000",
+		"deptName": "杭州市民政局",
+		"itemName": "最低生活保障边缘家庭认定和专项社会救助",
+		"innerCode": "d3da1ffb-9589-424a-a9a8-d509e9ca47ad"
+	},{
+		"code": "给付-00043-000",
+		"deptName": "杭州市民政局",
+		"itemName": "最低生活保障家庭认定及保障金给付",
+		"innerCode": "8fac72c4-1e9d-4b65-afb9-889ede43470f"
+	},{
+		"code": "给付-00006-000",
+		"deptName": "杭州市民政局",
+		"itemName": "特困人员救助供养认定及保障金给付",
+		"innerCode": "3966df1c-58a6-4c20-b91d-a3956377cb9d"
+	}]
+}

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Question">
+   <typeAlias alias="question" type="com.fline.form.access.model.Question" />
+   <resultMap id="questionResult" class="Question">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="cerno" column="cerno" javaType="string" jdbcType="VARCHAR" />
+      <result property="departmentId" column="departmentId" javaType="long" jdbcType="number" />
+      <result property="certTempId" column="certTempId" javaType="long" jdbcType="NUMERIC" />
+      <result property="bewrite" column="bewrite" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+
+   <insert id="create" parameterClass="question">
+      <![CDATA[
+         INSERT INTO c_question (
+            name, cerno, departmentId,certTempId,bewrite
+         ) VALUES (
+            #name#, #cerno#, #departmentId#, #certTempId#,#bewrite#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <update id="update" parameterClass="question">
+      <![CDATA[
+         UPDATE c_question SET
+            name=#name#,
+            cerno=#cerno#,
+            departmentId=#departmentId#,
+            certTempId=#certTempId#,
+            bewrite=#bewrite#
+         WHERE
+         	id=#id# 
+      ]]>
+   </update>
+   
+   
+   
+   <delete id="remove" parameterClass="question">
+      <![CDATA[
+         DELETE FROM c_question WHERE id=#id#
+      ]]>
+   </delete>
+
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+         
+         <isNotNull prepend="AND" property="nameLike"> upper(NAME) like upper('%$nameLike$%') </isNotNull>
+         <isNotEmpty prepend="AND" property="name"> name=#name# </isNotEmpty>
+         
+
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM c_question
+      <include refid="sql_where" />
+   </sql>
+
+   <select id="find" resultMap="questionResult">
+		<![CDATA[ SELECT
+                id,
+               cerno,
+               name,
+               departmentId,
+               certTempId,
+               bewrite
+         ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+
+</sqlMap>

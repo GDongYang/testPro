@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TempAttachment">
+
+	<typeAlias alias="tempAttachment" type="com.fline.form.access.model.TempAttachment" />
+
+	<resultMap id="tempAttachmentResult" class="tempAttachment">
+		<result property="id" column="id" javaType="long" jdbcType="NUMBER" />
+		<result property="keyWord" column="KEYWORD" javaType="string" jdbcType="VARCHAR2" />
+		<result property="coordinatex" column="coordinatex" javaType="string" jdbcType="VARCHAR2" />
+		<result property="coordinatey" column="coordinatey" javaType="string" jdbcType="VARCHAR2" />
+		<result property="code" column="CODE" javaType="string" jdbcType="VARCHAR2" />
+		<result property="type" column="type" javaType="int" jdbcType="NUMBER" nullValue="0"/>
+		<result property="tempId" column="tempId" javaType="long" jdbcType="NUMBER" nullValue="0"/>
+		<result property="width" column="width" javaType="Double"  />
+	    <result property="height" column="height" javaType="Double"/>
+	</resultMap>
+
+    <resultMap id="tempImageResult" class="tempAttachment" >
+		<result property="id" column="id" javaType="long" jdbcType="NUMBER" />
+		<result property="tempId" column="tempId" javaType="long" jdbcType="NUMBER" nullValue="0"/>
+        <result property="content" column="content" javaType="byte" jdbcType="blob"/>
+		<result property="type" column="type" javaType="int" jdbcType="NUMBER" nullValue="0"/>
+    </resultMap>
+	<insert id="create" parameterClass="tempAttachment">
+		<![CDATA[
+			INSERT INTO r_cert_attachment(
+				coordinatex,coordinatey,CODE,
+				type,KEYWORD,width,tempId,
+				height
+			) VALUES (
+				#coordinatex#,#coordinatey#,#code#,
+				#type#,#keyWord#,#width#,#tempId#,
+				#height#
+			)
+		]]>
+		<selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as ID
+	  	</selectKey>
+	</insert>
+	<update id="update" parameterClass="tempAttachment">
+		<![CDATA[
+		UPDATE r_cert_attachment SET
+			coordinatex=#coordinatex#,
+			coordinatey=#coordinatey#,
+			CODE=#code#,
+			KEYWORD=#keyWord#,
+			type=#type#,
+			height=#height#,
+			width=#width#,
+			tempId=#tempId#,
+		WHERE ID=#id#
+		]]>
+	</update>
+	<delete id="remove" parameterClass="tempAttachment">
+		<![CDATA[
+		DELETE FROM r_cert_attachment WHERE ID=#id#
+		]]>
+	</delete>
+	
+	<delete id="removeByCode" parameterClass="java.util.Map">
+		<![CDATA[
+		DELETE FROM r_cert_attachment WHERE CODE=#code#
+		]]>
+	</delete>
+	<delete id="removeByTempId" parameterClass="java.util.Map">
+		<![CDATA[
+		DELETE FROM r_cert_attachment WHERE tempId=#tempId#
+		]]>
+	</delete>
+	<delete id="removeByTempIdAndType" parameterClass="java.util.Map">
+		<![CDATA[
+		DELETE FROM r_cert_attachment WHERE tempId=#tempId# and type=#type#
+		]]>
+	</delete>
+	
+	<select id="findAll" resultMap="tempAttachmentResult">
+		<![CDATA[ SELECT
+			  id,
+			tempId,
+			code,
+			keyword,
+			coordinatex,
+			coordinatey,
+			height,
+			width,
+			type
+  	FROM r_cert_attachment ]]>
+	</select>
+	
+	<select id="findById" resultMap="tempAttachmentResult" parameterClass="java.lang.Long">
+		<![CDATA[
+		SELECT
+		 id,
+			tempId,
+			code,
+			keyword,
+			coordinatex,
+			coordinatey,
+			height,
+			width,
+			type
+		 FROM r_cert_attachment WHERE id=#id#
+		]]>
+	</select>
+	<select id="findByCode" resultMap="tempAttachmentResult" parameterClass="java.util.Map">
+		<![CDATA[
+		SELECT
+		 id,
+			tempId,
+			code,
+			keyword,
+			coordinatex,
+			coordinatey,
+			height,
+			width,
+			type
+		 FROM r_cert_attachment WHERE code=#code#
+		]]>
+	</select>
+	<select id="findByTempId" resultMap="tempAttachmentResult"
+		parameterClass="java.util.Map">
+		<![CDATA[
+		SELECT
+		 id,
+		tempId,
+		code,
+		keyword,
+		coordinatex,
+		coordinatey,
+		height,
+		width,
+		type
+		 FROM r_cert_attachment WHERE tempId=#tempId#
+		]]>
+	</select>
+ 	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull property="id">
+				<isGreaterThan prepend="AND" property="id"
+					compareValue="0"> ID=#id#</isGreaterThan>
+			</isNotNull>
+			<isNotNull prepend="AND" property="code">
+				CODE=#code#
+			</isNotNull>
+			<isNotNull prepend="AND" property="tempId">
+				tempId=#tempId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="type">
+				type=#type#
+			</isNotNull>
+		</dynamic>
+	</sql>
+	<sql id="sql_from">
+		FROM r_cert_attachment
+		<include refid="sql_where" />
+	</sql>
+  <select id="find" resultMap="tempAttachmentResult">
+		<![CDATA[ SELECT
+			 id,
+			tempId,
+			code,
+			keyword,
+			coordinatex,
+			coordinatey,
+			height,
+			width,
+			type
+ 		 ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map"
+		resultClass="int">
+		<![CDATA[ SELECT COUNT(1) ]]>
+		<include refid="sql_from" />
+   </select>
+   
+    <select id="findAllVo" resultClass="com.fline.form.vo.TempAttachmentVo">
+        <![CDATA[ SELECT
+			  id,
+			tempId,
+			code,
+			keyword,
+			coordinatex,
+			coordinatey,
+			height,
+			width,
+			type
+  		FROM r_CERT_attachment ]]>
+    </select>
+    
+    <select id="findVoByMap" resultClass="com.fline.form.vo.TempAttachmentVo">
+        <![CDATA[ SELECT
+			  id,
+			tempId,
+			code,
+			keyword,
+			coordinatex,
+			coordinatey,
+			height,
+			width,
+			type
+  		FROM r_CERT_attachment where tempId=#tempId#]]>
+    </select>
+    
+    <insert id="createImage" parameterClass="tempAttachment" >
+		<![CDATA[
+			INSERT INTO r_cert_image(
+				content,type,tempId
+			) VALUES (
+				#content#,#type#,#tempId#
+			)
+		]]>
+		<selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as ID
+	  	</selectKey>
+	</insert>
+	<update id="updateImage" parameterClass="tempAttachment">
+		<![CDATA[
+		UPDATE r_cert_image SET
+			content=#content#
+		WHERE ID=#id#
+		]]>
+	</update>
+	<delete id="removeImage" parameterClass="java.util.Map">
+		<![CDATA[
+		DELETE FROM r_cert_image WHERE ID=#id#
+		]]>
+	</delete>
+	<delete id="removeImageByTempId" parameterClass="java.util.Map">
+		<![CDATA[
+		DELETE FROM r_cert_image WHERE tempId=#tempId#
+		]]>
+	</delete>
+</sqlMap>

@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+.base_fs-0ex,.base_fs-0ex * { font-size:0ex; }
+.base_fs-1ex,.base_fs-1ex * { font-size:1ex; }
+.base_fs-2ex,.base_fs-2ex * { font-size:2ex; }
+.base_fs-3ex,.base_fs-3ex * { font-size:3ex; }
+.base_fs-4ex,.base_fs-4ex * { font-size:4ex; }
+.base_fs-5ex,.base_fs-5ex * { font-size:5ex; }
+.base_fs-6ex,.base_fs-6ex * { font-size:6ex; }
+.base_fs-7ex,.base_fs-7ex * { font-size:7ex; }
+.base_fs-8ex,.base_fs-8ex * { font-size:8ex; }
+.base_fs-9ex,.base_fs-9ex * { font-size:9ex; }
+.base_fs-10ex,.base_fs-10ex * { font-size:10ex; }
+.base_fs-11ex,.base_fs-11ex * { font-size:11ex; }
+.base_fs-12ex,.base_fs-12ex * { font-size:12ex; }
+.base_fs-13ex,.base_fs-13ex * { font-size:13ex; }
+.base_fs-14ex,.base_fs-14ex * { font-size:14ex; }
+.base_fs-15ex,.base_fs-15ex * { font-size:15ex; }
+.base_fs-16ex,.base_fs-16ex * { font-size:16ex; }
+.base_fs-17ex,.base_fs-17ex * { font-size:17ex; }
+.base_fs-18ex,.base_fs-18ex * { font-size:18ex; }
+.base_fs-19ex,.base_fs-19ex * { font-size:19ex; }
+.base_fs-20ex,.base_fs-20ex * { font-size:20ex; }
+.base_fs-21ex,.base_fs-21ex * { font-size:21ex; }
+.base_fs-22ex,.base_fs-22ex * { font-size:22ex; }
+.base_fs-23ex,.base_fs-23ex * { font-size:23ex; }
+.base_fs-24ex,.base_fs-24ex * { font-size:24ex; }
+.base_fs-25ex,.base_fs-25ex * { font-size:25ex; }
+.base_fs-26ex,.base_fs-26ex * { font-size:26ex; }
+.base_fs-27ex,.base_fs-27ex * { font-size:27ex; }
+.base_fs-28ex,.base_fs-28ex * { font-size:28ex; }
+.base_fs-29ex,.base_fs-29ex * { font-size:29ex; }
+.base_fs-30ex,.base_fs-30ex * { font-size:30ex; }
+.base_fs-31ex,.base_fs-31ex * { font-size:31ex; }
+.base_fs-32ex,.base_fs-32ex * { font-size:32ex; }
+.base_fs-33ex,.base_fs-33ex * { font-size:33ex; }
+.base_fs-34ex,.base_fs-34ex * { font-size:34ex; }
+.base_fs-35ex,.base_fs-35ex * { font-size:35ex; }
+.base_fs-36ex,.base_fs-36ex * { font-size:36ex; }
+.base_fs-37ex,.base_fs-37ex * { font-size:37ex; }
+.base_fs-38ex,.base_fs-38ex * { font-size:38ex; }
+.base_fs-39ex,.base_fs-39ex * { font-size:39ex; }
+.base_fs-40ex,.base_fs-40ex * { font-size:40ex; }
+.base_fs-41ex,.base_fs-41ex * { font-size:41ex; }
+.base_fs-42ex,.base_fs-42ex * { font-size:42ex; }
+.base_fs-43ex,.base_fs-43ex * { font-size:43ex; }
+.base_fs-44ex,.base_fs-44ex * { font-size:44ex; }
+.base_fs-45ex,.base_fs-45ex * { font-size:45ex; }
+.base_fs-46ex,.base_fs-46ex * { font-size:46ex; }
+.base_fs-47ex,.base_fs-47ex * { font-size:47ex; }
+.base_fs-48ex,.base_fs-48ex * { font-size:48ex; }
+.base_fs-49ex,.base_fs-49ex * { font-size:49ex; }
+.base_fs-50ex,.base_fs-50ex * { font-size:50ex; }
+.base_fs-51ex,.base_fs-51ex * { font-size:51ex; }
+.base_fs-52ex,.base_fs-52ex * { font-size:52ex; }
+.base_fs-53ex,.base_fs-53ex * { font-size:53ex; }
+.base_fs-54ex,.base_fs-54ex * { font-size:54ex; }
+.base_fs-55ex,.base_fs-55ex * { font-size:55ex; }
+.base_fs-56ex,.base_fs-56ex * { font-size:56ex; }
+.base_fs-57ex,.base_fs-57ex * { font-size:57ex; }
+.base_fs-58ex,.base_fs-58ex * { font-size:58ex; }
+.base_fs-59ex,.base_fs-59ex * { font-size:59ex; }
+.base_fs-60ex,.base_fs-60ex * { font-size:60ex; }
+.base_fs-61ex,.base_fs-61ex * { font-size:61ex; }
+.base_fs-62ex,.base_fs-62ex * { font-size:62ex; }
+.base_fs-63ex,.base_fs-63ex * { font-size:63ex; }
+.base_fs-64ex,.base_fs-64ex * { font-size:64ex; }
+.base_fs-65ex,.base_fs-65ex * { font-size:65ex; }
+.base_fs-66ex,.base_fs-66ex * { font-size:66ex; }
+.base_fs-67ex,.base_fs-67ex * { font-size:67ex; }
+.base_fs-68ex,.base_fs-68ex * { font-size:68ex; }
+.base_fs-69ex,.base_fs-69ex * { font-size:69ex; }
+.base_fs-70ex,.base_fs-70ex * { font-size:70ex; }
+.base_fs-71ex,.base_fs-71ex * { font-size:71ex; }
+.base_fs-72ex,.base_fs-72ex * { font-size:72ex; }
+.base_fs-73ex,.base_fs-73ex * { font-size:73ex; }
+.base_fs-74ex,.base_fs-74ex * { font-size:74ex; }
+.base_fs-75ex,.base_fs-75ex * { font-size:75ex; }
+.base_fs-76ex,.base_fs-76ex * { font-size:76ex; }
+.base_fs-77ex,.base_fs-77ex * { font-size:77ex; }
+.base_fs-78ex,.base_fs-78ex * { font-size:78ex; }
+.base_fs-79ex,.base_fs-79ex * { font-size:79ex; }
+.base_fs-80ex,.base_fs-80ex * { font-size:80ex; }
+.base_fs-81ex,.base_fs-81ex * { font-size:81ex; }
+.base_fs-82ex,.base_fs-82ex * { font-size:82ex; }
+.base_fs-83ex,.base_fs-83ex * { font-size:83ex; }
+.base_fs-84ex,.base_fs-84ex * { font-size:84ex; }
+.base_fs-85ex,.base_fs-85ex * { font-size:85ex; }
+.base_fs-86ex,.base_fs-86ex * { font-size:86ex; }
+.base_fs-87ex,.base_fs-87ex * { font-size:87ex; }
+.base_fs-88ex,.base_fs-88ex * { font-size:88ex; }
+.base_fs-89ex,.base_fs-89ex * { font-size:89ex; }
+.base_fs-90ex,.base_fs-90ex * { font-size:90ex; }
+.base_fs-91ex,.base_fs-91ex * { font-size:91ex; }
+.base_fs-92ex,.base_fs-92ex * { font-size:92ex; }
+.base_fs-93ex,.base_fs-93ex * { font-size:93ex; }
+.base_fs-94ex,.base_fs-94ex * { font-size:94ex; }
+.base_fs-95ex,.base_fs-95ex * { font-size:95ex; }
+.base_fs-96ex,.base_fs-96ex * { font-size:96ex; }
+.base_fs-97ex,.base_fs-97ex * { font-size:97ex; }
+.base_fs-98ex,.base_fs-98ex * { font-size:98ex; }
+.base_fs-99ex,.base_fs-99ex * { font-size:99ex; }
+.base_fs-100ex,.base_fs-100ex * { font-size:100ex; }
+
+.base_fs-imp-0ex,.base_fs-imp-0ex * { font-size:0ex !important; }
+.base_fs-imp-1ex,.base_fs-imp-1ex * { font-size:1ex !important; }
+.base_fs-imp-2ex,.base_fs-imp-2ex * { font-size:2ex !important; }
+.base_fs-imp-3ex,.base_fs-imp-3ex * { font-size:3ex !important; }
+.base_fs-imp-4ex,.base_fs-imp-4ex * { font-size:4ex !important; }
+.base_fs-imp-5ex,.base_fs-imp-5ex * { font-size:5ex !important; }
+.base_fs-imp-6ex,.base_fs-imp-6ex * { font-size:6ex !important; }
+.base_fs-imp-7ex,.base_fs-imp-7ex * { font-size:7ex !important; }
+.base_fs-imp-8ex,.base_fs-imp-8ex * { font-size:8ex !important; }
+.base_fs-imp-9ex,.base_fs-imp-9ex * { font-size:9ex !important; }
+.base_fs-imp-10ex,.base_fs-imp-10ex * { font-size:10ex !important; }
+.base_fs-imp-11ex,.base_fs-imp-11ex * { font-size:11ex !important; }
+.base_fs-imp-12ex,.base_fs-imp-12ex * { font-size:12ex !important; }
+.base_fs-imp-13ex,.base_fs-imp-13ex * { font-size:13ex !important; }
+.base_fs-imp-14ex,.base_fs-imp-14ex * { font-size:14ex !important; }
+.base_fs-imp-15ex,.base_fs-imp-15ex * { font-size:15ex !important; }
+.base_fs-imp-16ex,.base_fs-imp-16ex * { font-size:16ex !important; }
+.base_fs-imp-17ex,.base_fs-imp-17ex * { font-size:17ex !important; }
+.base_fs-imp-18ex,.base_fs-imp-18ex * { font-size:18ex !important; }
+.base_fs-imp-19ex,.base_fs-imp-19ex * { font-size:19ex !important; }
+.base_fs-imp-20ex,.base_fs-imp-20ex * { font-size:20ex !important; }
+.base_fs-imp-21ex,.base_fs-imp-21ex * { font-size:21ex !important; }
+.base_fs-imp-22ex,.base_fs-imp-22ex * { font-size:22ex !important; }
+.base_fs-imp-23ex,.base_fs-imp-23ex * { font-size:23ex !important; }
+.base_fs-imp-24ex,.base_fs-imp-24ex * { font-size:24ex !important; }
+.base_fs-imp-25ex,.base_fs-imp-25ex * { font-size:25ex !important; }
+.base_fs-imp-26ex,.base_fs-imp-26ex * { font-size:26ex !important; }
+.base_fs-imp-27ex,.base_fs-imp-27ex * { font-size:27ex !important; }
+.base_fs-imp-28ex,.base_fs-imp-28ex * { font-size:28ex !important; }
+.base_fs-imp-29ex,.base_fs-imp-29ex * { font-size:29ex !important; }
+.base_fs-imp-30ex,.base_fs-imp-30ex * { font-size:30ex !important; }
+.base_fs-imp-31ex,.base_fs-imp-31ex * { font-size:31ex !important; }
+.base_fs-imp-32ex,.base_fs-imp-32ex * { font-size:32ex !important; }
+.base_fs-imp-33ex,.base_fs-imp-33ex * { font-size:33ex !important; }
+.base_fs-imp-34ex,.base_fs-imp-34ex * { font-size:34ex !important; }
+.base_fs-imp-35ex,.base_fs-imp-35ex * { font-size:35ex !important; }
+.base_fs-imp-36ex,.base_fs-imp-36ex * { font-size:36ex !important; }
+.base_fs-imp-37ex,.base_fs-imp-37ex * { font-size:37ex !important; }
+.base_fs-imp-38ex,.base_fs-imp-38ex * { font-size:38ex !important; }
+.base_fs-imp-39ex,.base_fs-imp-39ex * { font-size:39ex !important; }
+.base_fs-imp-40ex,.base_fs-imp-40ex * { font-size:40ex !important; }
+.base_fs-imp-41ex,.base_fs-imp-41ex * { font-size:41ex !important; }
+.base_fs-imp-42ex,.base_fs-imp-42ex * { font-size:42ex !important; }
+.base_fs-imp-43ex,.base_fs-imp-43ex * { font-size:43ex !important; }
+.base_fs-imp-44ex,.base_fs-imp-44ex * { font-size:44ex !important; }
+.base_fs-imp-45ex,.base_fs-imp-45ex * { font-size:45ex !important; }
+.base_fs-imp-46ex,.base_fs-imp-46ex * { font-size:46ex !important; }
+.base_fs-imp-47ex,.base_fs-imp-47ex * { font-size:47ex !important; }
+.base_fs-imp-48ex,.base_fs-imp-48ex * { font-size:48ex !important; }
+.base_fs-imp-49ex,.base_fs-imp-49ex * { font-size:49ex !important; }
+.base_fs-imp-50ex,.base_fs-imp-50ex * { font-size:50ex !important; }
+.base_fs-imp-51ex,.base_fs-imp-51ex * { font-size:51ex !important; }
+.base_fs-imp-52ex,.base_fs-imp-52ex * { font-size:52ex !important; }
+.base_fs-imp-53ex,.base_fs-imp-53ex * { font-size:53ex !important; }
+.base_fs-imp-54ex,.base_fs-imp-54ex * { font-size:54ex !important; }
+.base_fs-imp-55ex,.base_fs-imp-55ex * { font-size:55ex !important; }
+.base_fs-imp-56ex,.base_fs-imp-56ex * { font-size:56ex !important; }
+.base_fs-imp-57ex,.base_fs-imp-57ex * { font-size:57ex !important; }
+.base_fs-imp-58ex,.base_fs-imp-58ex * { font-size:58ex !important; }
+.base_fs-imp-59ex,.base_fs-imp-59ex * { font-size:59ex !important; }
+.base_fs-imp-60ex,.base_fs-imp-60ex * { font-size:60ex !important; }
+.base_fs-imp-61ex,.base_fs-imp-61ex * { font-size:61ex !important; }
+.base_fs-imp-62ex,.base_fs-imp-62ex * { font-size:62ex !important; }
+.base_fs-imp-63ex,.base_fs-imp-63ex * { font-size:63ex !important; }
+.base_fs-imp-64ex,.base_fs-imp-64ex * { font-size:64ex !important; }
+.base_fs-imp-65ex,.base_fs-imp-65ex * { font-size:65ex !important; }
+.base_fs-imp-66ex,.base_fs-imp-66ex * { font-size:66ex !important; }
+.base_fs-imp-67ex,.base_fs-imp-67ex * { font-size:67ex !important; }
+.base_fs-imp-68ex,.base_fs-imp-68ex * { font-size:68ex !important; }
+.base_fs-imp-69ex,.base_fs-imp-69ex * { font-size:69ex !important; }
+.base_fs-imp-70ex,.base_fs-imp-70ex * { font-size:70ex !important; }
+.base_fs-imp-71ex,.base_fs-imp-71ex * { font-size:71ex !important; }
+.base_fs-imp-72ex,.base_fs-imp-72ex * { font-size:72ex !important; }
+.base_fs-imp-73ex,.base_fs-imp-73ex * { font-size:73ex !important; }
+.base_fs-imp-74ex,.base_fs-imp-74ex * { font-size:74ex !important; }
+.base_fs-imp-75ex,.base_fs-imp-75ex * { font-size:75ex !important; }
+.base_fs-imp-76ex,.base_fs-imp-76ex * { font-size:76ex !important; }
+.base_fs-imp-77ex,.base_fs-imp-77ex * { font-size:77ex !important; }
+.base_fs-imp-78ex,.base_fs-imp-78ex * { font-size:78ex !important; }
+.base_fs-imp-79ex,.base_fs-imp-79ex * { font-size:79ex !important; }
+.base_fs-imp-80ex,.base_fs-imp-80ex * { font-size:80ex !important; }
+.base_fs-imp-81ex,.base_fs-imp-81ex * { font-size:81ex !important; }
+.base_fs-imp-82ex,.base_fs-imp-82ex * { font-size:82ex !important; }
+.base_fs-imp-83ex,.base_fs-imp-83ex * { font-size:83ex !important; }
+.base_fs-imp-84ex,.base_fs-imp-84ex * { font-size:84ex !important; }
+.base_fs-imp-85ex,.base_fs-imp-85ex * { font-size:85ex !important; }
+.base_fs-imp-86ex,.base_fs-imp-86ex * { font-size:86ex !important; }
+.base_fs-imp-87ex,.base_fs-imp-87ex * { font-size:87ex !important; }
+.base_fs-imp-88ex,.base_fs-imp-88ex * { font-size:88ex !important; }
+.base_fs-imp-89ex,.base_fs-imp-89ex * { font-size:89ex !important; }
+.base_fs-imp-90ex,.base_fs-imp-90ex * { font-size:90ex !important; }
+.base_fs-imp-91ex,.base_fs-imp-91ex * { font-size:91ex !important; }
+.base_fs-imp-92ex,.base_fs-imp-92ex * { font-size:92ex !important; }
+.base_fs-imp-93ex,.base_fs-imp-93ex * { font-size:93ex !important; }
+.base_fs-imp-94ex,.base_fs-imp-94ex * { font-size:94ex !important; }
+.base_fs-imp-95ex,.base_fs-imp-95ex * { font-size:95ex !important; }
+.base_fs-imp-96ex,.base_fs-imp-96ex * { font-size:96ex !important; }
+.base_fs-imp-97ex,.base_fs-imp-97ex * { font-size:97ex !important; }
+.base_fs-imp-98ex,.base_fs-imp-98ex * { font-size:98ex !important; }
+.base_fs-imp-99ex,.base_fs-imp-99ex * { font-size:99ex !important; }
+.base_fs-imp-100ex,.base_fs-imp-100ex * { font-size:100ex !important; }

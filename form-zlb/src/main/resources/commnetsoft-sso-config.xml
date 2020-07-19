@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+     <servicecode desc="业务代码">tzszsb</servicecode>
+     <servicepwd desc="业务密码">tzszsbpwd</servicepwd>
+     <url desc="SSO地址">https://puser.zjzwfw.gov.cn/sso/</url>
+     
+     <!-- 如果同版本同时有政府和个人则启用
+	     <servicecodegov desc="业务代码">sso</servicecodegov>
+	     <servicepwdgov desc="业务密码">sso</servicepwdgov>
+	     <urlgov desc="SSO地址">http://192.168.1.77:8080/sso4/</urlgov>
+     -->
+</config>

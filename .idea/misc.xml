@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/form-center" />
+    <file type="web" url="file://$PROJECT_DIR$/form-core" />
+    <file type="web" url="file://$PROJECT_DIR$/form-gzt" />
+    <file type="web" url="file://$PROJECT_DIR$/form-manager" />
+    <file type="web" url="file://$PROJECT_DIR$/form-manager-runtime" />
+    <file type="web" url="file://$PROJECT_DIR$/form-server" />
+    <file type="web" url="file://$PROJECT_DIR$/form-zlb" />
+    <file type="web" url="file://$PROJECT_DIR$/../tz_form/form-center" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/form-center/pom.xml" />
+        <option value="$PROJECT_DIR$/form-common/pom.xml" />
+        <option value="$PROJECT_DIR$/form-core/pom.xml" />
+        <option value="$PROJECT_DIR$/form-zlb/pom.xml" />
+        <option value="$PROJECT_DIR$/form-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/form-manager-core/pom.xml" />
+        <option value="$PROJECT_DIR$/form-manager-runtime/pom.xml" />
+        <option value="$PROJECT_DIR$/form-manager/form-manager-core/pom.xml" />
+        <option value="$PROJECT_DIR$/form-manager/form-manager-runtime/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://121.40.19.144/svn/form-center/trunk/code/form-base" />
+                  <option value="http://121.40.19.144/svn/zhengzhaoku/branches" />
+                  <option value="http://121.40.19.144/svn/zhengzhaoku/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://121.40.19.144/svn/form-center/trunk/code/form-base" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="form-manager-runtime:war">
+    <output-path>$PROJECT_DIR$/form-manager/form-manager-runtime/target</output-path>
+    <root id="archive" name="yztb.war">
+      <element id="artifact" artifact-name="form-manager-runtime:war exploded" />
+    </root>
+  </artifact>
+</component>

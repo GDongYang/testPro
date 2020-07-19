@@ -1,0 +1,99 @@
+.f_s20{font-size:20px;}
+.f_s12{font-size:12px;}
+.f_mr10{margin-right:10px;}
+.f_wp60{width:60%;}
+.f_lh40{line-height:40px;}
+.f_mt5{margin-top:5px;}
+.f_pt45b20{padding-top:45px;padding-bottom:20px;}
+.f_ibwp28{width:28%;display:inline-block;text-align:center;}
+.f_pl10{padding-left:10px;}
+.f_wp40{width:40%;}
+.f_dib{display:inline-block;vertical-align:top;}
+.f_mr20{margin-right:20px;}
+.f_mr15{margin-right:15px;}
+.f_wp35{width:35%;}
+.f_h305{height:305px;}
+.f_wp48{width:48%;margin-bottom:15px;}
+.f_mlp4{margin-left:4%;}
+.f_mt20{margin-top:20px;}
+.f_h280{height:280px;}
+.f_mt10{margin-top:10px;}
+.f_wp100{width:100%;margin-bottom:15px;}
+.f_h380{height:380px;}
+.f_ov_h280{height:280px;overflow:auto;}
+.f_h580{height:580px;}
+.f_m0{margin:0px!important;}
+select option{color:#000;}
+input{background:transparent;border:1px solid #0D4DFF;color:#fff;}
+@font-face{
+    font-family: 'numFont';
+    src:url(./digfaw.ttf)
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-size:14px;
+}
+.daterangepicker .calendar th,.daterangepicker .calendar td{color:#999;}
+body{margin:0px;padding:0px;background:#151F4C;color:#fff;font-size:14px;}
+.header{padding:10px 0px;height:9rem;margin-bottom:20px;background:url('../images/taitou.png') no-repeat center;text-align:center;background-size:100% 100%;}
+.header>div:first-child{margin-bottom:10px;}
+.systemTitle{position:relative;line-height: 40px;text-align:center;font-size:20px;padding-top:10px}
+.systemTitleRight{font-size:14px;width:auto;position:absolute;right:20px;top:12px;}
+.content{padding:0px 3% 20px;}
+.itemBox{display:inline-block;}
+.itemTitle{margin-bottom:20px;font-size:18px}
+.borderSty{
+	background: background:-webkit-radial-gradient(rgba(15,51,113,.5),rgba(0,0,0,.1));  /* Safari 5.1 - 6.0 */
+	  background: -o-radial-gradient(rgba(15,51,113,.5),rgba(0,0,0,.1)); /* Opera 11.6 - 12.0 */
+	  background: -moz-radial-gradient(rgba(15,51,113,.5),rgba(0,0,0,.1)); /* Firefox 3.6 - 15 */
+	  background: radial-gradient(rgba(15,51,113,.5),rgba(0,0,0,.1)); /* 标准的语法 */
+	border:2px solid #1a37ba;padding:30px;position: relative;border-radius: 5px;box-shadow:0px 0px 10px #3b58da}
+.borderSty i{background:url('../images/border.svg') no-repeat;
+	height: 20px;
+    width: 20px;
+    position: absolute;}
+.borderSty i:nth-child(1){
+    top: -5px;
+    left: -6px;
+    transform: rotate(-180deg);
+}
+.borderSty i:nth-child(2){
+	background:url('../images/juxing.png') no-repeat;
+    top: 0px;
+    left: 50%;
+    width: 100%;
+    margin-left: -40px;
+}
+.borderSty i:nth-child(3){
+    top: -5px;
+    right: -6px;
+    transform: rotate(-90deg);
+}
+.borderSty i:nth-child(4){
+    bottom: -5px;
+    left: -6px;
+    transform: rotate(90deg);
+}
+.borderSty i:nth-child(5){
+    bottom: -5px;
+    right: -6px;
+}
+.tableBox{height:280px;overflow:auto;}
+.baseTable{width:100%;}
+.baseTable th,.baseTable td{text-align:center;}
+.baseTable th{background:#1D3478;line-height:2em;font-weight:normal;}
+.baseTable td{line-height:3em;border-top:1px solid #1D3478;border-bottom :1px solid #1D3478;}
+.baseTable tr:nth-child(even){background:#0C1852;}
+#paginationUl{color:#666;}
+.daterange{float:right;width:200px;}
+.chooseBox{border:1px solid #0D4DFF;border-radius:5px;margin-bottom:10px;width:127px;float:right;}
+.chooseBox div{cursor:pointer;color:#fff;padding:0px 10px;line-height:24px;border-radius:5px;display:inline-block;vertical-align: top;}
+.chooseBox div:hover,.chooseBox div.active{background:#0D4DFF;color:#fff;}
+.f_select{margin-bottom:15px;width:80px;background:transparent;border:1px solid #fff;border-radius:5px;height:28px;color:#fff;}
+.dataListTitle{margin-bottom:10px;}
+.dataListTitle>div{color:#fff;line-height:30px;text-align:center;background:#1D3478;width:23.875%;margin-right:1.5%;border-radius:5px;display:inline-block;vertical-align:top;}
+.dataListBody>div{text-align:center;line-height:30px;}
+.dataListBody>div>span{color:#fff;display:inline-block;line-height:30px;text-align:center;width:22.875%;margin-right:1.5%;}
+.datetime{width:200px;}
+.datetimepicker.datetimepicker-dropdown-bottom-right.dropdown-menu table{color:#666}

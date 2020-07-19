@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Role">
+   <typeAlias alias="role" type="com.fline.form.access.model.Role" />
+   <resultMap id="roleResult" class="role">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+      <result property="version" column="version" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <!-- LifecycleModel -->
+      <result property="createDate" column="created" javaType="date" />
+      <result property="creator" column="creator" javaType="string" jdbcType="VARCHAR" />
+      <result property="updateDate" column="modified" javaType="date" />
+      <result property="updater" column="modificator" javaType="string" jdbcType="VARCHAR" />
+      <!-- Role -->
+      <result property="description" column="description" javaType="string" jdbcType="VARCHAR" />
+      <result property="active" column="active" javaType="boolean" jdbcType="NUMERIC" nullValue="0"/>
+   	  <result property="level" column="level" javaType="int" jdbcType="NUMERIC" nullValue="-1"/>
+   </resultMap>
+   
+   <insert id="create" parameterClass="role">
+      <![CDATA[
+         INSERT INTO C_ROLE (
+            code, name, memo, description, active, 
+            created, creator, modified, modificator,version,level
+         ) VALUES (
+            #code#, #name#, #memo#, #description#, #active#,
+            now(), #creator# , now(), #updater# , #version#,#level#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+
+   <insert id="saveRoleMenu" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_ROLE_MENU (
+             roleId, menuId
+         ) VALUES (
+             #roleId#, #menuId#
+         )
+      ]]>
+   </insert>
+
+   <delete id="removeRoleMenuByRole" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_ROLE_MENU WHERE roleId=#roleId#
+      ]]>
+   </delete>
+   
+   <insert id="saveRoleDepart" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_ROLE_DEPART (
+             roleId, departId
+         ) VALUES (
+            #roleId#, #departId#
+         )
+      ]]>
+   </insert>
+   
+   <insert id="saveRoleDepartAll" parameterClass="java.util.HashMap">
+      <![CDATA[
+         INSERT INTO R_ROLE_DEPART (
+             roleId, departId
+         ) VALUES ]]> 
+         <iterate conjunction ="," property="deptIds">
+       <![CDATA[
+         (
+            #roleId#,#deptIds[]#
+         )
+        ]]>
+      </iterate>
+   </insert>
+
+   <delete id="removeRoleDepartByRole" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_ROLE_DEPART WHERE roleId=#roleId#
+      ]]>
+   </delete>
+   
+   <delete id="removeRoleMenuByMenu" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_ROLE_MENU WHERE menuId=#menuId#
+      ]]>
+   </delete>
+   
+   <delete id="removeUserRoleByRole" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_USER_ROLE WHERE roleId=#roleId#
+      ]]>
+   </delete>
+	
+	<!-- 数据库没有这张表 -->
+    <insert id="savePrivilege" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_ROLE_PRIVILEGE (
+             roleId, privilegeId
+         ) VALUES (
+             #roleId#, #privilegeId#
+         )
+      ]]>
+   </insert>
+	<!-- 数据库没有这张表 -->
+   <delete id="removePrivilege" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_ROLE_PRIVILEGE WHERE roleId=#roleId#
+      ]]>
+   </delete>
+
+   <update id="update" parameterClass="role">
+      <![CDATA[
+         UPDATE C_ROLE SET
+         	version=version+1,
+            name=#name#,
+            memo=#memo#,
+            description = #description#,
+            active = #active#,
+            modified = now(),
+            modificator = #updater#,
+            level = #level#
+         WHERE
+         	id=#id# 
+      ]]>
+   </update>
+   <delete id="remove" parameterClass="role">
+      <![CDATA[
+         DELETE FROM C_ROLE WHERE id=#id#
+      ]]>
+   </delete>
+
+
+    <delete id="delusergroup" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM r_user_role WHERE userId=#id#
+      ]]>
+
+      <isNotNull property="roleIds">
+            AND roleId IN
+         <iterate property="roleIds" open="(" close=")" conjunction=",">
+            #roleIds[]#
+        </iterate>
+     </isNotNull>
+   </delete>
+
+   <select id="findByUserID" parameterClass="java.util.Map" resultMap="roleResult">
+      <![CDATA[
+         SELECT
+          r.id,
+         r.name,
+         r.code,
+         r.memo,
+         r.description,
+         r.active,
+         r.creator,
+         r.created,
+         r.modified,
+         r.modificator,
+         r.version,
+         r.level
+          FROM C_ROLE r, r_user_role ur
+         WHERE r.id=ur.roleId AND ur.userId=#id# AND r.active = 1
+      ]]>
+   </select>
+
+   <select id="findById" parameterClass="java.lang.Long" resultMap="roleResult">
+      <![CDATA[
+         SELECT
+          id,
+         name,
+         code,
+         memo,
+         description,
+         active,
+         creator,
+         created,
+         modified,
+         modificator,
+         version,
+         level
+          FROM C_ROLE WHERE id=#id#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="roleResult">
+      <![CDATA[
+         SELECT
+          id,
+            name,
+            code,
+            memo,
+            description,
+            active,
+            creator,
+            created,
+            modified,
+            modificator,
+            version,
+            level
+          FROM C_ROLE WHERE id IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   
+   <select id="findByUserRole" parameterClass="java.util.Map" resultMap="roleResult">
+      SELECT
+        C.id,
+         C.name,
+         C.code,
+         C.memo,
+         C.description,
+         C.active,
+         C.creator,
+         C.created,
+         C.modified,
+         C.modificator,
+         C.version,
+         C.level
+      FROM C_ROLE C INNER JOIN r_user_role R ON C.id=R.roleId
+      WHERE R.userId=#userId# AND C.active = 1
+   </select>
+   
+    <select id="findByUserRoleCode" parameterClass="java.util.Map" resultMap="roleResult">
+      SELECT
+       C.id,
+      C.name,
+      C.code,
+      C.memo,
+      C.description,
+      C.active,
+      C.creator,
+      C.created,
+      C.modified,
+      C.modificator,
+      C.version,
+      C.level
+       FROM C_ROLE C INNER JOIN r_user_role R ON C.id=R.roleId
+      WHERE R.userId=#userId# and c.code=#code# AND C.active = 1
+   </select>
+   
+   <select id="isExists" parameterClass="java.util.Map" resultClass="int">
+		select count(id) FROM C_ROLE 
+		<dynamic prepend="WHERE">
+			<isNotNull property="id">
+				<isGreaterThan prepend="AND" property="id"
+					compareValue="0"> <![CDATA[ id <> #id# ]]></isGreaterThan>
+			</isNotNull>
+			<isNotNull prepend="AND" property="name"> 
+				name = #name#
+			 </isNotNull>
+		</dynamic>
+	</select>
+
+   <select id="findAll" resultMap="roleResult">
+       SELECT
+      id,
+      name,
+      code,
+      memo,
+      description,
+      active,
+      creator,
+      created,
+      modified,
+      modificator,
+      version,
+      level
+      FROM C_ROLE WHERE active = 1
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> id=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="username"> username=#username#</isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(name) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="name"> name=#name# </isNotNull>
+		 <isNotNull prepend="AND" property="level"> A.level=#level# </isNotNull>
+          <isNotNull property="userId">
+            <isGreaterThan prepend="AND" property="userId" compareValue="0">
+            id IN (SELECT roleId FROM r_user_role WHERE userId=#userId#)
+            </isGreaterThan>
+         </isNotNull>
+
+         <isNotNull property="userSessionId">
+            <isGreaterThan prepend="AND" property="userSessionId" compareValue="0">
+               id IN (SELECT userId FROM C_USERSESSION WHERE id=#userSessionId#)
+            </isGreaterThan>
+         </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_ROLE
+      <include refid="sql_where" />
+   </sql>
+
+   <sql id="sql_from2">
+      FROM C_ROLE A
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="roleResult">
+		<![CDATA[ SELECT A.level,A.code,A.id,A.version,A.name,A.memo,A.description,A.active,(SELECT B.name FROM c_user B WHERE B.id=A.modificator) modificator,A.modified,(SELECT B.name FROM c_user B WHERE B.id=A.creator) creator,A.created  ]]>
+		<include refid="sql_from2" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+   <insert id="saveUserRole" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_USER_ROLE (
+             userId, roleId
+         ) VALUES (
+             #userId#, #roleId#
+         )
+      ]]>
+   </insert>
+   <select id="findDeptIdsByRole" parameterClass="java.util.HashMap" resultClass="java.lang.Long">
+   		select departId from r_role_depart where roleId = #roleId#
+   </select>
+   <delete id="removeDeptIds" parameterClass="java.util.HashMap">
+   		delete from r_role_depart where departId in 
+   		<iterate property="deptIds" open="(" close=")" conjunction=","> #deptIds[]#</iterate> 
+   		and roleId = #roleId#
+   </delete>
+</sqlMap>

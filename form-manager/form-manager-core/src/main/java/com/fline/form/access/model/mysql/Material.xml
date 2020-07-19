@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Material">
+	<typeAlias alias="material" type="com.fline.form.access.model.Material" />
+	<resultMap id="materialResult" class="material">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="name" column="name" javaType="String" />
+		<result property="code" column="code" javaType="String" />
+		<result property="situationId" column="situationId" javaType="Integer" />
+		<result property="type" column="type" javaType="int" />
+		<result property="isMust" column="isMust" javaType="Integer" />
+		<result property="needUpload" column="needUpload" javaType="Integer"></result>
+	</resultMap>
+	
+	<insert id="create" parameterClass="material">
+		INSERT INTO c_material (
+			name
+			,code
+			,situationId,type,isMust,needUpload
+		) VALUES (
+			#name#
+			,#code#
+			,#situationId#,#type#,#isMust#,#needUpload#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="material">
+		UPDATE c_material SET
+			name=#name#
+			, code=#code#
+			, situationId=#situationId#
+			, isMust = #isMust#
+			, type = #type#
+			, needUpload = #needUpload#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="material">
+		<![CDATA[
+			DELETE FROM c_material WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="materialResult">
+		<![CDATA[
+			SELECT
+			id,
+			name,
+			code,
+			situationId,
+			type,
+			isMust,
+			tips,
+			needUpload
+			FROM c_material A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="materialResult">
+		SELECT
+		id,
+			name,
+			code,
+			situationId,
+			type,
+			isMust,
+			tips,
+			needUpload
+		FROM c_material
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="nameLike" prepend="AND"> upper(NAME) like upper('%$nameLike$%') or upper(CODE) like upper('%$nameLike$%') </isNotEmpty>
+			<isNotNull property="situationId" prepend="AND"> situationId=#situationId#</isNotNull>
+            <isNotNull prepend="AND" property="situationIds">
+                situationId in
+                <iterate property="situationIds" open="(" conjunction="," close=")">
+                    #situationIds[]#
+                </iterate>
+            </isNotNull>
+            <isNotNull property="deptIds" prepend="AND">
+            	situationId in(select id from c_situation where itemId in (select id from c_item where deptId in
+            	<iterate open="(" close=")" conjunction="," property="deptIds">
+				#deptIds[]#
+				</iterate>))
+            </isNotNull>
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_material A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="materialResult">
+		<![CDATA[ SELECT
+ 			id,
+			name,
+			code,
+			situationId,
+			type,
+			isMust,
+			tips,
+			needUpload
+ 		 ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+	
+	<select id="findTempCodeByMap" parameterClass="java.util.Map" resultClass="java.lang.String">
+		SELECT `code` from c_cert_temp where id in (SELECT tempId from r_material_temp where materialId = #id#)
+	</select>
+	
+	<select id="findMaterialBySId" parameterClass="java.util.HashMap" resultMap="materialResult">
+        <![CDATA[ SELECT
+ 			 id,
+			name,
+			code,
+			situationId,
+			type,
+			isMust,
+			tips,
+			needUpload
+  	FROM c_material WHERE  situationId=#situationId# ]]>
+    </select>
+
+    <select id="findMaterialTempVo" resultClass="com.fline.form.mgmt.service.impl.vo.MaterialTempVo">
+        SELECT m.name, m.code, m.type, m.isMust, m.needUpload,m.tips, s.id as situationId,s.itemId,s.`code` as situationCode,s.`name` as situationName,
+        s.type as situationType,s.describe as situationDescribe,
+        (SELECT GROUP_CONCAT(c.code) from r_material_temp r,c_cert_temp c where r.tempId = c.id and r.materialId = m.id) as tempCode
+        FROM `c_material` m RIGHT JOIN c_situation s
+        on m.situationId = s.id
+    </select>
+
+	<select id="findCertMaterial" resultClass="java.lang.String" parameterClass="java.util.Map">
+		select tempId from r_material_temp  
+		<dynamic prepend="WHERE">
+			<isNotNull property="materialId" prepend="AND"> materialId = #materialId#</isNotNull>
+			<isNotNull property="isMust" prepend="AND"> isMust = #isMust#</isNotNull>
+		</dynamic>
+	</select>
+	
+	<insert id="createMaterialTemp" parameterClass="java.util.Map">
+		insert into r_material_temp (materialId,tempId,isMust) values (#materialId#,#tempId#,#isMust#);
+	</insert>
+	
+	<delete id="deleteMaterialTemp" parameterClass="java.util.Map">
+		delete from r_material_temp where materialId = #materialId#
+	</delete>
+	
+	<delete id="deleteMaterialTempByInnerCode" parameterClass="java.util.Map">
+		DELETE FROM r_material_temp WHERE materialId 
+			IN ( SELECT c.id FROM c_material c WHERE c.situationId 
+				IN ( SELECT q.id FROM c_situation q WHERE q.itemId 
+					IN ( SELECT id FROM c_item WHERE innerCode in 
+					<iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate> 
+					) ) ); 
+	</delete>
+	
+	<delete id="deleteMaterialByInnerCode" parameterClass="java.util.Map">
+		DELETE FROM c_material WHERE situationId 
+			IN ( SELECT q.id FROM c_situation q WHERE q.itemId 
+				IN ( SELECT id FROM c_item WHERE innerCode in 
+				<iterate property="innerCodes" open="(" close=")" conjunction=","> #innerCodes[]#</iterate>  
+				) )
+	</delete>
+	<!-- 根据情形Id删除 -->
+	<delete id="removeBySituationId" parameterClass="java.lang.Long">
+		DELETE FROM c_material where situationId = #situationId#
+	</delete>
+	
+	<delete id="removeByMap" parameterClass="java.util.Map">
+		DELETE FROM c_material 
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="materialIds"> id IN
+	         	 <iterate property="materialIds" open="(" close=")" conjunction=","> #materialIds[]#</iterate>
+	         </isNotNull>
+	         <isNotNull prepend="AND" property="certTempIds">
+	         	 <iterate property="certTempIds" open="(" close=")" conjunction=" or "> tempId = #certTempIds[]#</iterate>
+	         </isNotNull>
+         </dynamic>
+	</delete>
+	
+	<delete id="removeMaterialTempByMap" parameterClass="java.util.Map">
+		DELETE FROM r_material_temp 
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="materialIds"> materialId IN
+	         	 <iterate property="materialIds" open="(" close=")" conjunction=","> #materialIds[]#</iterate>
+	         </isNotNull>
+	         <isNotNull prepend="AND" property="materialId">
+	         	 materialId = #materialId#	
+	         </isNotNull>
+	         <isNotNull prepend="AND" property="certTempIds">
+	         	 <iterate property="certTempIds" open="(" close=")" conjunction=" or "> tempId = #certTempIds[]#</iterate>
+	         </isNotNull>
+         </dynamic>
+	</delete>
+	<select id="findDefaultSituationMaterials" parameterClass="java.util.Map" resultMap="materialResult">
+		SELECT
+		 id,
+			name,
+			code,
+			situationId,
+			type,
+			isMust,
+			tips,
+			needUpload
+		 FROM c_material where situationId = (select id from c_situation where itemId = #itemId# and name = '缺省情形' limit 0,1)
+	</select>
+	
+	
+	<insert id="createRmaterialTemp" parameterClass="java.util.Map">
+		INSERT INTO r_material_temp (materialId, tempId, isMust) SELECT id, #id#, 1 FROM c_material 
+			WHERE id NOT IN ( SELECT materialId FROM r_material_temp ) AND NAME LIKE '%$name$%' AND NAME not like  '%委托人%'
+				AND situationId not in (SELECT id from c_situation where confirm = 2) AND situationId in 
+	               <iterate open="(" close=")" conjunction="," property="situationIds">
+	                   #situationIds[]#
+	               </iterate>
+	</insert>
+	
+	<!-- 删除多余的模板关联 -->
+	<delete id="deleteOtherCard" parameterClass="java.util.Map">
+		DELETE FROM r_material_temp where 
+			materialId in (  SELECT id from c_material where `name` like '%$materialName$%' ) and tempId = #tempId#
+	</delete>
+	
+	<select id="findItemSituationByMaterialIds">
+		
+	</select>
+	
+	<select id="findMaterialList" parameterClass="java.util.Map" resultMap="materialResult">
+		<![CDATA[SELECT
+			id,
+			name,
+			code,
+			situationId,
+			type,
+			isMust,
+			tips,
+			needUpload
+		 ]]>
+		<include refid="sql_from" />
+		GROUP BY name;
+	</select>
+	
+	<select id="findIdsByNames" parameterClass="java.util.HashMap" resultClass="java.lang.Long">
+		<![CDATA[SELECT id from c_material ]]>
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="OR" property="materialNames">
+				<iterate property="materialNames" conjunction=" or "> name = #materialNames[]#</iterate>
+			</isNotNull>
+		</dynamic>
+	</select>
+	
+	<insert id="insertRMaterialsTemps" parameterClass="java.util.Map">
+		  <![CDATA[
+         INSERT INTO r_material_temp ( materialId, tempId, isMust
+         ) VALUES ]]> 
+         <iterate conjunction ="," property="materialIds">
+    	 <![CDATA[
+         (
+            #materialIds[]#,#tempId#,1
+         )
+      	  ]]>
+      </iterate>
+	</insert>
+	<select id="findMaterialIds" parameterClass="java.util.HashMap" resultClass="java.lang.Long">
+		SELECT materialId FROM r_material_temp 
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="materialIds">
+				materialId IN
+	         	 <iterate property="materialIds" open="(" close=")" conjunction=","> #materialIds[]#</iterate>
+			</isNotNull>
+			<isNotNull prepend="AND" property="tempId">
+				tempId = #tempId#
+			</isNotNull>
+		</dynamic>
+	</select>
+	
+	<update id="updateRMaterialsTemps" parameterClass="java.util.Map">
+		UPDATE r_material_temp set tempId = #tempId# 
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="materialIds">
+				materialId IN
+	         	 <iterate property="materialIds" open="(" close=")" conjunction=","> #materialIds[]#</iterate>
+			</isNotNull>
+		</dynamic>
+	</update>
+</sqlMap>

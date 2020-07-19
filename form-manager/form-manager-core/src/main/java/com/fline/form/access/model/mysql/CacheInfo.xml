@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="CacheInfo">
+	<typeAlias alias="cacheInfo" type="com.fline.form.access.model.CacheInfo" />
+	<resultMap id="cacheInfoResult" class="cacheInfo">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="name" column="name" javaType="String" />
+		<result property="code" column="code" javaType="String" />
+		<result property="refreshTime" column="refreshTime" javaType="Date" />
+		<result property="status" column="status" javaType="Integer" />
+	</resultMap>
+	
+	<insert id="create" parameterClass="cacheInfo">
+		INSERT INTO c_cache_info (
+			name
+			,code
+			,refreshTime
+			,status
+		) VALUES (
+			#name#
+			,#code#
+			,#refreshTime#
+			,#status#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="cacheInfo">
+		UPDATE c_cache_info SET
+			name=#name#
+			, code=#code#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="cacheInfo">
+		<![CDATA[
+			DELETE FROM c_cache_info WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="cacheInfoResult">
+		<![CDATA[
+			SELECT
+			id,
+			NAME,
+			CODE,
+			refreshTime,
+			STATUS
+		 FROM c_cache_info A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="cacheInfoResult">
+		SELECT
+		id,
+		NAME,
+		CODE,
+		refreshTime,
+		STATUS
+		FROM c_cache_info
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_cache_info A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="cacheInfoResult">
+		<![CDATA[ SELECT
+					A.id,
+					A.NAME,
+					A.CODE,
+					A.refreshTime,
+					A.STATUS
+ 		  ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+
+    <update id="updateRefreshTime" parameterClass="java.util.Map">
+		UPDATE c_cache_info SET
+		  refreshTime = #time#,
+		  status = #status#
+		WHERE code = #code#
+	</update>
+
+    <update id="updateStatus" parameterClass="java.util.Map">
+		UPDATE c_cache_info SET
+		  status = #status#
+		WHERE code = #code#
+	</update>
+</sqlMap>

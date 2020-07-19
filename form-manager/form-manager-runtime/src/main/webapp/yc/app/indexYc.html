@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../components/bootstrap/3.3.7/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../components/icheck/1.0.2/skins/all.css"/>
+		<link rel="stylesheet" type="text/css" href="../build/css/common.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../build/css/common-all.css"/>
+		<link rel="stylesheet" rel="stylesheet" href="../plugins/mui/css/mui.min.css">
+	    <link rel="stylesheet" rel="stylesheet" href="../plugins/mui/css/mui.picker.css">
+	    <link rel="stylesheet" rel="stylesheet" href="../plugins/mui/css/mui.poppicker.css">
+		<link type="text/css" rel="stylesheet" href="../build/css/app.css?v=1">
+		<link type="text/css" rel="stylesheet" href="../build/css/formOnline.css">
+	</head>
+	<body>
+		<div class='header'>
+			<div class="step">        	
+				<ul id="progressBar">
+					<li class="base_w-19pct pull-left base_ml-2pct" id="step1">
+						<span class="num"><em class="f-r5"></em></span>
+						<span class="line_bg lbg-r"></span>
+						<p class="lbg-txt">用户须知</p>
+					</li>
+					<li class="base_w-19pct pull-left" id="step2">
+						<span class="num"><em class="f-r5"></em></span>
+						<span class="line_bg lbg-l"></span>
+						<span class="line_bg lbg-r"></span>
+						<p class="lbg-txt">情形选择</p>
+					</li>
+					<li class="base_w-19pct pull-left" id="step3">
+						<span class="num"><em class="f-r5"></em></span>
+						<span class="line_bg lbg-l"></span>
+						<span class="line_bg lbg-r"></span>
+						<p class="lbg-txt">基本信息</p>
+					</li>
+					<li class="base_w-16pct pull-left base_display-none" id="step4">
+						<span class="num"><em class="f-r5"></em></span>
+						<span class="line_bg lbg-l"></span>
+						<span class="line_bg lbg-r"></span>
+						<p class="lbg-txt">在线填表</p>
+					</li>
+					<li class="base_w-19pct pull-left" id="step5">
+						<span class="num"><em class="f-r5"></em></span>
+						<span class="line_bg lbg-l"></span>
+						<span class="line_bg lbg-r"></span>
+						<p class="lbg-txt">材料申报</p>
+					</li>
+					<li class="base_w-19pct pull-left base_mr-2pct" id="step6">
+						<span class="num"><em class="f-r5"></em></span>
+						<span class="line_bg lbg-l"></span>
+						<p class="lbg-txt">确认提交</p>
+					</li>
+				</ul>
+            </div>
+		</div>
+		<!-- /.header -->
+		
+		<div class='content base_bgc-imp-white'>
+			<div class="base_w-100pct base_h-100pct base_plr-5px contentPanel">
+				<div class='f_p10'>
+					<p>温馨提示：</p>
+		            <p>1、申请人确认身份证在有效期限内且信息未发生变化。</p>
+		            <p>2、申请人确认其他情形。</p>
+		            <p>3、申请成功后，需制发新牌证的，均通过快递寄递。</p>
+				</div>
+				<div class='bgF1F5F8'>
+					<div class="mui-input-row mui-radio">
+						<input name="radio1" class='itemRadio base_posl-20px' type="radio" value='item1'>
+						<label class='f_pl60'>我已阅读或确认授权等操作</label>
+					</div>
+				</div>
+			</div>
+			<div class="base_w-100pct base_h-100pct contentPanel base_display-none">
+				<div class='contentTitle title'></div>
+				<div class='formTitle'><span></span>无特殊情形</div>
+				<ul class='checkboxChoose' id='situListBox'>
+					<li><b data-code='' class="active"></b>无以下特殊情形</li>
+				</ul>
+				<div id='situationBox'></div>
+			</div>
+			<div class="base_w-100pct base_h-100pct contentPanel base_display-none">
+			 <p>基本信息</p> 
+				<div class="base_w-100pct base_fs-14px">
+					<div class="base_w-100pct base_h-30px base_lh-30px base_bbs-solid base_bbw-1px base_bc-e0e0e0 base_display-table">
+						<div class="base_w-35pct pull-left"><label class="base_mtb-5px base_c-8e8e8e" for="id1">事项名称</label></div>
+						<div class="base_w-65pct pull-left">
+							<input type="text" id="id1" class="base_bw-imp-0px base_p-10px base_h-30px base_mtb-imp-0px" disabled="disabled" title="审批事项名称" placeholder="请输入" value="">
+						</div>
+					</div>
+					<div class="base_w-100pct base_h-30px base_lh-30px base_bbs-solid base_bbw-1px base_bc-e0e0e0 base_display-table">
+						<div class="base_w-35pct pull-left"><label class="base_mtb-5px base_c-8e8e8e" for="id2">办件类型</label></div>
+						<div class="base_w-65pct pull-left">
+							<input type="text" id="id2" class="base_bw-imp-0px base_p-10px base_h-30px base_mtb-imp-0px" disabled="disabled" title="审批事项名称" placeholder="请输入" value="">
+						</div>
+					</div>
+					<div class="base_w-100pct base_h-30px base_lh-30px base_bbs-solid base_bbw-1px base_bc-e0e0e0 base_display-table">
+						<div class="base_w-35pct pull-left"><label class="base_mtb-5px base_c-8e8e8e" for="id3">办理机构</label></div>
+						<div class="base_w-65pct pull-left">
+							<input type="text" id="id3" class="base_bw-imp-0px base_p-10px base_h-30px base_mtb-imp-0px" disabled="disabled" title="审批事项名称" placeholder="请输入" value="">
+						</div>
+					</div>
+					<div class="base_w-100pct base_h-30px base_lh-30px base_bbs-solid base_bbw-1px base_bc-e0e0e0 base_display-table">
+						<div class="base_w-35pct pull-left"><label class="base_mtb-5px base_c-8e8e8e" for="id4">办结时限</label></div>
+						<div class="base_w-65pct pull-left">
+							<input type="text" id="id4" class="base_bw-imp-0px base_p-10px base_h-30px base_mtb-imp-0px" disabled="disabled" title="审批事项名称" placeholder="请输入" value="">
+						</div>
+					</div>
+					<div class="base_w-100pct base_h-30px base_lh-30px base_bbs-solid base_bbw-1px base_bc-e0e0e0 base_display-table">
+						<div class="base_w-35pct pull-left"><label class="base_mtb-5px base_c-8e8e8e" for="id5">是否收费</label></div>
+						<div class="base_w-65pct pull-left">
+							<input type="text" id="id5" class="base_bw-imp-0px base_p-10px base_h-30px base_mtb-imp-0px" disabled="disabled" title="审批事项名称" placeholder="请输入" value="">
+						</div>
+					</div>
+					<div class="base_w-100pct base_h-30px base_lh-30px base_bbs-solid base_bbw-1px base_bc-e0e0e0 base_display-table">
+						<div class="base_w-35pct pull-left"><label class="base_mtb-5px base_c-8e8e8e" for="id6">咨询电话</label></div>
+						<div class="base_w-65pct pull-left">
+							<input type="text" id="id6" class="base_bw-imp-0px base_p-10px base_h-30px base_mtb-imp-0px" disabled="disabled" title="审批事项名称" placeholder="请输入" value="">
+						</div>
+					</div>
+					<input type="hidden" id="id7">
+					<input type="hidden" id="id8">
+					<input type="hidden" id="id9">
+					<input type="hidden" id="id10">
+				</div>
+			</div>
+			<div class="base_w-100pct base_h-100pct contentPanel">
+				<iframe id="iframeInset" src="" width="100%" frameborder="no" border="0"></iframe>                                                                     
+			</div>
+			<div class="base_w-100pct base_h-100pct contentPanel">
+				<div id='docListBox'></div>
+			</div>
+			<div class="base_w-100pct base_h-100pct contentPanel">
+				<div class='f_pt60 f_pb15 base_display-none' id='successConfirm' >
+					<div class='completeBox'><span class='mui-icon mui-icon-checkmarkempty'></span></div>
+					<div class='f_te20 f_lh40 text-center'>申报完成</div>
+					<div class='f_te20 f_lh40 text-center' id='projid'></div>
+				</div>
+				<div class='f_pt60 f_pb15 base_display-none' id='failConfirm'>
+					<div class='completeBox'><span class='mui-icon mui-icon-closeempty'></span></div>
+					<div class='f_te20 f_lh40 text-center' id="errorMassage">申报失败</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.content -->
+		
+		<div class="footer base_footer">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn1" class="f_btnBlock stepBtn btn-xs" onclick="nextStep2();">下一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn2" class="f_btnBlock stepBtn btn-xs" onclick="lastStep1();">上一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn3" class="f_btnBlock stepBtn btn-xs" onclick="nextStep3();">下一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn4" class="f_btnBlock stepBtn btn-xs" onclick="lastStep2();">上一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn5" class="f_btnBlock stepBtn btn-xs" onclick="nextStep4();">下一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn6" class="f_btnBlock stepBtn btn-xs" onclick="lastStep3();">上一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn7" class="f_btnBlock stepBtn btn-xs" onclick="nextStep5();">下一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn8" class="f_btnBlock stepBtn btn-xs" onclick="lastStep4();">上一步</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 base_mt-8px operationBtn">
+				<button type="button" id="stepBtn9" class="f_btnBlock stepBtn btn-xs" onclick="nextStep6();">提　交</button>
+			</div>
+		</div>
+		<!-- /.footer -->
+		
+		<!-- 遮罩层 -->
+		<div id="popWindow" class="popWindow circleLoading base_posz-1000 base_display-none">
+			<div class='loading-overlay'></div>
+		    <div class='loading-anim'>
+		        <div class='border out'></div>
+		        <div class='border in'></div>
+		        <div class='border mid'></div>
+		        <div class='circle'>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		            <span class='dot'></span>
+		        </div>
+		        <div id="wxts"><span><br/>温馨提示：获取电子共享材料可能时间较长，请耐心等待结果。</span></div>
+		    </div>
+		</div>
+		<div id='bigImg' class='bigImgBox base_posz-1000 base_display-none'>
+			<span onclick='hideImg()' class='mui-icon mui-icon-closeempty closeImg'></span>
+			<img class='img' width="90%" src=''/>
+		</div>
+		<!-- 遮罩层 -->
+	</body>
+	
+	<!-- <script type="text/javascript" src="https://portal.zjzwfw.gov.cn/assets/jsbridge/1.0.0/jsbridge.js"></script> -->
+	<script type="text/javascript" src="../portal/assets/jsbridge/1.0.0/jsbridge.js"></script>
+	<!-- <script type="text/javascript" src="//hzmetro2.oss-cn-hangzhou.aliyuncs.com/jssdk/resource/vconsole.min.js"></script> -->
+	<script type="text/javascript" src="../components/jquery/2.2.4/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../components/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../components/icheck/1.0.2/icheck.min.js"></script>
+	<script type="text/javascript" src="../components/icheck/1.0.2/icheck.jquery.util.js"></script>
+	<script type="text/javascript" src="../build/js/common.min.js"></script>
+	<script type="text/javascript" src="../plugins/mui/js/mui.min.js"></script>
+	<script type="text/javascript" src="../build/js/index.js?v=8"></script>
+	<script type="text/javascript">
+	/* 	window.onload = function() {
+			dd.ready({
+				usage: [
+				  'dd.biz.user.realAuthentication',
+				],
+			});
+		}; */
+		
+		$(function(){
+			//设置iframe高度
+			setIframeHeight();
+			
+			//icheck控件配置
+			icheckConfig($(".icheck"),$(".contentPanel:eq(0)"));
+			
+			//切换页面
+			nextStep1();
+        	
+			findByBusiCode();
+			
+		});
+		
+	</script>
+</html>

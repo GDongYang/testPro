@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DataElement">
+	<typeAlias alias="dataElement" type="com.fline.form.access.model.DataElement" />
+	<resultMap id="dataElementResult" class="dataElement">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="field" column="field" javaType="String" />
+		<result property="fieldname" column="fieldname" javaType="String" />
+		<result property="dataelementid" column="dataelementid" javaType="String" />
+		<result property="dataformat" column="dataformat" javaType="String" />
+		<result property="formCode" column="formCode" javaType="String" />
+	</resultMap>
+	
+	<insert id="create" parameterClass="dataElement">
+		INSERT INTO c_dataelement (
+			field
+			,fieldname
+			,dataelementid
+			,dataformat
+			,formCode
+		) VALUES (
+			#field#
+			,#fieldname#
+			,#dataelementid#
+			,#dataformat#
+			,#formCode#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="dataElement">
+		UPDATE c_dataelement SET
+			field=#field#
+			, fieldname=#fieldname#
+			, dataelementid=#dataelementid#
+			, dataformat=#dataformat#
+			, formCode=#formCode#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="dataElement">
+		<![CDATA[
+			DELETE FROM c_dataelement WHERE id=#id#
+		]]>
+	</delete>
+
+    <delete id="removeByFormCode" parameterClass="java.util.Map">
+		<![CDATA[
+			DELETE FROM c_dataelement WHERE formCode = #formCode#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="dataElementResult">
+		<![CDATA[
+			SELECT
+			 id,
+			field,
+			fieldname,
+			dataelementid,
+			dataformat,
+			formCode
+			 FROM c_dataelement A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="dataElementResult">
+		SELECT
+		 id,
+			field,
+			fieldname,
+			dataelementid,
+			dataformat,
+			formCode
+		 FROM c_dataelement
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="and" property="formCode" >
+                formCode = #formCode#
+            </isNotNull>
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_dataelement A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="dataElementResult">
+		<![CDATA[ SELECT
+			id,
+			field,
+			fieldname,
+			dataelementid,
+			dataformat,
+			formCode
+		 ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

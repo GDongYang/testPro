@@ -1,0 +1,296 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: noen;
+	color: black;
+}
+
+body {
+	background: rgba(237, 247, 255, 1) ;
+	padding-top: 0rem;
+	padding-bottom: 2rem;
+}
+
+.sz-header {
+	width: 100%;
+	position: fixed;
+	top: 0rem;
+	z-index: 99999;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	padding: 0 0.6rem;
+	background: rgba(0, 136, 255, 1);
+}
+
+.sz-header .left {
+	width: 17%;
+	height: 100%;
+}
+
+.sz-header .left span {
+	width: 0.64rem;
+	height: 0.8rem;
+	background: rgba(0, 136, 255, 1);
+	color: #fff;
+}
+
+.sz-header .center {
+	width: 7.8rem;
+	height: 1rem;
+	font-size: 0.72rem;
+	font-family: PingFangSC;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	line-height: 1rem;
+	text-align: center;
+}
+
+.sz-header .right {
+	height: 1.6rem;
+}
+
+.sz-header .right span {
+	width: 0.64rem;
+	height: 0.8rem;
+	background: rgba(0, 136, 255, 1);
+	color: #fff;
+}
+
+.sz-header .right span:nth-of-type(1) {
+	margin-right: 0.5rem;
+}
+
+.sz-silder {
+	position: relative;
+	height: 6.32rem;
+}
+
+.sz-slider img {
+	width: 100%;
+}
+
+.sz-slider .banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1.4rem;
+	margin-left:  0.6rem;
+	margin-right:  0.6rem;
+	position: absolute;
+	top: 7rem;	
+	width: 13.84rem;
+	height: 1.76rem;
+	line-height: 1.76rem;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 1.08rem;
+	z-index: 9999;
+	box-shadow: 0px 0.08rem 0.28rem 0rem rgba(0, 104, 196, 0.17);
+}
+
+.sz-slider .banner .left {
+	position: relative;
+}
+
+.sz-slider .banner .left::after {
+	position: absolute;
+	top: 0.52rem;
+	left: 5.4rem;
+	content: '';
+	width: 0.04rem;
+	height: 0.76rem;
+	background-color: #ccc;
+}
+
+.sz-slider .banner .left,
+.sz-slider .banner .right {
+	width: 50%;
+	height: 100%;
+}
+
+.sz-slider .banner .right {
+	text-align: right;
+}
+
+.sz-slider .banner .left span,
+.sz-slider .banner .right span {
+	font-size: 0.56rem;
+	font-family: PingFangSC;
+	font-weight: 600;
+	color: rgba(47, 59, 71, 1);
+}
+
+.sz-slider .banner .left img {
+	width: 1.4rem;
+	height: 1.44rem;
+	vertical-align: middle;
+}
+
+.sz-slider .banner .right img {
+	width: 1.68rem;
+	height: 1.44rem;
+	vertical-align: middle;
+}
+
+.sz-news {
+	width: 100%;	
+	padding: 1.6rem 1rem;
+	padding-bottom: 0px;
+	margin-bottom: 0.4rem;
+}
+
+.sz-news .message {
+	margin-bottom: 0.4rem;
+}
+
+.sz-news .message,
+.sz-news .news {
+	display: inline-block;
+	width: 1.72rem;
+	height: 0.68rem;
+	line-height: 0.60rem;
+	text-align: center;
+	border-radius: 0.4rem;
+	border: 0.04rem solid rgba(0, 136, 255, 1);
+	font-size: 0.4rem;
+	font-weight: 500;
+	font-family: PingFangSC;
+	color: rgba(0, 136, 255, 1);
+}
+
+.sz-news .content {
+	font-size: 0.4rem;
+	color: rgba(102, 102, 102, 1);
+	margin-left: 0.2rem;
+}
+
+.sz-hot {
+	position: relative;
+	width: 14.36rem;
+	height: 6.24rem;
+	background-color: pink;
+	margin: 0 0.32rem;
+	background: url(../../image/bianzu.png) no-repeat center center;
+	background-size: contain;
+}
+
+.sz-hot .title {
+	position: absolute;
+	top: 0.92rem;
+	left: 1.24rem;	
+	font-size: 0.64rem;
+	font-family: PingFangSC;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 1);
+	line-height: 0.88rem;
+}
+
+.sz-hot .hot-item {
+	width: 86%;
+	position: absolute;
+	top: 2.52rem;
+	left: 1.08rem;
+}
+
+.sz-hot .hot-item ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
+.sz-hot .hot-item ul li {
+	width: 2.88rem;
+}
+.sz-hot .hot-item img {
+	width: 1.6rem;
+	height: 1.6rem;
+
+}
+
+.sz-hot .hot-item ul li p {
+	font-size: 0.48rem;
+	font-family: PingFangSC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+}
+
+.sz-server {
+	width: 13.8rem;
+	height: 5.68rem;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 0.08rem 0.28rem 0rem rgba(0, 104, 196, 0.17);
+	border-radius: 0.8rem;
+	margin-top: 0.24rem;
+	margin-left: 0.6rem;
+	margin-bottom: 1.16rem;
+}
+
+.sz-server .title {
+	position: absolute;
+	top: 0.72rem;
+	left: 0.96rem;
+	font-size: 0.64rem;
+	font-family: PingFangSC;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 1);
+}
+.sz-hot .hot-item ul li a {
+	width: 100%;
+	height: 100%;
+}
+.sz-hot .hot-item ul li p {
+	font-size: 0.48rem;
+	font-family: PingFangSC;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.sz-server .hot-item {
+	width: 89%;
+	position: absolute;
+	top: 2.32rem;
+	left: 0.84rem;
+}
+
+.sz-footer {
+	width: 100% !important;
+	position: fixed;
+	bottom: 0;
+	width: 15rem;
+	height: 2rem;
+	background: rgba(0, 136, 255, 1);
+}
+
+.sz-footer .center {
+	width: 2rem;
+	height: 2rem;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 0.08rem 0.16rem 0px rgba(0, 68, 129, 0.41);
+	margin: 0 auto;
+	font-size: 1.2rem;
+	font-family: PingFangSC;
+	font-weight: 600;
+	color: rgba(0, 136, 255, 1);
+	text-align: center;
+	line-height: 2rem;
+	margin-top: -0.64rem;
+	border-radius: 50%;
+}
+
+/* 覆盖图标样式 */
+.iconfont {
+	font-size: 0.8rem !important; 
+}
+.dropdown-icon {
+	font-size: 0.4rem !important; 
+}
+

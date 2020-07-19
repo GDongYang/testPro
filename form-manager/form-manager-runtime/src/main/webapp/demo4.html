@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/common.min.css">
+    <style type="text/css">
+        * {
+            font-size: 14px;
+        }
+        ul,li{list-style:none;padding:0px;}
+        body {
+            background: #f7f7f7;
+            font-size: 16px;
+            color: #333;
+        }
+        .title {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .searchBox {
+            background: #fff;
+            padding: 0 4%;
+            line-height: 50px;
+        }
+        
+        #searchResultPanel {
+            display: inline-block;
+            width: 100%;
+            line-height: 25px;
+            margin-top: 14px;
+        }
+        
+        .form-control {
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .textBox input .form-control {
+            width: 100%;
+            border: none;
+            display: none;
+        }
+        
+        .basePrimaryBtn {
+            vertical-align: top;
+            display: inline-block;
+            background: #24A0F9;
+            color: #fff;
+            box-shadow: none;
+            border: none;
+            padding: 0px 15px;
+            line-height: 24px;
+            margin: 10px 0;
+        }
+        
+        .basePreviewBtn {
+            vertical-align: top;
+            display: inline-block;
+            background: #fff;
+            color: #24A0F9;
+            box-shadow: none;
+            border: 1px solid #24A0F9;
+            padding: 0px 15px;
+            line-height: 24px;
+            margin: 10px 0;
+        }
+        
+        .textBox {
+            line-height: 50px;
+            background: #fff;
+            padding: 0 4%;
+            overflow: hidden;
+        }
+        
+        .textBox li {
+            float: left;
+        }
+        
+        .textBox li:nth-child(1) {
+            width: 22%;
+        }
+        
+        .textBox li:nth-child(2) {
+            width: 78%;
+        }
+        
+        #l-map {
+            height: 300px;
+            width: 100%;
+            display: none;
+        }
+        
+        #docList {
+            width: 100%;
+            line-height: 32px;
+            cursor: pointer;
+            border-top: 2px solid #f7f7f7;
+            margin: 0 auto;
+        }
+        
+        #docList img {
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        .marginT15 {
+            margin-top: 15px;
+        }
+        
+        .marginL5 {
+            margin-left: 5px;
+        }
+        
+        .blockBtn {
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .docBox {
+            width: 82%;
+            display: inline-block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: break-all;
+            white-space: nowrap;
+            line-height: 40px;
+        }
+        
+        .fileInputBox {
+            display: none;
+        }
+        
+        .fileInputBox .form-control {
+            width: 80%
+        }
+        
+        #formContent {
+            background: #fff;
+            width: 92%;
+        }
+        
+        .searchBox .textBox {
+            padding: 0;
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+        
+        #from, #to {
+            display: block;
+            float: right;
+            width: 100%;
+            line-height: 25px;
+            padding-top: 13px;
+            color: #999999;
+        }
+        
+        #fromInput,
+        #toInput,
+        #suggestId {
+            display: none;
+            width: 100%;
+            border: none;
+        }
+    </style>
+    <title>查询</title>
+</head>
+
+	<body>
+	    <div class="title">搜索</div>
+	    <ul class='textBox'>
+	        <li>当前地址：</li>
+	        <li>
+	            <div id="l-map"></div>
+	            <span id="searchResultPanel"></span>
+	            <input type="text" class='form-control' id="suggestId" size="20" value="百度" />
+	        </li>
+	    </ul>
+	    <div class='searchBox' style='display:none;'>
+	        <div id="l-map"></div>
+	        地址搜索：
+	        <input type="text" class='form-control' id="suggestId" size="20" value="百度" />
+	        <button id="search-btn" class='searchBtn' style='display:none;'>搜索</button>
+	        <input type="text" id="lng" style='display:none;' />
+	        <input type="text" id="lat" style='display:none;' />
+	    </div>
+	    <div class='textBox'>事项名称：
+	        <select class='form-control' id='items' style='width:75%;'>
+					<option value=''>请选择</option>
+					<option value='e8fc56e3-8aff-4c4c-9d98-15922efa4f97'>居民身份证首次申领</option>
+					<option value='00e65163-a4d3-468e-ba82-4076bb669ce4'>赴台团队旅游签注</option>
+				</select>
+	    </div>
+	    <form class='textBox' id='formContent'>
+	        <div id='docList'></div>
+	    </form>
+	    <div class='textBox marginT15' style="display: none;">邮寄地址：</div>
+	    <div class='searchBox marginT15'>
+	        <ul class='textBox'>
+	            <li>寄件地址：</li>
+	            <li>
+	                <span id="from">详细地址，如道路、门牌号、小区等</span>
+	                <input type="text" class='form-control' id="fromInput" size="20" value="" />
+	            </li>
+	        </ul>
+	    </div>
+	    <div class='searchBox marginT15'>
+	        <ul class='textBox'>
+	            <li>收件地址：</li>
+	            <li>
+	                <span id="to">详细地址，如道路、门牌号、小区等</span>
+	                <input type="text" class='form-control' id="toInput" size="20" value="" />
+	            </li>
+	        </ul>
+       </div>
+        <script src='jquery/3.2.1/jquery-3.2.1.min.js'></script>
+        <script type="text/javascript" src="js/jquery-form.js"></script>
+        <!--引入表单提交js-->
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KyKYGhKT1DYisflH6Lk8OeGxEUYrFKRS"></script>
+        <script type="text/javascript">
+            var oldVal, newVal, newVal1, newProvince, newProvince1;
+            $('#items').change(function() {
+                var itemCode = $(this).val();
+                var url = 'tempInfoAction!findTempInfoAll.action?sfName=%E6%96%B9%E4%BA%AE&sfId=330327199503301715&itemCode=' + itemCode;
+                if (itemCode == '00e65163-a4d3-468e-ba82-4076bb669ce4') {
+                    url += '&situationCode=dcc84dbd-0c38-4efe-9ad1-05f4e671a090';
+                }
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    error: function(request, textStatus, errorThrown) {},
+                    success: function(data) {
+                        $('#docList').empty();
+                        if (data.returnCode == 0) {
+                            var datas = data.data;
+                            if (datas != null) {
+                                var dataStr = '';
+                                var uploadBtn = '<button class="basePrimaryBtn" type="button" onclick="buttonClick(this)">上传</button>' +
+                                    '<div class="fileInputBox"><input class="form-control" type="text" name="fileFileName"/>' +
+                                    '<input type="file" name="file" onchange="fileChange(this)" style="display:none;"/>' +
+                                    '<button class="basePrimaryBtn marginL5" type="button" onclick="uploadFileAjax(this)">提交</button></div>';
+                                for (var i = 0; i < datas.length; i++) {
+                                    if (datas[i].certName != null) {
+                                        dataStr += '<div><div class="docBox"><img src="build/image/11.png"/>' + datas[i].materialName + '</div>';
+                                        if (datas[i].code == 0) {
+                                            dataStr += uploadBtn;
+                                        } else {
+                                            dataStr += '<button type="button" class="basePreviewBtn"  onclick="readPdf(\'' + datas[i].materialCode + '\',\'' + itemCode + '\')">预览</button>'
+                                        }
+                                        dataStr += '</div>'
+                                    }
+                                }
+                                $('#docList').append(dataStr);
+                            }
+                        }
+                    }
+                });
+            });
+            $("#searchResultPanel,#from,#to").click(function() {
+                $(this).css("color", "#333");
+                $(this).hide();
+                $(this).next().show();
+                $(this).next().focus();
+                oldVal = $(this).text().toString().split(" ")[0];
+            });
+            $("#fromInput").blur(function() {
+                newVal = $(this).val();
+                if (newVal !== '') {
+                    oldVal = newProvince + oldVal.replace(oldVal, newVal);
+                    $("#from").text(oldVal);
+                    $("#from").show();
+                    $("#fromInput").hide();
+
+                } else {
+                    $("#from").show();
+                    $("#fromInput").hide();
+                    $("#from").text('详细地址，如道路、门牌号、小区等');
+                    $("#from").css("color", "#999");
+                }
+            });
+            $("#toInput").blur(function() {
+                newVal1 = $(this).val();
+                if (newVal1 !== '') {
+                    oldVal = newProvince1 + oldVal.replace(oldVal, newVal1);
+                    $("#to").text(oldVal);
+                    $("#to").show();
+                    $("#toInput").hide();
+                } else {
+                    $("#to").show();
+                    $("#toInput").hide();
+                    $("#to").text('详细地址，如道路、门牌号、小区等');
+                    $("#to").css("color", "#999");
+                }
+            });
+            //上传文件ajax版
+            function buttonClick(obj) {
+                $(obj).next().css('display', 'block');
+                $(obj).next().find('input[name="file"]').click();
+            };
+
+            function fileChange(file) {
+                var upload_file = $.trim($(file).val()); //获取上传文件
+                $(file).prev().val(upload_file); //赋值给自定义input框
+            };
+
+            function uploadFileAjax(obj) {
+                if ($(obj).prev().val() == '') {
+                    alert('请选择文件！');
+                    return
+                }
+                var fileParams = $(obj).prev().val();
+                var fileNameParams = $(obj).prev().prev().val();
+                var ajax_option = {
+                    url: 'tempInfoAction!upload.action',
+                    type: 'post',
+                    data: {
+                        'file': fileParams,
+                        'fileFileName': fileNameParams
+                    }, //字段拼接
+                    error: function(request, textStatus, errorThrown) {
+                        console.log(textStatus)
+                    },
+                    success: function(data) {
+                        if (data.returnCode == 0) {
+                            alert('上传成功！');
+                            $(obj).parent().css('display', 'none')
+                            $(obj).parent().prev().hide();
+                            var dataStr = '<button type="button" class="basePrimaryBtn"  onclick="readPdf2(\'' + data.data + '\')">预览</button>';
+                            $(obj).parent().parent().append(dataStr);
+                        } else {
+                            alert('上传失败！');
+                        }
+                    }
+                };
+                $('#formContent').ajaxSubmit(ajax_option);
+            };
+
+            function readPdf(certCode, itemCode) {
+                window.open('tempInfoAction!preview.action?certCode=' + certCode + '&sfId=330327199503301715&itemCode=' + itemCode + '&sfName=%E6%96%B9%E4%BA%AE');
+            }
+
+            function readPdf2(code) {
+                window.open('./temp/' + code);
+            }
+            var postCode = "";
+            var province = "";
+            (function() {
+                // 百度地图API功能
+                function G(id) {
+                    return document.getElementById(id);
+                }
+                var map = new BMap.Map("l-map");
+                var lng = G('lng');
+                var lat = G('lat');
+                var searchBtn = G('search-btn');
+                var myValue;
+                var fromValue;
+                var toValue;
+                var local = null;
+                var ac = null;
+                var from = null;
+                var to = null;
+
+                var geolocation = new BMap.Geolocation();
+                //获取当前位置
+                geolocation.getCurrentPosition(function(r) {
+                    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                        mk = new BMap.Marker(r.point);
+                        mk.addEventListener("dragend", showInfo);
+                        mk.enableDragging(); //可拖拽
+                        getAddress(r.point);
+                        map.addOverlay(mk); //把点添加到地图上  
+                        map.panTo(r.point);
+                    } else {
+                        alert('failed' + this.getStatus());
+                    }
+                });
+                //获取地址信息，设置地址label
+                function getAddress(point) {
+                    var gc = new BMap.Geocoder();
+                    gc.getLocation(point, function(rs) {
+                        var addComp = rs.addressComponents;
+                        var address = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber; //获取地址
+                        //画图 ---》显示地址信息
+                        var label = new BMap.Label(address, {
+                            offset: new BMap.Size(20, -10)
+                        });
+                        map.removeOverlay(mk.getLabel()); //删除之前的label 
+                        mk.setLabel(label);
+                        $("#suggestId").hide();
+                        $("#searchResultPanel").show();
+                        G("searchResultPanel").innerHTML = label.content;
+                    });
+                }
+                ac = new BMap.Autocomplete({
+                    "input": "suggestId",
+                    "location": map
+                });
+                from = new BMap.Autocomplete({
+                    "input": "fromInput",
+                    "location": map
+                });
+                to = new BMap.Autocomplete({
+                    "input": "toInput",
+                    "location": map
+                });
+                geolocation.getCurrentPosition(function(r) {
+                    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                        point = new BMap.Point(r.point.lng, +r.point.lat);
+                        map.centerAndZoom(point, 15);
+                    }
+                })
+                map.enableScrollWheelZoom(); //开启鼠标滚轮缩放
+                function myFun() {
+
+                    var pp = local.getResults().getPoi(0).point; //获取第一个智能搜索的结果
+
+                    map.centerAndZoom(pp, 18);
+                    map.addOverlay(new BMap.Marker(pp)); //添加标注
+                    /*   var gc = new BMap.Geocoder();
+			       
+			        gc.getLocation(pp, function(rs){
+			        	console.log(rs);
+				        var addComp = rs.addressComponents;
+				        var address =  addComp.province +  addComp.city + addComp.district + addComp.street + addComp.streetNumber;//获取地址
+			      		if(type!=1){
+			      			getPostcode(address);
+			      		}
+				        if(type==2){
+			      			G("from").innerHTML = address+G("from").innerHTML+"   邮编："+postCode ;
+			      		}else if(type==3){
+			      			G("to").innerHTML = address+G("to").innerHTML+"   邮编："+postCode ;
+			      		}
+			        }); */
+                }
+
+                function setPlace(value) {
+                    map.clearOverlays(); //清除地图上所有覆盖物
+                    local = new BMap.LocalSearch(map, { //智能搜索
+                        onSearchComplete: myFun
+                    });
+                    local.search(value);
+                }
+
+                function showInfo(e) {
+                    lng.value = e.point.lng;
+                    lat.value = e.point.lat;
+                }
+                ac.addEventListener("onconfirm", function(e) { //鼠标点击下拉列表后的事件
+                    var _value = e.item.value;
+                    myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+                    $("#suggestId").hide();
+                    $("#searchResultPanel").show();
+                    G("searchResultPanel").innerHTML = myValue;
+                    setPlace(myValue);
+                });
+                from.addEventListener("onconfirm", function(e) { //鼠标点击下拉列表后的事件
+                    var _value = e.item.value;
+                    myValue = _value.district + _value.street + _value.business;
+                    getPostcode(_value.province, _value.city, myValue, 1);
+
+                    //getPostcode(myValue);
+                    //    setPlace(myValue,2);
+                });
+                to.addEventListener("onconfirm", function(e) { //鼠标点击下拉列表后的事件
+                    var _value = e.item.value;
+                    myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+                    getPostcode(_value.province, _value.city, myValue, 2);
+                    //   setPlace(myValue,3);
+                });
+                searchBtn.addEventListener("click", function() { //点击搜索
+                    local = new BMap.LocalSearch(map, { //智能搜索
+                        onSearchComplete: myFun
+                    });
+                    local.search(document.getElementById("suggestId").value);
+                });
+                map.addEventListener("click", showInfo); //搜索事件
+
+
+                function getPostcode(_province, city, areaname, type) {
+                    var url = 'http://api.k780.com/?app=life.postcode&areaname=' + _province + city + areaname + '&appkey=43059&sign=50c6d74aaefca5f6a37f8c3e38f6f528&format=json&jsoncallback=data'
+                    $.ajax({
+                        type: 'get',
+                        async: false,
+                        url: url,
+                        dataType: 'jsonp',
+                        jsonp: 'callback',
+                        jsonpCallback: 'data',
+                        success: function(data) {
+                            if (data.success != '1') {
+                                alert(data.msgid + ' ' + data.msg);
+                                exit;
+                            }
+                            //遍历
+                            var description = "";
+                            var result = data.result.lists[0];
+                            postCode = result.postcode;
+                            province = result.areanm.split(',')[1];
+                            var tvalue = "";
+                            if (_province == "" && city != province) {
+                                if (type == 1) {
+                                    tvalue = province + city + areaname;
+                                } else {
+                                    tvalue = province + areaname;
+                                }
+                            }else if(city == province){
+                            	if (type == 1) {
+                                    tvalue = province  + areaname;
+                                } else {
+                                    tvalue = areaname;
+                                }
+                            }
+                            // tvalue += "邮编：" + postCode
+                            if (type == 1) {
+                                $("#fromInput").hide();
+                                $("#from").show();
+                                G("from").innerHTML = tvalue;
+                                newProvince = province;
+                            } else {
+                                $("#toInput").hide();
+                                $("#to").show();
+                                G("to").innerHTML = tvalue;
+                                newProvince1 = province;
+                            }
+                            /* for(var i in data.result){
+                                var property=data.result[i];
+                                description+=i+" = "+property+"\n";
+                            } */
+                        },
+                        error: function() {
+                            alert('fail');
+                        }
+                    });
+                }
+            })()
+        </script>
+	</body>
+</html>

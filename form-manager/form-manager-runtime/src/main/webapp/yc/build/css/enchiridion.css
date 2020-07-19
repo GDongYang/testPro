@@ -1,0 +1,92 @@
+.container {
+    border-top: 2px solid #2395fc;
+    background-color: #f0f0f0;
+}
+
+.position {
+    line-height: 40px;
+    color: #999;
+}
+
+span.dqwz {
+    background: url(../image/pos.png) no-repeat left -1px;
+    background-size: contain;
+    font-size: 14px;
+    padding-left: 25px;
+}
+
+span.dyh {
+    color: #dcdee2;
+}
+
+.position>a {
+    color: #515a6e;
+    font-size: 14px;
+}
+
+.position>a:hover {
+    color: #0e90d2;
+}
+
+.white {
+    /* height: 293px; */
+    background: #fff;
+}
+
+.bszn_content {
+    width: 100%;
+    padding: 0 48px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.bszn_title {
+    border-bottom: 1px solid #ccc;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #303331;
+    margin-top: 20px;
+    /* height: 40px; */
+    cursor: pointer;
+}
+
+.bszn_title:hover {
+    color: #409eff;
+}
+
+.zn_title {
+    text-align: center;
+    font-size: 21px;
+    font-family: 黑体;
+    color: black;
+    margin-top: 15px;
+    margin-right: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+    text-align: center;
+    text-indent: 21px;
+    line-height: 32px;
+}
+
+.num {
+    padding: 0 48px;
+}
+
+.num p {
+    font-size: 14px;
+    font-family: 黑体;
+    color: black;
+    margin: 5px 0;
+    line-height: 32px;
+}
+
+.num span {
+    font-size: 14px;
+    font-family: 宋体;
+    display: block;
+    margin: 5px 0;
+    line-height: 32px;
+}

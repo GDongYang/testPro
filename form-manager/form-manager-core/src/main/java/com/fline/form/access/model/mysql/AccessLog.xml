@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="AccessLog">
+   <typeAlias alias="accessLog" type="com.fline.form.access.model.AccessLog" />
+   <resultMap id="accessLogResult" class="accessLog">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <!-- AccessLog -->
+      <result property="resName" column="resName" javaType="string" jdbcType="VARCHAR" />
+      <result property="resCode" column="resCode" javaType="string" jdbcType="VARCHAR" />
+	  <result property="userId" column="userId" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="accessDate" column="accessDate" javaType="date" />
+	  <result property="serverEndpoint" column="serverEndpoint" javaType="string" jdbcType="VARCHAR" />
+	  <result property="remoteEndpoint" column="remoteEndpoint" javaType="string" jdbcType="VARCHAR" />
+	  <result property="guid" column="GUID" javaType="string" jdbcType="VARCHAR" />
+	  <result property="accessType" column="accessType" javaType="int" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="userName" column="username" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+   <insert id="create" parameterClass="accessLog">
+      <![CDATA[
+         INSERT INTO C_ACCESSLOG (
+            resName,resCode, userId, accessDate,
+            serverEndpoint, remoteEndpoint,
+            GUID, accessType
+         ) VALUES (
+            #resName#, #resCode#, #userId#, #accessDate#,
+            #serverEndpoint#, #remoteEndpoint#, 
+            #guid#, #accessType#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="accessLog">
+      <![CDATA[
+         UPDATE C_ACCESSLOG SET
+            GUID=#guid#
+         WHERE ID=#id#
+      ]]>
+   </update>
+   
+   <delete id="remove" parameterClass="accessLog">
+      <![CDATA[
+         DELETE FROM C_ACCESSLOG WHERE ID=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="accessLogResult">
+      <![CDATA[
+         SELECT A.id, A.resName,A.resCode,A.userId,A.accessDate,A.serverEndpoint, A.remoteEndpoint, A.guid, A.accessType  FROM C_ACCESSLOG A WHERE ID=#value#
+      ]]>
+   </select>
+
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="accessLogResult">
+      <![CDATA[
+         SELECT id, resName,resCode,userId,accessDate,serverEndpoint, remoteEndpoint, guid, accessType  FROM C_ACCESSLOG WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   <select id="findAll" resultMap="accessLogResult">
+      <![CDATA[ SELECT id, resName,resCode,userId,accessDate,serverEndpoint, remoteEndpoint, guid, accessType FROM C_ACCESSLOG ORDER BY ORDINAL]]>
+   </select>
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> A.ID=#id#</isGreaterThan>
+         </isNotNull>
+          <isNotNull property="userId">
+            <isGreaterThan prepend="AND" property="userId" compareValue="0"> A.userId=#userId#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="accessDate"> date_format(A.accessDate,'%Y-%m-%d') = #accessDate#</isNotNull>
+         <isNotNull prepend="AND" property="username">  upper(U.username) like upper('%$userName$%')</isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_ACCESSLOG A
+      LEFT JOIN C_USER U ON A.userId = U.ID
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="accessLogResult">
+	  <![CDATA[ SELECT A.id, A.resName,A.resCode,A.userId,A.accessDate,A.serverEndpoint, A.remoteEndpoint, A.guid, A.accessType,U.username ]]>
+	  <include refid="sql_from" />
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+</sqlMap>

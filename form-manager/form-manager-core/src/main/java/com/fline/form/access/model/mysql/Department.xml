@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Department">
+   <typeAlias alias="department" type="com.fline.form.access.model.Department" />
+   <resultMap id="departmentResult" class="department">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <result property="createDate" column="created" javaType="date" />
+      <result property="creator" column="creator" javaType="string" jdbcType="VARCHAR" />
+      <!-- <result property="updateDate" column="modified" javaType="date" /> -->
+      <result property="updater" column="modificator" javaType="string" jdbcType="VARCHAR" />
+      <!-- Department -->
+       <result property="active" column="active" javaType="string" jdbcType="NUMBER" />
+       <result property="parentId" column="parentId" javaType="string" jdbcType="NUMBER" />
+       <result property="isLeaf" column="isLeaf" javaType="string" jdbcType="NUMBER" />
+  <!--     <result property="ipAddress" column="ipAddress" javaType="string" jdbcType="VARCHAR" /> -->
+  <!--     <result property="returnAddress" column="returnAddress" javaType="string" jdbcType="VARCHAR" />
+       <result property="orgcoding" column="orgcoding" javaType="string" jdbcType="VARCHAR" /> -->
+   <!--    <result property="oid" column="oid" javaType="string" jdbcType="VARCHAR" /> -->
+    <!--   <result property="fullName" column="fullName" javaType="string" jdbcType="VARCHAR" /> -->
+ <!--      <result property="orgtype" column="orgtype" javaType="int" jdbcType="NUMBER" nullValue="0"/>  -->
+       <result property="level" column="level" javaType="string" jdbcType="VARCHAR" />
+   <!--    <result property="uncode" column="uncode" javaType="string" jdbcType="VARCHAR" />  -->
+       <result property="uniquecoding" column="uniquecoding" javaType="string" jdbcType="VARCHAR" />
+  <!--     <result property="poid" column="poid" javaType="string" jdbcType="VARCHAR" /> -->
+   </resultMap>
+
+   <insert id="create" parameterClass="department">
+      <![CDATA[
+         INSERT INTO C_DEPARTMENT (
+            code, name, memo ,version,
+            created, creator,active,parentId,isLeaf,
+           level,uniquecoding
+         ) VALUES (
+            #code#, #name#, #memo#,#version#,
+            sysdate(), #creator#, 
+            #active#,#parentId#,#isLeaf#,
+            #level#,#uniquecoding#	
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="department">
+      <![CDATA[
+         UPDATE C_DEPARTMENT SET
+         	version=version+1,
+            name=#name#,
+            code=#code#,
+            memo=#memo#,
+            modificator=#updater#,
+            active=#active#,
+            parentId=#parentId#,
+            isLeaf=#isLeaf#,
+            level = #level#,
+            uniquecoding = #uniquecoding#
+         WHERE
+         	id=#id# 
+      ]]>
+   </update>
+   <delete id="remove" parameterClass="department">
+      <![CDATA[
+         DELETE FROM C_DEPARTMENT WHERE id=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="departmentResult">
+      <![CDATA[
+         SELECT
+            id,
+            updateTime,
+            name,
+            active,
+            code,
+            isLeaf,
+            parentId,
+            version,
+            memo,
+            modificator,
+            created,
+            creator,
+            level,
+            uniquecoding,
+            areaCode
+          FROM C_DEPARTMENT WHERE id=#id#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="departmentResult">
+      <![CDATA[
+         SELECT
+          id,
+            updateTime,
+            name,
+            active,
+            code,
+            isLeaf,
+            parentId,
+            version,
+            memo,
+            modificator,
+            created,
+            creator,
+            level,
+            uniquecoding,
+            areaCode
+          FROM C_DEPARTMENT WHERE id IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   
+   <select id="findDepartByRole" parameterClass="java.util.Map" resultMap="departmentResult">
+   		<![CDATA[ 
+	   		SELECT
+	   		D.id,
+            D.updateTime,
+            D.name,
+            D.active,
+            D.code,
+            D.isLeaf,
+            D.parentId,
+            D.version,
+            D.memo,
+            D.modificator,
+            D.created,
+            D.creator,
+            D.level,
+            D.uniquecoding,
+            D.areaCode
+			FROM C_DEPARTMENT D 
+			LEFT JOIN R_ROLE_DEPART RD ON D.id = RD.departId
+			WHERE RD.roleId = #roleId# AND D.active =1
+		]]>
+   		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+      	<isNull property="_orderBy"><![CDATA[ ORDER BY D.id ]]></isNull>
+   </select>
+   
+   <select id="findAll" resultMap="departmentResult">
+      <![CDATA[ SELECT * FROM C_DEPARTMENT WHERE active =1 ORDER BY id]]>
+   </select>
+
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> id=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(name) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="name"> name=#name# </isNotNull>
+         <isNotNull prepend="AND" property="orgcoding"> orgcoding=#orgcoding# </isNotNull>
+         <isNotNull prepend="AND" property="oid"> oid=#oid# </isNotNull>
+         <isNotNull prepend="AND" property="poid"> poid=#poid# </isNotNull>
+         <isNotNull prepend="AND" property="uniquecoding"> 
+         		left(uniquecoding,6) = #uniquecoding# 
+         </isNotNull>
+         <isNotNull prepend="AND" property="deptId" >
+         	code like CONCAT((SELECT code from c_department where id = #deptId#) ,'%') 
+         </isNotNull>
+         <isNotNull prepend="AND" property="deptIds">
+         	active = 1 AND id IN
+         	<iterate property="deptIds" open="(" conjunction="," close=")">
+         		#deptIds[]#
+         	</iterate>
+         </isNotNull>
+         <isNotNull prepend="AND" property="parentId"> parentId=#parentId# </isNotNull>
+         <isNotNull prepend="AND" property="active"> active = #active# </isNotNull>
+		 <isNotNull prepend="AND" property="code"> code = #code#</isNotNull>
+		 <isNotNull prepend="AND" property="codeLike"> code like '$codeLike$%'</isNotNull>
+		 <isNotNull prepend="AND" property="memo"> memo = #memo#</isNotNull>
+      </dynamic>
+   </sql>
+   
+   <sql id="sql_from">
+      FROM C_DEPARTMENT a
+      <include refid="sql_where" />
+   </sql>
+
+   <select id="find" resultMap="departmentResult">
+		SELECT id,code,memo,created,creator,modificator,active,parentId,
+		isLeaf,level,uniquecoding,
+		<isNotNull property="nameWithDept">
+		CONCAT(a.name,'(',(select name from c_department b where  b.uniquecoding = left(a.uniquecoding,6)limit 1),')') as name,
+		</isNotNull>
+		name
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+   
+   <select id="findDeptsByUser" parameterClass="java.util.Map" resultClass="java.lang.Long">
+   		SELECT id FROM c_department WHERE active = 1 AND id IN (
+	   		SELECT departId FROM r_role_depart WHERE roleId IN 
+	   		(SELECT roleId from r_user_role where userId = #userId#)
+		)
+   </select>
+   
+   <select id="findTop" resultMap="departmentResult">
+       SELECT
+            id,
+            updateTime,
+            name,
+            active,
+            code,
+            isLeaf,
+            parentId,
+            version,
+            memo,
+            modificator,
+            created,
+            creator,
+            level,
+            uniquecoding,
+            areaCode
+        FROM `c_department` where LENGTH(uniquecoding) = 6 and active =1 ORDER BY uniquecoding
+   </select>
+   
+   <sql id="updateUniquecoingWhere">
+   		<dynamic prepend="WHERE">
+   			<isNotNull prepend="AND" property="deptIds">
+     			 id IN
+	         	<iterate property="deptIds" open="(" conjunction="," close=")">
+	         		#deptIds[]#
+         		</iterate>
+         	</isNotNull>
+         	<isNotNull prepend="AND" property="id">
+     			 id = #id#
+        	 </isNotNull>
+   		</dynamic>
+   </sql>
+   
+   <!-- 测试使用使区级一下的部门的uniqueCoding = 区级的uniqueCoding -->
+   <update id="updateChildUniquecoding">
+   		update c_department set uniquecoding = #uniquecoding#
+   		<include refid="updateUniquecoingWhere"/>
+   </update>
+
+    <select id="findAllVo" resultClass="com.fline.form.vo.DepartmentVo" >
+        select
+          id,
+            updateTime,
+            name,
+            active,
+            code,
+            isLeaf,
+            parentId,
+            version,
+            memo,
+            modificator,
+            created,
+            creator,
+            level,
+            uniquecoding,
+            areaCode
+         from c_department
+    </select>
+
+</sqlMap>

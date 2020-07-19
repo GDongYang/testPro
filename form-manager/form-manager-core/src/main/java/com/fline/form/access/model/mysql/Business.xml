@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Business">
+
+	<typeAlias alias="business" type="com.fline.form.access.model.Business" />
+
+	<resultMap id="businessResult" class="business">
+
+		<result property="id" column="ID" javaType="long" jdbcType="NUMBER" />
+		<result property="name" column="NAME" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="code" column="CODE" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="memo" column="MEMO" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="status" column="STATUS" javaType="long"
+			jdbcType="NUMBER" />
+		<result property="cerno" column="CERNO" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="accountId" column="accountId" javaType="long"
+			jdbcType="NUMBER" />
+		<result property="departmentId" column="departmentId"
+			javaType="long" jdbcType="NUMBER" />
+		<result property="createDate" column="createDate" javaType="date" />
+		<result property="updateDate" column="updateDate" javaType="date"
+			jdbcType="DATE" />
+		<result property="itemCode" column="itemCode" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="applicantUser" column="applicantUser" javaType="string"
+		jdbcType="VARCHAR2" />
+		<result property="applicantUnit" column="applicantUnit" javaType="string"
+		jdbcType="VARCHAR2" />
+		<result property="permissionCode" column="permissionCode" javaType="string"
+		jdbcType="VARCHAR2" />
+		<result property="cerName" column="cerName" javaType="string"
+		jdbcType="VARCHAR2" />
+		<result property="type" column="type" javaType="int"
+		jdbcType="NUMBER" />
+		<result property="accessIP" column="accessIp" javaType="string"
+		jdbcType="VARCHAR2" />
+		<result property="userId" column="userId" javaType="long"
+			jdbcType="NUMBER" nullValue="0"/>
+		<result property="userName" column="username" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="itemInnerCode" column="itemInnerCode" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="zhId" column="zhId" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="requestParam" column="requestParam" javaType="string"
+			jdbcType="VARCHAR2" />
+	</resultMap>
+	<resultMap id="businessResultLeftJoin" class="business" extends="businessResult">
+		<result property="departmentName" column="departmentName" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="ItemName" column="itemName" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="accountName" column="accountName" javaType="string"
+			jdbcType="VARCHAR2" />
+	</resultMap>
+	
+	<resultMap id="TempCount" class="business" >
+		<result property="departmentName" column="departmentName" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="ItemName" column="itemName" javaType="string"
+			jdbcType="VARCHAR2" />
+		<result property="certTempCount" column="accountCert" javaType="int"
+			jdbcType="int" />
+	</resultMap>
+
+	<insert id="create" parameterClass="business">
+		<![CDATA[
+			INSERT INTO C_BUSINESS (
+				NAME,CODE,MEMO,STATUS,
+				CERNO,accountId,departmentId,
+				itemCode,createDate,applicantUnit,applicantUser,permissionCode,
+				cerName,type,accessIp,userId,itemInnerCode,zhId,requestParam
+			) VALUES (
+				#name#,#code#,#memo#,#status#,
+				#cerno#,#accountId#,#departmentId#,
+				#itemCode#,#createDate#,#applicantUnit#,#applicantUser#,#permissionCode#,
+				#cerName#,#type#,#accessIP#,#userId#,#itemInnerCode#,#zhId#,#requestParam#
+			)
+		]]>
+		<selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as ID
+	  	</selectKey>
+	</insert>
+	<update id="update" parameterClass="business">
+		<![CDATA[
+		UPDATE C_BUSINESS SET
+			ID=#id#,
+			NAME=#name#,
+			CODE=#code#,
+			MEMO=#memo#,
+			STATUS=#status#,
+			CERNO=#cerno#,
+			accountId=#accountId#,
+			departmentId=#departmentId#,
+			createDate=#createDate#,
+			updateDate=#updateDate#,
+			itemCode=#itemCode#,
+			applicantUnit=#applicantUnit#,
+			applicantUser=#applicantUser#
+			WHERE ID=#id#
+		]]>
+	</update>
+	<delete id="remove" parameterClass="business">
+		<![CDATA[
+		DELETE FROM C_BUSINESS WHERE ID=#id#
+		]]>
+	</delete>
+	<select id="findAll" resultMap="businessResult">
+		<![CDATA[ SELECT
+ 					id,
+					NAME,
+					CODE,
+					MEMO,
+					STATUS,
+					CERNO,
+					accountId,
+					departmentId,
+					itemCode,
+					createDate,
+					updateDate,
+					applicantUnit,
+					applicantUser,
+					permissionCode,
+					cerName,
+					TYPE,
+					accessIp,
+					userId,
+					itemInnerCode,
+					zhId,
+					requestParam
+ 				FROM C_BUSINESS ]]>
+	</select>
+	<select id="findById" resultMap="businessResult" parameterClass="long">
+		<![CDATA[
+				  SELECT
+					 id,
+					NAME,
+					CODE,
+					MEMO,
+					STATUS,
+					CERNO,
+					accountId,
+					departmentId,
+					itemCode,
+					createDate,
+					updateDate,
+					applicantUnit,
+					applicantUser,
+					permissionCode,
+					cerName,
+					TYPE,
+					accessIp,
+					userId,
+					itemInnerCode,
+					zhId,
+					requestParam
+			 FROM C_BUSINESS WHERE ID=#value#
+			]]>
+	</select>
+	
+	<resultMap id="mapCumulative" class="java.util.HashMap">  
+	     <result property="itemCount" column="itemCount" javaType="java.lang.String" />  
+	     <result property="certCount" column="certCount" javaType="java.lang.String" />
+	     <result property="departmentName" column="departmentName" javaType="java.lang.String" />
+	</resultMap>  
+	
+	<resultMap id="mapDay" class="java.util.HashMap">  
+	     <result property="cerNoCount" column="cerNoCount" javaType="java.lang.String" />  
+	     <result property="tempCount" column="tempCount" javaType="java.lang.String" />
+	     <result property="dayTempCount" column="dayTempCount" javaType="java.lang.String" />
+	     <result property="departmentName" column="departmentName" javaType="java.lang.String" />
+	</resultMap>
+	
+	<resultMap id="mapDayDepar" class="java.util.HashMap">  
+	     <result property="departmentName" column="departmentName" javaType="java.lang.String" nullValue=""/>  
+	     <result property="dayCount" column="dayCount" javaType="java.lang.String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="mapMonth" class="java.util.HashMap">  
+	     <result property="months" column="months" javaType="java.lang.String" nullValue=""/>  
+	     <result property="monthCount" column="monthCount" javaType="java.lang.String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="mapWeek" class="java.util.HashMap">  
+	     <result property="weekDay" column="weekDay" javaType="java.lang.String" />  
+	     <result property="weekCount" column="weekCount" javaType="java.lang.String" />
+	</resultMap>
+	
+	<resultMap id="mapTempWeek" class="java.util.HashMap">  
+	     <result property="tempName" column="tempName" javaType="java.lang.String" />
+	     <result property="tempCount" column="tempCount" javaType="java.lang.String" />
+	</resultMap>
+	
+	<resultMap id="mapTempWeek1" class="java.util.HashMap">  
+	     <result property="departmentName" column="departmentName" javaType="java.lang.String" />  
+	     <result property="tempCount" column="tempCount" javaType="java.lang.String" />
+	</resultMap>
+	
+	<select id="cumulativeTempItemRequest" resultMap="mapCumulative" remapResults="true">
+		<![CDATA[
+			SELECT
+	DT.departmentName as departmentName,
+	COUNT(businessid) AS itemCount,
+	SUM(itemcount) AS certCount
+FROM
+	(
+		SELECT
+			CB.ID businessid,
+			CD. NAME AS departmentName,
+			COUNT(CBI.ID) itemcount
+		FROM
+			C_BUSINESS cb
+		LEFT JOIN C_BUSINESS_ITEM cbi ON CB.ID = CBI.businessId
+		LEFT JOIN C_DEPARTMENT cd ON CB.departmentId = cd.ID
+		WHERE
+			cb.type !=3 and DATEDIFF(cb.createDate,NOW())=0
+		GROUP BY
+			CB.ID,
+			CD. NAME,
+			CB.itemCode
+		ORDER BY
+			businessid
+	) dt
+GROUP BY
+	DT.departmentName
+		]]>
+	</select>
+
+	<select id="count" resultClass="int" remapResults="true">
+		<![CDATA[
+			select count(*) from C_BUSINESS
+		]]>
+	</select>
+	
+	<!-- 可视化页面中央办件总量和查询证件总量 -->
+	<select id="serviceItemCount" resultClass="java.util.HashMap" >
+		select * from (
+		   (select count(CERNO) as cerNoCount from C_BUSINESS where type !=3 and type != 4 ) a ,
+		   (select count(bi.certTempCode) as tempCount
+		     from c_business_item bi,c_business bb 
+		     where bb.id = bi.businessId and bb.type !=4 ) b,
+		   (select COUNT(1) as itemCount from c_item where active = 2) c,
+		   (select count(*) as certCount from c_cert_temp ) d,
+	       (select count(*) as formCount from  c_form_page) e,
+	       (select count(*) as caCount from c_user where certNo is not null) f
+		)
+	</select>
+	
+	<select id="dayItemCount" resultMap="mapDayDepar" remapResults="true">
+		<![CDATA[
+			SELECT d.NAME as departmentName,count(d.NAME) as dayCount FROM C_BUSINESS b 
+LEFT JOIN C_DEPARTMENT d on d.id = b.departmentId and b.type !=3
+WHERE DATEDIFF(b.createDate,NOW())=0 GROUP BY d.NAME
+		]]>
+	</select>
+	
+	<select id="monthItemCount" resultMap="mapMonth" remapResults="true">
+		<![CDATA[
+			SELECT date_format(b.createDate,'%m') as months,count(*) as monthCount FROM C_BUSINESS b
+WHERE date_format(b.createDate,'%Y') = date_format(b.createDate,'%Y')
+GROUP BY date_format(b.createDate,'%m')
+		]]>
+	</select>
+	
+	<select id="monthCerNoCount" resultMap="mapMonth" remapResults="true">
+		SELECT date_format(b.createDate,'%m') as months,count(CERNO) as monthCount FROM C_BUSINESS b
+			WHERE b.type !=3 and date_format(b.createDate,'%Y') = date_format(b.createDate,'%Y')
+			GROUP BY date_format(b.createDate,'%m')
+	</select>
+	
+	<select id="weekItemCount" resultMap="mapWeek" remapResults="true" parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT date_format(b.createDate,'%Y-%m-%d') weekDay,count(*) as weekCount FROM C_BUSINESS b
+WHERE b.type !=3 and date_format(b.createDate,'%Y-%m-%d') < date_format(#date#,'%Y-%m-%d')
+AND date_format(b.createDate,'%Y-%m-%d') >= date_format(date_sub(#date#,interval 7 day) ,'%Y-%m-%d')
+GROUP BY date_format(b.createDate,'%Y-%m-%d')
+		]]>
+	</select>
+	
+	<select id="dayTempCount" resultMap="mapTempWeek" remapResults="true" parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT CT.name as tempName,count(CT.name) as tempCount FROM C_BUSINESS_ITEM bi
+LEFT JOIN C_CERT_TEMP ct ON ct.CODE = BI.certTempCode
+LEFT JOIN C_BUSINESS b on b.id = BI.businessId
+WHERE DATEDIFF(b.createDate,NOW())=0
+GROUP BY CT.name ORDER BY tempCount desc limit 0,4
+		]]>
+	</select>
+	
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull property="id">
+				<isGreaterThan prepend="AND" property="id"
+					compareValue="0"> B.ID=#id#</isGreaterThan>
+			</isNotNull>
+			<isNotNull prepend="AND" property="cerno"> B.CERNO=#cerno# </isNotNull>
+			<isNotNull prepend="AND" property="deptId"> B.departmentId=#deptId# </isNotNull>
+			<isNotNull prepend="AND" property="startDate">
+				date_format(B.createDate,'%Y-%m-%d') <![CDATA[>=]]> #startDate#
+			</isNotNull>
+			<isNotNull prepend="AND" property="stopDate">
+				date_format(B.createDate,'%Y-%m-%d') <![CDATA[<=]]> #stopDate#
+			</isNotNull>
+			<isNotNull prepend="AND" property="deptIds">
+         		B.departmentId IN
+	         	<iterate property="deptIds" open="(" conjunction="," close=")">
+	         		#deptIds[]#
+	         	</iterate>
+            </isNotNull>
+            <isNotNull prepend="AND" property="type"> B.type=#type# </isNotNull>
+			<isNotNull prepend="AND" property="code"> B.code=#code# </isNotNull>
+			<isNotNull prepend="AND" property="requestParam">requestParam=#requestParam#</isNotNull>
+		</dynamic>
+	</sql>
+	<sql id="sql_from">
+		FROM C_BUSINESS B
+		<include refid="sql_where" />
+	</sql>
+	<select id="find" resultMap="businessResultLeftJoin">
+	  <![CDATA[ SELECT
+ 	    B.id,
+		B.NAME,
+		B.CODE,
+		B.MEMO,
+		B.STATUS,
+		B.CERNO,
+		B.accountId,
+		B.departmentId,
+		B.itemCode,
+		B.createDate,
+		B.updateDate,
+		B.applicantUnit,
+		B.applicantUser,
+		B.permissionCode,
+		B.cerName,
+		B.type,
+		B.accessIp,
+		B.userId,
+		B.itemInnerCode,
+		B.zhId,
+		B.requestParam,
+	  (SELECT NAME FROM C_DEPARTMENT D WHERE D.ID = B.departmentId) AS departmentName,
+	  (SELECT NAME FROM C_ITEM I WHERE I.CODE = B.itemCode limit 0,1) AS itemName,
+	  B.applicantUser AS accountName,
+	  (SELECT NAME FROM C_USER U WHERE U.ID = B.userId ) AS username]]>
+	  <include refid="sql_from" />
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY B.$_orderBy$ ]]></isNotNull>
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map"
+		resultClass="int">
+		<![CDATA[ SELECT COUNT(1) ]]>
+		<include refid="sql_from" />
+	</select>
+	
+	<sql id="sql_tempCountWhere">
+		<isNotNull prepend="AND" property="certTempCode">
+			bi.certTempCode in
+			<iterate property="certTempCode" open="(" close=")" conjunction=",">  
+                 #certTempCode[]#   
+	       </iterate>
+		</isNotNull>
+		<isNotNull prepend="AND" property="departmentId"> 
+			 b.departmentId in (
+          		select id from C_DEPARTMENT where uniquecoding like 
+          		CONCAT('%',(select uniquecoding from C_DEPARTMENT where id = #departmentId#),'%')
+          	)
+		</isNotNull>
+		<isNotNull prepend="AND" property="startDate">
+			date_format(bi.createDate,'%Y-%m-%d') <![CDATA[>=]]> #startDate#
+		</isNotNull>
+		<isNotNull prepend="AND" property="stopDate">
+			date_format(bi.createDate,'%Y-%m-%d') <![CDATA[<=]]> #stopDate#
+		</isNotNull>
+		<isNotNull prepend="AND" property="deptIds">
+       		b.departmentId IN
+        	<iterate property="deptIds" open="(" conjunction="," close=")">
+        		#deptIds[]#
+        	</iterate>
+        </isNotNull>
+	</sql>
+	
+	<!-- 证件统计页面 -->
+	<select id="findTempCount" resultMap="TempCount">
+		select d.name as departmentName, c.name itemName, accountCert from (
+			select b.departmentId,bi.certTempCode,count(bi.certTempCode) as
+		accountCert
+			from c_business_item bi,c_business b
+			where b.id = bi.businessId
+			<include refid="sql_tempCountWhere"/>
+			GROUP BY b.departmentId,bi.certTempCode
+		)  a
+		LEFT JOIN c_department d on d.id = a.departmentId
+		LEFT JOIN c_cert_temp c on c.code = a.certTempCode
+		ORDER BY departmentName
+		<isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+	</select>
+	
+	<select id="findTempCount_count" parameterClass="java.util.Map"  resultClass="int">
+  		select count(*) from (
+	  		select b.departmentId
+			from c_business_item bi,c_business b 
+			where b.id = bi.businessId
+		  	<include refid="sql_tempCountWhere" />
+		  	GROUP BY b.departmentId,bi.certTempCode
+	  	) result
+	</select>
+	
+	<select id="findTempCount_sum" parameterClass="java.util.Map" resultClass="int" >
+		select count(*) 
+		from c_business_item bi,c_business b  
+		where b.id = bi.businessId
+	    <include refid="sql_tempCountWhere" />
+	</select>
+	
+	<delete id="deleteTest">
+		DELETE FROM c_business where cerName = '' or  accessIp = '127.0.0.1' or id in (
+		select id from (
+		select b.id FROM c_business b where cerName = (select name from c_user u where u.id = b.userId)
+		) result 
+		)
+	</delete>
+	
+	<sql id="sql_itemCountWhere">
+		<isNotNull prepend="AND" property="departmentId"> 
+			 b.departmentId in (
+         		select id from C_DEPARTMENT where uniquecoding like 
+         		CONCAT('%',(select uniquecoding from C_DEPARTMENT where id = #departmentId#),'%')
+         		)
+		</isNotNull>
+		<isNotNull prepend="AND" property="itemCode">
+			b.itemCode in
+			<iterate property="itemCode" open="(" close=")" conjunction=",">  
+                 #itemCode[]#   
+	       </iterate>
+		</isNotNull>
+		<isNotNull prepend="AND" property="startDate">
+			date_format(b.createDate,'%Y-%m-%d') <![CDATA[>=]]> #startDate#
+		</isNotNull>
+		<isNotNull prepend="AND" property="stopDate">
+			date_format(b.createDate,'%Y-%m-%d') <![CDATA[<=]]> #stopDate#
+		</isNotNull>
+		<isNotNull prepend="AND" property="deptIds">
+       		b.departmentId IN
+        	<iterate property="deptIds" open="(" conjunction="," close=")">
+        		#deptIds[]#
+        	</iterate>
+        </isNotNull>
+	</sql>
+	
+	<!-- 事项统计页面 -->
+	<select id="findItemCount" resultClass="com.fline.form.vo.ItemCount">
+		select d.name as deptName,number,
+		(select name from c_item i where i.CODE = itemCode LIMIT 0,1) as itemName,
+		(select name from c_department where uniquecoding = left(d.uniquecoding,6) ) as area
+		from (
+			select b.departmentId, b.itemCode, count(itemInnerCode) as number
+			from c_business b where b.type != 3 and b.type !=4  
+			<include refid="sql_itemCountWhere"/>
+			GROUP BY b.departmentId,b.itemCode
+		) a
+		LEFT JOIN c_department d on d.id = departmentId
+		ORDER BY area,deptName 
+	    <isGreaterThan property="_maxResult" compareValue="0">
+	       <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	    </isGreaterThan>
+	</select>
+	
+	<select id="findItemCount_count" parameterClass="java.util.Map" resultClass="int">
+		select count(*) from (
+		select departmentId from c_business b where b.type != 3 and b.type != 4  
+		<include refid="sql_itemCountWhere"/>
+		GROUP BY b.departmentId,b.itemCode
+		) result
+	</select>
+	
+	<select id="findItemCount_sum" parameterClass="java.util.Map" resultClass="int">
+		select count(*) from c_business b where b.type != 3 and b.type != 4  
+		<include refid="sql_itemCountWhere"/>
+	</select>
+	
+	<!-- 部门办件排名 -->
+	<select id="deptItemCount" resultClass="java.util.HashMap" >
+		SELECT d.NAME as departmentName,count(d.NAME) as itemCount FROM C_BUSINESS b 
+		LEFT JOIN C_DEPARTMENT d on d.id = b.departmentId and b.type != 3 and b.type != 4
+		and left(d.uniquecoding,6) <isEqual property="city" compareValue="1">!</isEqual>= '330000'
+		WHERE d.NAME is not null  
+		<isEqual property="type" compareValue="1">
+			and DATE_FORMAT(b.createDate,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m')
+		</isEqual>
+	    GROUP BY d.NAME ORDER BY itemCount desc 
+	</select>
+	
+	<!-- 区县办件排名 -->
+	<select id="cityItemCount" resultClass="java.util.HashMap" >
+		select a.itemCount,(select name from c_department aa where aa.uniquecoding = a.code) as departmentName  from (
+		SELECT left(d.uniquecoding,6) as code,count(d.uniquecoding) as itemCount FROM C_BUSINESS b 
+		LEFT JOIN C_DEPARTMENT d on d.id = b.departmentId and b.type != 3 and b.type != 4
+		and left(d.uniquecoding,6) != '330000'
+		WHERE d.uniquecoding is not null 
+		<isEqual property="type" compareValue="1">
+			and DATE_FORMAT(b.createDate,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m')
+		</isEqual>
+		GROUP BY left(d.uniquecoding,6) ORDER BY itemCount desc limit 0,10
+		)a
+	</select>
+	
+	<!-- 今日办件量分布 -->
+	<select id="deptItemCountByDay" resultClass="java.util.HashMap" >
+		SELECT d.NAME as departmentName,count(d.NAME) as itemCount FROM C_BUSINESS b 
+		LEFT JOIN C_DEPARTMENT d on d.id = b.departmentId and b.type != 3 and b.type != 4
+		WHERE d.NAME is not null and DATEDIFF(b.createDate,now()) = 0  
+		GROUP BY d.NAME ORDER BY itemCount desc 
+	</select>
+	
+	<!-- 办件量统计 周 月 年 -->
+	<select id="dayItemCountChange" resultClass="java.util.HashMap" >
+		SELECT DATE_FORMAT(createDate,'%y-%m-%d') as time,count(*) as itemCount
+		from c_business where type != 3 and type !=4 
+		<isNotNull property="days">
+			<isGreaterThan property="days" compareValue="0">
+				and createDate > DATE_ADD(NOW(),INTERVAL -#days# DAY)
+			</isGreaterThan>
+		</isNotNull>
+		GROUP BY time 
+	</select>
+	
+	<select id="dayItemCountChange_sum" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(*) as itemCount
+			from c_business where type != 3 and type !=4 
+			<isNotNull property="days">
+				<isGreaterThan property="days" compareValue="0">
+					and createDate > DATE_ADD(NOW(),INTERVAL -#days# DAY)
+				</isGreaterThan>
+			</isNotNull>
+	</select>
+	
+	<select id="implementedItem" resultClass="java.util.HashMap" >
+		SELECT
+			COUNT(1) as total,SUBSTR(deptName,1,4) as subDeptName
+		FROM
+			c_item where departmentId IN (
+				SELECT
+					id
+				FROM
+					C_DEPARTMENT
+				WHERE
+					   CODE LIKE '001008001%' or CODE LIKE '001008002%' or CODE like '001008003%'
+					or CODE LIKE '001008004%' or CODE LIKE '001008005%' or CODE like '001008006%'
+					or CODE LIKE '001008007%' or CODE like '001008009%' or CODE LIKE '001008010%' 
+					or CODE LIKE '001008011%' or CODE like '001008012%'	or CODE like '001008013%'	
+		) AND active = 2 GROUP BY subDeptName
+	</select>
+	
+</sqlMap>

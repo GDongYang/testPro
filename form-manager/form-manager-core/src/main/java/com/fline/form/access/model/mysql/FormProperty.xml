@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FormProperty">
+
+   <typeAlias alias="formProperty" type="com.fline.yztb.access.model.FormProperty" />
+
+   <resultMap id="formPropertyResult" class="formProperty">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" />
+      <result property="name" column="name" javaType="string" jdbcType="VARCHAR" />
+      
+      <!-- FormProperty -->
+      <result property="cnName" column="cnName" javaType="string" jdbcType="VARCHAR" />
+      <result property="value" column="value" javaType="string" jdbcType="VARCHAR" />
+      <result property="valueName" column="valueName" javaType="string" jdbcType="VARCHAR" />
+      <result property="formCode" column="formCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="formName" column="formName" javaType="string" jdbcType="VARCHAR"/>
+      <result property="formVersion" column="formVersion" javaType="long" jdbcType="NUMERIC"/>
+   </resultMap>
+
+   <insert id="create" parameterClass="formProperty">
+      <![CDATA[
+         INSERT INTO c_form_property (
+            name, cnName,
+            value, valueName,
+            formCode, formName, formVersion
+         ) VALUES (
+            #name#, #cnName#,
+            #value#, #valueName#,
+            #formCode#, #formName#, #formVersion#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="formProperty">
+      <![CDATA[
+         UPDATE c_form_property SET
+            formName=#formName#,
+            formVersion=#formVersion#,
+            value=#value#,
+            valueName=#valueName#
+         WHERE ID=#id#
+      ]]>
+   </update>
+
+   <delete id="remove" parameterClass="formProperty">
+      <![CDATA[
+         DELETE FROM c_form_property WHERE ID=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="formPropertyResult">
+      <![CDATA[
+         SELECT
+          id,
+         name,
+         cnName,
+         value,
+         valueName,
+         formCode,
+         formName,
+         formVersion,
+         update_time
+          FROM c_form_property WHERE ID=#value#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="formPropertyResult">
+      <![CDATA[
+         SELECT
+          id,
+         name,
+         cnName,
+         value,
+         valueName,
+         formCode,
+         formName,
+         formVersion,
+         update_time
+          FROM c_form_property WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=",">
+         #ids[]#
+      </iterate>
+   </select>
+
+   <select id="findAll" resultMap="formPropertyResult">
+      <![CDATA[ SELECT
+           id,
+         name,
+         cnName,
+         value,
+         valueName,
+         formCode,
+         formName,
+         formVersion,
+         update_time
+        FROM c_form_property ]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+         	<isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="formCode"> formCode=#formCode#</isNotNull>
+         <isNotNull prepend="AND" property="formVersion"> formVersion=#formVersion#</isNotNull>
+         <isNotNull prepend="AND" property="name"> name=#name#</isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM c_form_property
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="formPropertyResult">
+		<![CDATA[ SELECT
+          id,
+         name,
+         cnName,
+         value,
+         valueName,
+         formCode,
+         formName,
+         formVersion,
+         update_time
+         ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+   <delete id="removeByForm" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM c_form_property WHERE formCode=#formCode# and formVersion=#formVersion#
+      ]]>
+   </delete>
+
+    <select id="findByMaxVersion" resultClass="com.fline.yztb.vo.FormPropertyVo">
+        select
+         b.id,
+         b.name,
+         b.cnName,
+         b.value,
+         b.valueName,
+         b.formCode,
+         b.formName,
+         b.formVersion,
+         b.update_time
+         from (
+          SELECT formCode,name,max(formVersion) as formVersion FROM `c_form_property` GROUP BY formCode,name
+        ) a ,c_form_property b
+        where a.formCode = b.formCode and a.name = b.name and a.formVersion = b.formVersion
+    </select>
+    
+    <select id="findVoListByFormInfo" resultClass="com.fline.yztb.vo.FormPropertyVo" parameterClass="java.util.HashMap">
+    	select
+    	 id,
+         name,
+         cnName,
+         value,
+         valueName,
+         formCode,
+         formName,
+         formVersion,
+         update_time
+      from c_form_property where formCode = #formCode# and formVersion = #formVersion#
+    </select>
+</sqlMap>

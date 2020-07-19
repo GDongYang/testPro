@@ -1,0 +1,21 @@
+[form-manager] 2020-03-12 13:05:25.533 < INFO> [main] log.info(67) | Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+[form-manager] 2020-03-12 13:05:25.576 < INFO> [main] log.info(67) | jetty-6.1.25
+[form-manager] 2020-03-12 13:05:26.017 < INFO> [main] /form-manager.info(67) | Set web app root system property: 'webapp.root' = [D:\workspace\form-yinchuan\form-manager\form-manager-runtime\src\main\webapp]
+[form-manager] 2020-03-12 13:05:26.020 < INFO> [main] /form-manager.info(67) | Initializing log4j from [classpath:log4j.properties]
+[form-manager] 2020-03-12 13:05:26.026 < INFO> [main] /form-manager.info(67) | Initializing Spring root WebApplicationContext
+[form-manager] 2020-03-12 13:05:26.027 < INFO> [main] ContextLoader.initWebApplicationContext(305) | Root WebApplicationContext: initialization started
+[form-manager] 2020-03-12 13:05:26.195 < INFO> [main] XmlWebApplicationContext.prepareRefresh(581) | Refreshing Root WebApplicationContext: startup date [Thu Mar 12 13:05:26 CST 2020]; root of context hierarchy
+[form-manager] 2020-03-12 13:05:26.268 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-server-index.xml]
+[form-manager] 2020-03-12 13:05:26.593 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-core-index.xml]
+[form-manager] 2020-03-12 13:05:26.604 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-common-properties.xml]
+[form-manager] 2020-03-12 13:05:26.641 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-common-properties.extensionpoint.xml]
+[form-manager] 2020-03-12 13:05:26.659 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-scriptengine.xml]
+[form-manager] 2020-03-12 13:05:26.678 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-cache-common.xml]
+[form-manager] 2020-03-12 13:05:26.708 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-cache-common.extensionpoint.xml]
+[form-manager] 2020-03-12 13:05:26.719 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-cache-ehcache.xml]
+[form-manager] 2020-03-12 13:05:26.730 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-system-datasource.xml]
+[form-manager] 2020-03-12 13:05:26.749 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-datasource-dbcp.xml]
+[form-manager] 2020-03-12 13:05:26.853 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-datasource-common.xml]
+[form-manager] 2020-03-12 13:05:26.899 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-datasource-common.extensionpoint.xml]
+[form-manager] 2020-03-12 13:05:26.909 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-transaction-common.xml]
+[form-manager] 2020-03-12 13:05:26.930 < INFO> [main] XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [applicationContext-tp-transaction-common.extensionpoint.xml]

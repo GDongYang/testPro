@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+table.base_T-Bts-none tr:first-child td { border-top-style:none; }
+table.base_T-Bts-hidden tr:first-child td { border-top-style:hidden; }
+table.base_T-Bts-dotted tr:first-child td { border-top-style:dotted; }
+table.base_T-Bts-dashed tr:first-child td { border-top-style:dashed; }
+table.base_T-Bts-solid tr:first-child td { border-top-style:solid; }
+table.base_T-Bts-double tr:first-child td { border-top-style:double; }
+table.base_T-Bts-groove tr:first-child td { border-top-style:groove; }
+table.base_T-Bts-ridge tr:first-child td { border-top-style:ridge; }
+table.base_T-Bts-inset tr:first-child td { border-top-style:inset; }
+table.base_T-Bts-outset tr:first-child td { border-top-style:outset; }
+table.base_T-Bts-inherit tr:first-child td { border-top-style:inherit; }
+
+table.base_T-Bts-imp-none tr:first-child td { border-top-style:none !important; }
+table.base_T-Bts-imp-hidden tr:first-child td { border-top-style:hidden !important; }
+table.base_T-Bts-imp-dotted tr:first-child td { border-top-style:dotted !important; }
+table.base_T-Bts-imp-dashed tr:first-child td { border-top-style:dashed !important; }
+table.base_T-Bts-imp-solid tr:first-child td { border-top-style:solid !important; }
+table.base_T-Bts-imp-double tr:first-child td { border-top-style:double !important; }
+table.base_T-Bts-imp-groove tr:first-child td { border-top-style:groove !important; }
+table.base_T-Bts-imp-ridge tr:first-child td { border-top-style:ridge !important; }
+table.base_T-Bts-imp-inset tr:first-child td { border-top-style:inset !important; }
+table.base_T-Bts-imp-outset tr:first-child td { border-top-style:outset !important; }
+table.base_T-Bts-imp-inherit tr:first-child td { border-top-style:inherit !important; }
+
+
+table.base_T-Bbs-none tr:last-child td { border-bottom-style:none; }
+table.base_T-Bbs-hidden tr:first-child td { border-bottom-style:hidden; }
+table.base_T-Bbs-dotted tr:first-child td { border-bottom-style:dotted; }
+table.base_T-Bbs-dashed tr:first-child td { border-bottom-style:dashed; }
+table.base_T-Bbs-solid tr:first-child td { border-bottom-style:solid; }
+table.base_T-Bbs-double tr:first-child td { border-bottom-style:double; }
+table.base_T-Bbs-groove tr:first-child td { border-bottom-style:groove; }
+table.base_T-Bbs-ridge tr:first-child td { border-bottom-style:ridge; }
+table.base_T-Bbs-inset tr:first-child td { border-bottom-style:inset; }
+table.base_T-Bbs-outset tr:first-child td { border-bottom-style:outset; }
+table.base_T-Bbs-inherit tr:first-child td { border-bottom-style:inherit; }
+
+table.base_T-Bbs-imp-none tr:last-child td { border-bottom-style:none !important; }
+table.base_T-Bbs-imp-hidden tr:first-child td { border-bottom-style:hidden !important; }
+table.base_T-Bbs-imp-dotted tr:first-child td { border-bottom-style:dotted !important; }
+table.base_T-Bbs-imp-dashed tr:first-child td { border-bottom-style:dashed !important; }
+table.base_T-Bbs-imp-solid tr:first-child td { border-bottom-style:solid !important; }
+table.base_T-Bbs-imp-double tr:first-child td { border-bottom-style:double !important; }
+table.base_T-Bbs-imp-groove tr:first-child td { border-bottom-style:groove !important; }
+table.base_T-Bbs-imp-ridge tr:first-child td { border-bottom-style:ridge !important; }
+table.base_T-Bbs-imp-inset tr:first-child td { border-bottom-style:inset !important; }
+table.base_T-Bbs-imp-outset tr:first-child td { border-bottom-style:outset !important; }
+table.base_T-Bbs-imp-inherit tr:first-child td { border-bottom-style:inherit !important; }
+
+
+table.base_T-Bls-none tr td:first-child { border-left-style:none; }
+table.base_T-Bls-hidden tr:first-child td { border-left-style:hidden; }
+table.base_T-Bls-dotted tr:first-child td { border-left-style:dotted; }
+table.base_T-Bls-dashed tr:first-child td { border-left-style:dashed; }
+table.base_T-Bls-solid tr:first-child td { border-left-style:solid; }
+table.base_T-Bls-double tr:first-child td { border-left-style:double; }
+table.base_T-Bls-groove tr:first-child td { border-left-style:groove; }
+table.base_T-Bls-ridge tr:first-child td { border-left-style:ridge; }
+table.base_T-Bls-inset tr:first-child td { border-left-style:inset; }
+table.base_T-Bls-outset tr:first-child td { border-left-style:outset; }
+table.base_T-Bls-inherit tr:first-child td { border-left-style:inherit; }
+
+table.base_T-Bls-imp-none tr td:first-child { border-left-style:none !important; }
+table.base_T-Bls-imp-hidden tr:first-child td { border-left-style:hidden !important; }
+table.base_T-Bls-imp-dotted tr:first-child td { border-left-style:dotted !important; }
+table.base_T-Bls-imp-dashed tr:first-child td { border-left-style:dashed !important; }
+table.base_T-Bls-imp-solid tr:first-child td { border-left-style:solid !important; }
+table.base_T-Bls-imp-double tr:first-child td { border-left-style:double !important; }
+table.base_T-Bls-imp-groove tr:first-child td { border-left-style:groove !important; }
+table.base_T-Bls-imp-ridge tr:first-child td { border-left-style:ridge !important; }
+table.base_T-Bls-imp-inset tr:first-child td { border-left-style:inset !important; }
+table.base_T-Bls-imp-outset tr:first-child td { border-left-style:outset !important; }
+table.base_T-Bls-imp-inherit tr:first-child td { border-left-style:inherit !important; }
+
+
+table.base_T-Brs-none tr td:last-child { border-right-style:none; }
+table.base_T-Brs-hidden tr:first-child td { border-right-style:hidden; }
+table.base_T-Brs-dotted tr:first-child td { border-right-style:dotted; }
+table.base_T-Brs-dashed tr:first-child td { border-right-style:dashed; }
+table.base_T-Brs-solid tr:first-child td { border-right-style:solid; }
+table.base_T-Brs-double tr:first-child td { border-right-style:double; }
+table.base_T-Brs-groove tr:first-child td { border-right-style:groove; }
+table.base_T-Brs-ridge tr:first-child td { border-right-style:ridge; }
+table.base_T-Brs-inset tr:first-child td { border-right-style:inset; }
+table.base_T-Brs-outset tr:first-child td { border-right-style:outset; }
+table.base_T-Brs-inherit tr:first-child td { border-right-style:inherit; }
+
+table.base_T-Brs-imp-none tr td:last-child { border-right-style:none !important; }
+table.base_T-Brs-imp-hidden tr:first-child td { border-right-style:hidden !important; }
+table.base_T-Brs-imp-dotted tr:first-child td { border-right-style:dotted !important; }
+table.base_T-Brs-imp-dashed tr:first-child td { border-right-style:dashed !important; }
+table.base_T-Brs-imp-solid tr:first-child td { border-right-style:solid !important; }
+table.base_T-Brs-imp-double tr:first-child td { border-right-style:double !important; }
+table.base_T-Brs-imp-groove tr:first-child td { border-right-style:groove !important; }
+table.base_T-Brs-imp-ridge tr:first-child td { border-right-style:ridge !important; }
+table.base_T-Brs-imp-inset tr:first-child td { border-right-style:inset !important; }
+table.base_T-Brs-imp-outset tr:first-child td { border-right-style:outset !important; }
+table.base_T-Brs-imp-inherit tr:first-child td { border-right-style:inherit !important; }
+
+
+table.base_T-Btbs-none tr:first-child td,table.base_T-Btbs-none tr:last-child td { border-top-style:none; border-bottom-style:none; }
+table.base_T-Btbs-hidden tr:first-child td,table.base_T-Btbs-hidden tr:last-child td { border-top-style:hidden; border-bottom-style:hidden; }
+table.base_T-Btbs-dotted tr:first-child td,table.base_T-Btbs-dotted tr:last-child td { border-top-style:dotted; border-bottom-style:dotted; }
+table.base_T-Btbs-dashed tr:first-child td,table.base_T-Btbs-dashed tr:last-child td { border-top-style:dashed; border-bottom-style:dashed; }
+table.base_T-Btbs-solid tr:first-child td,table.base_T-Btbs-solid tr:last-child td { border-top-style:solid; border-bottom-style:solid; }
+table.base_T-Btbs-double tr:first-child td,table.base_T-Btbs-double tr:last-child td { border-top-style:double; border-bottom-style:double; }
+table.base_T-Btbs-groove tr:first-child td,table.base_T-Btbs-groove tr:last-child td { border-top-style:groove; border-bottom-style:groove; }
+table.base_T-Btbs-ridge tr:first-child td,table.base_T-Btbs-ridge tr:last-child td { border-top-style:ridge; border-bottom-style:ridge; }
+table.base_T-Btbs-inset tr:first-child td,table.base_T-Btbs-inset tr:last-child td { border-top-style:inset; border-bottom-style:inset; }
+table.base_T-Btbs-outset tr:first-child td,table.base_T-Btbs-outset tr:last-child td { border-top-style:outset; border-bottom-style:outset; }
+table.base_T-Btbs-inherit tr:first-child td,table.base_T-Btbs-inherit tr:last-child td { border-top-style:inherit; border-bottom-style:inherit; }
+
+table.base_T-Btbs-imp-none tr:first-child td,table.base_T-Btbs-imp-none tr:last-child td { border-top-style:none !important; border-bottom-style:none !important; }
+table.base_T-Btbs-imp-hidden tr:first-child td,table.base_T-Btbs-imp-hidden tr:last-child td { border-top-style:hidden !important; border-bottom-style:hidden !important; }
+table.base_T-Btbs-imp-dotted tr:first-child td,table.base_T-Btbs-imp-dotted tr:last-child td { border-top-style:dotted !important; border-bottom-style:dotted !important; }
+table.base_T-Btbs-imp-dashed tr:first-child td,table.base_T-Btbs-imp-dashed tr:last-child td { border-top-style:dashed !important; border-bottom-style:dashed !important; }
+table.base_T-Btbs-imp-solid tr:first-child td,table.base_T-Btbs-imp-solid tr:last-child td { border-top-style:solid !important; border-bottom-style:solid !important; }
+table.base_T-Btbs-imp-double tr:first-child td,table.base_T-Btbs-imp-double tr:last-child td { border-top-style:double !important; border-bottom-style:double !important; }
+table.base_T-Btbs-imp-groove tr:first-child td,table.base_T-Btbs-imp-groove tr:last-child td { border-top-style:groove !important; border-bottom-style:groove !important; }
+table.base_T-Btbs-imp-ridge tr:first-child td,table.base_T-Btbs-imp-ridge tr:last-child td { border-top-style:ridge !important; border-bottom-style:ridge !important; }
+table.base_T-Btbs-imp-inset tr:first-child td,table.base_T-Btbs-imp-inset tr:last-child td { border-top-style:inset !important; border-bottom-style:inset !important; }
+table.base_T-Btbs-imp-outset tr:first-child td,table.base_T-Btbs-imp-outset tr:last-child td { border-top-style:outset !important; border-bottom-style:outset !important; }
+table.base_T-Btbs-imp-inherit tr:first-child td,table.base_T-Btbs-imp-inherit tr:last-child td { border-top-style:inherit !important; border-bottom-style:inherit !important; }
+
+
+table.base_T-Blrs-none tr td:first-child,table.base_T-Blrs-none tr td:last-child { border-left-style:none; border-right-style:none; }
+table.base_T-Blrs-hidden tr:first-child td,table.base_T-Blrs-hidden tr:last-child td { border-left-style:hidden; border-right-style:hidden; }
+table.base_T-Blrs-dotted tr:first-child td,table.base_T-Blrs-dotted tr:last-child td { border-left-style:dotted; border-right-style:dotted; }
+table.base_T-Blrs-dashed tr:first-child td,table.base_T-Blrs-dashed tr:last-child td { border-left-style:dashed; border-right-style:dashed; }
+table.base_T-Blrs-solid tr:first-child td,table.base_T-Blrs-solid tr:last-child td { border-left-style:solid; border-right-style:solid; }
+table.base_T-Blrs-double tr:first-child td,table.base_T-Blrs-double tr:last-child td { border-left-style:double; border-right-style:double; }
+table.base_T-Blrs-groove tr:first-child td,table.base_T-Blrs-groove tr:last-child td { border-left-style:groove; border-right-style:groove; }
+table.base_T-Blrs-ridge tr:first-child td,table.base_T-Blrs-ridge tr:last-child td { border-left-style:ridge; border-right-style:ridge; }
+table.base_T-Blrs-inset tr:first-child td,table.base_T-Blrs-inset tr:last-child td { border-left-style:inset; border-right-style:inset; }
+table.base_T-Blrs-outset tr:first-child td,table.base_T-Blrs-outset tr:last-child td { border-left-style:outset; border-right-style:outset; }
+table.base_T-Blrs-inherit tr:first-child td,table.base_T-Blrs-inherit tr:last-child td { border-left-style:inherit; border-right-style:inherit; }
+
+table.base_T-Blrs-imp-none tr td:first-child,table.base_T-Blrs-imp-none tr td:last-child { border-left-style:none !important; border-right-style:none !important; }
+table.base_T-Blrs-imp-hidden tr:first-child td,table.base_T-Blrs-imp-hidden tr:last-child td { border-left-style:hidden !important; border-right-style:hidden !important; }
+table.base_T-Blrs-imp-dotted tr:first-child td,table.base_T-Blrs-imp-dotted tr:last-child td { border-left-style:dotted !important; border-right-style:dotted !important; }
+table.base_T-Blrs-imp-dashed tr:first-child td,table.base_T-Blrs-imp-dashed tr:last-child td { border-left-style:dashed !important; border-right-style:dashed !important; }
+table.base_T-Blrs-imp-solid tr:first-child td,table.base_T-Blrs-imp-solid tr:last-child td { border-left-style:solid !important; border-right-style:solid !important; }
+table.base_T-Blrs-imp-double tr:first-child td,table.base_T-Blrs-imp-double tr:last-child td { border-left-style:double !important; border-right-style:double !important; }
+table.base_T-Blrs-imp-groove tr:first-child td,table.base_T-Blrs-imp-groove tr:last-child td { border-left-style:groove !important; border-right-style:groove !important; }
+table.base_T-Blrs-imp-ridge tr:first-child td,table.base_T-Blrs-imp-ridge tr:last-child td { border-left-style:ridge !important; border-right-style:ridge !important; }
+table.base_T-Blrs-imp-inset tr:first-child td,table.base_T-Blrs-imp-inset tr:last-child td { border-left-style:inset !important; border-right-style:inset !important; }
+table.base_T-Blrs-imp-outset tr:first-child td,table.base_T-Blrs-imp-outset tr:last-child td { border-left-style:outset !important; border-right-style:outset !important; }
+table.base_T-Blrs-imp-inherit tr:first-child td,table.base_T-Blrs-imp-inherit tr:last-child td { border-left-style:inherit !important; border-right-style:inherit !important; }
+
+
+table.base_T-Bs-none tr:first-child td,table.base_T-Bs-none tr:last-child td,table.base_T-Bs-none tr td:first-child,table.base_T-Bs-none tr td:last-child { border-top-style:none; border-bottom-style:none; border-left-style:none; border-right-style:none; }
+table.base_T-Bs-hidden tr:first-child td,table.base_T-Bs-hidden tr:last-child td,table.base_T-Bs-hidden tr td:first-child,table.base_T-Bs-hidden tr td:last-child { border-top-style:hidden; border-bottom-style:hidden; border-left-style:hidden; border-right-style:hidden; }
+table.base_T-Bs-dotted tr:first-child td,table.base_T-Bs-dotted tr:last-child td,table.base_T-Bs-dotted tr td:first-child,table.base_T-Bs-dotted tr td:last-child { border-top-style:dotted; border-bottom-style:dotted; border-left-style:dotted; border-right-style:dotted; }
+table.base_T-Bs-dashed tr:first-child td,table.base_T-Bs-dashed tr:last-child td,table.base_T-Bs-dashed tr td:first-child,table.base_T-Bs-dashed tr td:last-child { border-top-style:dashed; border-bottom-style:dashed; border-left-style:dashed; border-right-style:dashed; }
+table.base_T-Bs-solid tr:first-child td,table.base_T-Bs-solid tr:last-child td,table.base_T-Bs-solid tr td:first-child,table.base_T-Bs-solid tr td:last-child { border-top-style:solid; border-bottom-style:solid; border-left-style:solid; border-right-style:solid; }
+table.base_T-Bs-double tr:first-child td,table.base_T-Bs-double tr:last-child td,table.base_T-Bs-double tr td:first-child,table.base_T-Bs-double tr td:last-child { border-top-style:double; border-bottom-style:double; border-left-style:double; border-right-style:double; }
+table.base_T-Bs-groove tr:first-child td,table.base_T-Bs-groove tr:last-child td,table.base_T-Bs-groove tr td:first-child,table.base_T-Bs-groove tr td:last-child { border-top-style:groove; border-bottom-style:groove; border-left-style:groove; border-right-style:groove; }
+table.base_T-Bs-ridge tr:first-child td,table.base_T-Bs-ridge tr:last-child td,table.base_T-Bs-ridge tr td:first-child,table.base_T-Bs-ridge tr td:last-child { border-top-style:ridge; border-bottom-style:ridge; border-left-style:ridge; border-right-style:ridge; }
+table.base_T-Bs-inset tr:first-child td,table.base_T-Bs-inset tr:last-child td,table.base_T-Bs-inset tr td:first-child,table.base_T-Bs-inset tr td:last-child { border-top-style:inset; border-bottom-style:inset; border-left-style:inset; border-right-style:inset; }
+table.base_T-Bs-outset tr:first-child td,table.base_T-Bs-outset tr:last-child td,table.base_T-Bs-outset tr td:first-child,table.base_T-Bs-outset tr td:last-child { border-top-style:outset; border-bottom-style:outset; border-left-style:outset; border-right-style:outset; }
+table.base_T-Bs-inherit tr:first-child td,table.base_T-Bs-inherit tr:last-child td,table.base_T-Bs-inherit tr td:first-child,table.base_T-Bs-inherit tr td:last-child { border-top-style:inherit; border-bottom-style:inherit; border-left-style:inherit; border-right-style:inherit; }
+
+table.base_T-Bs-imp-none tr:first-child td,table.base_T-Bs-imp-none tr:last-child td,table.base_T-Bs-imp-none tr td:first-child,table.base_T-Bs-imp-none tr td:last-child { border-top-style:none !important; border-bottom-style:none !important; border-left-style:none !important; border-right-style:none !important; }
+table.base_T-Bs-imp-hidden tr:first-child td,table.base_T-Bs-imp-hidden tr:last-child td,table.base_T-Bs-imp-hidden tr td:first-child,table.base_T-Bs-imp-hidden tr td:last-child { border-top-style:hidden !important; border-bottom-style:hidden !important; border-left-style:hidden !important; border-right-style:hidden !important; }
+table.base_T-Bs-imp-dotted tr:first-child td,table.base_T-Bs-imp-dotted tr:last-child td,table.base_T-Bs-imp-dotted tr td:first-child,table.base_T-Bs-imp-dotted tr td:last-child { border-top-style:dotted !important; border-bottom-style:dotted !important; border-left-style:dotted !important; border-right-style:dotted !important; }
+table.base_T-Bs-imp-dashed tr:first-child td,table.base_T-Bs-imp-dashed tr:last-child td,table.base_T-Bs-imp-dashed tr td:first-child,table.base_T-Bs-imp-dashed tr td:last-child { border-top-style:dashed !important; border-bottom-style:dashed !important; border-left-style:dashed !important; border-right-style:dashed !important; }
+table.base_T-Bs-imp-solid tr:first-child td,table.base_T-Bs-imp-solid tr:last-child td,table.base_T-Bs-imp-solid tr td:first-child,table.base_T-Bs-imp-solid tr td:last-child { border-top-style:solid !important; border-bottom-style:solid !important; border-left-style:solid !important; border-right-style:solid !important; }
+table.base_T-Bs-imp-double tr:first-child td,table.base_T-Bs-imp-double tr:last-child td,table.base_T-Bs-imp-double tr td:first-child,table.base_T-Bs-imp-double tr td:last-child { border-top-style:double !important; border-bottom-style:double !important; border-left-style:double !important; border-right-style:double !important; }
+table.base_T-Bs-imp-groove tr:first-child td,table.base_T-Bs-imp-groove tr:last-child td,table.base_T-Bs-imp-groove tr td:first-child,table.base_T-Bs-imp-groove tr td:last-child { border-top-style:groove !important; border-bottom-style:groove !important; border-left-style:groove !important; border-right-style:groove !important; }
+table.base_T-Bs-imp-ridge tr:first-child td,table.base_T-Bs-imp-ridge tr:last-child td,table.base_T-Bs-imp-ridge tr td:first-child,table.base_T-Bs-imp-ridge tr td:last-child { border-top-style:ridge !important; border-bottom-style:ridge !important; border-left-style:ridge !important; border-right-style:ridge !important; }
+table.base_T-Bs-imp-inset tr:first-child td,table.base_T-Bs-imp-inset tr:last-child td,table.base_T-Bs-imp-inset tr td:first-child,table.base_T-Bs-imp-inset tr td:last-child { border-top-style:inset !important; border-bottom-style:inset !important; border-left-style:inset !important; border-right-style:inset !important; }
+table.base_T-Bs-imp-outset tr:first-child td,table.base_T-Bs-imp-outset tr:last-child td,table.base_T-Bs-imp-outset tr td:first-child,table.base_T-Bs-imp-outset tr td:last-child { border-top-style:outset !important; border-bottom-style:outset !important; border-left-style:outset !important; border-right-style:outset !important; }
+table.base_T-Bs-imp-inherit tr:first-child td,table.base_T-Bs-imp-inherit tr:last-child td,table.base_T-Bs-imp-inherit tr td:first-child,table.base_T-Bs-imp-inherit tr td:last-child { border-top-style:inherit !important; border-bottom-style:inherit !important; border-left-style:inherit !important; border-right-style:inherit !important; }
+
+
+table.base_Tinner-Bs-none tr td { border-top-style:none; border-bottom-style:none; border-left-style:none; border-right-style:none; }
+table.base_Tinner-Bs-hidden tr td { border-top-style:hidden; border-bottom-style:hidden; border-left-style:hidden; border-right-style:hidden; }
+table.base_Tinner-Bs-dotted tr td { border-top-style:dotted; border-bottom-style:dotted; border-left-style:dotted; border-right-style:dotted; }
+table.base_Tinner-Bs-dashed tr td { border-top-style:dashed; border-bottom-style:dashed; border-left-style:dashed; border-right-style:dashed; }
+table.base_Tinner-Bs-solid tr td { border-top-style:solid; border-bottom-style:solid; border-left-style:solid; border-right-style:solid; }
+table.base_Tinner-Bs-double tr td { border-top-style:double; border-bottom-style:double; border-left-style:double; border-right-style:double; }
+table.base_Tinner-Bs-groove tr td { border-top-style:groove; border-bottom-style:groove; border-left-style:groove; border-right-style:groove; }
+table.base_Tinner-Bs-ridge tr td { border-top-style:ridge; border-bottom-style:ridge; border-left-style:ridge; border-right-style:ridge; }
+table.base_Tinner-Bs-inset tr td { border-top-style:inset; border-bottom-style:inset; border-left-style:inset; border-right-style:inset; }
+table.base_Tinner-Bs-outset tr td { border-top-style:outset; border-bottom-style:outset; border-left-style:outset; border-right-style:outset; }
+table.base_Tinner-Bs-inherit tr td { border-top-style:inherit; border-bottom-style:inherit; border-left-style:inherit; border-right-style:inherit; }
+
+table.base_Tinner-Bs-imp-none tr td { border-top-style:none !important; border-bottom-style:none !important; border-left-style:none !important; border-right-style:none !important; }
+table.base_Tinner-Bs-imp-hidden tr td { border-top-style:hidden !important; border-bottom-style:hidden !important; border-left-style:hidden !important; border-right-style:hidden !important; }
+table.base_Tinner-Bs-imp-dotted tr td { border-top-style:dotted !important; border-bottom-style:dotted !important; border-left-style:dotted !important; border-right-style:dotted !important; }
+table.base_Tinner-Bs-imp-dashed tr td { border-top-style:dashed !important; border-bottom-style:dashed !important; border-left-style:dashed !important; border-right-style:dashed !important; }
+table.base_Tinner-Bs-imp-solid tr td { border-top-style:solid !important; border-bottom-style:solid !important; border-left-style:solid !important; border-right-style:solid !important; }
+table.base_Tinner-Bs-imp-double tr td { border-top-style:double !important; border-bottom-style:double !important; border-left-style:double !important; border-right-style:double !important; }
+table.base_Tinner-Bs-imp-groove tr td { border-top-style:groove !important; border-bottom-style:groove !important; border-left-style:groove !important; border-right-style:groove !important; }
+table.base_Tinner-Bs-imp-ridge tr td { border-top-style:ridge !important; border-bottom-style:ridge !important; border-left-style:ridge !important; border-right-style:ridge !important; }
+table.base_Tinner-Bs-imp-inset tr td { border-top-style:inset !important; border-bottom-style:inset !important; border-left-style:inset !important; border-right-style:inset !important; }
+table.base_Tinner-Bs-imp-outset tr td { border-top-style:outset !important; border-bottom-style:outset !important; border-left-style:outset !important; border-right-style:outset !important; }
+table.base_Tinner-Bs-imp-inherit tr td { border-top-style:inherit !important; border-bottom-style:inherit !important; border-left-style:inherit !important; border-right-style:inherit !important; }

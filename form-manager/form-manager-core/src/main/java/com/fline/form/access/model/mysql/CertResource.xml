@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="CertResource">
+   <typeAlias alias="certResource" type="com.fline.yztb.access.model.CertResource" />
+   <resultMap id="certResourceResult" class="CertResource">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="tempId" column="tempId" javaType="int" jdbcType="int"/>
+	  <result property="tempCode" column="tempCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="resourceCode" column="resourceCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="resourceType" column="resourceType" javaType="int" jdbcType="tinyint" />
+      <result property="fieldName" column="fieldName" javaType="String" jdbcType="VARCHAR" />
+      <result property="fieldCode" column="fieldCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="fieldPath" column="fieldPath" javaType="string" jdbcType="VARCHAR" />
+      <result property="packageId" column="packageId" javaType="string" jdbcType="VARCHAR"/>
+      <result property="dataElementId" column="dataElementId" javaType="string" jdbcType="VARCHAR"/>
+   </resultMap>
+   
+
+   <insert id="create" parameterClass="certResource">
+      <![CDATA[
+         INSERT INTO r_cert_resource (
+            tempId,tempCode, resourceCode, resourceType,fieldName,fieldCode,fieldPath,dataElementId,packageId
+         ) VALUES (
+            #tempId#,#tempCode#, #resourceCode#, #resourceType#, #fieldName#,#fieldCode#,#fieldPath#,#dataElementId#,#packageId#)
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <update id="update" parameterClass="certResource">
+      <![CDATA[
+         UPDATE r_cert_resource SET
+            tempId=#tempId#,
+            tempCode=#tempCode#,
+            resourceCode=#resourceCode#,
+            resourceType=#resourceType#,
+            fieldName=#fieldName#,
+            fieldCode=#fieldCode#,
+            fieldPath=#fieldPath#,
+            packageId=#packageId#,
+            dataElementId=#dataElementId#
+         WHERE
+         	id=#id# 
+      ]]>
+   </update>
+   
+   
+   
+   <delete id="remove" parameterClass="certResource">
+      <![CDATA[
+         DELETE FROM r_cert_resource WHERE id=#id#
+      ]]>
+   </delete>
+   
+   <delete id="removeByCert" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM r_cert_resource WHERE tempCode = #tempCode#
+      ]]>
+   </delete>
+
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+         
+         <isNotNull prepend="AND" property="nameLike"> upper(NAME) like upper('%$nameLike$%') </isNotNull>
+         <isNotEmpty prepend="AND" property="name"> NAME=#name# </isNotEmpty>
+         
+		 <isGreaterThan prepend="AND" property="tempId" compareValue="0">tempId=#tempId#</isGreaterThan>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM r_cert_resource
+      <include refid="sql_where" />
+   </sql>
+
+   <select id="find" resultMap="certResourceResult">
+		<![CDATA[ SELECT
+            id,
+            tempId,
+            tempCode,
+            resourceCode,
+            resourceType,
+            fieldName,
+            fieldCode,
+            fieldPath,
+            dataElementId,
+            packageId
+         ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+   <select id="findByGroup" resultClass="java.util.HashMap">
+      SELECT tempId,resourceCode,resourceType FROM r_cert_resource GROUP BY tempId,resourceCode,resourceType
+  </select>
+  
+  <select id="findByMap"  parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+  	SELECT tempId,resourceCode,resourceType FROM r_cert_resource 
+  	<include refid="sql_where"/>
+  	GROUP BY tempId,resourceCode,resourceType
+  </select>
+
+    <select id="findAll" resultMap="certResourceResult" >
+        select
+         id,
+        tempId,
+        tempCode,
+        resourceCode,
+        resourceType,
+        fieldName,
+        fieldCode,
+        fieldPath,
+        dataElementId,
+        packageId
+         from r_cert_resource
+    </select>
+</sqlMap>

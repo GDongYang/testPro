@@ -1,0 +1,11 @@
+.bgWhite{background:#fff;}
+.border-t-e5e4e4{border-bottom:1px solid #e5e4e4;}
+.base_login-box{position:relative;}
+#login-box{border-radius:5px;}
+.base_login-box:before{content:"";position:absolute;top:-10px;right:50%;width:0px;height:0px;border-left:5px solid transparent;border-bottom:10px solid rgb(255,255,255,1);border-right:5px solid transparent;border-right:5px solid transparent;}
+.loginButton{width:200px;font-size:16px;background:#1988bb}
+.backgroundOne{background: url(../images/loginbg.png) no-repeat;background-size:100% 100%;}
+.loginInputBox{width:359px;vertical-align: top;display: inline-block;}
+.loginImgBox{border-right:1px solid #e5e4e4;vertical-align: top;display: inline-block;padding:5px;}
+.loginInputBox .form-control{height:35px;border:0px;background: #fff;}
+.base_display-inlineBlock{display:inline-block;}

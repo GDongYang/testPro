@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd"
+>
+
+	<context:component-scan base-package="com.fline.form.aop" />
+
+	<aop:config>
+		<aop:advisor advice-ref="accessLogAdvice"
+			pointcut="execution(* com.fline.form.mgmt.service.impl.CatalogMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.CatalogMgmtServiceImpl.create(..))
+			or execution(* com.fline.form.mgmt.service.impl.CatalogMgmtServiceImpl.update(..))
+			or execution(* com.fline.form.mgmt.service.impl.CertTempMgmtServiceImpl.create(..))
+			or execution(* com.fline.form.mgmt.service.impl.CertTempMgmtServiceImpl.update(..))
+			or execution(* com.fline.form.mgmt.service.impl.DepartmentMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.MenuMgmtServiceImpl.update(..))
+			or execution(* com.fline.form.mgmt.service.impl.PositionMgmtServiceImpl.update(..))
+			or execution(* com.fline.form.mgmt.service.impl.RoleMgmtServiceImpl.update(..))
+			or execution(* com.fline.form.mgmt.service.impl.ItemMgmtServiceImpl.create(..))
+			or execution(* com.fline.form.mgmt.service.impl.ItemMgmtServiceImpl.update(..))
+			"
+			order="30" />
+			
+ 		<aop:advisor advice-ref="deptPrivilegeAdvice"
+			pointcut="execution(* com.fline.form.mgmt.service.impl.UserMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.DepartmentMgmtServiceImpl.find(..))
+			or execution(* com.fline.form.mgmt.service.impl.CertTempMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.PositionMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.ServiceAccountMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.access.service.impl.DepartmentAccessServiceImpl.findWithAop(..))
+			or execution(* com.fline.form.mgmt.service.impl.BusinessMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.BusinessMgmtServiceImpl.findItemCount(..))
+			or execution(* com.fline.form.mgmt.service.impl.BusinessMgmtServiceImpl.findTempCount(..))
+			or execution(* com.fline.form.mgmt.service.impl.SealLogMgmtServiceImpl.findPagination(..))
+			or execution(* com.fline.form.mgmt.service.impl.ItemMgmtServiceImpl.findPaginationTable(..))
+			or execution(* com.fline.form.mgmt.service.impl.ItemMgmtServiceImpl.findPaginationTable(..))
+			or execution(* com.fline.form.mgmt.service.impl.MaterialMgmtServiceImpl.findPaginationTable(..))
+			"
+			order="30" /> 
+	</aop:config>
+</beans>

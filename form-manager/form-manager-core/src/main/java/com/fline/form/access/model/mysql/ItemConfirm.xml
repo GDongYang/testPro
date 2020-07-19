@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ItemConfirm">
+	<typeAlias alias="itemConfirm" type="com.fline.form.access.model.ItemConfirm" />
+	<resultMap id="itemConfirmResult" class="itemConfirm">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="createTime" column="createTime" javaType="Date" />
+		<result property="creator" column="creator" javaType="String" />
+		<result property="itemId" column="itemId" javaType="Long" />
+		<result property="itemName" column="itemName" javaType="String" />
+		<result property="itemInnerCode" column="itemInnerCode" javaType="String" />
+		<result property="status" column="status" javaType="Integer" />
+		<result property="memo" column="memo" javaType="String" />
+		<result property="deptId" column="deptId" javaType="Long" />
+		<result property="deptName" column="deptName" javaType="String" />
+	</resultMap>
+	
+	<insert id="create" parameterClass="itemConfirm">
+		INSERT INTO c_item_confirm (
+			createTime
+			,creator
+			,itemId
+			,itemName
+			,itemInnerCode
+			,status
+			,memo
+			,deptId
+			,deptName
+		) VALUES (
+			now()
+			,#creator#
+			,#itemId#
+			,#itemName#
+			,#itemInnerCode#
+			,#status#
+			,#memo#
+			,#deptId#
+			,#deptName#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="itemConfirm">
+		UPDATE c_item_confirm SET
+			createTime=#createTime#
+			, creator=#creator#
+			, itemId=#itemId#
+			, itemName=#itemName#
+			, itemInnerCode=#itemInnerCode#
+			, status=#status#
+			, memo=#memo#
+			, deptId=#deptId#
+			, deptName=#deptName#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="itemConfirm">
+		<![CDATA[
+			DELETE FROM c_item_confirm WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="itemConfirmResult">
+		<![CDATA[
+			SELECT * FROM c_item_confirm A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="itemConfirmResult">
+		SELECT * FROM c_item_confirm
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_item_confirm A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="itemConfirmResult">
+		<![CDATA[ SELECT * ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

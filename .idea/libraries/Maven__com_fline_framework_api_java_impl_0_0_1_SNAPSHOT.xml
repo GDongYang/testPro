@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.fline.framework:api-java-impl:0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://G:/flinemaven/com/fline/framework/api-java-impl/0.0.1-SNAPSHOT/api-java-impl-0.0.1-20191107.045508-13.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://G:/flinemaven/com/fline/framework/api-java-impl/0.0.1-SNAPSHOT/api-java-impl-0.0.1-20191107.045508-13-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://G:/flinemaven/com/fline/framework/api-java-impl/0.0.1-SNAPSHOT/api-java-impl-0.0.1-20191107.045508-13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

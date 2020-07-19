@@ -1,0 +1,1942 @@
+@charset "utf-8";
+
+.base_bc-inherit { border-color:inherit; }
+.base_bc-transparent { border-color:transparent; }
+
+.base_bc-imp-inherit { border-color:inherit !important; }
+.base_bc-imp-transparent { border-color:transparent !important; }
+
+
+.base_bc-ffffff { border-color:#ffffff; }
+.base_bc-fffafa { border-color:#fffafa; }
+.base_bc-fff68f { border-color:#fff68f; }
+.base_bc-ffefd5 { border-color:#ffefd5; }
+.base_bc-ffe4e1 { border-color:#ffe4e1; }
+.base_bc-ffdead { border-color:#ffdead; }
+.base_bc-ffc1c1 { border-color:#ffc1c1; }
+.base_bc-ffb90f { border-color:#ffb90f; }
+.base_bc-ffa54f { border-color:#ffa54f; }
+.base_bc-ff8c00 { border-color:#ff8c00; }
+.base_bc-ff7f50 { border-color:#ff7f50; }
+.base_bc-ff6eb4 { border-color:#ff6eb4; }
+.base_bc-ff4500 { border-color:#ff4500; }
+.base_bc-ff3030 { border-color:#ff3030; }
+.base_bc-fdf5e6 { border-color:#fdf5e6; }
+.base_bc-faf0e6 { border-color:#faf0e6; }
+.base_bc-f7f7f7 { border-color:#f7f7f7; }
+.base_bc-f5deb3 { border-color:#f5deb3; }
+.base_bc-f0ffff { border-color:#f0ffff; }
+.base_bc-f0e68c { border-color:#f0e68c; }
+.base_bc-eeee00 { border-color:#eeee00; }
+.base_bc-eee8aa { border-color:#eee8aa; }
+.base_bc-eedfcc { border-color:#eedfcc; }
+.base_bc-eed5b7 { border-color:#eed5b7; }
+.base_bc-eec900 { border-color:#eec900; }
+.base_bc-eeaeee { border-color:#eeaeee; }
+.base_bc-ee9a49 { border-color:#ee9a49; }
+.base_bc-ee8262 { border-color:#ee8262; }
+.base_bc-ee7621 { border-color:#ee7621; }
+.base_bc-ee6363 { border-color:#ee6363; }
+.base_bc-ee3a8c { border-color:#ee3a8c; }
+.base_bc-ee00ee { border-color:#ee00ee; }
+.base_bc-eaeaea { border-color:#eaeaea; }
+.base_bc-e5e5e5 { border-color:#e5e5e5; }
+.base_bc-e0eee0 { border-color:#e0eee0; }
+.base_bc-deb887 { border-color:#deb887; }
+.base_bc-dbdbdb { border-color:#dbdbdb; }
+.base_bc-d9d9d9 { border-color:#d9d9d9; }
+.base_bc-d3d3d3 { border-color:#d3d3d3; }
+.base_bc-d1d1d1 { border-color:#d1d1d1; }
+.base_bc-cdcdc1 { border-color:#cdcdc1; }
+.base_bc-cdc9a5 { border-color:#cdc9a5; }
+.base_bc-cdc1c5 { border-color:#cdc1c5; }
+.base_bc-cdb7b5 { border-color:#cdb7b5; }
+.base_bc-cdaf95 { border-color:#cdaf95; }
+.base_bc-cd9b1d { border-color:#cd9b1d; }
+.base_bc-cd8c95 { border-color:#cd8c95; }
+.base_bc-cd7054 { border-color:#cd7054; }
+.base_bc-cd661d { border-color:#cd661d; }
+.base_bc-cd5b45 { border-color:#cd5b45; }
+.base_bc-cd3333 { border-color:#cd3333; }
+.base_bc-cd1076 { border-color:#cd1076; }
+.base_bc-caff70 { border-color:#caff70; }
+.base_bc-c71585 { border-color:#c71585; }
+.base_bc-c4c4c4 { border-color:#c4c4c4; }
+.base_bc-c1cdc1 { border-color:#c1cdc1; }
+.base_bc-bfbfbf { border-color:#bfbfbf; }
+.base_bc-bdb76b { border-color:#bdb76b; }
+.base_bc-bbffff { border-color:#bbffff; }
+.base_bc-b8b8b8 { border-color:#b8b8b8; }
+.base_bc-b4eeb4 { border-color:#b4eeb4; }
+.base_bc-b3b3b3 { border-color:#b3b3b3; }
+.base_bc-b0e2ff { border-color:#b0e2ff; }
+.base_bc-b03060 { border-color:#b03060; }
+.base_bc-adadad { border-color:#adadad; }
+.base_bc-a9a9a9 { border-color:#a9a9a9; }
+.base_bc-a4d3ee { border-color:#a4d3ee; }
+.base_bc-a1a1a1 { border-color:#a1a1a1; }
+.base_bc-9f79ee { border-color:#9f79ee; }
+.base_bc-9b30ff { border-color:#9b30ff; }
+.base_bc-9a32cd { border-color:#9a32cd; }
+.base_bc-98f5ff { border-color:#98f5ff; }
+.base_bc-949494 { border-color:#949494; }
+.base_bc-912cee { border-color:#912cee; }
+.base_bc-8ee5ee { border-color:#8ee5ee; }
+.base_bc-8deeee { border-color:#8deeee; }
+.base_bc-8b8b7a { border-color:#8b8b7a; }
+.base_bc-8b8878 { border-color:#8b8878; }
+.base_bc-8b8378 { border-color:#8b8378; }
+.base_bc-8b7d6b { border-color:#8b7d6b; }
+.base_bc-8b7500 { border-color:#8b7500; }
+.base_bc-8b668b { border-color:#8b668b; }
+.base_bc-8b5a2b { border-color:#8b5a2b; }
+.base_bc-8b4789 { border-color:#8b4789; }
+.base_bc-8b4500 { border-color:#8b4500; }
+.base_bc-8b3626 { border-color:#8b3626; }
+.base_bc-8b1c62 { border-color:#8b1c62; }
+.base_bc-8b0000 { border-color:#8b0000; }
+.base_bc-87ceff { border-color:#87ceff; }
+.base_bc-858585 { border-color:#858585; }
+.base_bc-838b83 { border-color:#838b83; }
+.base_bc-7fff00 { border-color:#7fff00; }
+.base_bc-7d7d7d { border-color:#7d7d7d; }
+.base_bc-7b68ee { border-color:#7b68ee; }
+.base_bc-7a67ee { border-color:#7a67ee; }
+.base_bc-778899 { border-color:#778899; }
+.base_bc-737373 { border-color:#737373; }
+.base_bc-707070 { border-color:#707070; }
+.base_bc-6ca6cd { border-color:#6ca6cd; }
+.base_bc-6a5acd { border-color:#6a5acd; }
+.base_bc-6959cd { border-color:#6959cd; }
+.base_bc-66cd00 { border-color:#66cd00; }
+.base_bc-63b8ff { border-color:#63b8ff; }
+.base_bc-5f9ea0 { border-color:#5f9ea0; }
+.base_bc-5c5c5c { border-color:#5c5c5c; }
+.base_bc-556b2f { border-color:#556b2f; }
+.base_bc-548b54 { border-color:#548b54; }
+.base_bc-525252 { border-color:#525252; }
+.base_bc-4eee94 { border-color:#4eee94; }
+.base_bc-4a4a4a { border-color:#4a4a4a; }
+.base_bc-474747 { border-color:#474747; }
+.base_bc-458b00 { border-color:#458b00; }
+.base_bc-424242 { border-color:#424242; }
+.base_bc-3d3d3d { border-color:#3d3d3d; }
+.base_bc-388e8e { border-color:#388e8e; }
+.base_bc-333333 { border-color:#333333; }
+.base_bc-2e8b57 { border-color:#2e8b57; }
+.base_bc-282828 { border-color:#282828; }
+.base_bc-228b22 { border-color:#228b22; }
+.base_bc-1f1f1f { border-color:#1f1f1f; }
+.base_bc-1c1c1c { border-color:#1c1c1c; }
+.base_bc-171717 { border-color:#171717; }
+.base_bc-0f0f0f { border-color:#0f0f0f; }
+.base_bc-050505 { border-color:#050505; }
+.base_bc-00ff00 { border-color:#00ff00; }
+.base_bc-00ee76 { border-color:#00ee76; }
+.base_bc-00cdcd { border-color:#00cdcd; }
+.base_bc-00bfff { border-color:#00bfff; }
+.base_bc-008b45 { border-color:#008b45; }
+.base_bc-006400 { border-color:#006400; }
+.base_bc-0000aa { border-color:#0000aa; }
+.base_bc-fffff0 { border-color:#fffff0; }
+.base_bc-fffaf0 { border-color:#fffaf0; }
+.base_bc-fff5ee { border-color:#fff5ee; }
+.base_bc-ffec8b { border-color:#ffec8b; }
+.base_bc-ffe4c4 { border-color:#ffe4c4; }
+.base_bc-ffdab9 { border-color:#ffdab9; }
+.base_bc-ffc125 { border-color:#ffc125; }
+.base_bc-ffb6c1 { border-color:#ffb6c1; }
+.base_bc-ffa500 { border-color:#ffa500; }
+.base_bc-ff83fa { border-color:#ff83fa; }
+.base_bc-ff7f24 { border-color:#ff7f24; }
+.base_bc-ff6a6a { border-color:#ff6a6a; }
+.base_bc-ff4040 { border-color:#ff4040; }
+.base_bc-ff1493 { border-color:#ff1493; }
+.base_bc-fcfcfc { border-color:#fcfcfc; }
+.base_bc-faebd7 { border-color:#faebd7; }
+.base_bc-f5fffa { border-color:#f5fffa; }
+.base_bc-f4f4f4 { border-color:#f4f4f4; }
+.base_bc-f0fff0 { border-color:#f0fff0; }
+.base_bc-f08080 { border-color:#f08080; }
+.base_bc-eee9e9 { border-color:#eee9e9; }
+.base_bc-eee685 { border-color:#eee685; }
+.base_bc-eedc82 { border-color:#eedc82; }
+.base_bc-eed2ee { border-color:#eed2ee; }
+.base_bc-eec591 { border-color:#eec591; }
+.base_bc-eead0e { border-color:#eead0e; }
+.base_bc-ee9a00 { border-color:#ee9a00; }
+.base_bc-ee7ae9 { border-color:#ee7ae9; }
+.base_bc-ee7600 { border-color:#ee7600; }
+.base_bc-ee5c42 { border-color:#ee5c42; }
+.base_bc-ee30a7 { border-color:#ee30a7; }
+.base_bc-ee0000 { border-color:#ee0000; }
+.base_bc-e9967a { border-color:#e9967a; }
+.base_bc-e3e3e3 { border-color:#e3e3e3; }
+.base_bc-e0e0e0 { border-color:#e0e0e0; }
+.base_bc-dda0dd { border-color:#dda0dd; }
+.base_bc-db7093 { border-color:#db7093; }
+.base_bc-d8bfd8 { border-color:#d8bfd8; }
+.base_bc-d2b48c { border-color:#d2b48c; }
+.base_bc-d15fee { border-color:#d15fee; }
+.base_bc-cdcdb4 { border-color:#cdcdb4; }
+.base_bc-cdc8b1 { border-color:#cdc8b1; }
+.base_bc-cdc0b0 { border-color:#cdc0b0; }
+.base_bc-cdb79e { border-color:#cdb79e; }
+.base_bc-cdad00 { border-color:#cdad00; }
+.base_bc-cd96cd { border-color:#cd96cd; }
+.base_bc-cd853f { border-color:#cd853f; }
+.base_bc-cd69c9 { border-color:#cd69c9; }
+.base_bc-cd6600 { border-color:#cd6600; }
+.base_bc-cd5555 { border-color:#cd5555; }
+.base_bc-cd3278 { border-color:#cd3278; }
+.base_bc-cd00cd { border-color:#cd00cd; }
+.base_bc-cae1ff { border-color:#cae1ff; }
+.base_bc-c6e2ff { border-color:#c6e2ff; }
+.base_bc-c2c2c2 { border-color:#c2c2c2; }
+.base_bc-c1c1c1 { border-color:#c1c1c1; }
+.base_bc-bf3eff { border-color:#bf3eff; }
+.base_bc-bcee68 { border-color:#bcee68; }
+.base_bc-bababa { border-color:#bababa; }
+.base_bc-b8860b { border-color:#b8860b; }
+.base_bc-b4cdcd { border-color:#b4cdcd; }
+.base_bc-b2dfee { border-color:#b2dfee; }
+.base_bc-b0e0e6 { border-color:#b0e0e6; }
+.base_bc-aeeeee { border-color:#aeeeee; }
+.base_bc-ababab { border-color:#ababab; }
+.base_bc-a8a8a8 { border-color:#a8a8a8; }
+.base_bc-a3a3a3 { border-color:#a3a3a3; }
+.base_bc-a0522d { border-color:#a0522d; }
+.base_bc-9e9e9e { border-color:#9e9e9e; }
+.base_bc-9aff9a { border-color:#9aff9a; }
+.base_bc-999999 { border-color:#999999; }
+.base_bc-97ffff { border-color:#97ffff; }
+.base_bc-9400d3 { border-color:#9400d3; }
+.base_bc-90ee90 { border-color:#90ee90; }
+.base_bc-8e8e8e { border-color:#8e8e8e; }
+.base_bc-8db6cd { border-color:#8db6cd; }
+.base_bc-8b8b00 { border-color:#8b8b00; }
+.base_bc-8b8682 { border-color:#8b8682; }
+.base_bc-8b814c { border-color:#8b814c; }
+.base_bc-8b7b8b { border-color:#8b7b8b; }
+.base_bc-8b7355 { border-color:#8b7355; }
+.base_bc-8b6508 { border-color:#8b6508; }
+.base_bc-8b5a00 { border-color:#8b5a00; }
+.base_bc-8b475d { border-color:#8b475d; }
+.base_bc-8b3e2f { border-color:#8b3e2f; }
+.base_bc-8b2500 { border-color:#8b2500; }
+.base_bc-8b1a1a { border-color:#8b1a1a; }
+.base_bc-8a8a8a { border-color:#8a8a8a; }
+.base_bc-87cefa { border-color:#87cefa; }
+.base_bc-848484 { border-color:#848484; }
+.base_bc-836fff { border-color:#836fff; }
+.base_bc-7f7f7f { border-color:#7f7f7f; }
+.base_bc-7d26cd { border-color:#7d26cd; }
+.base_bc-7ac5cd { border-color:#7ac5cd; }
+.base_bc-7a378b { border-color:#7a378b; }
+.base_bc-76eec6 { border-color:#76eec6; }
+.base_bc-71c671 { border-color:#71c671; }
+.base_bc-6e8b3d { border-color:#6e8b3d; }
+.base_bc-6c7b8b { border-color:#6c7b8b; }
+.base_bc-698b69 { border-color:#698b69; }
+.base_bc-68838b { border-color:#68838b; }
+.base_bc-668b8b { border-color:#668b8b; }
+.base_bc-636363 { border-color:#636363; }
+.base_bc-5e5e5e { border-color:#5e5e5e; }
+.base_bc-5b5b5b { border-color:#5b5b5b; }
+.base_bc-555555 { border-color:#555555; }
+.base_bc-545454 { border-color:#545454; }
+.base_bc-515151 { border-color:#515151; }
+.base_bc-4d4d4d { border-color:#4d4d4d; }
+.base_bc-48d1cc { border-color:#48d1cc; }
+.base_bc-473c8b { border-color:#473c8b; }
+.base_bc-454545 { border-color:#454545; }
+.base_bc-4169e1 { border-color:#4169e1; }
+.base_bc-3cb371 { border-color:#3cb371; }
+.base_bc-383838 { border-color:#383838; }
+.base_bc-32cd32 { border-color:#32cd32; }
+.base_bc-2e2e2e { border-color:#2e2e2e; }
+.base_bc-27408b { border-color:#27408b; }
+.base_bc-218868 { border-color:#218868; }
+.base_bc-1e90ff { border-color:#1e90ff; }
+.base_bc-1a1a1a { border-color:#1a1a1a; }
+.base_bc-141414 { border-color:#141414; }
+.base_bc-0d0d0d { border-color:#0d0d0d; }
+.base_bc-030303 { border-color:#030303; }
+.base_bc-00fa9a { border-color:#00fa9a; }
+.base_bc-00ee00 { border-color:#00ee00; }
+.base_bc-00cd66 { border-color:#00cd66; }
+.base_bc-00b2ee { border-color:#00b2ee; }
+.base_bc-008b00 { border-color:#008b00; }
+.base_bc-0000ff { border-color:#0000ff; }
+.base_bc-00008b { border-color:#00008b; }
+.base_bc-ffffe0 { border-color:#ffffe0; }
+.base_bc-fffacd { border-color:#fffacd; }
+.base_bc-fff0f5 { border-color:#fff0f5; }
+.base_bc-ffebcd { border-color:#ffebcd; }
+.base_bc-ffe4b5 { border-color:#ffe4b5; }
+.base_bc-ffd700 { border-color:#ffd700; }
+.base_bc-ffc0cb { border-color:#ffc0cb; }
+.base_bc-ffb5c5 { border-color:#ffb5c5; }
+.base_bc-ffa07a { border-color:#ffa07a; }
+.base_bc-ff82ab { border-color:#ff82ab; }
+.base_bc-ff7f00 { border-color:#ff7f00; }
+.base_bc-ff69b4 { border-color:#ff69b4; }
+.base_bc-ff3e96 { border-color:#ff3e96; }
+.base_bc-ff00ff { border-color:#ff00ff; }
+.base_bc-fafafa { border-color:#fafafa; }
+.base_bc-fa8072 { border-color:#fa8072; }
+.base_bc-f5f5f5 { border-color:#f5f5f5; }
+.base_bc-f4a460 { border-color:#f4a460; }
+.base_bc-f0f8ff { border-color:#f0f8ff; }
+.base_bc-eeeee0 { border-color:#eeeee0; }
+.base_bc-eee9bf { border-color:#eee9bf; }
+.base_bc-eee5de { border-color:#eee5de; }
+.base_bc-eed8ae { border-color:#eed8ae; }
+.base_bc-eecfa1 { border-color:#eecfa1; }
+.base_bc-eeb4b4 { border-color:#eeb4b4; }
+.base_bc-eea9b8 { border-color:#eea9b8; }
+.base_bc-ee9572 { border-color:#ee9572; }
+.base_bc-ee799f { border-color:#ee799f; }
+.base_bc-ee6aa7 { border-color:#ee6aa7; }
+.base_bc-ee4000 { border-color:#ee4000; }
+.base_bc-ee2c2c { border-color:#ee2c2c; }
+.base_bc-ededed { border-color:#ededed; }
+.base_bc-e8e8e8 { border-color:#e8e8e8; }
+.base_bc-e0ffff { border-color:#e0ffff; }
+.base_bc-e066ff { border-color:#e066ff; }
+.base_bc-dcdcdc { border-color:#dcdcdc; }
+.base_bc-daa520 { border-color:#daa520; }
+.base_bc-d6d6d6 { border-color:#d6d6d6; }
+.base_bc-d2691e { border-color:#d2691e; }
+.base_bc-d02090 { border-color:#d02090; }
+.base_bc-cdcd00 { border-color:#cdcd00; }
+.base_bc-cdc673 { border-color:#cdc673; }
+.base_bc-cdbe70 { border-color:#cdbe70; }
+.base_bc-cdb5cd { border-color:#cdb5cd; }
+.base_bc-cdaa7d { border-color:#cdaa7d; }
+.base_bc-cd950c { border-color:#cd950c; }
+.base_bc-cd8500 { border-color:#cd8500; }
+.base_bc-cd6889 { border-color:#cd6889; }
+.base_bc-cd6090 { border-color:#cd6090; }
+.base_bc-cd4f39 { border-color:#cd4f39; }
+.base_bc-cd2990 { border-color:#cd2990; }
+.base_bc-cd0000 { border-color:#cd0000; }
+.base_bc-c9c9c9 { border-color:#c9c9c9; }
+.base_bc-c67171 { border-color:#c67171; }
+.base_bc-c1ffc1 { border-color:#c1ffc1; }
+.base_bc-c0ff3e { border-color:#c0ff3e; }
+.base_bc-bebebe { border-color:#bebebe; }
+.base_bc-bcd2ee { border-color:#bcd2ee; }
+.base_bc-ba55d3 { border-color:#ba55d3; }
+.base_bc-b7b7b7 { border-color:#b7b7b7; }
+.base_bc-b452cd { border-color:#b452cd; }
+.base_bc-b23aee { border-color:#b23aee; }
+.base_bc-b0c4de { border-color:#b0c4de; }
+.base_bc-adff2f { border-color:#adff2f; }
+.base_bc-ab82ff { border-color:#ab82ff; }
+.base_bc-a6a6a6 { border-color:#a6a6a6; }
+.base_bc-a2cd5a { border-color:#a2cd5a; }
+.base_bc-a020f0 { border-color:#a020f0; }
+.base_bc-9c9c9c { border-color:#9c9c9c; }
+.base_bc-9acd32 { border-color:#9acd32; }
+.base_bc-9932cc { border-color:#9932cc; }
+.base_bc-96cdcd { border-color:#96cdcd; }
+.base_bc-9370db { border-color:#9370db; }
+.base_bc-8fbc8f { border-color:#8fbc8f; }
+.base_bc-8e8e38 { border-color:#8e8e38; }
+.base_bc-8c8c8c { border-color:#8c8c8c; }
+.base_bc-8b8989 { border-color:#8b8989; }
+.base_bc-8b864e { border-color:#8b864e; }
+.base_bc-8b7e66 { border-color:#8b7e66; }
+.base_bc-8b795e { border-color:#8b795e; }
+.base_bc-8b6969 { border-color:#8b6969; }
+.base_bc-8b636c { border-color:#8b636c; }
+.base_bc-8b5742 { border-color:#8b5742; }
+.base_bc-8b4726 { border-color:#8b4726; }
+.base_bc-8b3a62 { border-color:#8b3a62; }
+.base_bc-8b2323 { border-color:#8b2323; }
+.base_bc-8b0a50 { border-color:#8b0a50; }
+.base_bc-8a2be2 { border-color:#8a2be2; }
+.base_bc-87ceeb { border-color:#87ceeb; }
+.base_bc-8470ff { border-color:#8470ff; }
+.base_bc-828282 { border-color:#828282; }
+.base_bc-7ec0ee { border-color:#7ec0ee; }
+.base_bc-7cfc00 { border-color:#7cfc00; }
+.base_bc-7a8b8b { border-color:#7a8b8b; }
+.base_bc-79cdcd { border-color:#79cdcd; }
+.base_bc-76ee00 { border-color:#76ee00; }
+.base_bc-7171c6 { border-color:#7171c6; }
+.base_bc-6e7b8b { border-color:#6e7b8b; }
+.base_bc-6b8e23 { border-color:#6b8e23; }
+.base_bc-698b22 { border-color:#698b22; }
+.base_bc-68228b { border-color:#68228b; }
+.base_bc-666666 { border-color:#666666; }
+.base_bc-616161 { border-color:#616161; }
+.base_bc-5d478b { border-color:#5d478b; }
+.base_bc-595959 { border-color:#595959; }
+.base_bc-551a8b { border-color:#551a8b; }
+.base_bc-53868b { border-color:#53868b; }
+.base_bc-4f94cd { border-color:#4f94cd; }
+.base_bc-4b0082 { border-color:#4b0082; }
+.base_bc-4876ff { border-color:#4876ff; }
+.base_bc-4682b4 { border-color:#4682b4; }
+.base_bc-43cd80 { border-color:#43cd80; }
+.base_bc-40e0d0 { border-color:#40e0d0; }
+.base_bc-3b3b3b { border-color:#3b3b3b; }
+.base_bc-36648b { border-color:#36648b; }
+.base_bc-303030 { border-color:#303030; }
+.base_bc-2b2b2b { border-color:#2b2b2b; }
+.base_bc-262626 { border-color:#262626; }
+.base_bc-212121 { border-color:#212121; }
+.base_bc-1e1e1e { border-color:#1e1e1e; }
+.base_bc-191970 { border-color:#191970; }
+.base_bc-121212 { border-color:#121212; }
+.base_bc-0a0a0a { border-color:#0a0a0a; }
+.base_bc-00ffff { border-color:#00ffff; }
+.base_bc-00f5ff { border-color:#00f5ff; }
+.base_bc-00e5ee { border-color:#00e5ee; }
+.base_bc-00cd00 { border-color:#00cd00; }
+.base_bc-009acd { border-color:#009acd; }
+.base_bc-00868b { border-color:#00868b; }
+.base_bc-0000ee { border-color:#0000ee; }
+.base_bc-000080 { border-color:#000080; }
+.base_bc-ffff00 { border-color:#ffff00; }
+.base_bc-fff8dc { border-color:#fff8dc; }
+.base_bc-ffefdb { border-color:#ffefdb; }
+.base_bc-ffe7ba { border-color:#ffe7ba; }
+.base_bc-ffe1ff { border-color:#ffe1ff; }
+.base_bc-ffd39b { border-color:#ffd39b; }
+.base_bc-ffbbff { border-color:#ffbbff; }
+.base_bc-ffaeb9 { border-color:#ffaeb9; }
+.base_bc-ff8c69 { border-color:#ff8c69; }
+.base_bc-ff8247 { border-color:#ff8247; }
+.base_bc-ff7256 { border-color:#ff7256; }
+.base_bc-ff6347 { border-color:#ff6347; }
+.base_bc-ff34b3 { border-color:#ff34b3; }
+.base_bc-ff0000 { border-color:#ff0000; }
+.base_bc-fafad2 { border-color:#fafad2; }
+.base_bc-f8f8ff { border-color:#f8f8ff; }
+.base_bc-f5f5dc { border-color:#f5f5dc; }
+.base_bc-f2f2f2 { border-color:#f2f2f2; }
+.base_bc-f0f0f0 { border-color:#f0f0f0; }
+.base_bc-eeeed1 { border-color:#eeeed1; }
+.base_bc-eee8cd { border-color:#eee8cd; }
+.base_bc-eee0e5 { border-color:#eee0e5; }
+.base_bc-eed5d2 { border-color:#eed5d2; }
+.base_bc-eecbad { border-color:#eecbad; }
+.base_bc-eeb422 { border-color:#eeb422; }
+.base_bc-eea2ad { border-color:#eea2ad; }
+.base_bc-ee82ee { border-color:#ee82ee; }
+.base_bc-ee7942 { border-color:#ee7942; }
+.base_bc-ee6a50 { border-color:#ee6a50; }
+.base_bc-ee3b3b { border-color:#ee3b3b; }
+.base_bc-ee1289 { border-color:#ee1289; }
+.base_bc-ebebeb { border-color:#ebebeb; }
+.base_bc-e6e6fa { border-color:#e6e6fa; }
+.base_bc-e0eeee { border-color:#e0eeee; }
+.base_bc-dedede { border-color:#dedede; }
+.base_bc-dc143c { border-color:#dc143c; }
+.base_bc-da70d6 { border-color:#da70d6; }
+.base_bc-d4d4d4 { border-color:#d4d4d4; }
+.base_bc-d1eeee { border-color:#d1eeee; }
+.base_bc-cfcfcf { border-color:#cfcfcf; }
+.base_bc-cdc9c9 { border-color:#cdc9c9; }
+.base_bc-cdc5bf { border-color:#cdc5bf; }
+.base_bc-cdba96 { border-color:#cdba96; }
+.base_bc-cdb38b { border-color:#cdb38b; }
+.base_bc-cd9b9b { border-color:#cd9b9b; }
+.base_bc-cd919e { border-color:#cd919e; }
+.base_bc-cd8162 { border-color:#cd8162; }
+.base_bc-cd6839 { border-color:#cd6839; }
+.base_bc-cd5c5c { border-color:#cd5c5c; }
+.base_bc-cd3700 { border-color:#cd3700; }
+.base_bc-cd2626 { border-color:#cd2626; }
+.base_bc-cccccc { border-color:#cccccc; }
+.base_bc-c7c7c7 { border-color:#c7c7c7; }
+.base_bc-c5c1aa { border-color:#c5c1aa; }
+.base_bc-c1cdcd { border-color:#c1cdcd; }
+.base_bc-bfefff { border-color:#bfefff; }
+.base_bc-bdbdbd { border-color:#bdbdbd; }
+.base_bc-bc8f8f { border-color:#bc8f8f; }
+.base_bc-b9d3ee { border-color:#b9d3ee; }
+.base_bc-b5b5b5 { border-color:#b5b5b5; }
+.base_bc-b3ee3a { border-color:#b3ee3a; }
+.base_bc-b22222 { border-color:#b22222; }
+.base_bc-b0b0b0 { border-color:#b0b0b0; }
+.base_bc-add8e6 { border-color:#add8e6; }
+.base_bc-aaaaaa { border-color:#aaaaaa; }
+.base_bc-a52a2a { border-color:#a52a2a; }
+.base_bc-a2b5cd { border-color:#a2b5cd; }
+.base_bc-9fb6cd { border-color:#9fb6cd; }
+.base_bc-9bcd9b { border-color:#9bcd9b; }
+.base_bc-9ac0cd { border-color:#9ac0cd; }
+.base_bc-98fb98 { border-color:#98fb98; }
+.base_bc-969696 { border-color:#969696; }
+.base_bc-919191 { border-color:#919191; }
+.base_bc-8f8f8f { border-color:#8f8f8f; }
+.base_bc-8e388e { border-color:#8e388e; }
+.base_bc-8b8b83 { border-color:#8b8b83; }
+.base_bc-8b8970 { border-color:#8b8970; }
+.base_bc-8b8386 { border-color:#8b8386; }
+.base_bc-8b7d7b { border-color:#8b7d7b; }
+.base_bc-8b7765 { border-color:#8b7765; }
+.base_bc-8b6914 { border-color:#8b6914; }
+.base_bc-8b5f65 { border-color:#8b5f65; }
+.base_bc-8b4c39 { border-color:#8b4c39; }
+.base_bc-8b4513 { border-color:#8b4513; }
+.base_bc-8b3a3a { border-color:#8b3a3a; }
+.base_bc-8b2252 { border-color:#8b2252; }
+.base_bc-8b008b { border-color:#8b008b; }
+.base_bc-8968cd { border-color:#8968cd; }
+.base_bc-878787 { border-color:#878787; }
+.base_bc-838b8b { border-color:#838b8b; }
+.base_bc-7fffd4 { border-color:#7fffd4; }
+.base_bc-7d9ec0 { border-color:#7d9ec0; }
+.base_bc-7ccd7c { border-color:#7ccd7c; }
+.base_bc-7a7a7a { border-color:#7a7a7a; }
+.base_bc-787878 { border-color:#787878; }
+.base_bc-757575 { border-color:#757575; }
+.base_bc-708090 { border-color:#708090; }
+.base_bc-6e6e6e { border-color:#6e6e6e; }
+.base_bc-6b6b6b { border-color:#6b6b6b; }
+.base_bc-696969 { border-color:#696969; }
+.base_bc-66cdaa { border-color:#66cdaa; }
+.base_bc-6495ed { border-color:#6495ed; }
+.base_bc-607b8b { border-color:#607b8b; }
+.base_bc-5cacee { border-color:#5cacee; }
+.base_bc-575757 { border-color:#575757; }
+.base_bc-54ff9f { border-color:#54ff9f; }
+.base_bc-528b8b { border-color:#528b8b; }
+.base_bc-4f4f4f { border-color:#4f4f4f; }
+.base_bc-4a708b { border-color:#4a708b; }
+.base_bc-483d8b { border-color:#483d8b; }
+.base_bc-458b74 { border-color:#458b74; }
+.base_bc-436eee { border-color:#436eee; }
+.base_bc-404040 { border-color:#404040; }
+.base_bc-3a5fcd { border-color:#3a5fcd; }
+.base_bc-363636 { border-color:#363636; }
+.base_bc-2f4f4f { border-color:#2f4f4f; }
+.base_bc-292929 { border-color:#292929; }
+.base_bc-242424 { border-color:#242424; }
+.base_bc-20b2aa { border-color:#20b2aa; }
+.base_bc-1c86ee { border-color:#1c86ee; }
+.base_bc-1874cd { border-color:#1874cd; }
+.base_bc-104e8b { border-color:#104e8b; }
+.base_bc-080808 { border-color:#080808; }
+.base_bc-00ff7f { border-color:#00ff7f; }
+.base_bc-00eeee { border-color:#00eeee; }
+.base_bc-00ced1 { border-color:#00ced1; }
+.base_bc-00c5cd { border-color:#00c5cd; }
+.base_bc-008b8b { border-color:#008b8b; }
+.base_bc-00688b { border-color:#00688b; }
+.base_bc-0000cd { border-color:#0000cd; }
+.base_bc-000000 { border-color:#000000; }
+
+.base_bc-imp-ffffff { border-color:#ffffff !important; }
+.base_bc-imp-fffafa { border-color:#fffafa !important; }
+.base_bc-imp-fff68f { border-color:#fff68f !important; }
+.base_bc-imp-ffefd5 { border-color:#ffefd5 !important; }
+.base_bc-imp-ffe4e1 { border-color:#ffe4e1 !important; }
+.base_bc-imp-ffdead { border-color:#ffdead !important; }
+.base_bc-imp-ffc1c1 { border-color:#ffc1c1 !important; }
+.base_bc-imp-ffb90f { border-color:#ffb90f !important; }
+.base_bc-imp-ffa54f { border-color:#ffa54f !important; }
+.base_bc-imp-ff8c00 { border-color:#ff8c00 !important; }
+.base_bc-imp-ff7f50 { border-color:#ff7f50 !important; }
+.base_bc-imp-ff6eb4 { border-color:#ff6eb4 !important; }
+.base_bc-imp-ff4500 { border-color:#ff4500 !important; }
+.base_bc-imp-ff3030 { border-color:#ff3030 !important; }
+.base_bc-imp-fdf5e6 { border-color:#fdf5e6 !important; }
+.base_bc-imp-faf0e6 { border-color:#faf0e6 !important; }
+.base_bc-imp-f7f7f7 { border-color:#f7f7f7 !important; }
+.base_bc-imp-f5deb3 { border-color:#f5deb3 !important; }
+.base_bc-imp-f0ffff { border-color:#f0ffff !important; }
+.base_bc-imp-f0e68c { border-color:#f0e68c !important; }
+.base_bc-imp-eeee00 { border-color:#eeee00 !important; }
+.base_bc-imp-eee8aa { border-color:#eee8aa !important; }
+.base_bc-imp-eedfcc { border-color:#eedfcc !important; }
+.base_bc-imp-eed5b7 { border-color:#eed5b7 !important; }
+.base_bc-imp-eec900 { border-color:#eec900 !important; }
+.base_bc-imp-eeaeee { border-color:#eeaeee !important; }
+.base_bc-imp-ee9a49 { border-color:#ee9a49 !important; }
+.base_bc-imp-ee8262 { border-color:#ee8262 !important; }
+.base_bc-imp-ee7621 { border-color:#ee7621 !important; }
+.base_bc-imp-ee6363 { border-color:#ee6363 !important; }
+.base_bc-imp-ee3a8c { border-color:#ee3a8c !important; }
+.base_bc-imp-ee00ee { border-color:#ee00ee !important; }
+.base_bc-imp-eaeaea { border-color:#eaeaea !important; }
+.base_bc-imp-e5e5e5 { border-color:#e5e5e5 !important; }
+.base_bc-imp-e0eee0 { border-color:#e0eee0 !important; }
+.base_bc-imp-deb887 { border-color:#deb887 !important; }
+.base_bc-imp-dbdbdb { border-color:#dbdbdb !important; }
+.base_bc-imp-d9d9d9 { border-color:#d9d9d9 !important; }
+.base_bc-imp-d3d3d3 { border-color:#d3d3d3 !important; }
+.base_bc-imp-d1d1d1 { border-color:#d1d1d1 !important; }
+.base_bc-imp-cdcdc1 { border-color:#cdcdc1 !important; }
+.base_bc-imp-cdc9a5 { border-color:#cdc9a5 !important; }
+.base_bc-imp-cdc1c5 { border-color:#cdc1c5 !important; }
+.base_bc-imp-cdb7b5 { border-color:#cdb7b5 !important; }
+.base_bc-imp-cdaf95 { border-color:#cdaf95 !important; }
+.base_bc-imp-cd9b1d { border-color:#cd9b1d !important; }
+.base_bc-imp-cd8c95 { border-color:#cd8c95 !important; }
+.base_bc-imp-cd7054 { border-color:#cd7054 !important; }
+.base_bc-imp-cd661d { border-color:#cd661d !important; }
+.base_bc-imp-cd5b45 { border-color:#cd5b45 !important; }
+.base_bc-imp-cd3333 { border-color:#cd3333 !important; }
+.base_bc-imp-cd1076 { border-color:#cd1076 !important; }
+.base_bc-imp-caff70 { border-color:#caff70 !important; }
+.base_bc-imp-c71585 { border-color:#c71585 !important; }
+.base_bc-imp-c4c4c4 { border-color:#c4c4c4 !important; }
+.base_bc-imp-c1cdc1 { border-color:#c1cdc1 !important; }
+.base_bc-imp-bfbfbf { border-color:#bfbfbf !important; }
+.base_bc-imp-bdb76b { border-color:#bdb76b !important; }
+.base_bc-imp-bbffff { border-color:#bbffff !important; }
+.base_bc-imp-b8b8b8 { border-color:#b8b8b8 !important; }
+.base_bc-imp-b4eeb4 { border-color:#b4eeb4 !important; }
+.base_bc-imp-b3b3b3 { border-color:#b3b3b3 !important; }
+.base_bc-imp-b0e2ff { border-color:#b0e2ff !important; }
+.base_bc-imp-b03060 { border-color:#b03060 !important; }
+.base_bc-imp-adadad { border-color:#adadad !important; }
+.base_bc-imp-a9a9a9 { border-color:#a9a9a9 !important; }
+.base_bc-imp-a4d3ee { border-color:#a4d3ee !important; }
+.base_bc-imp-a1a1a1 { border-color:#a1a1a1 !important; }
+.base_bc-imp-9f79ee { border-color:#9f79ee !important; }
+.base_bc-imp-9b30ff { border-color:#9b30ff !important; }
+.base_bc-imp-9a32cd { border-color:#9a32cd !important; }
+.base_bc-imp-98f5ff { border-color:#98f5ff !important; }
+.base_bc-imp-949494 { border-color:#949494 !important; }
+.base_bc-imp-912cee { border-color:#912cee !important; }
+.base_bc-imp-8ee5ee { border-color:#8ee5ee !important; }
+.base_bc-imp-8deeee { border-color:#8deeee !important; }
+.base_bc-imp-8b8b7a { border-color:#8b8b7a !important; }
+.base_bc-imp-8b8878 { border-color:#8b8878 !important; }
+.base_bc-imp-8b8378 { border-color:#8b8378 !important; }
+.base_bc-imp-8b7d6b { border-color:#8b7d6b !important; }
+.base_bc-imp-8b7500 { border-color:#8b7500 !important; }
+.base_bc-imp-8b668b { border-color:#8b668b !important; }
+.base_bc-imp-8b5a2b { border-color:#8b5a2b !important; }
+.base_bc-imp-8b4789 { border-color:#8b4789 !important; }
+.base_bc-imp-8b4500 { border-color:#8b4500 !important; }
+.base_bc-imp-8b3626 { border-color:#8b3626 !important; }
+.base_bc-imp-8b1c62 { border-color:#8b1c62 !important; }
+.base_bc-imp-8b0000 { border-color:#8b0000 !important; }
+.base_bc-imp-87ceff { border-color:#87ceff !important; }
+.base_bc-imp-858585 { border-color:#858585 !important; }
+.base_bc-imp-838b83 { border-color:#838b83 !important; }
+.base_bc-imp-7fff00 { border-color:#7fff00 !important; }
+.base_bc-imp-7d7d7d { border-color:#7d7d7d !important; }
+.base_bc-imp-7b68ee { border-color:#7b68ee !important; }
+.base_bc-imp-7a67ee { border-color:#7a67ee !important; }
+.base_bc-imp-778899 { border-color:#778899 !important; }
+.base_bc-imp-737373 { border-color:#737373 !important; }
+.base_bc-imp-707070 { border-color:#707070 !important; }
+.base_bc-imp-6ca6cd { border-color:#6ca6cd !important; }
+.base_bc-imp-6a5acd { border-color:#6a5acd !important; }
+.base_bc-imp-6959cd { border-color:#6959cd !important; }
+.base_bc-imp-66cd00 { border-color:#66cd00 !important; }
+.base_bc-imp-63b8ff { border-color:#63b8ff !important; }
+.base_bc-imp-5f9ea0 { border-color:#5f9ea0 !important; }
+.base_bc-imp-5c5c5c { border-color:#5c5c5c !important; }
+.base_bc-imp-556b2f { border-color:#556b2f !important; }
+.base_bc-imp-548b54 { border-color:#548b54 !important; }
+.base_bc-imp-525252 { border-color:#525252 !important; }
+.base_bc-imp-4eee94 { border-color:#4eee94 !important; }
+.base_bc-imp-4a4a4a { border-color:#4a4a4a !important; }
+.base_bc-imp-474747 { border-color:#474747 !important; }
+.base_bc-imp-458b00 { border-color:#458b00 !important; }
+.base_bc-imp-424242 { border-color:#424242 !important; }
+.base_bc-imp-3d3d3d { border-color:#3d3d3d !important; }
+.base_bc-imp-388e8e { border-color:#388e8e !important; }
+.base_bc-imp-333333 { border-color:#333333 !important; }
+.base_bc-imp-2e8b57 { border-color:#2e8b57 !important; }
+.base_bc-imp-282828 { border-color:#282828 !important; }
+.base_bc-imp-228b22 { border-color:#228b22 !important; }
+.base_bc-imp-1f1f1f { border-color:#1f1f1f !important; }
+.base_bc-imp-1c1c1c { border-color:#1c1c1c !important; }
+.base_bc-imp-171717 { border-color:#171717 !important; }
+.base_bc-imp-0f0f0f { border-color:#0f0f0f !important; }
+.base_bc-imp-050505 { border-color:#050505 !important; }
+.base_bc-imp-00ff00 { border-color:#00ff00 !important; }
+.base_bc-imp-00ee76 { border-color:#00ee76 !important; }
+.base_bc-imp-00cdcd { border-color:#00cdcd !important; }
+.base_bc-imp-00bfff { border-color:#00bfff !important; }
+.base_bc-imp-008b45 { border-color:#008b45 !important; }
+.base_bc-imp-006400 { border-color:#006400 !important; }
+.base_bc-imp-0000aa { border-color:#0000aa !important; }
+.base_bc-imp-fffff0 { border-color:#fffff0 !important; }
+.base_bc-imp-fffaf0 { border-color:#fffaf0 !important; }
+.base_bc-imp-fff5ee { border-color:#fff5ee !important; }
+.base_bc-imp-ffec8b { border-color:#ffec8b !important; }
+.base_bc-imp-ffe4c4 { border-color:#ffe4c4 !important; }
+.base_bc-imp-ffdab9 { border-color:#ffdab9 !important; }
+.base_bc-imp-ffc125 { border-color:#ffc125 !important; }
+.base_bc-imp-ffb6c1 { border-color:#ffb6c1 !important; }
+.base_bc-imp-ffa500 { border-color:#ffa500 !important; }
+.base_bc-imp-ff83fa { border-color:#ff83fa !important; }
+.base_bc-imp-ff7f24 { border-color:#ff7f24 !important; }
+.base_bc-imp-ff6a6a { border-color:#ff6a6a !important; }
+.base_bc-imp-ff4040 { border-color:#ff4040 !important; }
+.base_bc-imp-ff1493 { border-color:#ff1493 !important; }
+.base_bc-imp-fcfcfc { border-color:#fcfcfc !important; }
+.base_bc-imp-faebd7 { border-color:#faebd7 !important; }
+.base_bc-imp-f5fffa { border-color:#f5fffa !important; }
+.base_bc-imp-f4f4f4 { border-color:#f4f4f4 !important; }
+.base_bc-imp-f0fff0 { border-color:#f0fff0 !important; }
+.base_bc-imp-f08080 { border-color:#f08080 !important; }
+.base_bc-imp-eee9e9 { border-color:#eee9e9 !important; }
+.base_bc-imp-eee685 { border-color:#eee685 !important; }
+.base_bc-imp-eedc82 { border-color:#eedc82 !important; }
+.base_bc-imp-eed2ee { border-color:#eed2ee !important; }
+.base_bc-imp-eec591 { border-color:#eec591 !important; }
+.base_bc-imp-eead0e { border-color:#eead0e !important; }
+.base_bc-imp-ee9a00 { border-color:#ee9a00 !important; }
+.base_bc-imp-ee7ae9 { border-color:#ee7ae9 !important; }
+.base_bc-imp-ee7600 { border-color:#ee7600 !important; }
+.base_bc-imp-ee5c42 { border-color:#ee5c42 !important; }
+.base_bc-imp-ee30a7 { border-color:#ee30a7 !important; }
+.base_bc-imp-ee0000 { border-color:#ee0000 !important; }
+.base_bc-imp-e9967a { border-color:#e9967a !important; }
+.base_bc-imp-e3e3e3 { border-color:#e3e3e3 !important; }
+.base_bc-imp-e0e0e0 { border-color:#e0e0e0 !important; }
+.base_bc-imp-dda0dd { border-color:#dda0dd !important; }
+.base_bc-imp-db7093 { border-color:#db7093 !important; }
+.base_bc-imp-d8bfd8 { border-color:#d8bfd8 !important; }
+.base_bc-imp-d2b48c { border-color:#d2b48c !important; }
+.base_bc-imp-d15fee { border-color:#d15fee !important; }
+.base_bc-imp-cdcdb4 { border-color:#cdcdb4 !important; }
+.base_bc-imp-cdc8b1 { border-color:#cdc8b1 !important; }
+.base_bc-imp-cdc0b0 { border-color:#cdc0b0 !important; }
+.base_bc-imp-cdb79e { border-color:#cdb79e !important; }
+.base_bc-imp-cdad00 { border-color:#cdad00 !important; }
+.base_bc-imp-cd96cd { border-color:#cd96cd !important; }
+.base_bc-imp-cd853f { border-color:#cd853f !important; }
+.base_bc-imp-cd69c9 { border-color:#cd69c9 !important; }
+.base_bc-imp-cd6600 { border-color:#cd6600 !important; }
+.base_bc-imp-cd5555 { border-color:#cd5555 !important; }
+.base_bc-imp-cd3278 { border-color:#cd3278 !important; }
+.base_bc-imp-cd00cd { border-color:#cd00cd !important; }
+.base_bc-imp-cae1ff { border-color:#cae1ff !important; }
+.base_bc-imp-c6e2ff { border-color:#c6e2ff !important; }
+.base_bc-imp-c2c2c2 { border-color:#c2c2c2 !important; }
+.base_bc-imp-c1c1c1 { border-color:#c1c1c1 !important; }
+.base_bc-imp-bf3eff { border-color:#bf3eff !important; }
+.base_bc-imp-bcee68 { border-color:#bcee68 !important; }
+.base_bc-imp-bababa { border-color:#bababa !important; }
+.base_bc-imp-b8860b { border-color:#b8860b !important; }
+.base_bc-imp-b4cdcd { border-color:#b4cdcd !important; }
+.base_bc-imp-b2dfee { border-color:#b2dfee !important; }
+.base_bc-imp-b0e0e6 { border-color:#b0e0e6 !important; }
+.base_bc-imp-aeeeee { border-color:#aeeeee !important; }
+.base_bc-imp-ababab { border-color:#ababab !important; }
+.base_bc-imp-a8a8a8 { border-color:#a8a8a8 !important; }
+.base_bc-imp-a3a3a3 { border-color:#a3a3a3 !important; }
+.base_bc-imp-a0522d { border-color:#a0522d !important; }
+.base_bc-imp-9e9e9e { border-color:#9e9e9e !important; }
+.base_bc-imp-9aff9a { border-color:#9aff9a !important; }
+.base_bc-imp-999999 { border-color:#999999 !important; }
+.base_bc-imp-97ffff { border-color:#97ffff !important; }
+.base_bc-imp-9400d3 { border-color:#9400d3 !important; }
+.base_bc-imp-90ee90 { border-color:#90ee90 !important; }
+.base_bc-imp-8e8e8e { border-color:#8e8e8e !important; }
+.base_bc-imp-8db6cd { border-color:#8db6cd !important; }
+.base_bc-imp-8b8b00 { border-color:#8b8b00 !important; }
+.base_bc-imp-8b8682 { border-color:#8b8682 !important; }
+.base_bc-imp-8b814c { border-color:#8b814c !important; }
+.base_bc-imp-8b7b8b { border-color:#8b7b8b !important; }
+.base_bc-imp-8b7355 { border-color:#8b7355 !important; }
+.base_bc-imp-8b6508 { border-color:#8b6508 !important; }
+.base_bc-imp-8b5a00 { border-color:#8b5a00 !important; }
+.base_bc-imp-8b475d { border-color:#8b475d !important; }
+.base_bc-imp-8b3e2f { border-color:#8b3e2f !important; }
+.base_bc-imp-8b2500 { border-color:#8b2500 !important; }
+.base_bc-imp-8b1a1a { border-color:#8b1a1a !important; }
+.base_bc-imp-8a8a8a { border-color:#8a8a8a !important; }
+.base_bc-imp-87cefa { border-color:#87cefa !important; }
+.base_bc-imp-848484 { border-color:#848484 !important; }
+.base_bc-imp-836fff { border-color:#836fff !important; }
+.base_bc-imp-7f7f7f { border-color:#7f7f7f !important; }
+.base_bc-imp-7d26cd { border-color:#7d26cd !important; }
+.base_bc-imp-7ac5cd { border-color:#7ac5cd !important; }
+.base_bc-imp-7a378b { border-color:#7a378b !important; }
+.base_bc-imp-76eec6 { border-color:#76eec6 !important; }
+.base_bc-imp-71c671 { border-color:#71c671 !important; }
+.base_bc-imp-6e8b3d { border-color:#6e8b3d !important; }
+.base_bc-imp-6c7b8b { border-color:#6c7b8b !important; }
+.base_bc-imp-698b69 { border-color:#698b69 !important; }
+.base_bc-imp-68838b { border-color:#68838b !important; }
+.base_bc-imp-668b8b { border-color:#668b8b !important; }
+.base_bc-imp-636363 { border-color:#636363 !important; }
+.base_bc-imp-5e5e5e { border-color:#5e5e5e !important; }
+.base_bc-imp-5b5b5b { border-color:#5b5b5b !important; }
+.base_bc-imp-555555 { border-color:#555555 !important; }
+.base_bc-imp-545454 { border-color:#545454 !important; }
+.base_bc-imp-515151 { border-color:#515151 !important; }
+.base_bc-imp-4d4d4d { border-color:#4d4d4d !important; }
+.base_bc-imp-48d1cc { border-color:#48d1cc !important; }
+.base_bc-imp-473c8b { border-color:#473c8b !important; }
+.base_bc-imp-454545 { border-color:#454545 !important; }
+.base_bc-imp-4169e1 { border-color:#4169e1 !important; }
+.base_bc-imp-3cb371 { border-color:#3cb371 !important; }
+.base_bc-imp-383838 { border-color:#383838 !important; }
+.base_bc-imp-32cd32 { border-color:#32cd32 !important; }
+.base_bc-imp-2e2e2e { border-color:#2e2e2e !important; }
+.base_bc-imp-27408b { border-color:#27408b !important; }
+.base_bc-imp-218868 { border-color:#218868 !important; }
+.base_bc-imp-1e90ff { border-color:#1e90ff !important; }
+.base_bc-imp-1a1a1a { border-color:#1a1a1a !important; }
+.base_bc-imp-141414 { border-color:#141414 !important; }
+.base_bc-imp-0d0d0d { border-color:#0d0d0d !important; }
+.base_bc-imp-030303 { border-color:#030303 !important; }
+.base_bc-imp-00fa9a { border-color:#00fa9a !important; }
+.base_bc-imp-00ee00 { border-color:#00ee00 !important; }
+.base_bc-imp-00cd66 { border-color:#00cd66 !important; }
+.base_bc-imp-00b2ee { border-color:#00b2ee !important; }
+.base_bc-imp-008b00 { border-color:#008b00 !important; }
+.base_bc-imp-0000ff { border-color:#0000ff !important; }
+.base_bc-imp-00008b { border-color:#00008b !important; }
+.base_bc-imp-ffffe0 { border-color:#ffffe0 !important; }
+.base_bc-imp-fffacd { border-color:#fffacd !important; }
+.base_bc-imp-fff0f5 { border-color:#fff0f5 !important; }
+.base_bc-imp-ffebcd { border-color:#ffebcd !important; }
+.base_bc-imp-ffe4b5 { border-color:#ffe4b5 !important; }
+.base_bc-imp-ffd700 { border-color:#ffd700 !important; }
+.base_bc-imp-ffc0cb { border-color:#ffc0cb !important; }
+.base_bc-imp-ffb5c5 { border-color:#ffb5c5 !important; }
+.base_bc-imp-ffa07a { border-color:#ffa07a !important; }
+.base_bc-imp-ff82ab { border-color:#ff82ab !important; }
+.base_bc-imp-ff7f00 { border-color:#ff7f00 !important; }
+.base_bc-imp-ff69b4 { border-color:#ff69b4 !important; }
+.base_bc-imp-ff3e96 { border-color:#ff3e96 !important; }
+.base_bc-imp-ff00ff { border-color:#ff00ff !important; }
+.base_bc-imp-fafafa { border-color:#fafafa !important; }
+.base_bc-imp-fa8072 { border-color:#fa8072 !important; }
+.base_bc-imp-f5f5f5 { border-color:#f5f5f5 !important; }
+.base_bc-imp-f4a460 { border-color:#f4a460 !important; }
+.base_bc-imp-f0f8ff { border-color:#f0f8ff !important; }
+.base_bc-imp-eeeee0 { border-color:#eeeee0 !important; }
+.base_bc-imp-eee9bf { border-color:#eee9bf !important; }
+.base_bc-imp-eee5de { border-color:#eee5de !important; }
+.base_bc-imp-eed8ae { border-color:#eed8ae !important; }
+.base_bc-imp-eecfa1 { border-color:#eecfa1 !important; }
+.base_bc-imp-eeb4b4 { border-color:#eeb4b4 !important; }
+.base_bc-imp-eea9b8 { border-color:#eea9b8 !important; }
+.base_bc-imp-ee9572 { border-color:#ee9572 !important; }
+.base_bc-imp-ee799f { border-color:#ee799f !important; }
+.base_bc-imp-ee6aa7 { border-color:#ee6aa7 !important; }
+.base_bc-imp-ee4000 { border-color:#ee4000 !important; }
+.base_bc-imp-ee2c2c { border-color:#ee2c2c !important; }
+.base_bc-imp-ededed { border-color:#ededed !important; }
+.base_bc-imp-e8e8e8 { border-color:#e8e8e8 !important; }
+.base_bc-imp-e0ffff { border-color:#e0ffff !important; }
+.base_bc-imp-e066ff { border-color:#e066ff !important; }
+.base_bc-imp-dcdcdc { border-color:#dcdcdc !important; }
+.base_bc-imp-daa520 { border-color:#daa520 !important; }
+.base_bc-imp-d6d6d6 { border-color:#d6d6d6 !important; }
+.base_bc-imp-d2691e { border-color:#d2691e !important; }
+.base_bc-imp-d02090 { border-color:#d02090 !important; }
+.base_bc-imp-cdcd00 { border-color:#cdcd00 !important; }
+.base_bc-imp-cdc673 { border-color:#cdc673 !important; }
+.base_bc-imp-cdbe70 { border-color:#cdbe70 !important; }
+.base_bc-imp-cdb5cd { border-color:#cdb5cd !important; }
+.base_bc-imp-cdaa7d { border-color:#cdaa7d !important; }
+.base_bc-imp-cd950c { border-color:#cd950c !important; }
+.base_bc-imp-cd8500 { border-color:#cd8500 !important; }
+.base_bc-imp-cd6889 { border-color:#cd6889 !important; }
+.base_bc-imp-cd6090 { border-color:#cd6090 !important; }
+.base_bc-imp-cd4f39 { border-color:#cd4f39 !important; }
+.base_bc-imp-cd2990 { border-color:#cd2990 !important; }
+.base_bc-imp-cd0000 { border-color:#cd0000 !important; }
+.base_bc-imp-c9c9c9 { border-color:#c9c9c9 !important; }
+.base_bc-imp-c67171 { border-color:#c67171 !important; }
+.base_bc-imp-c1ffc1 { border-color:#c1ffc1 !important; }
+.base_bc-imp-c0ff3e { border-color:#c0ff3e !important; }
+.base_bc-imp-bebebe { border-color:#bebebe !important; }
+.base_bc-imp-bcd2ee { border-color:#bcd2ee !important; }
+.base_bc-imp-ba55d3 { border-color:#ba55d3 !important; }
+.base_bc-imp-b7b7b7 { border-color:#b7b7b7 !important; }
+.base_bc-imp-b452cd { border-color:#b452cd !important; }
+.base_bc-imp-b23aee { border-color:#b23aee !important; }
+.base_bc-imp-b0c4de { border-color:#b0c4de !important; }
+.base_bc-imp-adff2f { border-color:#adff2f !important; }
+.base_bc-imp-ab82ff { border-color:#ab82ff !important; }
+.base_bc-imp-a6a6a6 { border-color:#a6a6a6 !important; }
+.base_bc-imp-a2cd5a { border-color:#a2cd5a !important; }
+.base_bc-imp-a020f0 { border-color:#a020f0 !important; }
+.base_bc-imp-9c9c9c { border-color:#9c9c9c !important; }
+.base_bc-imp-9acd32 { border-color:#9acd32 !important; }
+.base_bc-imp-9932cc { border-color:#9932cc !important; }
+.base_bc-imp-96cdcd { border-color:#96cdcd !important; }
+.base_bc-imp-9370db { border-color:#9370db !important; }
+.base_bc-imp-8fbc8f { border-color:#8fbc8f !important; }
+.base_bc-imp-8e8e38 { border-color:#8e8e38 !important; }
+.base_bc-imp-8c8c8c { border-color:#8c8c8c !important; }
+.base_bc-imp-8b8989 { border-color:#8b8989 !important; }
+.base_bc-imp-8b864e { border-color:#8b864e !important; }
+.base_bc-imp-8b7e66 { border-color:#8b7e66 !important; }
+.base_bc-imp-8b795e { border-color:#8b795e !important; }
+.base_bc-imp-8b6969 { border-color:#8b6969 !important; }
+.base_bc-imp-8b636c { border-color:#8b636c !important; }
+.base_bc-imp-8b5742 { border-color:#8b5742 !important; }
+.base_bc-imp-8b4726 { border-color:#8b4726 !important; }
+.base_bc-imp-8b3a62 { border-color:#8b3a62 !important; }
+.base_bc-imp-8b2323 { border-color:#8b2323 !important; }
+.base_bc-imp-8b0a50 { border-color:#8b0a50 !important; }
+.base_bc-imp-8a2be2 { border-color:#8a2be2 !important; }
+.base_bc-imp-87ceeb { border-color:#87ceeb !important; }
+.base_bc-imp-8470ff { border-color:#8470ff !important; }
+.base_bc-imp-828282 { border-color:#828282 !important; }
+.base_bc-imp-7ec0ee { border-color:#7ec0ee !important; }
+.base_bc-imp-7cfc00 { border-color:#7cfc00 !important; }
+.base_bc-imp-7a8b8b { border-color:#7a8b8b !important; }
+.base_bc-imp-79cdcd { border-color:#79cdcd !important; }
+.base_bc-imp-76ee00 { border-color:#76ee00 !important; }
+.base_bc-imp-7171c6 { border-color:#7171c6 !important; }
+.base_bc-imp-6e7b8b { border-color:#6e7b8b !important; }
+.base_bc-imp-6b8e23 { border-color:#6b8e23 !important; }
+.base_bc-imp-698b22 { border-color:#698b22 !important; }
+.base_bc-imp-68228b { border-color:#68228b !important; }
+.base_bc-imp-666666 { border-color:#666666 !important; }
+.base_bc-imp-616161 { border-color:#616161 !important; }
+.base_bc-imp-5d478b { border-color:#5d478b !important; }
+.base_bc-imp-595959 { border-color:#595959 !important; }
+.base_bc-imp-551a8b { border-color:#551a8b !important; }
+.base_bc-imp-53868b { border-color:#53868b !important; }
+.base_bc-imp-4f94cd { border-color:#4f94cd !important; }
+.base_bc-imp-4b0082 { border-color:#4b0082 !important; }
+.base_bc-imp-4876ff { border-color:#4876ff !important; }
+.base_bc-imp-4682b4 { border-color:#4682b4 !important; }
+.base_bc-imp-43cd80 { border-color:#43cd80 !important; }
+.base_bc-imp-40e0d0 { border-color:#40e0d0 !important; }
+.base_bc-imp-3b3b3b { border-color:#3b3b3b !important; }
+.base_bc-imp-36648b { border-color:#36648b !important; }
+.base_bc-imp-303030 { border-color:#303030 !important; }
+.base_bc-imp-2b2b2b { border-color:#2b2b2b !important; }
+.base_bc-imp-262626 { border-color:#262626 !important; }
+.base_bc-imp-212121 { border-color:#212121 !important; }
+.base_bc-imp-1e1e1e { border-color:#1e1e1e !important; }
+.base_bc-imp-191970 { border-color:#191970 !important; }
+.base_bc-imp-121212 { border-color:#121212 !important; }
+.base_bc-imp-0a0a0a { border-color:#0a0a0a !important; }
+.base_bc-imp-00ffff { border-color:#00ffff !important; }
+.base_bc-imp-00f5ff { border-color:#00f5ff !important; }
+.base_bc-imp-00e5ee { border-color:#00e5ee !important; }
+.base_bc-imp-00cd00 { border-color:#00cd00 !important; }
+.base_bc-imp-009acd { border-color:#009acd !important; }
+.base_bc-imp-00868b { border-color:#00868b !important; }
+.base_bc-imp-0000ee { border-color:#0000ee !important; }
+.base_bc-imp-000080 { border-color:#000080 !important; }
+.base_bc-imp-ffff00 { border-color:#ffff00 !important; }
+.base_bc-imp-fff8dc { border-color:#fff8dc !important; }
+.base_bc-imp-ffefdb { border-color:#ffefdb !important; }
+.base_bc-imp-ffe7ba { border-color:#ffe7ba !important; }
+.base_bc-imp-ffe1ff { border-color:#ffe1ff !important; }
+.base_bc-imp-ffd39b { border-color:#ffd39b !important; }
+.base_bc-imp-ffbbff { border-color:#ffbbff !important; }
+.base_bc-imp-ffaeb9 { border-color:#ffaeb9 !important; }
+.base_bc-imp-ff8c69 { border-color:#ff8c69 !important; }
+.base_bc-imp-ff8247 { border-color:#ff8247 !important; }
+.base_bc-imp-ff7256 { border-color:#ff7256 !important; }
+.base_bc-imp-ff6347 { border-color:#ff6347 !important; }
+.base_bc-imp-ff34b3 { border-color:#ff34b3 !important; }
+.base_bc-imp-ff0000 { border-color:#ff0000 !important; }
+.base_bc-imp-fafad2 { border-color:#fafad2 !important; }
+.base_bc-imp-f8f8ff { border-color:#f8f8ff !important; }
+.base_bc-imp-f5f5dc { border-color:#f5f5dc !important; }
+.base_bc-imp-f2f2f2 { border-color:#f2f2f2 !important; }
+.base_bc-imp-f0f0f0 { border-color:#f0f0f0 !important; }
+.base_bc-imp-eeeed1 { border-color:#eeeed1 !important; }
+.base_bc-imp-eee8cd { border-color:#eee8cd !important; }
+.base_bc-imp-eee0e5 { border-color:#eee0e5 !important; }
+.base_bc-imp-eed5d2 { border-color:#eed5d2 !important; }
+.base_bc-imp-eecbad { border-color:#eecbad !important; }
+.base_bc-imp-eeb422 { border-color:#eeb422 !important; }
+.base_bc-imp-eea2ad { border-color:#eea2ad !important; }
+.base_bc-imp-ee82ee { border-color:#ee82ee !important; }
+.base_bc-imp-ee7942 { border-color:#ee7942 !important; }
+.base_bc-imp-ee6a50 { border-color:#ee6a50 !important; }
+.base_bc-imp-ee3b3b { border-color:#ee3b3b !important; }
+.base_bc-imp-ee1289 { border-color:#ee1289 !important; }
+.base_bc-imp-ebebeb { border-color:#ebebeb !important; }
+.base_bc-imp-e6e6fa { border-color:#e6e6fa !important; }
+.base_bc-imp-e0eeee { border-color:#e0eeee !important; }
+.base_bc-imp-dedede { border-color:#dedede !important; }
+.base_bc-imp-dc143c { border-color:#dc143c !important; }
+.base_bc-imp-da70d6 { border-color:#da70d6 !important; }
+.base_bc-imp-d4d4d4 { border-color:#d4d4d4 !important; }
+.base_bc-imp-d1eeee { border-color:#d1eeee !important; }
+.base_bc-imp-cfcfcf { border-color:#cfcfcf !important; }
+.base_bc-imp-cdc9c9 { border-color:#cdc9c9 !important; }
+.base_bc-imp-cdc5bf { border-color:#cdc5bf !important; }
+.base_bc-imp-cdba96 { border-color:#cdba96 !important; }
+.base_bc-imp-cdb38b { border-color:#cdb38b !important; }
+.base_bc-imp-cd9b9b { border-color:#cd9b9b !important; }
+.base_bc-imp-cd919e { border-color:#cd919e !important; }
+.base_bc-imp-cd8162 { border-color:#cd8162 !important; }
+.base_bc-imp-cd6839 { border-color:#cd6839 !important; }
+.base_bc-imp-cd5c5c { border-color:#cd5c5c !important; }
+.base_bc-imp-cd3700 { border-color:#cd3700 !important; }
+.base_bc-imp-cd2626 { border-color:#cd2626 !important; }
+.base_bc-imp-cccccc { border-color:#cccccc !important; }
+.base_bc-imp-c7c7c7 { border-color:#c7c7c7 !important; }
+.base_bc-imp-c5c1aa { border-color:#c5c1aa !important; }
+.base_bc-imp-c1cdcd { border-color:#c1cdcd !important; }
+.base_bc-imp-bfefff { border-color:#bfefff !important; }
+.base_bc-imp-bdbdbd { border-color:#bdbdbd !important; }
+.base_bc-imp-bc8f8f { border-color:#bc8f8f !important; }
+.base_bc-imp-b9d3ee { border-color:#b9d3ee !important; }
+.base_bc-imp-b5b5b5 { border-color:#b5b5b5 !important; }
+.base_bc-imp-b3ee3a { border-color:#b3ee3a !important; }
+.base_bc-imp-b22222 { border-color:#b22222 !important; }
+.base_bc-imp-b0b0b0 { border-color:#b0b0b0 !important; }
+.base_bc-imp-add8e6 { border-color:#add8e6 !important; }
+.base_bc-imp-aaaaaa { border-color:#aaaaaa !important; }
+.base_bc-imp-a52a2a { border-color:#a52a2a !important; }
+.base_bc-imp-a2b5cd { border-color:#a2b5cd !important; }
+.base_bc-imp-9fb6cd { border-color:#9fb6cd !important; }
+.base_bc-imp-9bcd9b { border-color:#9bcd9b !important; }
+.base_bc-imp-9ac0cd { border-color:#9ac0cd !important; }
+.base_bc-imp-98fb98 { border-color:#98fb98 !important; }
+.base_bc-imp-969696 { border-color:#969696 !important; }
+.base_bc-imp-919191 { border-color:#919191 !important; }
+.base_bc-imp-8f8f8f { border-color:#8f8f8f !important; }
+.base_bc-imp-8e388e { border-color:#8e388e !important; }
+.base_bc-imp-8b8b83 { border-color:#8b8b83 !important; }
+.base_bc-imp-8b8970 { border-color:#8b8970 !important; }
+.base_bc-imp-8b8386 { border-color:#8b8386 !important; }
+.base_bc-imp-8b7d7b { border-color:#8b7d7b !important; }
+.base_bc-imp-8b7765 { border-color:#8b7765 !important; }
+.base_bc-imp-8b6914 { border-color:#8b6914 !important; }
+.base_bc-imp-8b5f65 { border-color:#8b5f65 !important; }
+.base_bc-imp-8b4c39 { border-color:#8b4c39 !important; }
+.base_bc-imp-8b4513 { border-color:#8b4513 !important; }
+.base_bc-imp-8b3a3a { border-color:#8b3a3a !important; }
+.base_bc-imp-8b2252 { border-color:#8b2252 !important; }
+.base_bc-imp-8b008b { border-color:#8b008b !important; }
+.base_bc-imp-8968cd { border-color:#8968cd !important; }
+.base_bc-imp-878787 { border-color:#878787 !important; }
+.base_bc-imp-838b8b { border-color:#838b8b !important; }
+.base_bc-imp-7fffd4 { border-color:#7fffd4 !important; }
+.base_bc-imp-7d9ec0 { border-color:#7d9ec0 !important; }
+.base_bc-imp-7ccd7c { border-color:#7ccd7c !important; }
+.base_bc-imp-7a7a7a { border-color:#7a7a7a !important; }
+.base_bc-imp-787878 { border-color:#787878 !important; }
+.base_bc-imp-757575 { border-color:#757575 !important; }
+.base_bc-imp-708090 { border-color:#708090 !important; }
+.base_bc-imp-6e6e6e { border-color:#6e6e6e !important; }
+.base_bc-imp-6b6b6b { border-color:#6b6b6b !important; }
+.base_bc-imp-696969 { border-color:#696969 !important; }
+.base_bc-imp-66cdaa { border-color:#66cdaa !important; }
+.base_bc-imp-6495ed { border-color:#6495ed !important; }
+.base_bc-imp-607b8b { border-color:#607b8b !important; }
+.base_bc-imp-5cacee { border-color:#5cacee !important; }
+.base_bc-imp-575757 { border-color:#575757 !important; }
+.base_bc-imp-54ff9f { border-color:#54ff9f !important; }
+.base_bc-imp-528b8b { border-color:#528b8b !important; }
+.base_bc-imp-4f4f4f { border-color:#4f4f4f !important; }
+.base_bc-imp-4a708b { border-color:#4a708b !important; }
+.base_bc-imp-483d8b { border-color:#483d8b !important; }
+.base_bc-imp-458b74 { border-color:#458b74 !important; }
+.base_bc-imp-436eee { border-color:#436eee !important; }
+.base_bc-imp-404040 { border-color:#404040 !important; }
+.base_bc-imp-3a5fcd { border-color:#3a5fcd !important; }
+.base_bc-imp-363636 { border-color:#363636 !important; }
+.base_bc-imp-2f4f4f { border-color:#2f4f4f !important; }
+.base_bc-imp-292929 { border-color:#292929 !important; }
+.base_bc-imp-242424 { border-color:#242424 !important; }
+.base_bc-imp-20b2aa { border-color:#20b2aa !important; }
+.base_bc-imp-1c86ee { border-color:#1c86ee !important; }
+.base_bc-imp-1874cd { border-color:#1874cd !important; }
+.base_bc-imp-104e8b { border-color:#104e8b !important; }
+.base_bc-imp-080808 { border-color:#080808 !important; }
+.base_bc-imp-00ff7f { border-color:#00ff7f !important; }
+.base_bc-imp-00eeee { border-color:#00eeee !important; }
+.base_bc-imp-00ced1 { border-color:#00ced1 !important; }
+.base_bc-imp-00c5cd { border-color:#00c5cd !important; }
+.base_bc-imp-008b8b { border-color:#008b8b !important; }
+.base_bc-imp-00688b { border-color:#00688b !important; }
+.base_bc-imp-0000cd { border-color:#0000cd !important; }
+.base_bc-imp-000000 { border-color:#000000 !important; }
+
+
+.base_bc-black { border-color:#000000; }
+.base_bc-navy { border-color:#000080; }
+.base_bc-darkBlue { border-color:#00008b; }
+.base_bc-mediumBlue { border-color:#0000cd; }
+.base_bc-blue { border-color:#0000ff; }
+.base_bc-darkGreen { border-color:#006400; }
+.base_bc-green { border-color:#008000; }
+.base_bc-teal { border-color:#008080; }
+.base_bc-darkCyan { border-color:#008b8b; }
+.base_bc-deepSkyBlue { border-color:#00bfff; }
+.base_bc-darkTurquoise { border-color:#00ced1; }
+.base_bc-mediumSpringGreen { border-color:#00fa9a; }
+.base_bc-lime { border-color:#00ff00; }
+.base_bc-springGreen { border-color:#00ff7f; }
+.base_bc-aqua { border-color:#00ffff; }
+.base_bc-cyan { border-color:#00ffff; }
+.base_bc-midnightBlue { border-color:#191970; }
+.base_bc-dodgerBlue { border-color:#1e90ff; }
+.base_bc-lightSeaGreen { border-color:#20b2aa; }
+.base_bc-forestGreen { border-color:#228b22; }
+.base_bc-seaGreen { border-color:#2e8b57; }
+.base_bc-darkSlateGray { border-color:#2f4f4f; }
+.base_bc-limeGreen { border-color:#32cd32; }
+.base_bc-mediumSeaGreen { border-color:#3cb371; }
+.base_bc-turquoise { border-color:#40e0d0; }
+.base_bc-royalBlue { border-color:#4169e1; }
+.base_bc-steelBlue { border-color:#4682b4; }
+.base_bc-darkSlateBlue { border-color:#483d8b; }
+.base_bc-mediumTurquoise { border-color:#48d1cc; }
+.base_bc-indigo { border-color:#4b0082; }
+.base_bc-darkOliveGreen { border-color:#556b2f; }
+.base_bc-cadetBlue { border-color:#5f9ea0; }
+.base_bc-cornflowerBlue { border-color:#6495ed; }
+.base_bc-mediumAquaMarine { border-color:#66cdaa; }
+.base_bc-dimGray { border-color:#696969; }
+.base_bc-slateBlue { border-color:#6a5acd; }
+.base_bc-oliveDrab { border-color:#6b8e23; }
+.base_bc-slateGray { border-color:#708090; }
+.base_bc-lightSlateGray { border-color:#778899; }
+.base_bc-mediumSlateBlue { border-color:#7b68ee; }
+.base_bc-lawnGreen { border-color:#7cfc00; }
+.base_bc-chartreuse { border-color:#7fff00; }
+.base_bc-aquamarine { border-color:#7fffd4; }
+.base_bc-maroon { border-color:#800000; }
+.base_bc-purple { border-color:#800080; }
+.base_bc-olive { border-color:#808000; }
+.base_bc-gray { border-color:#808080; }
+.base_bc-skyBlue { border-color:#87ceeb; }
+.base_bc-lightSkyBlue { border-color:#87cefa; }
+.base_bc-blueViolet { border-color:#8a2be2; }
+.base_bc-darkRed { border-color:#8b0000; }
+.base_bc-darkMagenta { border-color:#8b008b; }
+.base_bc-saddleBrown { border-color:#8b4513; }
+.base_bc-darkSeaGreen { border-color:#8fbc8f; }
+.base_bc-lightGreen { border-color:#90ee90; }
+.base_bc-mediumPurple { border-color:#9370db; }
+.base_bc-darkViolet { border-color:#9400d3; }
+.base_bc-paleGreen { border-color:#98fb98; }
+.base_bc-darkOrchid { border-color:#9932cc; }
+.base_bc-yellowGreen { border-color:#9acd32; }
+.base_bc-sienna { border-color:#a0522d; }
+.base_bc-brown { border-color:#a52a2a; }
+.base_bc-darkGray { border-color:#a9a9a9; }
+.base_bc-lightBlue { border-color:#add8e6; }
+.base_bc-greenYellow { border-color:#adff2f; }
+.base_bc-paleTurquoise { border-color:#afeeee; }
+.base_bc-lightSteelBlue { border-color:#b0c4de; }
+.base_bc-powderBlue { border-color:#b0e0e6; }
+.base_bc-fireBrick { border-color:#b22222; }
+.base_bc-darkGoldenRod { border-color:#b8860b; }
+.base_bc-mediumOrchid { border-color:#ba55d3; }
+.base_bc-rosyBrown { border-color:#bc8f8f; }
+.base_bc-darkKhaki { border-color:#bdb76b; }
+.base_bc-silver { border-color:#c0c0c0; }
+.base_bc-mediumVioletRed { border-color:#c71585; }
+.base_bc-indianRed { border-color:#cd5c5c; }
+.base_bc-peru { border-color:#cd853f; }
+.base_bc-chocolate { border-color:#d2691e; }
+.base_bc-tan { border-color:#d2b48c; }
+.base_bc-lightGray { border-color:#d3d3d3; }
+.base_bc-thistle { border-color:#d8bfd8; }
+.base_bc-orchid { border-color:#da70d6; }
+.base_bc-goldenRod { border-color:#daa520; }
+.base_bc-paleVioletRed { border-color:#db7093; }
+.base_bc-crimson { border-color:#dc143c; }
+.base_bc-gainsboro { border-color:#dcdcdc; }
+.base_bc-plum { border-color:#dda0dd; }
+.base_bc-burlyWood { border-color:#deb887; }
+.base_bc-lightCyan { border-color:#e0ffff; }
+.base_bc-lavender { border-color:#e6e6fa; }
+.base_bc-darkSalmon { border-color:#e9967a; }
+.base_bc-violet { border-color:#ee82ee; }
+.base_bc-paleGoldenRod { border-color:#eee8aa; }
+.base_bc-lightCoral { border-color:#f08080; }
+.base_bc-khaki { border-color:#f0e68c; }
+.base_bc-aliceBlue { border-color:#f0f8ff; }
+.base_bc-honeyDew { border-color:#f0fff0; }
+.base_bc-azure { border-color:#f0ffff; }
+.base_bc-sandyBrown { border-color:#f4a460; }
+.base_bc-wheat { border-color:#f5deb3; }
+.base_bc-beige { border-color:#f5f5dc; }
+.base_bc-whiteSmoke { border-color:#f5f5f5; }
+.base_bc-mintCream { border-color:#f5fffa; }
+.base_bc-ghostWhite { border-color:#f8f8ff; }
+.base_bc-salmon { border-color:#fa8072; }
+.base_bc-antiqueWhite { border-color:#faebd7; }
+.base_bc-linen { border-color:#faf0e6; }
+.base_bc-lightGoldenRodYellow { border-color:#fafad2; }
+.base_bc-oldLace { border-color:#fdf5e6; }
+.base_bc-red { border-color:#ff0000; }
+.base_bc-magenta { border-color:#ff00ff; }
+.base_bc-deepPink { border-color:#ff1493; }
+.base_bc-orangeRed { border-color:#ff4500; }
+.base_bc-tomato { border-color:#ff6347; }
+.base_bc-hotPink { border-color:#ff69b4; }
+.base_bc-coral { border-color:#ff7f50; }
+.base_bc-darkOrange { border-color:#ff8c00; }
+.base_bc-lightSalmon { border-color:#ffa07a; }
+.base_bc-orange { border-color:#ffa500; }
+.base_bc-lightPink { border-color:#ffb6c1; }
+.base_bc-pink { border-color:#ffc0cb; }
+.base_bc-gold { border-color:#ffd700; }
+.base_bc-peachPuff { border-color:#ffdab9; }
+.base_bc-navajoWhite { border-color:#ffdead; }
+.base_bc-moccasin { border-color:#ffe4b5; }
+.base_bc-bisque { border-color:#ffe4c4; }
+.base_bc-mistyRose { border-color:#ffe4e1; }
+.base_bc-blanchedAlmond { border-color:#ffebcd; }
+.base_bc-papayaWhip { border-color:#ffefd5; }
+.base_bc-lavenderBlush { border-color:#fff0f5; }
+.base_bc-seaShell { border-color:#fff5ee; }
+.base_bc-cornsilk { border-color:#fff8dc; }
+.base_bc-lemonChiffon { border-color:#fffacd; }
+.base_bc-floralWhite { border-color:#fffaf0; }
+.base_bc-snow { border-color:#fffafa; }
+.base_bc-yellow { border-color:#ffff00; }
+.base_bc-lightYellow { border-color:#ffffe0; }
+.base_bc-ivory { border-color:#fffff0; }
+.base_bc-white { border-color:#ffffff; }
+
+.base_bc-imp-black { border-color:#000000 !important; }
+.base_bc-imp-navy { border-color:#000080 !important; }
+.base_bc-imp-darkBlue { border-color:#00008b !important; }
+.base_bc-imp-mediumBlue { border-color:#0000cd !important; }
+.base_bc-imp-blue { border-color:#0000ff !important; }
+.base_bc-imp-darkGreen { border-color:#006400 !important; }
+.base_bc-imp-green { border-color:#008000 !important; }
+.base_bc-imp-teal { border-color:#008080 !important; }
+.base_bc-imp-darkCyan { border-color:#008b8b !important; }
+.base_bc-imp-deepSkyBlue { border-color:#00bfff !important; }
+.base_bc-imp-darkTurquoise { border-color:#00ced1 !important; }
+.base_bc-imp-mediumSpringGreen { border-color:#00fa9a !important; }
+.base_bc-imp-lime { border-color:#00ff00 !important; }
+.base_bc-imp-springGreen { border-color:#00ff7f !important; }
+.base_bc-imp-aqua { border-color:#00ffff !important; }
+.base_bc-imp-cyan { border-color:#00ffff !important; }
+.base_bc-imp-midnightBlue { border-color:#191970 !important; }
+.base_bc-imp-dodgerBlue { border-color:#1e90ff !important; }
+.base_bc-imp-lightSeaGreen { border-color:#20b2aa !important; }
+.base_bc-imp-forestGreen { border-color:#228b22 !important; }
+.base_bc-imp-seaGreen { border-color:#2e8b57 !important; }
+.base_bc-imp-darkSlateGray { border-color:#2f4f4f !important; }
+.base_bc-imp-limeGreen { border-color:#32cd32 !important; }
+.base_bc-imp-mediumSeaGreen { border-color:#3cb371 !important; }
+.base_bc-imp-turquoise { border-color:#40e0d0 !important; }
+.base_bc-imp-royalBlue { border-color:#4169e1 !important; }
+.base_bc-imp-steelBlue { border-color:#4682b4 !important; }
+.base_bc-imp-darkSlateBlue { border-color:#483d8b !important; }
+.base_bc-imp-mediumTurquoise { border-color:#48d1cc !important; }
+.base_bc-imp-indigo { border-color:#4b0082 !important; }
+.base_bc-imp-darkOliveGreen { border-color:#556b2f !important; }
+.base_bc-imp-cadetBlue { border-color:#5f9ea0 !important; }
+.base_bc-imp-cornflowerBlue { border-color:#6495ed !important; }
+.base_bc-imp-mediumAquaMarine { border-color:#66cdaa !important; }
+.base_bc-imp-dimGray { border-color:#696969 !important; }
+.base_bc-imp-slateBlue { border-color:#6a5acd !important; }
+.base_bc-imp-oliveDrab { border-color:#6b8e23 !important; }
+.base_bc-imp-slateGray { border-color:#708090 !important; }
+.base_bc-imp-lightSlateGray { border-color:#778899 !important; }
+.base_bc-imp-mediumSlateBlue { border-color:#7b68ee !important; }
+.base_bc-imp-lawnGreen { border-color:#7cfc00 !important; }
+.base_bc-imp-chartreuse { border-color:#7fff00 !important; }
+.base_bc-imp-aquamarine { border-color:#7fffd4 !important; }
+.base_bc-imp-maroon { border-color:#800000 !important; }
+.base_bc-imp-purple { border-color:#800080 !important; }
+.base_bc-imp-olive { border-color:#808000 !important; }
+.base_bc-imp-gray { border-color:#808080 !important; }
+.base_bc-imp-skyBlue { border-color:#87ceeb !important; }
+.base_bc-imp-lightSkyBlue { border-color:#87cefa !important; }
+.base_bc-imp-blueViolet { border-color:#8a2be2 !important; }
+.base_bc-imp-darkRed { border-color:#8b0000 !important; }
+.base_bc-imp-darkMagenta { border-color:#8b008b !important; }
+.base_bc-imp-saddleBrown { border-color:#8b4513 !important; }
+.base_bc-imp-darkSeaGreen { border-color:#8fbc8f !important; }
+.base_bc-imp-lightGreen { border-color:#90ee90 !important; }
+.base_bc-imp-mediumPurple { border-color:#9370db !important; }
+.base_bc-imp-darkViolet { border-color:#9400d3 !important; }
+.base_bc-imp-paleGreen { border-color:#98fb98 !important; }
+.base_bc-imp-darkOrchid { border-color:#9932cc !important; }
+.base_bc-imp-yellowGreen { border-color:#9acd32 !important; }
+.base_bc-imp-sienna { border-color:#a0522d !important; }
+.base_bc-imp-brown { border-color:#a52a2a !important; }
+.base_bc-imp-darkGray { border-color:#a9a9a9 !important; }
+.base_bc-imp-lightBlue { border-color:#add8e6 !important; }
+.base_bc-imp-greenYellow { border-color:#adff2f !important; }
+.base_bc-imp-paleTurquoise { border-color:#afeeee !important; }
+.base_bc-imp-lightSteelBlue { border-color:#b0c4de !important; }
+.base_bc-imp-powderBlue { border-color:#b0e0e6 !important; }
+.base_bc-imp-fireBrick { border-color:#b22222 !important; }
+.base_bc-imp-darkGoldenRod { border-color:#b8860b !important; }
+.base_bc-imp-mediumOrchid { border-color:#ba55d3 !important; }
+.base_bc-imp-rosyBrown { border-color:#bc8f8f !important; }
+.base_bc-imp-darkKhaki { border-color:#bdb76b !important; }
+.base_bc-imp-silver { border-color:#c0c0c0 !important; }
+.base_bc-imp-mediumVioletRed { border-color:#c71585 !important; }
+.base_bc-imp-indianRed { border-color:#cd5c5c !important; }
+.base_bc-imp-peru { border-color:#cd853f !important; }
+.base_bc-imp-chocolate { border-color:#d2691e !important; }
+.base_bc-imp-tan { border-color:#d2b48c !important; }
+.base_bc-imp-lightGray { border-color:#d3d3d3 !important; }
+.base_bc-imp-thistle { border-color:#d8bfd8 !important; }
+.base_bc-imp-orchid { border-color:#da70d6 !important; }
+.base_bc-imp-goldenRod { border-color:#daa520 !important; }
+.base_bc-imp-paleVioletRed { border-color:#db7093 !important; }
+.base_bc-imp-crimson { border-color:#dc143c !important; }
+.base_bc-imp-gainsboro { border-color:#dcdcdc !important; }
+.base_bc-imp-plum { border-color:#dda0dd !important; }
+.base_bc-imp-burlyWood { border-color:#deb887 !important; }
+.base_bc-imp-lightCyan { border-color:#e0ffff !important; }
+.base_bc-imp-lavender { border-color:#e6e6fa !important; }
+.base_bc-imp-darkSalmon { border-color:#e9967a !important; }
+.base_bc-imp-violet { border-color:#ee82ee !important; }
+.base_bc-imp-paleGoldenRod { border-color:#eee8aa !important; }
+.base_bc-imp-lightCoral { border-color:#f08080 !important; }
+.base_bc-imp-khaki { border-color:#f0e68c !important; }
+.base_bc-imp-aliceBlue { border-color:#f0f8ff !important; }
+.base_bc-imp-honeyDew { border-color:#f0fff0 !important; }
+.base_bc-imp-azure { border-color:#f0ffff !important; }
+.base_bc-imp-sandyBrown { border-color:#f4a460 !important; }
+.base_bc-imp-wheat { border-color:#f5deb3 !important; }
+.base_bc-imp-beige { border-color:#f5f5dc !important; }
+.base_bc-imp-whiteSmoke { border-color:#f5f5f5 !important; }
+.base_bc-imp-mintCream { border-color:#f5fffa !important; }
+.base_bc-imp-ghostWhite { border-color:#f8f8ff !important; }
+.base_bc-imp-salmon { border-color:#fa8072 !important; }
+.base_bc-imp-antiqueWhite { border-color:#faebd7 !important; }
+.base_bc-imp-linen { border-color:#faf0e6 !important; }
+.base_bc-imp-lightGoldenRodYellow { border-color:#fafad2 !important; }
+.base_bc-imp-oldLace { border-color:#fdf5e6 !important; }
+.base_bc-imp-red { border-color:#ff0000 !important; }
+.base_bc-imp-magenta { border-color:#ff00ff !important; }
+.base_bc-imp-deepPink { border-color:#ff1493 !important; }
+.base_bc-imp-orangeRed { border-color:#ff4500 !important; }
+.base_bc-imp-tomato { border-color:#ff6347 !important; }
+.base_bc-imp-hotPink { border-color:#ff69b4 !important; }
+.base_bc-imp-coral { border-color:#ff7f50 !important; }
+.base_bc-imp-darkOrange { border-color:#ff8c00 !important; }
+.base_bc-imp-lightSalmon { border-color:#ffa07a !important; }
+.base_bc-imp-orange { border-color:#ffa500 !important; }
+.base_bc-imp-lightPink { border-color:#ffb6c1 !important; }
+.base_bc-imp-pink { border-color:#ffc0cb !important; }
+.base_bc-imp-gold { border-color:#ffd700 !important; }
+.base_bc-imp-peachPuff { border-color:#ffdab9 !important; }
+.base_bc-imp-navajoWhite { border-color:#ffdead !important; }
+.base_bc-imp-moccasin { border-color:#ffe4b5 !important; }
+.base_bc-imp-bisque { border-color:#ffe4c4 !important; }
+.base_bc-imp-mistyRose { border-color:#ffe4e1 !important; }
+.base_bc-imp-blanchedAlmond { border-color:#ffebcd !important; }
+.base_bc-imp-papayaWhip { border-color:#ffefd5 !important; }
+.base_bc-imp-lavenderBlush { border-color:#fff0f5 !important; }
+.base_bc-imp-seaShell { border-color:#fff5ee !important; }
+.base_bc-imp-cornsilk { border-color:#fff8dc !important; }
+.base_bc-imp-lemonChiffon { border-color:#fffacd !important; }
+.base_bc-imp-floralWhite { border-color:#fffaf0 !important; }
+.base_bc-imp-snow { border-color:#fffafa !important; }
+.base_bc-imp-yellow { border-color:#ffff00 !important; }
+.base_bc-imp-lightYellow { border-color:#ffffe0 !important; }
+.base_bc-imp-ivory { border-color:#fffff0 !important; }
+.base_bc-imp-white { border-color:#ffffff !important; }
+
+
+.base_bc-000000 { border-color:#000000; }
+.base_bc-272727 { border-color:#272727; }
+.base_bc-3c3c3c { border-color:#3c3c3c; }
+.base_bc-4f4f4f { border-color:#4f4f4f; }
+.base_bc-5b5b5b { border-color:#5b5b5b; }
+.base_bc-6c6c6c { border-color:#6c6c6c; }
+.base_bc-7b7b7b { border-color:#7b7b7b; }
+.base_bc-8e8e8e { border-color:#8e8e8e; }
+.base_bc-9d9d9d { border-color:#9d9d9d; }
+.base_bc-adadad { border-color:#adadad; }
+.base_bc-bebebe { border-color:#bebebe; }
+.base_bc-d0d0d0 { border-color:#d0d0d0; }
+.base_bc-e0e0e0 { border-color:#e0e0e0; }
+.base_bc-f0f0f0 { border-color:#f0f0f0; }
+.base_bc-fcfcfc { border-color:#fcfcfc; }
+.base_bc-ffffff { border-color:#ffffff; }
+.base_bc-000079 { border-color:#000079; }
+.base_bc-000093 { border-color:#000093; }
+.base_bc-0000c6 { border-color:#0000c6; }
+.base_bc-0000c6 { border-color:#0000c6; }
+.base_bc-0000e3 { border-color:#0000e3; }
+.base_bc-2828ff { border-color:#2828ff; }
+.base_bc-4a4aff { border-color:#4a4aff; }
+.base_bc-6a6aff { border-color:#6a6aff; }
+.base_bc-7d7dff { border-color:#7d7dff; }
+.base_bc-9393ff { border-color:#9393ff; }
+.base_bc-aaaaff { border-color:#aaaaff; }
+.base_bc-b9b9ff { border-color:#b9b9ff; }
+.base_bc-ceceff { border-color:#ceceff; }
+.base_bc-ddddff { border-color:#ddddff; }
+.base_bc-ececff { border-color:#ececff; }
+.base_bc-fbfbff { border-color:#fbfbff; }
+.base_bc-467500 { border-color:#467500; }
+.base_bc-548c00 { border-color:#548c00; }
+.base_bc-64a600 { border-color:#64a600; }
+.base_bc-73bf00 { border-color:#73bf00; }
+.base_bc-82d900 { border-color:#82d900; }
+.base_bc-8cea00 { border-color:#8cea00; }
+.base_bc-9aff02 { border-color:#9aff02; }
+.base_bc-a8ff24 { border-color:#a8ff24; }
+.base_bc-b7ff4a { border-color:#b7ff4a; }
+.base_bc-c2ff68 { border-color:#c2ff68; }
+.base_bc-ccff80 { border-color:#ccff80; }
+.base_bc-d3ff93 { border-color:#d3ff93; }
+.base_bc-deffac { border-color:#deffac; }
+.base_bc-e8ffc4 { border-color:#e8ffc4; }
+.base_bc-efffd7 { border-color:#efffd7; }
+.base_bc-f5ffe8 { border-color:#f5ffe8; }
+.base_bc-613030 { border-color:#613030; }
+.base_bc-743a3a { border-color:#743a3a; }
+.base_bc-804040 { border-color:#804040; }
+.base_bc-984b4b { border-color:#984b4b; }
+.base_bc-ad5a5a { border-color:#ad5a5a; }
+.base_bc-b87070 { border-color:#b87070; }
+.base_bc-c48888 { border-color:#c48888; }
+.base_bc-cf9e9e { border-color:#cf9e9e; }
+.base_bc-d9b3b3 { border-color:#d9b3b3; }
+.base_bc-e1c4c4 { border-color:#e1c4c4; }
+.base_bc-ebd6d6 { border-color:#ebd6d6; }
+.base_bc-f2e6e6 { border-color:#f2e6e6; }
+.base_bc-2f0000 { border-color:#2f0000; }
+.base_bc-4d0000 { border-color:#4d0000; }
+.base_bc-600000 { border-color:#600000; }
+.base_bc-750000 { border-color:#750000; }
+.base_bc-930000 { border-color:#930000; }
+.base_bc-ae0000 { border-color:#ae0000; }
+.base_bc-ce0000 { border-color:#ce0000; }
+.base_bc-ea0000 { border-color:#ea0000; }
+.base_bc-ff0000 { border-color:#ff0000; }
+.base_bc-ff2d2d { border-color:#ff2d2d; }
+.base_bc-ff5151 { border-color:#ff5151; }
+.base_bc-ff7575 { border-color:#ff7575; }
+.base_bc-ff9797 { border-color:#ff9797; }
+.base_bc-ffb5b5 { border-color:#ffb5b5; }
+.base_bc-ffd2d2 { border-color:#ffd2d2; }
+.base_bc-ffecec { border-color:#ffecec; }
+.base_bc-000079 { border-color:#000079; }
+.base_bc-003d79 { border-color:#003d79; }
+.base_bc-004b97 { border-color:#004b97; }
+.base_bc-005ab5 { border-color:#005ab5; }
+.base_bc-0066cc { border-color:#0066cc; }
+.base_bc-0072e3 { border-color:#0072e3; }
+.base_bc-0080ff { border-color:#0080ff; }
+.base_bc-2894ff { border-color:#2894ff; }
+.base_bc-46a3ff { border-color:#46a3ff; }
+.base_bc-66b3ff { border-color:#66b3ff; }
+.base_bc-84c1ff { border-color:#84c1ff; }
+.base_bc-97cbff { border-color:#97cbff; }
+.base_bc-acd6ff { border-color:#acd6ff; }
+.base_bc-c4e1ff { border-color:#c4e1ff; }
+.base_bc-d2e9ff { border-color:#d2e9ff; }
+.base_bc-ecf5ff { border-color:#ecf5ff; }
+.base_bc-424200 { border-color:#424200; }
+.base_bc-5b5b00 { border-color:#5b5b00; }
+.base_bc-737300 { border-color:#737300; }
+.base_bc-8c8c00 { border-color:#8c8c00; }
+.base_bc-a6a600 { border-color:#a6a600; }
+.base_bc-c4c400 { border-color:#c4c400; }
+.base_bc-e1e100 { border-color:#e1e100; }
+.base_bc-f9f900 { border-color:#f9f900; }
+.base_bc-ffff37 { border-color:#ffff37; }
+.base_bc-ffff6f { border-color:#ffff6f; }
+.base_bc-ffff93 { border-color:#ffff93; }
+.base_bc-ffffaa { border-color:#ffffaa; }
+.base_bc-ffffb9 { border-color:#ffffb9; }
+.base_bc-ffffce { border-color:#ffffce; }
+.base_bc-ffffdf { border-color:#ffffdf; }
+.base_bc-fffff4 { border-color:#fffff4; }
+.base_bc-616130 { border-color:#616130; }
+.base_bc-707038 { border-color:#707038; }
+.base_bc-808040 { border-color:#808040; }
+.base_bc-949449 { border-color:#949449; }
+.base_bc-a5a552 { border-color:#a5a552; }
+.base_bc-afaf61 { border-color:#afaf61; }
+.base_bc-b9b973 { border-color:#b9b973; }
+.base_bc-c2c287 { border-color:#c2c287; }
+.base_bc-cdcd9a { border-color:#cdcd9a; }
+.base_bc-d6d6ad { border-color:#d6d6ad; }
+.base_bc-dedebe { border-color:#dedebe; }
+.base_bc-e8e8d0 { border-color:#e8e8d0; }
+.base_bc-600030 { border-color:#600030; }
+.base_bc-820041 { border-color:#820041; }
+.base_bc-9f0050 { border-color:#9f0050; }
+.base_bc-bf0060 { border-color:#bf0060; }
+.base_bc-d9006c { border-color:#d9006c; }
+.base_bc-f00078 { border-color:#f00078; }
+.base_bc-ff0080 { border-color:#ff0080; }
+.base_bc-ff359a { border-color:#ff359a; }
+.base_bc-ff60af { border-color:#ff60af; }
+.base_bc-ff79bc { border-color:#ff79bc; }
+.base_bc-ff95ca { border-color:#ff95ca; }
+.base_bc-ffaad5 { border-color:#ffaad5; }
+.base_bc-ffc1e0 { border-color:#ffc1e0; }
+.base_bc-ffd9ec { border-color:#ffd9ec; }
+.base_bc-ffecf5 { border-color:#ffecf5; }
+.base_bc-fff7fb { border-color:#fff7fb; }
+.base_bc-003e3e { border-color:#003e3e; }
+.base_bc-005757 { border-color:#005757; }
+.base_bc-007979 { border-color:#007979; }
+.base_bc-009393 { border-color:#009393; }
+.base_bc-00aeae { border-color:#00aeae; }
+.base_bc-00caca { border-color:#00caca; }
+.base_bc-00e3e3 { border-color:#00e3e3; }
+.base_bc-00ffff { border-color:#00ffff; }
+.base_bc-4dffff { border-color:#4dffff; }
+.base_bc-80ffff { border-color:#80ffff; }
+.base_bc-a6ffff { border-color:#a6ffff; }
+.base_bc-bbffff { border-color:#bbffff; }
+.base_bc-caffff { border-color:#caffff; }
+.base_bc-d9ffff { border-color:#d9ffff; }
+.base_bc-ecffff { border-color:#ecffff; }
+.base_bc-fdffff { border-color:#fdffff; }
+.base_bc-5b4b00 { border-color:#5b4b00; }
+.base_bc-796400 { border-color:#796400; }
+.base_bc-977c00 { border-color:#977c00; }
+.base_bc-ae8f00 { border-color:#ae8f00; }
+.base_bc-c6a300 { border-color:#c6a300; }
+.base_bc-d9b300 { border-color:#d9b300; }
+.base_bc-eac100 { border-color:#eac100; }
+.base_bc-ffd306 { border-color:#ffd306; }
+.base_bc-ffdc35 { border-color:#ffdc35; }
+.base_bc-ffe153 { border-color:#ffe153; }
+.base_bc-ffe66f { border-color:#ffe66f; }
+.base_bc-ffed97 { border-color:#ffed97; }
+.base_bc-fff0ac { border-color:#fff0ac; }
+.base_bc-fff4c1 { border-color:#fff4c1; }
+.base_bc-fff8d7 { border-color:#fff8d7; }
+.base_bc-fffcec { border-color:#fffcec; }
+.base_bc-336666 { border-color:#336666; }
+.base_bc-3d7878 { border-color:#3d7878; }
+.base_bc-408080 { border-color:#408080; }
+.base_bc-4f9d9d { border-color:#4f9d9d; }
+.base_bc-5cadad { border-color:#5cadad; }
+.base_bc-6fb7b7 { border-color:#6fb7b7; }
+.base_bc-81c0c0 { border-color:#81c0c0; }
+.base_bc-95caca { border-color:#95caca; }
+.base_bc-a3d1d1 { border-color:#a3d1d1; }
+.base_bc-b3d9d9 { border-color:#b3d9d9; }
+.base_bc-c4e1e1 { border-color:#c4e1e1; }
+.base_bc-d1e9e9 { border-color:#d1e9e9; }
+.base_bc-460046 { border-color:#460046; }
+.base_bc-5e005e { border-color:#5e005e; }
+.base_bc-750075 { border-color:#750075; }
+.base_bc-930093 { border-color:#930093; }
+.base_bc-ae00ae { border-color:#ae00ae; }
+.base_bc-d200d2 { border-color:#d200d2; }
+.base_bc-e800e8 { border-color:#e800e8; }
+.base_bc-ff00ff { border-color:#ff00ff; }
+.base_bc-ff44ff { border-color:#ff44ff; }
+.base_bc-ff77ff { border-color:#ff77ff; }
+.base_bc-ff8eff { border-color:#ff8eff; }
+.base_bc-ffa6ff { border-color:#ffa6ff; }
+.base_bc-ffbfff { border-color:#ffbfff; }
+.base_bc-ffd0ff { border-color:#ffd0ff; }
+.base_bc-ffe6ff { border-color:#ffe6ff; }
+.base_bc-fff7ff { border-color:#fff7ff; }
+.base_bc-006030 { border-color:#006030; }
+.base_bc-01814a { border-color:#01814a; }
+.base_bc-019858 { border-color:#019858; }
+.base_bc-01b468 { border-color:#01b468; }
+.base_bc-02c874 { border-color:#02c874; }
+.base_bc-02df82 { border-color:#02df82; }
+.base_bc-02f78e { border-color:#02f78e; }
+.base_bc-1afd9c { border-color:#1afd9c; }
+.base_bc-4efeb3 { border-color:#4efeb3; }
+.base_bc-7afec6 { border-color:#7afec6; }
+.base_bc-96fed1 { border-color:#96fed1; }
+.base_bc-adfedc { border-color:#adfedc; }
+.base_bc-c1ffe4 { border-color:#c1ffe4; }
+.base_bc-d7ffee { border-color:#d7ffee; }
+.base_bc-e8fff5 { border-color:#e8fff5; }
+.base_bc-fbfffd { border-color:#fbfffd; }
+.base_bc-844200 { border-color:#844200; }
+.base_bc-9f5000 { border-color:#9f5000; }
+.base_bc-bb5e00 { border-color:#bb5e00; }
+.base_bc-d26900 { border-color:#d26900; }
+.base_bc-ea7500 { border-color:#ea7500; }
+.base_bc-ff8000 { border-color:#ff8000; }
+.base_bc-ff9224 { border-color:#ff9224; }
+.base_bc-ffa042 { border-color:#ffa042; }
+.base_bc-ffaf60 { border-color:#ffaf60; }
+.base_bc-ffbb77 { border-color:#ffbb77; }
+.base_bc-ffc78e { border-color:#ffc78e; }
+.base_bc-ffd1a4 { border-color:#ffd1a4; }
+.base_bc-ffdcb9 { border-color:#ffdcb9; }
+.base_bc-ffe4ca { border-color:#ffe4ca; }
+.base_bc-ffeedd { border-color:#ffeedd; }
+.base_bc-fffaf4 { border-color:#fffaf4; }
+.base_bc-484891 { border-color:#484891; }
+.base_bc-5151a2 { border-color:#5151a2; }
+.base_bc-5a5aad { border-color:#5a5aad; }
+.base_bc-7373b9 { border-color:#7373b9; }
+.base_bc-8080c0 { border-color:#8080c0; }
+.base_bc-9999cc { border-color:#9999cc; }
+.base_bc-a6a6d2 { border-color:#a6a6d2; }
+.base_bc-b8b8dc { border-color:#b8b8dc; }
+.base_bc-c7c7e2 { border-color:#c7c7e2; }
+.base_bc-d8d8eb { border-color:#d8d8eb; }
+.base_bc-e6e6f2 { border-color:#e6e6f2; }
+.base_bc-f3f3fa { border-color:#f3f3fa; }
+.base_bc-28004d { border-color:#28004d; }
+.base_bc-3a006f { border-color:#3a006f; }
+.base_bc-4b0091 { border-color:#4b0091; }
+.base_bc-5b00ae { border-color:#5b00ae; }
+.base_bc-6f00d2 { border-color:#6f00d2; }
+.base_bc-8600ff { border-color:#8600ff; }
+.base_bc-921aff { border-color:#921aff; }
+.base_bc-9f35ff { border-color:#9f35ff; }
+.base_bc-b15bff { border-color:#b15bff; }
+.base_bc-be77ff { border-color:#be77ff; }
+.base_bc-ca8eff { border-color:#ca8eff; }
+.base_bc-d3a4ff { border-color:#d3a4ff; }
+.base_bc-dcb5ff { border-color:#dcb5ff; }
+.base_bc-e6caff { border-color:#e6caff; }
+.base_bc-f1e1ff { border-color:#f1e1ff; }
+.base_bc-faf4ff { border-color:#faf4ff; }
+.base_bc-006000 { border-color:#006000; }
+.base_bc-007500 { border-color:#007500; }
+.base_bc-009100 { border-color:#009100; }
+.base_bc-00a600 { border-color:#00a600; }
+.base_bc-00bb00 { border-color:#00bb00; }
+.base_bc-00db00 { border-color:#00db00; }
+.base_bc-00ec00 { border-color:#00ec00; }
+.base_bc-28ff28 { border-color:#28ff28; }
+.base_bc-53ff53 { border-color:#53ff53; }
+.base_bc-79ff79 { border-color:#79ff79; }
+.base_bc-93ff93 { border-color:#93ff93; }
+.base_bc-a6ffa6 { border-color:#a6ffa6; }
+.base_bc-bbffbb { border-color:#bbffbb; }
+.base_bc-ceffce { border-color:#ceffce; }
+.base_bc-dfffdf { border-color:#dfffdf; }
+.base_bc-f0fff0 { border-color:#f0fff0; }
+.base_bc-642100 { border-color:#642100; }
+.base_bc-842b00 { border-color:#842b00; }
+.base_bc-a23400 { border-color:#a23400; }
+.base_bc-bb3d00 { border-color:#bb3d00; }
+.base_bc-d94600 { border-color:#d94600; }
+.base_bc-f75000 { border-color:#f75000; }
+.base_bc-ff5809 { border-color:#ff5809; }
+.base_bc-ff8040 { border-color:#ff8040; }
+.base_bc-ff8f59 { border-color:#ff8f59; }
+.base_bc-ff9d6f { border-color:#ff9d6f; }
+.base_bc-ffad86 { border-color:#ffad86; }
+.base_bc-ffbd9d { border-color:#ffbd9d; }
+.base_bc-ffcbb3 { border-color:#ffcbb3; }
+.base_bc-ffdac8 { border-color:#ffdac8; }
+.base_bc-ffe6d9 { border-color:#ffe6d9; }
+.base_bc-fff3ee { border-color:#fff3ee; }
+.base_bc-6c3365 { border-color:#6c3365; }
+.base_bc-7e3d76 { border-color:#7e3d76; }
+.base_bc-8f4586 { border-color:#8f4586; }
+.base_bc-9f4d95 { border-color:#9f4d95; }
+.base_bc-ae57a4 { border-color:#ae57a4; }
+.base_bc-b766ad { border-color:#b766ad; }
+.base_bc-c07ab8 { border-color:#c07ab8; }
+.base_bc-ca8ec2 { border-color:#ca8ec2; }
+.base_bc-d2a2cc { border-color:#d2a2cc; }
+.base_bc-dab1d5 { border-color:#dab1d5; }
+.base_bc-e2c2de { border-color:#e2c2de; }
+.base_bc-ebd3e8 { border-color:#ebd3e8; }
+
+.base_bc-imp-000000 { border-color:#000000 !important; }
+.base_bc-imp-272727 { border-color:#272727 !important; }
+.base_bc-imp-3c3c3c { border-color:#3c3c3c !important; }
+.base_bc-imp-4f4f4f { border-color:#4f4f4f !important; }
+.base_bc-imp-5b5b5b { border-color:#5b5b5b !important; }
+.base_bc-imp-6c6c6c { border-color:#6c6c6c !important; }
+.base_bc-imp-7b7b7b { border-color:#7b7b7b !important; }
+.base_bc-imp-8e8e8e { border-color:#8e8e8e !important; }
+.base_bc-imp-9d9d9d { border-color:#9d9d9d !important; }
+.base_bc-imp-adadad { border-color:#adadad !important; }
+.base_bc-imp-bebebe { border-color:#bebebe !important; }
+.base_bc-imp-d0d0d0 { border-color:#d0d0d0 !important; }
+.base_bc-imp-e0e0e0 { border-color:#e0e0e0 !important; }
+.base_bc-imp-f0f0f0 { border-color:#f0f0f0 !important; }
+.base_bc-imp-fcfcfc { border-color:#fcfcfc !important; }
+.base_bc-imp-ffffff { border-color:#ffffff !important; }
+.base_bc-imp-000079 { border-color:#000079 !important; }
+.base_bc-imp-000093 { border-color:#000093 !important; }
+.base_bc-imp-0000c6 { border-color:#0000c6 !important; }
+.base_bc-imp-0000c6 { border-color:#0000c6 !important; }
+.base_bc-imp-0000e3 { border-color:#0000e3 !important; }
+.base_bc-imp-2828ff { border-color:#2828ff !important; }
+.base_bc-imp-4a4aff { border-color:#4a4aff !important; }
+.base_bc-imp-6a6aff { border-color:#6a6aff !important; }
+.base_bc-imp-7d7dff { border-color:#7d7dff !important; }
+.base_bc-imp-9393ff { border-color:#9393ff !important; }
+.base_bc-imp-aaaaff { border-color:#aaaaff !important; }
+.base_bc-imp-b9b9ff { border-color:#b9b9ff !important; }
+.base_bc-imp-ceceff { border-color:#ceceff !important; }
+.base_bc-imp-ddddff { border-color:#ddddff !important; }
+.base_bc-imp-ececff { border-color:#ececff !important; }
+.base_bc-imp-fbfbff { border-color:#fbfbff !important; }
+.base_bc-imp-467500 { border-color:#467500 !important; }
+.base_bc-imp-548c00 { border-color:#548c00 !important; }
+.base_bc-imp-64a600 { border-color:#64a600 !important; }
+.base_bc-imp-73bf00 { border-color:#73bf00 !important; }
+.base_bc-imp-82d900 { border-color:#82d900 !important; }
+.base_bc-imp-8cea00 { border-color:#8cea00 !important; }
+.base_bc-imp-9aff02 { border-color:#9aff02 !important; }
+.base_bc-imp-a8ff24 { border-color:#a8ff24 !important; }
+.base_bc-imp-b7ff4a { border-color:#b7ff4a !important; }
+.base_bc-imp-c2ff68 { border-color:#c2ff68 !important; }
+.base_bc-imp-ccff80 { border-color:#ccff80 !important; }
+.base_bc-imp-d3ff93 { border-color:#d3ff93 !important; }
+.base_bc-imp-deffac { border-color:#deffac !important; }
+.base_bc-imp-e8ffc4 { border-color:#e8ffc4 !important; }
+.base_bc-imp-efffd7 { border-color:#efffd7 !important; }
+.base_bc-imp-f5ffe8 { border-color:#f5ffe8 !important; }
+.base_bc-imp-613030 { border-color:#613030 !important; }
+.base_bc-imp-743a3a { border-color:#743a3a !important; }
+.base_bc-imp-804040 { border-color:#804040 !important; }
+.base_bc-imp-984b4b { border-color:#984b4b !important; }
+.base_bc-imp-ad5a5a { border-color:#ad5a5a !important; }
+.base_bc-imp-b87070 { border-color:#b87070 !important; }
+.base_bc-imp-c48888 { border-color:#c48888 !important; }
+.base_bc-imp-cf9e9e { border-color:#cf9e9e !important; }
+.base_bc-imp-d9b3b3 { border-color:#d9b3b3 !important; }
+.base_bc-imp-e1c4c4 { border-color:#e1c4c4 !important; }
+.base_bc-imp-ebd6d6 { border-color:#ebd6d6 !important; }
+.base_bc-imp-f2e6e6 { border-color:#f2e6e6 !important; }
+.base_bc-imp-2f0000 { border-color:#2f0000 !important; }
+.base_bc-imp-4d0000 { border-color:#4d0000 !important; }
+.base_bc-imp-600000 { border-color:#600000 !important; }
+.base_bc-imp-750000 { border-color:#750000 !important; }
+.base_bc-imp-930000 { border-color:#930000 !important; }
+.base_bc-imp-ae0000 { border-color:#ae0000 !important; }
+.base_bc-imp-ce0000 { border-color:#ce0000 !important; }
+.base_bc-imp-ea0000 { border-color:#ea0000 !important; }
+.base_bc-imp-ff0000 { border-color:#ff0000 !important; }
+.base_bc-imp-ff2d2d { border-color:#ff2d2d !important; }
+.base_bc-imp-ff5151 { border-color:#ff5151 !important; }
+.base_bc-imp-ff7575 { border-color:#ff7575 !important; }
+.base_bc-imp-ff9797 { border-color:#ff9797 !important; }
+.base_bc-imp-ffb5b5 { border-color:#ffb5b5 !important; }
+.base_bc-imp-ffd2d2 { border-color:#ffd2d2 !important; }
+.base_bc-imp-ffecec { border-color:#ffecec !important; }
+.base_bc-imp-000079 { border-color:#000079 !important; }
+.base_bc-imp-003d79 { border-color:#003d79 !important; }
+.base_bc-imp-004b97 { border-color:#004b97 !important; }
+.base_bc-imp-005ab5 { border-color:#005ab5 !important; }
+.base_bc-imp-0066cc { border-color:#0066cc !important; }
+.base_bc-imp-0072e3 { border-color:#0072e3 !important; }
+.base_bc-imp-0080ff { border-color:#0080ff !important; }
+.base_bc-imp-2894ff { border-color:#2894ff !important; }
+.base_bc-imp-46a3ff { border-color:#46a3ff !important; }
+.base_bc-imp-66b3ff { border-color:#66b3ff !important; }
+.base_bc-imp-84c1ff { border-color:#84c1ff !important; }
+.base_bc-imp-97cbff { border-color:#97cbff !important; }
+.base_bc-imp-acd6ff { border-color:#acd6ff !important; }
+.base_bc-imp-c4e1ff { border-color:#c4e1ff !important; }
+.base_bc-imp-d2e9ff { border-color:#d2e9ff !important; }
+.base_bc-imp-ecf5ff { border-color:#ecf5ff !important; }
+.base_bc-imp-424200 { border-color:#424200 !important; }
+.base_bc-imp-5b5b00 { border-color:#5b5b00 !important; }
+.base_bc-imp-737300 { border-color:#737300 !important; }
+.base_bc-imp-8c8c00 { border-color:#8c8c00 !important; }
+.base_bc-imp-a6a600 { border-color:#a6a600 !important; }
+.base_bc-imp-c4c400 { border-color:#c4c400 !important; }
+.base_bc-imp-e1e100 { border-color:#e1e100 !important; }
+.base_bc-imp-f9f900 { border-color:#f9f900 !important; }
+.base_bc-imp-ffff37 { border-color:#ffff37 !important; }
+.base_bc-imp-ffff6f { border-color:#ffff6f !important; }
+.base_bc-imp-ffff93 { border-color:#ffff93 !important; }
+.base_bc-imp-ffffaa { border-color:#ffffaa !important; }
+.base_bc-imp-ffffb9 { border-color:#ffffb9 !important; }
+.base_bc-imp-ffffce { border-color:#ffffce !important; }
+.base_bc-imp-ffffdf { border-color:#ffffdf !important; }
+.base_bc-imp-fffff4 { border-color:#fffff4 !important; }
+.base_bc-imp-616130 { border-color:#616130 !important; }
+.base_bc-imp-707038 { border-color:#707038 !important; }
+.base_bc-imp-808040 { border-color:#808040 !important; }
+.base_bc-imp-949449 { border-color:#949449 !important; }
+.base_bc-imp-a5a552 { border-color:#a5a552 !important; }
+.base_bc-imp-afaf61 { border-color:#afaf61 !important; }
+.base_bc-imp-b9b973 { border-color:#b9b973 !important; }
+.base_bc-imp-c2c287 { border-color:#c2c287 !important; }
+.base_bc-imp-cdcd9a { border-color:#cdcd9a !important; }
+.base_bc-imp-d6d6ad { border-color:#d6d6ad !important; }
+.base_bc-imp-dedebe { border-color:#dedebe !important; }
+.base_bc-imp-e8e8d0 { border-color:#e8e8d0 !important; }
+.base_bc-imp-600030 { border-color:#600030 !important; }
+.base_bc-imp-820041 { border-color:#820041 !important; }
+.base_bc-imp-9f0050 { border-color:#9f0050 !important; }
+.base_bc-imp-bf0060 { border-color:#bf0060 !important; }
+.base_bc-imp-d9006c { border-color:#d9006c !important; }
+.base_bc-imp-f00078 { border-color:#f00078 !important; }
+.base_bc-imp-ff0080 { border-color:#ff0080 !important; }
+.base_bc-imp-ff359a { border-color:#ff359a !important; }
+.base_bc-imp-ff60af { border-color:#ff60af !important; }
+.base_bc-imp-ff79bc { border-color:#ff79bc !important; }
+.base_bc-imp-ff95ca { border-color:#ff95ca !important; }
+.base_bc-imp-ffaad5 { border-color:#ffaad5 !important; }
+.base_bc-imp-ffc1e0 { border-color:#ffc1e0 !important; }
+.base_bc-imp-ffd9ec { border-color:#ffd9ec !important; }
+.base_bc-imp-ffecf5 { border-color:#ffecf5 !important; }
+.base_bc-imp-fff7fb { border-color:#fff7fb !important; }
+.base_bc-imp-003e3e { border-color:#003e3e !important; }
+.base_bc-imp-005757 { border-color:#005757 !important; }
+.base_bc-imp-007979 { border-color:#007979 !important; }
+.base_bc-imp-009393 { border-color:#009393 !important; }
+.base_bc-imp-00aeae { border-color:#00aeae !important; }
+.base_bc-imp-00caca { border-color:#00caca !important; }
+.base_bc-imp-00e3e3 { border-color:#00e3e3 !important; }
+.base_bc-imp-00ffff { border-color:#00ffff !important; }
+.base_bc-imp-4dffff { border-color:#4dffff !important; }
+.base_bc-imp-80ffff { border-color:#80ffff !important; }
+.base_bc-imp-a6ffff { border-color:#a6ffff !important; }
+.base_bc-imp-bbffff { border-color:#bbffff !important; }
+.base_bc-imp-caffff { border-color:#caffff !important; }
+.base_bc-imp-d9ffff { border-color:#d9ffff !important; }
+.base_bc-imp-ecffff { border-color:#ecffff !important; }
+.base_bc-imp-fdffff { border-color:#fdffff !important; }
+.base_bc-imp-5b4b00 { border-color:#5b4b00 !important; }
+.base_bc-imp-796400 { border-color:#796400 !important; }
+.base_bc-imp-977c00 { border-color:#977c00 !important; }
+.base_bc-imp-ae8f00 { border-color:#ae8f00 !important; }
+.base_bc-imp-c6a300 { border-color:#c6a300 !important; }
+.base_bc-imp-d9b300 { border-color:#d9b300 !important; }
+.base_bc-imp-eac100 { border-color:#eac100 !important; }
+.base_bc-imp-ffd306 { border-color:#ffd306 !important; }
+.base_bc-imp-ffdc35 { border-color:#ffdc35 !important; }
+.base_bc-imp-ffe153 { border-color:#ffe153 !important; }
+.base_bc-imp-ffe66f { border-color:#ffe66f !important; }
+.base_bc-imp-ffed97 { border-color:#ffed97 !important; }
+.base_bc-imp-fff0ac { border-color:#fff0ac !important; }
+.base_bc-imp-fff4c1 { border-color:#fff4c1 !important; }
+.base_bc-imp-fff8d7 { border-color:#fff8d7 !important; }
+.base_bc-imp-fffcec { border-color:#fffcec !important; }
+.base_bc-imp-336666 { border-color:#336666 !important; }
+.base_bc-imp-3d7878 { border-color:#3d7878 !important; }
+.base_bc-imp-408080 { border-color:#408080 !important; }
+.base_bc-imp-4f9d9d { border-color:#4f9d9d !important; }
+.base_bc-imp-5cadad { border-color:#5cadad !important; }
+.base_bc-imp-6fb7b7 { border-color:#6fb7b7 !important; }
+.base_bc-imp-81c0c0 { border-color:#81c0c0 !important; }
+.base_bc-imp-95caca { border-color:#95caca !important; }
+.base_bc-imp-a3d1d1 { border-color:#a3d1d1 !important; }
+.base_bc-imp-b3d9d9 { border-color:#b3d9d9 !important; }
+.base_bc-imp-c4e1e1 { border-color:#c4e1e1 !important; }
+.base_bc-imp-d1e9e9 { border-color:#d1e9e9 !important; }
+.base_bc-imp-460046 { border-color:#460046 !important; }
+.base_bc-imp-5e005e { border-color:#5e005e !important; }
+.base_bc-imp-750075 { border-color:#750075 !important; }
+.base_bc-imp-930093 { border-color:#930093 !important; }
+.base_bc-imp-ae00ae { border-color:#ae00ae !important; }
+.base_bc-imp-d200d2 { border-color:#d200d2 !important; }
+.base_bc-imp-e800e8 { border-color:#e800e8 !important; }
+.base_bc-imp-ff00ff { border-color:#ff00ff !important; }
+.base_bc-imp-ff44ff { border-color:#ff44ff !important; }
+.base_bc-imp-ff77ff { border-color:#ff77ff !important; }
+.base_bc-imp-ff8eff { border-color:#ff8eff !important; }
+.base_bc-imp-ffa6ff { border-color:#ffa6ff !important; }
+.base_bc-imp-ffbfff { border-color:#ffbfff !important; }
+.base_bc-imp-ffd0ff { border-color:#ffd0ff !important; }
+.base_bc-imp-ffe6ff { border-color:#ffe6ff !important; }
+.base_bc-imp-fff7ff { border-color:#fff7ff !important; }
+.base_bc-imp-006030 { border-color:#006030 !important; }
+.base_bc-imp-01814a { border-color:#01814a !important; }
+.base_bc-imp-019858 { border-color:#019858 !important; }
+.base_bc-imp-01b468 { border-color:#01b468 !important; }
+.base_bc-imp-02c874 { border-color:#02c874 !important; }
+.base_bc-imp-02df82 { border-color:#02df82 !important; }
+.base_bc-imp-02f78e { border-color:#02f78e !important; }
+.base_bc-imp-1afd9c { border-color:#1afd9c !important; }
+.base_bc-imp-4efeb3 { border-color:#4efeb3 !important; }
+.base_bc-imp-7afec6 { border-color:#7afec6 !important; }
+.base_bc-imp-96fed1 { border-color:#96fed1 !important; }
+.base_bc-imp-adfedc { border-color:#adfedc !important; }
+.base_bc-imp-c1ffe4 { border-color:#c1ffe4 !important; }
+.base_bc-imp-d7ffee { border-color:#d7ffee !important; }
+.base_bc-imp-e8fff5 { border-color:#e8fff5 !important; }
+.base_bc-imp-fbfffd { border-color:#fbfffd !important; }
+.base_bc-imp-844200 { border-color:#844200 !important; }
+.base_bc-imp-9f5000 { border-color:#9f5000 !important; }
+.base_bc-imp-bb5e00 { border-color:#bb5e00 !important; }
+.base_bc-imp-d26900 { border-color:#d26900 !important; }
+.base_bc-imp-ea7500 { border-color:#ea7500 !important; }
+.base_bc-imp-ff8000 { border-color:#ff8000 !important; }
+.base_bc-imp-ff9224 { border-color:#ff9224 !important; }
+.base_bc-imp-ffa042 { border-color:#ffa042 !important; }
+.base_bc-imp-ffaf60 { border-color:#ffaf60 !important; }
+.base_bc-imp-ffbb77 { border-color:#ffbb77 !important; }
+.base_bc-imp-ffc78e { border-color:#ffc78e !important; }
+.base_bc-imp-ffd1a4 { border-color:#ffd1a4 !important; }
+.base_bc-imp-ffdcb9 { border-color:#ffdcb9 !important; }
+.base_bc-imp-ffe4ca { border-color:#ffe4ca !important; }
+.base_bc-imp-ffeedd { border-color:#ffeedd !important; }
+.base_bc-imp-fffaf4 { border-color:#fffaf4 !important; }
+.base_bc-imp-484891 { border-color:#484891 !important; }
+.base_bc-imp-5151a2 { border-color:#5151a2 !important; }
+.base_bc-imp-5a5aad { border-color:#5a5aad !important; }
+.base_bc-imp-7373b9 { border-color:#7373b9 !important; }
+.base_bc-imp-8080c0 { border-color:#8080c0 !important; }
+.base_bc-imp-9999cc { border-color:#9999cc !important; }
+.base_bc-imp-a6a6d2 { border-color:#a6a6d2 !important; }
+.base_bc-imp-b8b8dc { border-color:#b8b8dc !important; }
+.base_bc-imp-c7c7e2 { border-color:#c7c7e2 !important; }
+.base_bc-imp-d8d8eb { border-color:#d8d8eb !important; }
+.base_bc-imp-e6e6f2 { border-color:#e6e6f2 !important; }
+.base_bc-imp-f3f3fa { border-color:#f3f3fa !important; }
+.base_bc-imp-28004d { border-color:#28004d !important; }
+.base_bc-imp-3a006f { border-color:#3a006f !important; }
+.base_bc-imp-4b0091 { border-color:#4b0091 !important; }
+.base_bc-imp-5b00ae { border-color:#5b00ae !important; }
+.base_bc-imp-6f00d2 { border-color:#6f00d2 !important; }
+.base_bc-imp-8600ff { border-color:#8600ff !important; }
+.base_bc-imp-921aff { border-color:#921aff !important; }
+.base_bc-imp-9f35ff { border-color:#9f35ff !important; }
+.base_bc-imp-b15bff { border-color:#b15bff !important; }
+.base_bc-imp-be77ff { border-color:#be77ff !important; }
+.base_bc-imp-ca8eff { border-color:#ca8eff !important; }
+.base_bc-imp-d3a4ff { border-color:#d3a4ff !important; }
+.base_bc-imp-dcb5ff { border-color:#dcb5ff !important; }
+.base_bc-imp-e6caff { border-color:#e6caff !important; }
+.base_bc-imp-f1e1ff { border-color:#f1e1ff !important; }
+.base_bc-imp-faf4ff { border-color:#faf4ff !important; }
+.base_bc-imp-006000 { border-color:#006000 !important; }
+.base_bc-imp-007500 { border-color:#007500 !important; }
+.base_bc-imp-009100 { border-color:#009100 !important; }
+.base_bc-imp-00a600 { border-color:#00a600 !important; }
+.base_bc-imp-00bb00 { border-color:#00bb00 !important; }
+.base_bc-imp-00db00 { border-color:#00db00 !important; }
+.base_bc-imp-00ec00 { border-color:#00ec00 !important; }
+.base_bc-imp-28ff28 { border-color:#28ff28 !important; }
+.base_bc-imp-53ff53 { border-color:#53ff53 !important; }
+.base_bc-imp-79ff79 { border-color:#79ff79 !important; }
+.base_bc-imp-93ff93 { border-color:#93ff93 !important; }
+.base_bc-imp-a6ffa6 { border-color:#a6ffa6 !important; }
+.base_bc-imp-bbffbb { border-color:#bbffbb !important; }
+.base_bc-imp-ceffce { border-color:#ceffce !important; }
+.base_bc-imp-dfffdf { border-color:#dfffdf !important; }
+.base_bc-imp-f0fff0 { border-color:#f0fff0 !important; }
+.base_bc-imp-642100 { border-color:#642100 !important; }
+.base_bc-imp-842b00 { border-color:#842b00 !important; }
+.base_bc-imp-a23400 { border-color:#a23400 !important; }
+.base_bc-imp-bb3d00 { border-color:#bb3d00 !important; }
+.base_bc-imp-d94600 { border-color:#d94600 !important; }
+.base_bc-imp-f75000 { border-color:#f75000 !important; }
+.base_bc-imp-ff5809 { border-color:#ff5809 !important; }
+.base_bc-imp-ff8040 { border-color:#ff8040 !important; }
+.base_bc-imp-ff8f59 { border-color:#ff8f59 !important; }
+.base_bc-imp-ff9d6f { border-color:#ff9d6f !important; }
+.base_bc-imp-ffad86 { border-color:#ffad86 !important; }
+.base_bc-imp-ffbd9d { border-color:#ffbd9d !important; }
+.base_bc-imp-ffcbb3 { border-color:#ffcbb3 !important; }
+.base_bc-imp-ffdac8 { border-color:#ffdac8 !important; }
+.base_bc-imp-ffe6d9 { border-color:#ffe6d9 !important; }
+.base_bc-imp-fff3ee { border-color:#fff3ee !important; }
+.base_bc-imp-6c3365 { border-color:#6c3365 !important; }
+.base_bc-imp-7e3d76 { border-color:#7e3d76 !important; }
+.base_bc-imp-8f4586 { border-color:#8f4586 !important; }
+.base_bc-imp-9f4d95 { border-color:#9f4d95 !important; }
+.base_bc-imp-ae57a4 { border-color:#ae57a4 !important; }
+.base_bc-imp-b766ad { border-color:#b766ad !important; }
+.base_bc-imp-c07ab8 { border-color:#c07ab8 !important; }
+.base_bc-imp-ca8ec2 { border-color:#ca8ec2 !important; }
+.base_bc-imp-d2a2cc { border-color:#d2a2cc !important; }
+.base_bc-imp-dab1d5 { border-color:#dab1d5 !important; }
+.base_bc-imp-e2c2de { border-color:#e2c2de !important; }
+.base_bc-imp-ebd3e8 { border-color:#ebd3e8 !important; }

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="QlItem">
+	<typeAlias alias="qlitem" type="com.fline.form.access.model.QlItem" />
+	<resultMap id="qlitemResult" class="qlitem">
+		<result property="qlItemName" column="QL_NAME" javaType="string" jdbcType="VARCHAR"/>
+		<result property="qlLeadDept" column="LEAD_DEPT" javaType="string" jdbcType="VARCHAR"/>
+		<result property="qlInnerCode" column="QL_INNER_CODE" javaType="string" jdbcType="VARCHAR"/>
+		<result property="qlOugUId" column="OUGUID" javaType="string" jdbcType="VARCHAR"/>
+		<result property="qlKind" column="QL_KIND" javaType="string" jdbcType="VARCHAR"  />
+		<result property="qlMainitemId" column="QL_MAINITEM_ID" javaType="string" jdbcType="VARCHAR"  />
+		<result property="qlSubitemId" column="QL_SUBITEM_ID" javaType="string" jdbcType="VARCHAR"  />
+		<result property="qlAreaCode" column="BELONGXIAQUCODE" javaType="string" jdbcType="VARCHAR"  />
+		<result property="materialInfo" column="MATERIAL_INFO" javaType="string" jdbcType="VARCHAR"  />
+		<result property="tongTime" column="tong_time" javaType="date" jdbcType="timestamp"  />
+	</resultMap>
+	
+
+	<sql id="sql_from">
+		FROM qlt_qlsx
+		<include refid="sql_where" />
+	</sql>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="qlItemName"> QL_NAME = #qlItemName#</isNotEmpty>
+			<isNotEmpty prepend="AND" property="qlKind"> QL_KIND = #qlKind#</isNotEmpty>
+			<isNotEmpty prepend="AND" property="qlMainitemId"> QL_MAINITEM_ID = #qlMainitemId#</isNotEmpty>
+			<isNotEmpty prepend="AND" property="qlSubitemId"> QL_SUBITEM_ID = #qlSubitemId#</isNotEmpty>
+			<isNotEmpty prepend="AND" property="qlOugUId"> OUGUID like '$qlOugUId$%'</isNotEmpty>
+			<isNotEmpty prepend="AND" property="qlInnerCode"> QL_INNER_CODE = #qlInnerCode#</isNotEmpty>
+			<isNotEmpty prepend="AND" property="startTime">
+				<![CDATA[	tong_time >= #startTime# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="endTime">
+			 	<![CDATA[	tong_time <= #endTime#   ]]>
+			</isNotEmpty>
+		</dynamic>
+	</sql>
+
+	<select id="find" resultMap="qlitemResult">
+		SELECT QL_NAME, LEAD_DEPT, QL_INNER_CODE, OUGUID, QL_KIND, QL_MAINITEM_ID, QL_SUBITEM_ID, BELONGXIAQUCODE,
+		 MATERIAL_INFO, tong_time 
+		 <include refid="sql_from" />
+		 <isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>	
+	
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+	
+	
+</sqlMap>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="form-zlb:war">
+    <output-path>$PROJECT_DIR$/form-zlb/target</output-path>
+    <root id="archive" name="form-zlb-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="form-zlb:war exploded" />
+    </root>
+  </artifact>
+</component>

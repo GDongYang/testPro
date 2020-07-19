@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Position">
+	<typeAlias alias="position" type="com.fline.form.access.model.Position" />
+	<resultMap id="positionResult" class="position">
+		<!-- Namespaceposition -->
+		<result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="name" column="name" javaType="string" jdbcType="VARCHAR" />
+		<result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+		<result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+		<!-- Systemposition -->
+		<!-- Position -->
+		<result property="active" column="active" javaType="boolean" jdbcType="NUMERIC" nullValue="0" />
+		<result property="departmentId" column="departmentId" javaType="long" jdbcType="NUMBER" />
+		<result property="type" column="type" javaType="int" jdbcType="NUMERIC" nullValue="0" />
+	</resultMap>
+	
+	<resultMap id="positionWithDeptName" class="position" extends="positionResult">
+		<result property="departmentName" column="departmentName" javaType="string" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<insert id="create" parameterClass="position">
+		<![CDATA[
+			INSERT INTO C_POSITION(
+				name,code,memo,active,departmentId,type
+			) VALUES (
+				#name#,CONCAT(CONCAT('yc_post_'), lpad(nextval('SEQ_C_POSITION_CODE'),4,'0')),
+				#memo#,#active#,#departmentId#,#type#
+			)
+		]]>
+		<selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as id
+	  	</selectKey>
+	</insert>
+	<update id="update" parameterClass="position">
+		<![CDATA[
+			UPDATE C_POSITION SET
+			id=#id#,
+			name=#name#,
+			memo=#memo#,
+			active=#active#,
+			departmentId=#departmentId#,
+			type = #type#
+			WHERE id=#id#
+		]]>
+	</update>
+	<delete id="remove" parameterClass="position">
+		<![CDATA[
+		UPDATE C_POSITION SET
+		active=0
+		WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findAll" resultMap="positionResult">
+		<![CDATA[ SELECT
+				  id,
+				name,
+				code,
+				memo,
+				active,
+				departmentId,
+				type
+  			FROM C_POSITION ]]>
+	</select>
+
+	<select id="findById" resultMap="positionResult" parameterClass="long">
+		<![CDATA[
+		SELECT
+		 	id,
+			name,
+			code,
+			memo,
+			active,
+			departmentId,
+			type
+		 FROM C_POSITION WHERE id=#value#
+		]]>
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotNull property="id">
+				<isGreaterThan prepend="AND" property="id" compareValue="0"> P.id=#id#</isGreaterThan>
+			</isNotNull>
+			<isNotEmpty prepend="AND" property="userId">
+				RU.userId = #userId#
+			</isNotEmpty>
+			<isNotNull property="searchName" prepend="and">
+		   			upper(P.name) like upper(CONCAT('%', CONCAT(#searchName#, '%')))
+		    </isNotNull>
+		    <isNotNull property="searchDept" prepend="and">
+				<![CDATA[
+		   			 P.departmentId = #searchDept#
+		   		]]>
+		    </isNotNull>
+		    <isNotNull property="active" prepend="and">
+		   		P.active = #active#
+		    </isNotNull>
+		    <isNotNull prepend="AND" property="deptIds">
+	         		P.departmentId IN
+	         	<iterate property="deptIds" open="(" conjunction="," close=")">
+	         		#deptIds[]#
+	         	</iterate>
+	         </isNotNull>
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM C_POSITION P
+		LEFT JOIN C_DEPARTMENT D ON P.departmentId =D.id AND D.active =1
+		<include refid="sql_where" />
+	</sql>
+	
+	<select id="find" resultMap="positionWithDeptName">
+		SELECT P.* ,D.name departmentName
+		<include refid="sql_from" />
+	    <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(1) ]]>
+		<include refid="sql_from" />
+	</select>
+	
+	<insert id="createPositionItem" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO r_position_item (
+            positionId,itemId
+         ) VALUES (#positionId#, #itemCode# ) 
+      ]]>
+	  <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+   
+   <delete id="deletePositionItem" parameterClass="java.util.Map">
+   	  DELETE FROM r_position_item WHERE positionId = #positionId# 
+   </delete>
+   
+   <select id="findItems" parameterClass="java.util.Map" resultClass="String">
+	  select itemId from r_position_item where positionId = #positionId#
+   </select>
+
+    <select id="findAllVo" resultClass="com.fline.form.vo.PositionVo">
+		<![CDATA[ SELECT
+			  id,
+			name,
+			code,
+			memo,
+			active,
+			departmentId,
+			type
+  		FROM C_POSITION ]]>
+	</select>
+
+    <select id="findPositionItem" resultClass="java.util.HashMap" parameterClass="java.util.Map">
+        select r.positionId, i.innerCode as itemCode from r_position_item r, c_item i
+        where r.itemId = i.id
+    </select>
+	
+	<sql id="positionItemVo_where">
+		<dynamic prepend="WHERE">
+			<isNotNull property="positionId" prepend="AND">positionId = #positionId#</isNotNull>
+		</dynamic>
+	</sql>
+	<select id="findPositionItemByMap" resultClass="java.util.HashMap" parameterClass="java.util.Map">
+		select r.positionId, i.innerCode as itemCode from r_position_item r join c_item i on r.itemId = i.id
+		<include refid="positionItemVo_where"/>		
+	</select>
+</sqlMap>

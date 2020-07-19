@@ -1,0 +1,16 @@
+/*业务日志 详情弹框*/
+.mydialog .modal-body{padding-bottom:0;height:360px;overflow:auto;}
+.formDetail{padding:0px 20px}
+.detailItem{padding-bottom:10px; border-bottom: 1px dashed #000;margin-bottom:10px;}
+.detailTitle{margin:10px 0;color:#0072FF;font-size:16px;margin-top:0;}
+.noStatus{color:#3BCC4F;}
+.failStatus{color:#EE1A57;}
+.detailContent div{padding-left:0;}
+.cerno,.certCode{display:inline-block;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: top;}
+.noDataTitle{margin:0;font-size:16px;font-weight:normal;}
+.innerCode{display:inline-block;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width:70%;vertical-align: top;}
+
+/*chosen select下拉框*/
+.chosen-container{width:108%!important;}
+.chosen-container-multi .chosen-choices{width:93%;min-height:32px;border-radius:4px}
+.chosen-container .chosen-drop{width:93%;}

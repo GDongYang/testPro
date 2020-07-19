@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="AreaOrg">
+	<typeAlias alias="areaOrg" type="com.fline.form.access.model.AreaOrg" />
+	<resultMap id="areaOrgResult" class="areaOrg">
+		<!-- NamespaceModel -->
+		<result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="name" column="name" javaType="String" />
+		<result property="areaCode" column="areaCode" javaType="String" />
+		<result property="orgCode" column="orgCode" javaType="String" />
+	</resultMap>
+	
+	<insert id="create" parameterClass="areaOrg">
+		INSERT INTO r_area_org (
+			id
+			,name
+			,areaCode
+			,orgCode
+		) VALUES (
+			#id#
+			,#name#
+			,#areaCode#
+			,#orgCode#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+		  select last_insert_id() as id
+	    </selectKey>
+	</insert>
+	<update id="update" parameterClass="areaOrg">
+		UPDATE r_area_org SET
+			name=#name#
+			, areaCode=#areaCode#
+			, orgCode=#orgCode#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="areaOrg">
+		<![CDATA[
+			DELETE FROM r_area_org WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer" resultMap="areaOrgResult">
+		<![CDATA[
+			SELECT A.id,A.name,A.areaCode,A.orgCode FROM r_area_org A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="areaOrgResult">
+		SELECT id,name,areaCode,orgCode FROM r_area_org
+	</select>
+
+    <select id="findAllVo" resultClass="com.fline.form.vo.AreaOrgVo">
+		SELECT id,name,areaCode,orgCode FROM r_area_org
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM r_area_org A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="areaOrgResult">
+		<![CDATA[ SELECT A.id,A.name,A.areaCode,A.orgCode ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

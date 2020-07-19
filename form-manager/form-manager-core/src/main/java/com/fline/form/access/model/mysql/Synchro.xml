@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Synchro">
+	<typeAlias alias="synchro" type="com.fline.form.access.model.Synchro" />
+	<resultMap id="synchroResult" class="synchro">
+		<!-- NamespaceModel -->
+		<result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<!-- Synchro -->
+		<result property="tableName" column="tableName" javaType="string" jdbcType="VARCHAR"/>
+		<result property="startTime" column="startTime" javaType="date" jdbcType="datetime"  />
+		<result property="endTime" column="endTime" javaType="date" jdbcType="datetime"  />
+		<result property="state" column="state" javaType="int" jdbcType="int"  />
+		<result property="takeTime" column="takeTime" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="term" column="term" javaType="string" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="updateTime" javaType="date" jdbcType="datetime"  />
+		
+	</resultMap>
+	
+	<update id="updateEndTimeByTableName" parameterClass="java.util.Map">
+	<![CDATA[  	
+		UPDATE c_synchro SET
+			endTime=#endTime#
+		WHERE tableName=#tableName#
+		]]>
+	</update>
+	
+	<update id="updateStartTimeByEndTime" parameterClass="java.util.Map">
+		<![CDATA[  
+		UPDATE c_synchro SET
+			startTime=#endTime#
+		WHERE tableName=#tableName#
+		]]>
+	</update>
+	
+	<select id="findStartTime"  resultMap="synchroResult" >
+		<![CDATA[ select
+				 id,
+				tableName,
+				startTime,
+				endTime,
+				state,
+				takeTime,
+				term,
+				updateTime
+ 				from c_synchro where  tableName = 'qlt_qlsx' ]]>
+	</select>
+	
+	<update id="updateState" parameterClass="java.util.Map">
+			UPDATE c_synchro SET
+				state=#state#
+			<dynamic>
+            	<isNotNull property="startTime" prepend=",">startTime=#startTime#</isNotNull>
+            	<isNotNull property="endTime" prepend=",">endTime=#endTime#</isNotNull>
+            	<isNotNull property="takeTime" prepend=",">takeTime=#takeTime#</isNotNull>
+            	<isNotNull property="term" prepend=",">term=#term#</isNotNull>
+            	<isNotNull property="updateTime" prepend=",">updateTime=#updateTime#</isNotNull>
+            </dynamic>
+			WHERE tableName=#tableName#
+	</update>
+	
+	<select id="findUpdateState" resultMap="synchroResult" parameterClass="java.util.Map">
+			select
+			 id,
+			tableName,
+			startTime,
+			endTime,
+			state,
+			takeTime,
+			term,
+			updateTime
+			 from c_synchro where tableName = #tableName#
+	</select>
+	
+</sqlMap>

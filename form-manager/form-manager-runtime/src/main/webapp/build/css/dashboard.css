@@ -1,0 +1,31 @@
+.textBox{height:140px;margin-bottom:0px;padding:33px 30px 0px 40px;}
+.textBoxBg1{background:url(../image/1.png) no-repeat;background-size:100%;}
+.textBoxBg2{background:url(../image/2.png) no-repeat;background-size:100%;}
+.textBoxBg3{background:url(../image/3.png) no-repeat;background-size:100%;}
+.textBoxBg4{background:url(../image/4.png) no-repeat;background-size:100%;}
+.textBoxBg5{background:url(../image/5.png) no-repeat;background-size:100%;}
+.textBoxBg6{background:url(../image/6.png) no-repeat;background-size:100%;}
+.textTitleBox{display:inline-block;vertical-align:top;color:#fff;margin-top:5px;margin-left:20px;}
+.chartTitle img{margin-right:8px;}
+.chartBox{background:#fff;border-radius:5px;margin-top:20px;margin-bottom:20px;}
+.noData{text-align:center;line-height:250px;background:#fff;border-radius:5px;margin-top:20px;margin-bottom:20px;}
+canvas{border-radius:5px;}
+.chartSmallTitle{position:absolute;top:35px;left:0px;z-index:999;width:100%;}
+.chartSmallTitle .col-sm-6{text-align:center;font-size:12px;}
+.chartTime{color:#ccc;}
+.chartCount{font-size:22px!important;line-height:100px;}
+.base_viewTable th,.base_viewTable td,.base_viewTable{border:none;background:#fff;box-shadow:none;}
+.base_viewTable tr:nth-child(1) td{background:#0173FF;color:#fff;}
+.base_viewTable tr:nth-child(2) td{background:#1E84FF;color:#fff;}
+.base_viewTable tr:nth-child(3) td{background:#3794FF;color:#fff;}
+.base_viewTable tr:hover{border-style:solid;border-color:#3366CC;border-width:1px;border-radius:10px}
+.week {position:absolute;top:0px;right:0px;width:auto;border:1px solid #ADB1B4; border-radius:3px; }
+.week ul { list-style:none; margin:0px; padding:0px; }
+.week li { width:43px; height:24px; line-height:24px; float:left; padding-top:0px; text-align:center; cursor:pointer; }
+.week a { width:100%; height:94%; color:#ADB1B4; display:block; text-align:center; }
+.week a:hover,.week a:focus{background-color:#f4f4f4;color:#0173FF; }
+.week .selectWeek { color:#0173FF; }
+#chooseForm select{background:transparent;border:1px solid #ADB1B4;border-radius:3px;color:#0173FF;outline:none;}
+.mybtn{border-radius: 5px; color: white;background: #0070ffde; border:none}
+.mybtn:hover{ box-shadow: 0 5px 8px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);}
+.showDialog{width:400px}

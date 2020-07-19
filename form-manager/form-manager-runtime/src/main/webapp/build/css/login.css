@@ -1,0 +1,19 @@
+.loginImg{background:url(../image/loginBackground.png) no-repeat;background-size:100% 100%;width:50%;height:100%;display:inline-block;}
+.loginFormBox{display:inline-block;vertical-align:top;width:50%;background:#fff;padding:0px 12%;}
+#login-box div{margin-bottom:20px;}
+#login-box .form-control{border:none;height:35px;border-bottom:1px solid #D7DAE6;box-shadow:none;border-radius:0px;}
+#login-box .form-control:focus{border-bottom:1px solid #0072FF;}
+#codeImg{display:inline-block;vertical-align:top;}
+#code{display:inline-block;width:135px;margin-right:30px;}
+#loginBtn{
+	background:#00C6FF;
+	background: -webkit-linear-gradient(left right,#0072FF ,#00C6FF )!important; /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right,#0072FF ,#00C6FF)!important; /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #0072FF ,#00C6FF)!important; /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right,#0072FF ,#00C6FF)!important; /* 标准的语法 */
+    border:none;
+    height:35px;
+    color:#fff;
+    font-size:14px;
+    margin-top:30px;
+}

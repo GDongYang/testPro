@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="UserSession">
+
+   <typeAlias alias="userSession" type="com.fline.form.access.model.UserSession" />
+
+   <resultMap id="userSessionResult" class="userSession">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <!-- UserSession -->
+      <result property="userId" column="userId" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <result property="sessionId" column="sessionId" javaType="string" jdbcType="VARCHAR" />
+      <result property="active" column="active" javaType="boolean" jdbcType="NUMERIC" />
+      <result property="remoteEndPoint" column="remoteEndpoint" javaType="string" jdbcType="VARCHAR" />
+      <result property="serverEndPoint" column="serverEndpoint" javaType="string" jdbcType="VARCHAR" />
+      <result property="loginDate" column="loginDate" javaType="date" />
+      <result property="expireDate" column="expireDate" javaType="date" />
+      <result property="guid" column="guid" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+
+   <insert id="create" parameterClass="userSession">
+      <![CDATA[
+         INSERT INTO C_USERSESSION (
+            userId, ACTIVE,
+            remoteEndpoint, serverEndpoint,sessionId,
+            loginDate, expireDate, GUID
+         ) VALUES (
+            #userId:NUMERIC:0#, #active:NUMERIC#,
+            #remoteEndPoint#, #serverEndPoint#,#sessionId#,
+            #loginDate#, #expireDate#, #guid#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="userSession">
+      <![CDATA[
+         UPDATE C_USERSESSION SET
+            userId=#userId:NUMERIC:0#,
+            ACTIVE=#active:NUMERIC#,
+            remoteEndpoint=#remoteEndPoint#,
+            serverEndpoint=#serverEndPoint#,
+            loginDate=#loginDate#,
+            expireDate=#expireDate#,
+            sessionId=#sessionId#
+         WHERE ID=#id#
+      ]]>
+   </update>
+
+   <delete id="remove" parameterClass="userSession">
+      <![CDATA[
+         DELETE FROM C_USERSESSION WHERE ID=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="userSessionResult">
+      <![CDATA[
+         SELECT
+          id,
+         name,
+         code,
+         memo,
+         userId,
+         loginDate,
+         expireDate,
+         active,
+         serverEndpoint,
+         remoteEndpoint,
+         guid,
+         sessionId
+          FROM C_USERSESSION WHERE ID=#value#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="userSessionResult">
+      <![CDATA[
+         SELECT
+          id,
+         name,
+         code,
+         memo,
+         userId,
+         loginDate,
+         expireDate,
+         active,
+         serverEndpoint,
+         remoteEndpoint,
+         guid,
+         sessionId
+          FROM C_USERSESSION WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=",">
+         #ids[]#
+      </iterate>
+   </select>
+
+   <select id="findAll" resultMap="userSessionResult">
+      <![CDATA[ SELECT
+              id,
+            name,
+            code,
+            memo,
+            userId,
+            loginDate,
+            expireDate,
+            active,
+            serverEndpoint,
+            remoteEndpoint,
+            guid,
+            sessionId
+          FROM C_USERSESSION ]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id"><isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan></isNotNull>
+         <isNotNull prepend="AND" property="userId"> userId=#userId#</isNotNull>
+         <isNotNull prepend="AND" property="sessionId"> sessionId=#sessionId#</isNotNull>
+         <isNotNull prepend="AND" property="active"> ACTIVE=#active:NUMERIC#</isNotNull>
+         <isNotNull prepend="AND" property="expiredDate"> expiredDate > #expiredDate#</isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_USERSESSION
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="userSessionResult">
+		<![CDATA[ SELECT
+                id,
+               name,
+               code,
+               memo,
+               userId,
+               loginDate,
+               expireDate,
+               active,
+               serverEndpoint,
+               remoteEndpoint,
+               guid,
+               sessionId
+       ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+   <delete id="removeByUserId" parameterClass="userSession">
+      <![CDATA[
+         DELETE FROM C_USERSESSION WHERE userId=#userId#
+      ]]>
+   </delete>
+
+</sqlMap>

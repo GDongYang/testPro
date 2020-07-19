@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SealInfo">
+   <typeAlias alias="sealInfo" type="com.fline.form.access.model.SealInfo" />
+   <resultMap id="sealInfoResult" class="sealInfo">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="username" column="USERNAME" javaType="string" jdbcType="VARCHAR" />
+      <result property="project" column="PROJECT" javaType="string" jdbcType="VARCHAR" />
+      <result property="createTime" column="createTime" javaType="date" jdbcType="timestamp"  />
+      <result property="departmentId" column="departmentId" javaType="Integer" jdbcType="NUMBER" />
+      <result property="visible" column="active" javaType="string" jdbcType="number" />
+      <result property="version" column="version" javaType="long" jdbcType="NUMERIC" nullValue="1" />
+      <result property="image" column="image" javaType="[B" jdbcType="BLOB"></result>
+   </resultMap>
+    
+    <resultMap id="withDeptName" class="sealInfo" extends="sealInfoResult" >
+        <result property="departmentName" column="departmentName" javaType="string" jdbcType="VARCHAR" />
+    </resultMap>
+   
+
+   <insert id="create" parameterClass="sealInfo">
+      <![CDATA[
+         INSERT INTO C_SEAL (
+            CODE, NAME, USERNAME, PROJECT,active,departmentId,version,image
+         ) VALUES (
+            #code#, #name#, #username#, #project#,#visible#,#departmentId#,#version#,#image#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <update id="update" parameterClass="sealInfo">
+         UPDATE C_SEAL SET
+         	<dynamic>
+         		<isNotNull property="name" prepend=""> NAME=#name#</isNotNull>
+	            <isNotNull property="code" prepend=",">CODE=#code#</isNotNull>
+	            <isNotNull property="version" prepend=",">version=#version#</isNotNull>
+	            <isNotNull property="departmentId" prepend=",">departmentId=#departmentId#</isNotNull>
+            	<isNotNull property="image" prepend=",">
+           	 		image=#image#
+           	 	</isNotNull>
+           	</dynamic>
+         WHERE
+         	ID=#id# 
+   </update>
+   
+    <update id="updateActive" parameterClass="sealInfo">
+      <![CDATA[
+         UPDATE C_SEAL SET
+            active=1
+         WHERE
+         	ID=#id# 
+      ]]>
+   </update>
+   
+   <delete id="remove" parameterClass="sealInfo">
+      <![CDATA[
+         DELETE FROM C_SEAL WHERE ID=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="java.lang.Long" resultMap="sealInfoResult">
+      <![CDATA[
+         SELECT
+          id,
+            code,
+            name,
+            username,
+            project,
+            departmentId,
+            active,
+            createTime,
+            version,
+            tableId,
+            dataFrom,
+            image
+          FROM C_SEAL WHERE ID=#id#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="sealInfoResult">
+      <![CDATA[
+         SELECT
+          id,
+            code,
+            name,
+            username,
+            project,
+            departmentId,
+            active,
+            createTime,
+            version,
+            tableId,
+            dataFrom,
+            image
+          FROM C_SEAL WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   
+   <select id="findByName" parameterClass="java.util.Map" resultMap="sealInfoResult">
+      <![CDATA[
+         SELECT
+          id,
+            code,
+            name,
+            username,
+            project,
+            departmentId,
+            active,
+            createTime,
+            version,
+            tableId,
+            dataFrom,
+            image
+          FROM C_SEAL WHERE NAME=#name#
+      ]]>
+   </select>
+   
+   <select id="findAll" resultMap="sealInfoResult">
+       SELECT
+       id,
+       code,
+       name,
+       username,
+       project,
+       departmentId,
+       active,
+       createTime,
+       version,
+       tableId,
+       dataFrom,
+       image
+       FROM C_SEAL
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+
+   <select id="findByDepartmentId" parameterClass="java.lang.Long" resultMap="sealInfoResult">
+      <![CDATA[
+         SELECT
+          id,
+            code,
+            name,
+            username,
+            project,
+            departmentId,
+            active,
+            createTime,
+            version,
+            tableId,
+            dataFrom,
+            image
+          FROM C_SEAL WHERE departmentId=#deptId#
+      ]]>
+   </select>
+
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="username"> USERNAME=#username#</isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(NAME) like upper('%$nameLike$%') </isNotNull>
+         <isNotEmpty prepend="AND" property="name"> NAME=#name# </isNotEmpty>
+         <isNotNull prepend="AND" property="departmentId">
+          	departmentId in (
+          		select id from C_DEPARTMENT where uniquecoding like 
+          		CONCAT('%',(select uniquecoding from C_DEPARTMENT where id = #departmentId#),'%')
+          	)
+		 </isNotNull>
+		 <isNotEmpty prepend="AND" property="deptIds">
+			departmentId IN
+			<iterate open="(" close=")" conjunction="," property="deptIds">
+				#deptIds[]#
+			</iterate>
+		</isNotEmpty>
+		 <isNotEmpty prepend="AND" property="visible"> active=#visible# </isNotEmpty>
+
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_SEAL
+      <include refid="sql_where" />
+   </sql>
+
+   <select id="find" resultMap="withDeptName">
+		<![CDATA[ SELECT *,(select name from c_department where id = departmentId) as departmentName ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+
+   <!--去除areaCode字段 2019.4.16-->
+   <insert id="createCertSeal" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO r_cert_seal (
+            certId, sealId,keyword
+         ) VALUES (
+            #certId#, #sealId#,#keyword#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <insert id="createSealHistory" parameterClass="sealInfo">
+      <![CDATA[
+         INSERT INTO c_seal_history (
+         CODE, NAME, USERNAME, PROJECT,active,departmentId,version,sealId
+         ) VALUES (
+            #code#, #name#, #username#, #project#,#visible#,#departmentId#,#version#,#id#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   
+   <delete id="removeCertSeal" parameterClass="java.util.Map">
+   	   delete from r_cert_seal where sealId = #id#
+   </delete>
+  
+   
+   <select id="findCertSeal" resultClass="java.util.HashMap">
+       SELECT
+        id,
+        tempId,
+        code,
+        keyword,
+        coordinatex,
+        coordinatey,
+        height,
+        width,
+        type
+        FROM  r_cert_attachment where code = #code#
+   </select>
+	
+   <!-- 用到的表里缺少字段 -->
+   <!--去除areaCode字段 2019.4.16-->
+   <select id="findByCertArea" resultMap="sealInfoResult">
+   	select * from c_seal where id = (
+       SELECT sealId FROM r_cert_seal where certId = #certId#
+     ) and active = 1
+   </select>
+	<!-- 更新图片 -->
+	<update id="updateImage" parameterClass="java.util.Map">
+		update c_seal set image = #image# 
+		where id = #id#
+	</update>
+</sqlMap>

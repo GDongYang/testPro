@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Dictionaries">
+	<typeAlias alias="dictionaries"
+		type="com.fline.form.access.model.Dictionaries" />
+	<resultMap id="dictionariesResult" class="dictionaries">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="code" column="code" javaType="String" />
+		<result property="explain" column="explain" javaType="String" />
+		<result property="filed" column="filed" javaType="String" />
+		<result property="template" column="template" javaType="String" />
+	</resultMap>
+
+	<insert id="create" parameterClass="dictionaries">
+		INSERT INTO c_dictionaries (
+		code
+		,explain
+		,filed
+		,template
+		) VALUES (
+		#code#
+		,#explain#
+		,#filed#
+		,#template#
+		)
+		<selectKey resultClass="long" keyProperty="id">
+			select last_insert_id() as id
+		</selectKey>
+	</insert>
+	<update id="update" parameterClass="dictionaries">
+		UPDATE c_dictionaries SET
+		code=#code#
+		, explain=#explain#
+		, filed=#filed#
+		,template=#template#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="dictionaries">
+		<![CDATA[
+			DELETE FROM c_dictionaries WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Integer"
+		resultMap="dictionariesResult">
+		<![CDATA[
+			SELECT
+			 A.id,
+			A.code,
+			A.explain,
+			A.filed,
+			A.template
+			 FROM c_dictionaries A WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAllVo" resultClass="com.fline.form.vo.DictionariesVo">
+			SELECT
+			 id,
+			code,
+			explain,
+			filed,
+			template
+			 FROM c_dictionaries
+	</select>
+
+	<select id="findAll" resultMap="dictionariesResult">
+		SELECT
+		 id,
+		code,
+		explain,
+		filed,
+		template
+		 FROM c_dictionaries
+	</select>
+
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+
+		</dynamic>
+	</sql>
+
+	<sql id="sql_from">
+		FROM c_dictionaries A
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="dictionariesResult">
+		<![CDATA[ SELECT
+			A.id,
+			A.code,
+			A.explain,
+			A.filed,
+			A.template
+ 	 	]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map"
+		resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

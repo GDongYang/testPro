@@ -1,0 +1,81 @@
+body{margin:0px;}
+ul,li{ list-style:none; margin:0; padding:0;}
+.col-xs-4{width:25%;float:left;}
+.bgWhite{background:#fff;}
+.bgF1F5F8{background:#F1F5F8}
+.bgEFEFF4{background:#EFEFF4}
+.f_mt0{margin-top:0px!important;}
+.f_mb20{margin-bottom:20px!important;}
+.f_pl60{padding-left:60px!important;}
+.f_h10{height:10px;}
+.f_te20{font-size:20px;}
+.f_te18{font-size:18px;}
+.f_teb{font-weight:bold;}
+.f_lh40{line-height:40px;}
+.f_p10{padding:10px;}
+.f_pt60{padding-top:60px;}
+.f_pl10{padding-left:10px;}
+.f_pb15{padding-bottom:15px;}
+.f_pb1{padding-bottom:1px!important;}
+.f_plr10{padding:0px 10px;}
+.text-center{text-align:center;}
+.f_wp50{width:50%!important;}
+.f_te4B99D3{color:#4B99D3}
+.bgFEEEEE{background:#FEEEEE}
+.f_teFF0000{color:#ff0000}
+#step1 input[type='radio']{
+	position: absolute;
+    top: 4px;
+    left: 20px;
+    display: inline-block;
+    width: 28px;
+    height: 26px;
+    border: 0;
+    outline: 0!important;
+    background-color: transparent;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+}
+input[type=radio]:before {
+    content: '\e411';
+    font-family: Muiicons;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    color: #aaa;
+    border-radius: 0;
+    background: 0 0;
+    -webkit-font-smoothing: antialiased;
+}
+#step2 input[type=radio]:before{
+	content:''
+}
+.header{height:60px;position:fixed;width:100%;top:8px;left:0px;}
+.content{margin-top:70px;margin-bottom:50px;overflow:auto;background:#EFEFF4;}
+.footer{height:10%;padding-top:10px;background:#fff;width:100%;position:fixed;bottom:0px;left:0px;text-align:center;}
+.f_btnBlock{width:90%;background:#1EA7FD;border-radius:3px;color:#fff;box-shadow:none;border:0px;line-height:30px;}
+.mui-input-group .mui-input-row{height:auto;}
+/*用户须知*/
+#step1 p{color:#8f8f94}
+#step1>div{padding:10px;font-size:14px;position:relative;}
+.mui-input-group #step1 .mui-input-row:after{background:transparent}
+/*表单*/
+.contentTitle{font-size:18px;font-weight:bold;line-height:40px;text-align:center;background:#EFEFF4}
+.formTitle{color:#1EA7FD;font-size:16px;font-weight:bold;line-height:40px;border-bottom:1px solid #c8c7cc;}
+.formTitle span{display:inline-block;width:5px;height:20px;background:#1EA7FD;vertical-align: middle;margin-right:10px;}
+#docList img{height:400px;width:100%;}
+/*完成*/
+.completeBox{height:50px;margin:0 auto;width:50px;color:#fff;line-height:50px;text-align:center;background:#1EA7FD;border-radius:50%;}
+.completeBox span{font-size:50px;}
+/*step*/
+.step{ margin:0 auto; display:block; height:60px;}
+.step li{ position:relative; text-align:center;}
+.step .line_bg{ height:3px; background:#DDDDDD; display:inline-block; width:50%; top:13px; position:absolute; z-index:1;}
+.step .lbg-l{left:0;}
+.step .lbg-r{right:0;}
+.step .num{ position:relative; z-index:2;width:10px; height:18px;display:inline-block;}
+.step .num em{width:10px; height:10px;background:#ddd;border-radius:50%; display:inline-block; left:0px; top:10px;position:absolute;}
+.step .lbg-txt{ position:relative; color:#8F8F94; font-size:13px;}
+.step .on .lbg-txt{color:#1EA7FD;}
+.step .on .line_bg,.step .on .num em{ background:#1EA7FD}

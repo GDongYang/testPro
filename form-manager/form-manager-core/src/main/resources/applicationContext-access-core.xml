@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="true">
+
+	<!-- system -->
+	<bean id="certResourceAccessService"
+		class="com.fline.form.access.service.impl.CertResourceAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+
+	<bean id="questionAccessService"
+		class="com.fline.form.access.service.impl.QuestionAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="menuAccessService"
+		class="com.fline.form.access.service.impl.MenuAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="positionAccessService"
+		class="com.fline.form.access.service.impl.PositionAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="roleAccessService"
+		class="com.fline.form.access.service.impl.RoleAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="serviceAccountAccessService"
+		class="com.fline.form.access.service.impl.ServiceAccountAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="userAccessService"
+		class="com.fline.form.access.service.impl.UserAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="accessLogAccessService"
+		class="com.fline.form.access.service.impl.AccessLogAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="userSessionAccessService"
+		class="com.fline.form.access.service.impl.UserSessionAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<!-- service -->
+	<bean id="catalogAccessService"
+		class="com.fline.form.access.service.impl.CatalogAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="certTempAccessService"
+		class="com.fline.form.access.service.impl.CertTempAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="itemAccessService"
+		class="com.fline.form.access.service.impl.ItemAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="approveItemAccessService"
+		class="com.fline.form.access.service.impl.ApproveItemAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="serviceItemAccessService"
+		class="com.fline.form.access.service.impl.ServiceItemAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="departmentAccessService"
+		class="com.fline.form.access.service.impl.DepartmentAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="businessAccessService"
+		class="com.fline.form.access.service.impl.BusinessAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="businessItemAccessService"
+		class="com.fline.form.access.service.impl.BusinessItemAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="tempAttachmentAccessService"
+		class="com.fline.form.access.service.impl.TempAttachmentAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="sealInfoAccessService"
+		class="com.fline.form.access.service.impl.SealInfoAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="dataSourceAccessService"
+		class="com.fline.form.access.service.impl.DataSourceAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="opinionAccessService"
+		class="com.fline.form.access.service.impl.OpinionAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="sealLogAccessService"
+		class="com.fline.form.access.service.impl.SealLogAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="codeAccessService"
+		class="com.fline.form.access.service.impl.CodeAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="noticeUserAccessService"
+		class="com.fline.form.access.service.impl.NoticeUserAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="otherParamAccessService"
+		class="com.fline.form.access.service.impl.OtherParamAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="cacheInfoAccessService"
+		class="com.fline.form.access.service.impl.CacheInfoAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="materialAccessService"
+		class="com.fline.form.access.service.impl.MaterialAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="situationAccessService"
+		class="com.fline.form.access.service.impl.SituationAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="synchroAccessService"
+		class="com.fline.form.access.service.impl.SynchroAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="errorXmlAccessService"
+		class="com.fline.form.access.service.impl.ErrorXmlAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+	
+	<bean id="formDataAccessService"
+		class="com.fline.form.access.service.impl.FormDataAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="pcsDistrictAccessService"
+		class="com.fline.form.access.service.impl.PcsDistrictAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="vichelDistrictAccessService"
+		class="com.fline.form.access.service.impl.VichelDistrictAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+	
+	<bean id="secretAccessService"
+		class="com.fline.form.access.service.impl.SecretAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="dictionariesAccessService"
+		class="com.fline.form.access.service.impl.DictionariesAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+	
+	<bean id="formPageAccessService"
+		class="com.fline.form.access.service.impl.FormPageAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+	
+	<bean id="formPropertyAccessService"
+		class="com.fline.form.access.service.impl.FormPropertyAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="dictionaryAccessService"
+		class="com.fline.form.access.service.impl.DictionaryAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="areaOrgAccessService"
+		class="com.fline.form.access.service.impl.AreaOrgAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+	
+	<bean id="qlItemAccessService"
+		class="com.fline.form.access.service.impl.QlItemAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="itemConfirmAccessService"
+		class="com.fline.form.access.service.impl.ItemConfirmAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+
+	<bean id="dataElementAccessService"
+		class="com.fline.form.access.service.impl.DataElementAccessServiceImpl"
+		parent="abstractNamespaceAccessService">
+	</bean>
+</beans>

@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="FormPage">
+    <typeAlias alias="formPage" type="com.fline.yztb.access.model.FormPage" />
+    <resultMap id="formPageResult" class="formPage">
+        <!-- NamespaceModel -->
+        <result property="id" column="id" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+        <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+        <result property="name" column="name" javaType="string" jdbcType="VARCHAR"/>
+        <result property="version" column="version" javaType="long" jdbcType="NUMBER" />
+        <result property="createDate" column="createTime" javaType="DATE" />
+        <result property="updateDate" column="updateTime" javaType="DATE" />
+
+        <!-- SystemModel -->
+        <!-- FormPage -->
+        <result property="catalogCode" column="catalogCode" javaType="string" jdbcType="VARCHAR" />
+        <result property="departmentId" column="departmentId" javaType="Integer" jdbcType="NUMBER" />
+        <result property="departmentName" column="departmentName" javaType="string" jdbcType="VARCHAR" />
+        <result property="active" column="active" javaType="boolean" jdbcType="NUMERIC" />
+        <result property="notice" column="notice" javaType="string" jdbcType="VARCHAR"/>
+        <result property="formUrl" column="formUrl" javaType="string" jdbcType="VARCHAR"/>
+        <result property="type" column="type" javaType="Integer"/>
+        <result property="checkFunction" column="checkFunction" />
+
+    </resultMap>
+
+    <resultMap id="formPageResult1" class="formPage" extends="formPageResult">
+        <result property="appContent" column="appContent" javaType="string" jdbcType="TEXT" />
+        <result property="onlineContent" column="onlineContent" javaType="string" jdbcType="TEXT" />
+        <result property="offlineContent" column="offlineContent" javaType="string" jdbcType="TEXT" />
+        <result property="terminalContent" column="terminalContent" javaType="string" jdbcType="TEXT" />
+        <result property="packageId" column="packageId" javaType="String" jdbcType="VARCHAR"/>
+        <result property="interfaceId" column="interfaceId" javaType="String" jdbcType="VARCHAR"/>
+        <result property="postType" column="postType" javaType="int" jdbcType="tinyint"/>
+        <result property="payType" column="payType" javaType="int" jdbcType="tinyint"/>
+    </resultMap>
+
+    <resultMap id="formPageResult2" class="formPage">
+        <result property="appImage" column="appImage" javaType="[B" jdbcType="blob" />
+        <result property="onlineImage" column="onlineImage" javaType="[B" jdbcType="blob" />
+        <result property="offlineImage" column="offlineImage" javaType="[B" jdbcType="blob" />
+        <result property="terminalImage" column="terminalImage" javaType="[B" jdbcType="blob" />
+    </resultMap>
+
+    <resultMap class="formPage" id="formPageAllResult" extends="formPageResult1">
+        <result property="appImage" column="appImage" javaType="[B" jdbcType="blob" />
+        <result property="onlineImage" column="onlineImage" javaType="[B" jdbcType="blob" />
+        <result property="offlineImage" column="offlineImage" javaType="[B" jdbcType="blob" />
+        <result property="terminalImage" column="terminalImage" javaType="[B" jdbcType="blob" />
+    </resultMap>
+
+    <insert id="create" parameterClass="formPage">
+        <![CDATA[
+         INSERT INTO C_FORM_PAGE (
+            code, name, catalogCode, departmentId, departmentName, version, createTime, active, formUrl,type,checkFunction
+         ) VALUES (
+            CONCAT(CONCAT('yc_',(SELECT IFNULL((CONCAT(memo,'_')),'') from c_department where id = #departmentId#),'form_'), lpad(nextval('SEQ_C_FORM_PAGE_CODE'), 5, '0')),
+            #name#, #catalogCode#, #departmentId#, #departmentName#, 1 , now(),0, #formUrl#,#type#,#checkFunction#
+         )
+      ]]>
+        <selectKey resultClass="long" keyProperty="id">
+            select last_insert_id() as ID
+        </selectKey>
+    </insert>
+
+    <update id="update" parameterClass="formPage">
+      <![CDATA[
+         UPDATE C_FORM_PAGE SET
+            name=#name#,
+            code=#code#,
+            departmentId=#departmentId#,
+            departmentName=#departmentName#,
+            type=#type#,
+            formUrl=#formUrl#,
+            checkFunction = #checkFunction#
+         WHERE
+         	id=#id#
+      ]]>
+   </update>
+
+    <update id="updateContent" parameterClass="java.util.Map">
+        UPDATE C_FORM_PAGE
+        <dynamic prepend="SET">
+            <isNotNull prepend="," property="appContent">appContent = #appContent#</isNotNull>
+            <isNotNull prepend="," property="appImage">appImage = #appImage#</isNotNull>
+            <isNotNull prepend="," property="onlineContent">onlineContent = #onlineContent#</isNotNull>
+            <isNotNull prepend="," property="onlineImage">onlineImage = #onlineImage#</isNotNull>
+            <isNotNull prepend="," property="offlineContent">offlineContent = #offlineContent#</isNotNull>
+            <isNotNull prepend="," property="offlineImage">offlineImage = #offlineImage#</isNotNull>
+            <isNotNull prepend="," property="terminalContent">terminalContent = #terminalContent#</isNotNull>
+            <isNotNull prepend="," property="terminalImage">terminalImage = #terminalImage#</isNotNull>
+            <isNotNull prepend="," property="packageId">packageId = #packageId#</isNotNull>
+            <isNotNull prepend="," property="interfaceId">interfaceId = #interfaceId#</isNotNull>
+            <isNotEqual prepend="," compareValue="-1" property="postType">postType = #postType#</isNotEqual>
+            <isNotEqual prepend="," compareValue="-1" property="payType">payType = #payType#</isNotEqual>
+        </dynamic>
+        WHERE ID=#id#
+    </update>
+
+    <delete id="remove" parameterClass="formPage">
+      <![CDATA[
+         DELETE FROM C_FORM_PAGE WHERE id=#id#
+      ]]>
+   </delete>
+
+    <select id="findById" parameterClass="long" resultMap="formPageResult1">
+      <![CDATA[
+         SELECT id, code, name, catalogCode, departmentId, departmentName, version, createTime, updateTime, active, formUrl, notice, type,
+         	appContent, onlineContent, offlineContent,terminalContent, packageId, interfaceId, postType, payType,checkFunction FROM C_FORM_PAGE WHERE id=#value#
+      ]]>
+   </select>
+
+
+
+    <select id="findImagesById" resultMap="formPageResult2">
+      <![CDATA[
+         SELECT appImage, onlineImage, offlineImage,terminalImage FROM C_FORM_PAGE WHERE id=#id#
+      ]]>
+   </select>
+
+    <select id="findByIds" parameterClass="java.util.Map" resultMap="formPageResult">
+        <![CDATA[
+         SELECT id, code, name, catalogCode, departmentId, departmentName, version, createTime, updateTime, active, formUrl, notice, type,
+         	appContent, onlineContent, offlineContent,terminalContent, packageId, interfaceId, postType, payType,checkFunction FROM C_FORM_PAGE WHERE id IN
+      ]]>
+        <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+    </select>
+
+    <select id="findAll" resultMap="formPageResult">
+        <![CDATA[ SELECT
+            id,
+            code,
+            name,
+            catalogCode,
+            version,
+            createTime,
+            updateTime,
+            departmentId,
+            departmentName,
+            type,
+            active,
+            isMust,
+            formUrl,
+            notice,
+            otherParams,
+            appContent,
+            appImage,
+            onlineContent,
+            onlineImage,
+            offlineContent,
+            offlineImage,
+            packageId,
+            interfaceId,
+            postType,
+            payType,
+            terminalContent,
+            terminalImage,
+            checkFunction
+          FROM C_FORM_PAGE ]]>
+        <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+    </select>
+
+    <select id="findAllVo" resultClass="com.fline.yztb.vo.FormPageVo">
+        <![CDATA[ SELECT
+              id,
+            code,
+            name,
+            catalogCode,
+            version,
+            createTime,
+            updateTime,
+            departmentId,
+            departmentName,
+            type,
+            active,
+            isMust,
+            formUrl,
+            notice,
+            otherParams,
+            appContent,
+            appImage,
+            onlineContent,
+            onlineImage,
+            offlineContent,
+            offlineImage,
+            packageId,
+            interfaceId,
+            postType,
+            payType,
+            terminalContent,
+            terminalImage,
+            checkFunction
+           FROM C_FORM_PAGE ]]>
+    </select>
+
+    <sql id="sql_where">
+        <dynamic prepend="WHERE">
+            <isNotNull property="id">
+                <isGreaterThan prepend="AND" property="id" compareValue="0"> CT."id"=#id#</isGreaterThan>
+            </isNotNull>
+            <isNotNull prepend="AND" property="code"> code=#code#</isNotNull>
+            <isNotNull prepend="AND" property="nameLike"> (upper(CT.`name`) like upper('%$nameLike$%') or upper(CT.`code`) like upper('%$nameLike$%')) </isNotNull>
+            <isNotNull prepend="AND" property="name"> "name"=#name# </isNotNull>
+            <isNotNull prepend="AND" property="catalogCode"> catalogCode=#catalogCode# </isNotNull>
+            <isNotNull prepend="AND" property="departmentId">
+                CT.departmentId IN (
+                select id from C_DEPARTMENT
+                where code like CONCAT((SELECT code from c_department where id = #departmentId#) ,'%')
+                )
+            </isNotNull>
+            <isNotNull prepend="AND" property="active"> active=#active# </isNotNull>
+        </dynamic>
+    </sql>
+    <sql id="sql_from">
+        FROM C_FORM_PAGE CT
+        <include refid="sql_where" />
+    </sql>
+
+    <select id="find" resultMap="formPageResult">
+        <![CDATA[ SELECT
+                CT.id,
+                CT.code,
+                CT.name,
+                CT.catalogCode,
+                CT.version,
+                CT.createTime,
+                CT.updateTime,
+                CT.departmentId,
+                CT.departmentName,
+                CT.type,
+                CT.active,
+                CT.isMust,
+                CT.formUrl,
+                CT.notice,
+                CT.otherParams,
+                CT.appContent,
+                CT.appImage,
+                CT.onlineContent,
+                CT.onlineImage,
+                CT.offlineContent,
+                CT.offlineImage,
+                CT.packageId,
+                CT.interfaceId,
+                CT.postType,
+                CT.payType,
+                CT.terminalContent,
+                CT.terminalImage,
+                CT.checkFunction
+        ]]>
+        <include refid="sql_from" />
+        <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+        <isGreaterThan property="_maxResult" compareValue="0">
+            <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+        </isGreaterThan>
+    </select>
+    <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+        <![CDATA[ SELECT COUNT(*) ]]>
+        <include refid="sql_from" />
+    </select>
+
+    <update id="updateActive" parameterClass="java.util.HashMap">
+   		UPDATE c_form_page SET active = 1 WHERE id = #formPageId#
+   </update>
+    <select id="findForCache" parameterClass="java.util.Map" resultClass="com.fline.yztb.vo.FormPageVo">
+   		SELECT id,code,name,version,catalogCode,departmentId,departmentName,active,notice,formUrl,type,packageId,interfaceId,postType,payType,checkFunction
+   		from c_form_page
+        <dynamic prepend="WHERE">
+            <isNotNull prepend="AND" property="formPageId"> id = #formPageId# </isNotNull>
+            <isNotNull prepend="AND" property="formCode"> code = #formCode#</isNotNull>
+        </dynamic>
+   </select>
+
+    <select id="findList" parameterClass="java.util.Map" resultClass="formPage">
+        SELECT id,code,name,version,catalogCode,departmentId,departmentName,active,notice,formUrl,type,packageId,interfaceId,postType,payType,checkFunction from c_form_page
+        <dynamic prepend="WHERE">
+            <isNotNull prepend="AND" property="active">active=#active#</isNotNull>
+            <isNotNull prepend="AND" property="deptId">
+                departmentId IN (
+                select id from C_DEPARTMENT
+                where code like CONCAT((SELECT code from c_department where id = #deptId#) ,'%')
+                )
+            </isNotNull>
+        </dynamic>
+
+    </select>
+
+    <insert id="createFormList" parameterClass="java.util.HashMap">
+        INSERT INTO c_form_page (
+        code,name,catalogCode,version,createTime,departmentId,departmentName,type,active,formUrl,
+        appContent,appImage,onlineContent,onlineImage,offlineContent,offlineImage,terminalContent,terminalImage,packageId,interfaceId,postType,payType
+        <![CDATA[
+	   			)VALUES
+	   		]]>
+        <iterate conjunction="," property="deptIds">
+            (CONCAT(CONCAT('yc_',(SELECT IFNULL((CONCAT(memo,'_')),'') from c_department where id = #deptIds[]#),'form_'),lpad(nextval('SEQ_C_FORM_PAGE_CODE'),3,'0')),
+            #formPage.name#,#formPage.catalogCode#,#formPage.version#,now(),#deptIds[]#,
+            (SELECT name from c_department where id = #deptIds[]#),
+            #formPage.type#,#formPage.active#,#formPage.formUrl#,
+            #formPage.appContent#,#formPage.appImage#,#formPage.onlineContent#,#formPage.onlineImage#,#formPage.offlineContent#,#formPage.offlineImage#,#formPage.terminalContent#,#formPage.terminalImage#,
+            #formPage.packageId#,#formPage.interfaceId#,#formPage.postType#,#formPage.payType#)
+        </iterate>
+    </insert>
+
+    <select id="findAllById" resultMap="formPageAllResult">
+		SELECT
+		 id,
+            code,
+            name,
+            catalogCode,
+            version,
+            createTime,
+            updateTime,
+            departmentId,
+            departmentName,
+            type,
+            active,
+            isMust,
+            formUrl,
+            notice,
+            otherParams,
+            appContent,
+            appImage,
+            onlineContent,
+            onlineImage,
+            offlineContent,
+            offlineImage,
+            packageId,
+            interfaceId,
+            postType,
+            payType,
+            terminalContent,
+            terminalImage,
+            checkFunction
+		 FROM c_form_page where id = #id#
+	</select>
+
+    <update id="updateVersion" parameterClass="java.util.HashMap">
+		update c_form_page set version = version + 1 where id = #id#
+	</update>
+
+    <select id="findNewCopiedFormPage" parameterClass="java.util.Map" resultMap="formPageResult">
+        SELECT
+        c2.id,
+        c2.code,
+        c2.name,
+        c2.catalogCode,
+        c2.version,
+        c2.createTime,
+        c2.updateTime,
+        c2.departmentId,
+        c2.departmentName,
+        c2.type,
+        c2.active,
+        c2.isMust,
+        c2.formUrl,
+        c2.notice,
+        c2.otherParams,
+        c2.appContent,
+        c2.appImage,
+        c2.onlineContent,
+        c2.onlineImage,
+        c2.offlineContent,
+        c2.offlineImage,
+        c2.packageId,
+        c2.interfaceId,
+        c2.postType,
+        c2.payType,
+        c2.terminalContent,
+        c2.terminalImage,
+        c2.checkFunction
+        FROM
+        c_form_page c1
+        JOIN c_form_page c2 ON c1. NAME = c2. NAME
+        AND c1.version = c2.version
+        <dynamic>
+            <isNotEmpty property="formPage.appContent"> AND c1.appContent = c2.appContent</isNotEmpty>
+            <isNotEmpty property="formPage.appImage"> AND c1.appImage = c2.appImage</isNotEmpty>
+            <isNotEmpty property="formPage.onlineContent"> AND c1.onlineContent = c2.onlineContent</isNotEmpty>
+            <isNotEmpty property="formPage.onlineImage"> AND c1.onlineImage = c2.onlineImage</isNotEmpty>
+            <isNotEmpty property="formPage.offlineContent"> AND c1.offlineContent = c2.offlineContent</isNotEmpty>
+            <isNotEmpty property="formPage.offlineImage"> AND c1.offlineImage = c2.offlineImage</isNotEmpty>
+            <isNotEmpty property="formPage.terminalContent"> AND c1.terminalContent = c2.terminalContent</isNotEmpty>
+            <isNotEmpty property="formPage.terminalImage"> AND c1.terminalImage = c2.terminalImage</isNotEmpty>
+            <isNotEmpty property="formPage.packageId"> AND c1.packageId = c2.packageId</isNotEmpty>
+            <isNotEmpty property="formPage.interfaceId"> AND c1.interfaceId = c2.interfaceId</isNotEmpty>
+        </dynamic>
+        WHERE
+        c1.id = #formPage.id# and c2.id > #lastMaxId#
+    </select>
+    <select id="findMaxId" resultClass="java.lang.Long">
+		select max(id) from c_form_page
+	</select>
+
+    <delete id="removeFormTemp" parameterClass="java.util.HashMap">
+        delete from r_form_temp where form_code = #formCode#
+    </delete>
+
+    <insert id="saveFormTemp" parameterClass="java.util.HashMap" >
+        INSERT INTO r_form_temp (form_code, temp_code)
+        values
+        <iterate conjunction="," property="tempCodes" >
+            (#formCode#, #tempCodes[]#)
+        </iterate>
+    </insert>
+
+</sqlMap>

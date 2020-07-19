@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Menu">
+   <typeAlias alias="menu" type="com.fline.form.access.model.Menu" />
+   <resultMap id="menuResult" class="menu">
+   	  <!-- SystemModel -->
+      <!-- Menu -->
+      <result property="id" column="id" javaType="long" jdbcType="number" />
+      <result property="name" column="name" javaType="string" jdbcType="varchar" />
+      <result property="code" column="code" javaType="string" jdbcType="varchar" />
+	  <result property="icon" column="icon" javaType="string" jdbcType="varchar" />
+	  <result property="location" column="location" javaType="string" jdbcType="varchar" />
+	  <result property="ordinal" column="ordinal" javaType="string" jdbcType="number" />
+	  <result property="parentId" column="parentId" javaType="string" jdbcType="number"/>
+	  <result property="parameter" column="parameter" javaType="string" jdbcType="varchar"/>
+	  <result property="visible" column="visible" javaType="string" jdbcType="number" />
+	  <result property="type" column="type" javaType="string" jdbcType="varchar" />
+   </resultMap>
+
+   <insert id="create" parameterClass="menu">
+      <![CDATA[
+         INSERT INTO C_MENU (
+            name, code, 
+            type, icon,
+            location, ordinal,
+            parameter,
+            parentId,visible
+         ) VALUES (
+            #name#, lpad(NEXTVAL('SEQ_MENU_CODE'),5,'0'), 
+            #type#,#icon#,
+            #location#,#ordinal#,
+            #parameter#,
+            #parentId#,#visible#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as id
+	  </selectKey>
+   </insert>
+   <update id="update" parameterClass="menu">
+      <![CDATA[
+         UPDATE C_MENU SET
+
+            name=#name#,
+
+            icon=#icon:NUMERIC:null#,
+            type=#type#,
+			
+            ordinal=#ordinal#,
+            parameter=#parameter#,
+            
+            location=#location#,
+            parentId=#parentId#,
+            visible=#visible#
+
+         WHERE id=#id#
+      ]]>
+   </update>
+   
+   <delete id="remove" parameterClass="menu">
+      <![CDATA[
+         DELETE FROM C_MENU WHERE id=#id# 
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="menuResult">
+      <![CDATA[
+         SELECT
+          id,
+            name,
+            code,
+            icon,
+            location,
+            ordinal,
+            parentId,
+            parameter,
+            visible,
+            type
+          FROM C_MENU WHERE id=#value#
+      ]]>
+   </select>
+
+   <select id="findByRole" parameterClass="java.util.Map" resultMap="menuResult">
+      <![CDATA[
+         SELECT DISTINCT m.* FROM C_MENU m, R_ROLE_MENU r WHERE r.roleId=#roleId# AND r.menuId = m.id and m.visible=1
+      ]]>
+   </select>
+
+   <select id="findByUser" parameterClass="java.util.Map" resultMap="menuResult">
+      <![CDATA[
+         SELECT DISTINCT m.* FROM C_MENU m, R_ROLE_MENU r WHERE r.roleId in (SELECT rr.roleId FROM r_user_role rr, C_USER u WHERE u.id=#userId# AND u.id=rr.userId) AND r.menuId = m.id and m.visible=1
+      ]]>
+      <isNotNull prepend="AND" property="parentId"> parentId=#parentId# </isNotNull>
+      <![CDATA[
+      	ORDER BY m.ordinal ASC
+      ]]>
+   </select>
+
+   <select id="findMainMenus" resultMap="menuResult">
+      <![CDATA[
+         SELECT
+          id,
+            name,
+            code,
+            icon,
+            location,
+            ordinal,
+            parentId,
+            parameter,
+            visible,
+            type
+          FROM C_MENU WHERE parentId = 0 and m.visible=1
+      ]]>
+   </select>
+
+   <select id="findByCode" parameterClass="java.util.Map" resultMap="menuResult">
+      <![CDATA[
+         SELECT
+          id,
+            name,
+            code,
+            icon,
+            location,
+            ordinal,
+            parentId,
+            parameter,
+            visible,
+            type
+          FROM C_MENU WHERE code=#code# and m.visible=1
+      ]]>
+   </select>
+
+   <select id="findByParentId" parameterClass="java.util.Map" resultMap="menuResult">
+      <![CDATA[
+          SELECT
+           id,
+            name,
+            code,
+            icon,
+            location,
+            ordinal,
+            parentId,
+            parameter,
+            visible,
+            type
+           FROM C_MENU where FIND_IN_SET(id, getChildidList(#parentCoolMenuId:NUMERIC:0#)) and m.visible=1
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="menuResult">
+      <![CDATA[
+         SELECT
+          id,
+            name,
+            code,
+            icon,
+            location,
+            ordinal,
+            parentId,
+            parameter,
+            visible,
+            type
+          FROM C_MENU WHERE id IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=",">
+         #ids[]#
+      </iterate>
+      <![CDATA[
+         ORDER BY ordinal
+      ]]>
+   </select>
+
+   <select id="findAll" resultMap="menuResult">
+      <![CDATA[ SELECT
+          id,
+        name,
+        code,
+        icon,
+        location,
+        ordinal,
+        parentId,
+        parameter,
+        visible,
+        type
+    FROM C_MENU WHERE visible=1 ]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+      <isNull property="_orderBy"><![CDATA[ ORDER BY ordinal ]]></isNull>
+   </select>
+   <select id="findAllTree" resultMap="menuResult">
+      <![CDATA[ SELECT
+          id,
+        name,
+        code,
+        icon,
+        location,
+        ordinal,
+        parentId,
+        parameter,
+        visible,
+        type
+  FROM C_MENU  ]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+      <isNull property="_orderBy"><![CDATA[ ORDER BY ordinal ]]></isNull>
+   </select>
+   
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+      	 <isNotNull prepend="AND" property="visible"> visible=#visible# </isNotNull>
+         <isNotNull prepend="AND" property="name"> name=#name# </isNotNull>
+         <isNotNull prepend="AND" property="code"> code=#code# </isNotNull>
+         <isNotNull prepend="AND" property="parentId"> parentId=#parentId# </isNotNull>
+         <isNotNull prepend="AND" property="parentName"> parentId IN (SELECT id FROM C_MENU WHERE name=#parentName#) </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_MENU
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="menuResult">
+		<![CDATA[ SELECT
+             id,
+            name,
+            code,
+            icon,
+            location,
+            ordinal,
+            parentId,
+            parameter,
+            visible,
+            type
+   ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+   
+   <select id="findRoleMenu" resultMap="menuResult">
+   		<![CDATA[ 
+	   		SELECT
+	   		M.id,
+            M.name,
+            M.code,
+            M.icon,
+            M.location,
+            M.ordinal,
+            M.parentId,
+            M.parameter,
+            M.visible,
+            M.type
+			FROM C_MENU M 
+			LEFT JOIN R_ROLE_MENU RR ON M.id = RR.menuId
+			LEFT JOIN R_USER_ROLE RU ON RR.roleId = RU.roleId
+			WHERE RU.userId = #userId#
+			AND M.visible =1 
+		]]>
+   		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+      	<isNull property="_orderBy"><![CDATA[ ORDER BY ordinal ]]></isNull>
+   </select>
+
+</sqlMap>

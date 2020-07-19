@@ -1,0 +1,45 @@
+h3{margin:0;padding:0;}
+html,body{width:100%;height:100%;background:#fff;font-family: "PingFangSC-Regular";overflow: hidden;opacity: 0.9;}
+.base_hidden{display:none}
+.header{border-bottom: 1px solid #DBDBDB;line-height: 1.173333rem;position: fixed;top:0;width:100%}
+.header div{width: 8.293333rem;display: inline-block;line-height: 1.173333rem;vertical-align: top;}
+.header img{margin-left: .413333rem;display:inline-block;width:.32rem;height: .546667rem;position: relative;top: 0.166666rem;}
+.header span{font-size: .453333rem;color:#0072FF;display:inline-block;line-height:1.173333rem}
+.header h3{display:inline-block;vertical-align:top;font-size: .453333rem;line-height: 1.173333rem;padding-left:1.44rem;}
+/* 中间 */
+.content{margin-top:1.173333rem;}
+.content input{border:none;outline: none;display: inline-block;margin:0;padding:0;}
+.searchBox{overflow: hidden;}
+.resultTitle{width:5.76rem;height: 0.666667rem;font-size:.48rem;color: #333;font-weight:700;margin: .773333rem auto .8rem;}
+.certWrap,.nameWrap{width:  9.093333rem;line-height: 0.666667rem;font-size: .373333rem;border-bottom: .013333rem solid #DBDBDB;padding-bottom:.4rem} 
+.nameWrap{margin: 0 auto .813333rem;}
+.certWrap{margin:0 auto 1.08rem;}
+.nameWrap label{padding-right: 2.96rem}
+.certWrap label{padding-right:2.213333rem}
+.content .nameInput,.content .certInput{width:4rem;line-height: 0.533333rem;color:#999;font-size: .373333rem;height:.533333rem;}
+.searchBtn{display: block;width: 9.2rem;height:  1.253333rem;background: #1492FF;border-radius: 4px;text-align: center;margin: 0 auto 1.518519rem;color:#fff;font-size:.48rem;}
+/* 查询结果 */
+.resultBox{width:100%;height:16.56rem;overflow-y: auto;overflow-x: hidden;}
+.resultContain{width:9.2rem;margin:.546667rem auto 0;}
+.resultCardBox{width:100%;height:8.466667rem;border: 1px solid #C9C9C9}
+.cardMarginBottom{margin-bottom:.533333rem}
+.certTitle{line-height: 1.453333rem;border-bottom: .013333rem solid #C9C9C9;background: #F6F8F7}
+.certTitle span{font-size:.426667rem;font-weight:700;padding: 0 2.24rem 0 .56rem;line-height: 1.453333rem;}
+.certTitle button{font-size:.373333rem;display: inline-block;vertical-align: top;background: #1491FF;width:1.32rem;line-height:.72rem;color:#FFF;position:relative;top:0.373333rem;padding:0;float:right;margin-right:.493333rem }
+.certContent{padding: .64rem .573333rem .773333rem .56rem;width:100%}
+.certContent div{line-height: .6rem;margin-bottom: .4rem;}
+.certContent>div:last-child{margin-bottom: 0;}
+.certContent span:first-child{font-size:.426667rem;color:#333}
+.certContent span:last-child{font-size:.426667rem;color:#808986;float: right;}
+/* 打印 */
+.printBox{width:100%;height:16.56rem;overflow-y: auto;overflow-x: hidden;}
+.printBox iframe{width: 9.2rem;height:15rem;margin: .546667rem auto 0;display: block;}
+/* 无结果 */
+.noCert{margin: 130px auto 0;width:121px;background:  #F0EFEF}
+/* 底部 */
+.footer{text-align: center;font-size: .356667rem}
+.footer span{display: block}
+.supportText{padding: 0.666667rem 0}
+.footer .telNum{color: #008DCF;display: inline-block;}
+
+.abd{height: .493333rem }

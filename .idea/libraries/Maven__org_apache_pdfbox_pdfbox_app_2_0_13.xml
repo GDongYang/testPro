@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.pdfbox:pdfbox-app:2.0.13">
+    <CLASSES>
+      <root url="jar://G:/flinemaven/org/apache/pdfbox/pdfbox-app/2.0.13/pdfbox-app-2.0.13.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://G:/flinemaven/org/apache/pdfbox/pdfbox-app/2.0.13/pdfbox-app-2.0.13-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://G:/flinemaven/org/apache/pdfbox/pdfbox-app/2.0.13/pdfbox-app-2.0.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

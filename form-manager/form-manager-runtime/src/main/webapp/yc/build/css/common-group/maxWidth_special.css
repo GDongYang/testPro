@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.base_maxw-none { max-width:none; }
+.base_maxw-inherit { max-width:inherit; }
+
+.base_maxw-imp-none { max-width:none !important; }
+.base_maxw-imp-inherit { max-width:inherit !important; }

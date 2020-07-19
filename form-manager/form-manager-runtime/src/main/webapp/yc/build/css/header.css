@@ -1,0 +1,58 @@
+.header-top {
+    font-size: 13px;
+    color: #000;
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    padding-right: 300px;
+    background: url(../image/jh.png) no-repeat center;
+    padding-left: 470px;
+}
+
+.header_bottom {
+    padding-top: 20px;
+}
+
+.header_bottom .l_logo a img {
+    height: 40px;
+    width: 205px;
+    margin: 10px 0;
+}
+
+.header_bottom .l_logo a:last-child img {
+    width: 158px;
+    height: 45px;
+    padding-left: 10px;
+}
+
+.r_login {
+    font-size: 0;
+    line-height: 4.6;
+}
+
+.r_login a {
+    font-size: 12px;
+    color: #333;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+a.grdl,
+a.frdl {
+    line-height: 30px;
+    width: 80px;
+    text-align: center;
+    font-size: 14px;
+}
+
+a.grdl {
+    border: 1px solid #2395fc;
+    color: #2191fc;
+    background: #e9f4ff;
+}
+
+a.frdl {
+    border: 1px solid #1ec67b;
+    background: #e8f9f2;
+    color: #1ec67b;
+}

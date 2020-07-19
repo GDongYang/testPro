@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="FormData">
+	<typeAlias alias="formData" type="com.fline.form.access.model.FormData" />
+	<resultMap id="formDataResult" class="formData">
+		<!-- NamespaceModel -->
+		<result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+		<result property="businessCode" column="businessCode" javaType="String" />
+		<result property="itemCode" column="itemCode" javaType="String" />
+		<result property="cerNo" column="cerNo" javaType="String" />
+		<result property="data" column="data" javaType="String" />
+		<result property="createTime" column="createTime" javaType="date"  />
+	</resultMap>
+	
+	<insert id="create" parameterClass="formData">
+		INSERT INTO c_form_data (
+			
+			businessCode,
+			itemCode,
+			cerNo,
+			data
+		) VALUES (
+			
+			#businessCode#,
+			#itemCode#,
+			#cerNo#,
+			#data#
+		)
+		
+	</insert>
+	<update id="update" parameterClass="formData">
+		UPDATE c_form_data SET
+			businessCode=#businessCode#,
+			itemCode=#itemCode#,
+			cerNo=#cerNo#,
+			data=#data#
+		WHERE id=#id#
+	</update>
+	<delete id="remove" parameterClass="formData">
+		<![CDATA[
+			DELETE FROM c_form_data WHERE id=#id#
+		]]>
+	</delete>
+	<select id="findById" parameterClass="Long" resultMap="formDataResult">
+		<![CDATA[
+			SELECT
+			 id,
+			businessCode,
+			itemCode,
+			cerNo,
+			data,
+			createTime
+			 FROM c_form_data  WHERE id=#id#
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="formDataResult">
+		SELECT
+		 id,
+		businessCode,
+		itemCode,
+		cerNo,
+		data,
+		createTime
+		 FROM c_form_data
+	</select>
+	
+	<sql id="sql_where">
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="cerNo" prepend="AND">cerNo = #cerNo#</isNotEmpty>
+			<isNotNull property="businessCode" prepend="AND"> businessCode like  upper('%$businessCode$%')</isNotNull>
+            <isNotNull prepend="AND" property="itemCode">
+             itemCode like  upper('%$itemCode$%')
+            </isNotNull>
+		</dynamic>
+	</sql>
+	
+	<sql id="sql_from">
+		FROM c_form_data 
+		<include refid="sql_where" />
+	</sql>
+
+	<select id="find" resultMap="formDataResult">
+		<![CDATA[ SELECT
+				id,
+				businessCode,
+				itemCode,
+				cerNo,
+				data,
+				createTime
+		]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy">
+			order by $_orderBy$
+		</isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+	</select>
+	<select id="find_count" parameterClass="java.util.Map" resultClass="int">
+		<![CDATA[ SELECT COUNT(*) ]]>
+		<include refid="sql_from" />
+	</select>
+</sqlMap>

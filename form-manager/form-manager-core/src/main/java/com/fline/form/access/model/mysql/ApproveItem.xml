@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ApproveItem">
+   <typeAlias alias="approveItem" type="com.fline.form.access.model.ApproveItem" />
+   <resultMap id="approveItemResult" class="approveItem">
+       <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" />
+      <result property="version" column="VERSION" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <result property="updateDate" column="UPDATE_DATE" javaType="date" />
+      <result property="versionDate" column="VERSION_DATE" javaType="date" />
+      <!-- ApproveItem -->
+      <result property="active" column="ACTIVE" javaType="string" jdbcType="NUMBER" />
+      <result property="departmentId" column="DEPARTMENT_ID" javaType="string" jdbcType="NUMBER" />
+      <result property="departmentName" column="DEPTNAME" javaType="string" jdbcType="VARCHAR" />
+      <result property="areaCode" column="AREA_CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="area" column="AREA" javaType="string" jdbcType="VARCHAR" />
+      <result property="counterpart" column="COUNTERPART" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+   <resultMap id="approveItemResultTable" class="approveItem">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <!-- ApproveItem -->
+      <result property="active" column="ACTIVE" javaType="string" jdbcType="NUMBER" />
+      <result property="departmentId" column="departmentId" javaType="string" jdbcType="NUMBER" />
+      
+      <result property="departmentName" column="departmentName" javaType="string" jdbcType="VARCHAR" />
+      <!-- <result property="positionId" column="position_id" javaType="string" jdbcType="NUMBER" />
+      <result property="positionName" column="positionName" javaType="string" jdbcType="VARCHAR" /> -->
+   </resultMap>
+   
+   <resultMap id="approveItemPageResult" class="approveItem">
+      <!-- NamespaceModel -->
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+   <resultMap id="unidResult" class="approveItem" extends="approveItemResult">
+      <result property="unid" column="UNID" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+
+   <insert id="create" parameterClass="approveItem">
+      <![CDATA[
+         INSERT INTO C_APPROVE_ITEM (
+            CODE, NAME, MEMO, ACTIVE,DEPTNAME
+         ) 
+         values (#code#, #name#, #memo#, #active#, #departmentName#)
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   <insert id="createPositionApproveItem" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_POSITION_ITEM (
+            positionId,itemId
+         ) VALUES (#POSITION_ID#, #ITEM_ID# ) 
+      ]]>
+	  <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   <select id="findCountrycount" resultClass="java.lang.Integer">
+   	SELECT
+		count(1)
+	FROM
+		(
+			SELECT
+				DEPTNAME
+			FROM
+				C_APPROVE_ITEM
+			GROUP BY
+				DEPTNAME
+			ORDER BY
+				DEPTNAME ASC
+		) A
+
+   </select>
+   <select id="findCountry" resultClass="com.fline.form.access.model.CountryDo" parameterClass="java.util.Map">
+   	SELECT c.* FROM
+	(
+		SELECT ROWNUM AS rn, B.*
+		FROM (
+				SELECT ROWNUM AS deparentId, A .DEPTNAME AS deptname
+				FROM (
+						SELECT DEPTNAME
+						FROM C_APPROVE_ITEM
+						GROUP BY DEPTNAME
+						ORDER BY DEPTNAME ASC
+					) A
+			) B
+	) C
+	WHERE rn between #min# and #max#
+   </select>
+   
+   <insert id="createApproveItemTemp" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_APPROVEITEM_TEMP (
+            ITEM_MEMO,TEMP_ID
+         ) VALUES (
+            #memo#, #tempId#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <insert id="deleteApproveItemTemp" parameterClass="java.util.Map">
+      <![CDATA[
+      	DELETE FROM R_APPROVEITEM_TEMP 
+         WHERE
+         	ITEM_MEMO=#memo# 
+      ]]>
+   </insert>
+
+   <update id="update" parameterClass="approveItem">
+      <![CDATA[
+         UPDATE C_APPROVE_ITEM SET
+            NAME=#name#,
+            MEMO=#memo#,
+            ACTIVE=#active#,
+            DEPARTMENT_ID=#departmentId#
+         WHERE
+         	ID=#id# 
+      ]]>
+   </update>
+   <delete id="remove" parameterClass="approveItem">
+      <![CDATA[
+         DELETE FROM C_APPROVE_ITEM WHERE ID=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="approveItemResult">
+      <![CDATA[
+         SELECT * FROM C_APPROVE_ITEM WHERE ID=#id#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="approveItemResult">
+      <![CDATA[
+         SELECT * FROM C_APPROVE_ITEM WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   
+   <select id="findAll" resultMap="approveItemResult">
+      <![CDATA[ SELECT * FROM C_APPROVE_ITEM ]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+	
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(NAME) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="name"> NAME=#name# </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_tablewhere">
+      <dynamic prepend="HAVING">
+         <isNotEmpty prepend="AND" property="name"> 
+            upper(NAME) like upper('%$name$%') 
+         </isNotEmpty>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_APPROVE_ITEM
+      <include refid="sql_where" />
+   </sql>
+	<select id="findTable" resultMap="approveItemPageResult">
+		<![CDATA[ select NAME, MEMO from C_APPROVE_ITEM where 1=1 ]]>
+		<isNotNull prepend="AND" property="departmentName"> DEPTNAME=#departmentName# </isNotNull>
+		<![CDATA[
+		GROUP BY NAME, MEMO ]]>
+		<include refid="sql_tablewhere" />
+		<![CDATA[ order by MEMO ASC ]]>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+		
+	</select>
+	
+   <select id="findRTemp" resultClass="java.lang.String" parameterClass="java.util.Map">
+      <![CDATA[ select TEMP_ID from R_APPROVEITEM_TEMP where ITEM_MEMO=#memo# ]]>
+   </select>
+	
+   <select id="findApproveItemByPositionId" resultMap="approveItemResult" parameterClass="java.util.Map">
+      <![CDATA[ select  i.* from C_APPROVE_ITEM i left join R_POSITION_ITEM p on i.ID=p.itemId where p.positionId=#positionId#]]>
+   </select>
+	
+	<select id="findTable_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[
+		select COUNT(1) from (select NAME, MEMO from C_APPROVE_ITEM
+		where 1=1 ]]>
+		<isNotNull prepend="AND" property="departmentName"> DEPTNAME=#departmentName# </isNotNull>
+		<![CDATA[
+		 GROUP BY NAME, MEMO
+	  ]]>
+		<include refid="sql_tablewhere" />
+	   <![CDATA[
+		) t
+	  ]]>
+   </select>
+   
+   <select id="findPositionName" parameterClass="java.util.Map" resultClass="String">
+      <![CDATA[
+	   select CP."NAME" from R_POSITION_ITEM rpi left join C_POSITION cp on RPI.positionId=CP."ID"
+		where RPI.itemId=#ITEM_ID#
+	]]>
+	<include refid="sql_tablewhere" />
+   </select>
+   
+   <select id="findPositionId" parameterClass="java.util.Map" resultClass="String">
+      <![CDATA[
+	  select POSITION_ID from R_POSITION_ITEM where itemId=#ITEM_ID#
+	]]>
+	<include refid="sql_tablewhere" />
+   </select>
+   
+   <select id="find" resultMap="approveItemResult">
+		<![CDATA[ SELECT *  ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+   
+   <select id="findApproveItemCount" parameterClass="java.util.Map" resultMap="approveItemResult">
+   	SELECT C.*
+	FROM C_APPROVE_ITEM C,
+	R_POSITION_ITEM PI
+	WHERE C.ID = PI.itemId AND
+		PI.positionId = #positionId#
+		AND PI.ITEM_ID = (
+		SELECT
+			CI."ID"
+		FROM
+			C_APPROVE_ITEM CI
+		WHERE
+			CI.CODE = #approveItemCode#
+		)
+   </select>
+   
+    <insert id="createNanWeiApproveItem" parameterClass="approveItem">
+      <![CDATA[
+         INSERT INTO C_APPROVE_ITEM (
+            CODE, NAME, MEMO,ACTIVE,DEPARTMENT_ID
+         ) VALUES (
+     	    #code#, #name#, #memo#, #active#, #departmentId#)
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <select id="findByCode" resultMap="approveItemResult">
+   	 <![CDATA[ SELECT * FROM C_APPROVE_ITEM WHERE CODE = #code#  ]]>
+   </select>
+   
+</sqlMap>

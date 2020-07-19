@@ -1,0 +1,122 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace "library://ns.adobe.com/flex/mx";
+
+Application {
+   padding-bottom: 0;
+   padding-left: 0;
+   padding-right: 0;
+   padding-top: 0;
+   backgroundColor: #F0F0F0;
+   color: #000000;   
+   fontSize: 12;
+   fontFamily: "Microsoft YaHei";
+}
+/*
+themeColor: #6699CC;
+backgroundColor: #ffffff;
+*/
+
+global{
+	modalTransparencyBlur: 0;
+	modalTransparency: 0.4;
+	modalTransparencyColor: black;
+	modalTransparencyDuration: 100;
+}
+
+.textInput {
+	/*color:#000000;
+	borderStyle:solid;
+	borderThickness:1;*/
+  	unfocusedTextSelectionColor:#FFFFFF;
+    focusedTextSelectionColor:#FFFFFF;
+    inactiveTextSelectionColor:#FFFFFF;
+}
+
+.text {
+	color:#000000;
+	fontSize:14;
+	fontFamily: "Microsoft YaHei";
+}
+/* 
+.loginButton {   
+   borderVisible:true;
+   borderStyle:solid; 
+   backgroundColor:#495869;
+	icon:Embed(source="assets/image/loginButton.png"); 
+}
+*/
+.grid {
+   /*borderStyle: solid;
+   borderSides: left, top, right;
+   borderColor: #E4E4E4;
+   background-color: #FFFFFF;*/
+   padding-top: 0;
+   padding-bottom: 0;
+   padding-left: 0;
+   padding-right: 0;
+   horizontal-gap: 0;
+   vertical-gap: 0;
+}
+
+.gridLabel {
+   /*textAlign: right;
+   borderStyle: solid;
+   borderSides: right;
+   background-color: #F5F5F5;
+   borderColor: #E4E4E4;*/
+   color:#000000;
+   padding-top:2;
+   padding-bottom:2;
+   padding-right:5;
+}
+
+.queryInput {
+   horizontalGap:0;
+   paddingBottom:0;
+   verticalAlign:bottom;
+}
+
+.removeButton {
+   paddingLeft:0;
+   paddingRight:0;
+   fontSize:14;
+   fontWeight:bold;
+   color:#999999;
+   textAlign:center;
+   verticalAlign:bottom;
+}
+
+.gridItem {
+   /*borderSides: right;
+   border-color: #E4E4E4;
+   border-style: solid;*/
+   verticalAlign:middle;
+   paddingRight: 5;
+}
+
+.gridRow {
+   /*border-color: #E4E4E4;
+   border-style: solid;
+   border-sides: bottom;*/
+   padding-top: 0;
+   padding-bottom: 0;
+   padding-left: 0;
+   padding-right: 0;
+}
+
+.menuTree {
+   borderThicknessBottom: 1;
+   borderThicknessLeft: 1;
+   borderThicknessRight: 1;
+   borderThicknessTop: 0;
+   borderStyle: solid;
+}
+
+.iconButton {
+   paddingLeft: 1;
+   paddingRight: 1;
+   borderThickness: 1;
+   horizontalGap: 1;
+   verticalAlign: middle;
+}

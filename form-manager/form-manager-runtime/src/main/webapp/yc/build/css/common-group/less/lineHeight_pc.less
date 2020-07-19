@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+//定义
+@explain: 0;//起始数值
+@explainUnit: pc;//单位标注：cm、em、ex、in、mm、pc、pct、pt、px
+@start: unit(@explain,replace(@explainUnit,'pct','%'));//单位应用：cm、em、ex、in、mm、pc、%、pt、px
+@name1: base_lh;
+@parmName1: line-height;
+
+.init1(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name1}-@{j}@{explainUnit} { @{parmName1}:(0 + @i); }
+	& when (@i < 100) {
+		.init1(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init1(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init1(@n, (@i + 50), (@j + 50));
+	}
+}
+.init_imp1(@n, @i:@start, @j:@explain) when (@i <= @n) {
+	.@{name1}-imp-@{j}@{explainUnit} { @{parmName1}:(0 + @i) !important; }
+	& when (@i < 100) {
+		.init_imp1(@n, (@i + 1), (@j + 1));
+	}
+	& when (@i >= 100) and (@i < 500) {
+		.init_imp1(@n, (@i + 5), (@j + 5));
+	}
+	& when (@i >= 500) {
+		.init_imp1(@n, (@i + 50), (@j + 50));
+	}
+}
+
+//执行
+.init1(1000);
+.init_imp1(1000);

@@ -1,0 +1,30 @@
+@charset "utf-8";
+* { font-family:"微软雅黑"; font-size:14px; }
+a { text-decoration:none !important; }
+
+/** <IE9版本样式支持 **/
+.w767 {}
+.w768 {}
+.w992 {}
+.w1200 {}
+
+/** <=767 **/
+@media only screen and (max-width: 767px) {
+	
+}
+/** >=768 **/
+@media only screen and (min-width: 768px) {
+	
+}
+/** >=992 **/
+@media only screen and (min-width: 992px) {
+	
+}
+/** >=1200 **/
+@media only screen and (min-width: 1200px) {
+	
+}
+/** 打印时的样式 **/
+@media print {
+	
+}

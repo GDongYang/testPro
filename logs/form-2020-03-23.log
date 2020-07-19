@@ -1,0 +1,122 @@
+[form] 2020-03-23 20:42:38.474 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 21372 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-03-23 20:42:38.475 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-03-23 20:42:40.959 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-03-23 20:42:40.968 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-03-23 20:42:40.968 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-03-23 20:42:40.977 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-03-23 20:42:40.978 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-03-23 20:42:40.978 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-03-23 20:42:40.978 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-03-23 20:42:42.037 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-03-23 20:42:42.190 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-03-23 20:42:42.316 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-03-23 20:42:42.373 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-03-23 20:42:45.217 [WARN ] [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext -  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultMvcConfig': Unsatisfied dependency expressed through field 'securityInterceptor'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.fline.form.interceptor.SecurityInterceptor': Unsatisfied dependency expressed through field 'dataCacheService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataCacheServiceImpl': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+[form] 2020-03-23 20:42:45.221 [INFO ] [main] org.apache.catalina.core.StandardService -  - Stopping service [Tomcat]
+[form] 2020-03-23 20:42:45.250 [ERROR] [main] org.springframework.boot.SpringApplication -  - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultMvcConfig': Unsatisfied dependency expressed through field 'securityInterceptor'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.fline.form.interceptor.SecurityInterceptor': Unsatisfied dependency expressed through field 'dataCacheService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataCacheServiceImpl': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:743)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:390)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at com.fline.form.FormApplication.main(FormApplication.java:14)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.fline.form.interceptor.SecurityInterceptor': Unsatisfied dependency expressed through field 'dataCacheService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataCacheServiceImpl': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataCacheServiceImpl': Unsatisfied dependency expressed through field 'redisMgmtService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 32 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisMgmtService' defined in class path resource [applicationContext-aic-redis.xml]: Cannot resolve reference to bean 'jedisCluster' while setting bean property 'jedisCluster'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:314)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisCluster' defined in class path resource [applicationContext-aic-redis.xml]: Invocation of init method failed; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:303)
+	... 58 common frames omitted
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:207)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:126)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:117)
+	at redis.clients.jedis.BinaryClient.auth(BinaryClient.java:564)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2138)
+	at redis.clients.jedis.JedisClusterConnectionHandler.initializeSlotsCache(JedisClusterConnectionHandler.java:36)
+	at redis.clients.jedis.JedisClusterConnectionHandler.<init>(JedisClusterConnectionHandler.java:17)
+	at redis.clients.jedis.JedisSlotBasedConnectionHandler.<init>(JedisSlotBasedConnectionHandler.java:24)
+	at redis.clients.jedis.BinaryJedisCluster.<init>(BinaryJedisCluster.java:54)
+	at redis.clients.jedis.JedisCluster.<init>(JedisCluster.java:93)
+	at com.fline.aic.redis.factory.JedisClusterFactory.afterPropertiesSet(JedisClusterFactory.java:79)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
+	... 65 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	... 78 common frames omitted

@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="CertTemp">
+   <typeAlias alias="certTemp" type="com.fline.form.access.model.CertTemp" />
+   <resultMap id="certTempResult" class="certTemp">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="version" column="VERSION" javaType="long" jdbcType="NUMBER" />
+      <!-- <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" /> -->
+      <!-- CertTemp -->
+      <result property="catalogCode" column="catalogCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="catalogDeptId" column="catalogDeptId" javaType="Integer" jdbcType="NUMBER" />
+      <result property="departmentId" column="departmentId" javaType="Integer" jdbcType="NUMBER" />
+      <result property="type" column="TYPE" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+      <result property="dataCode" column="dataCode" javaType="string" jdbcType="VARCHAR" />
+      <result property="createTime" column="createTime" javaType="date" jdbcType="timestamp"  />
+   	  <result property="feedback" column="feedback" javaType="int" jdbcType="NUMERIC" nullValue="2" />
+   	  <result property="deptCode" column="deptCode" javaType="string" jdbcType="VARCHAR" />
+   	  <result property="dataSource" column="dataSource" javaType="string" jdbcType="VARCHAR" />
+   	  <result property="dataType" column="dataType" javaType="Integer" jdbcType="NUMBER" nullValue="0" />
+      <result property="active" column="active" javaType="int" jdbcType="int" />
+
+      
+      <result property="cerNoParam" column="cerNoParam" javaType="string" jdbcType="VARCHAR" />
+      <result property="cerNameParam" column="cerNameParam" javaType="string" jdbcType="VARCHAR" />
+      <result property="resultHandler" column="resultHandler" javaType="string" jdbcType="VARCHAR" /> 
+	  <result property="requestHandler" column="requestHandler" javaType="string" jdbcType="VARCHAR"/>
+      <result property="keywords" column="keywords" javaType="string" jdbcType="VARCHAR" />
+      <result property="otherParams" column="otherParams" javaType="string" jdbcType="VARCHAR"/>
+
+   </resultMap>
+   
+   <resultMap id="certTempResult1" class="certTemp" extends="certTempResult">
+       <result property="deptName" column="deptName" javaType="string" jdbcType="VARCHAR" />
+       <result property="catalogDeptName" column="catalogDeptName" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+	<sql id="insert_history">
+		INSERT INTO c_cert_temp_history (`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,certId,createTime,keywords,cerNoParam,cerNameParam,resultHandler,requestHandler,catalogDeptId)
+		(SELECT `code`,`name` ,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,id,createTime,keywords,cerNoParam,cerNameParam,resultHandler,requestHandler,catalogDeptId FROM c_cert_temp WHERE ID = #id#);
+	</sql>
+    <!--移除SERIAL字段，数据库表不存在此字段 2019.4.17-->
+   <insert id="create" parameterClass="certTemp">
+      <![CDATA[
+         INSERT INTO C_CERT_TEMP (
+            CODE, NAME,catalogCode,departmentId,VERSION,TYPE,dataCode,dataSource,createTime,deptCode,active,content,image,keywords,cerNoParam,cerNameParam,resultHandler,dataType,otherParams,requestHandler,catalogDeptId
+         ) VALUES (
+            CONCAT(CONCAT('yc_',(SELECT IFNULL((CONCAT(memo,'_')),'') from c_department where id = #departmentId#),'cer_'),lpad(nextval('SEQ_C_CERT_TEMP_CODE'),3,'0')),
+             #name#,#catalogCode#,#departmentId#,#version#,#type#,
+             #dataCode#,#dataSource#,
+             now(),#deptCode#,#active#,#content#,#image#,#keywords#,#cerNoParam#,#cerNameParam#,#resultHandler#,1,#otherParams#,#requestHandler#,#catalogDeptId#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   <!-- 生成新版本的certTemp时使用 -->
+   <insert id="createHighVersion" parameterClass="certTemp">
+   		INSERT INTO c_cert_temp (
+	   		`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,createTime,keywords,cerNoParam,cerNameParam,resultHandler,requestHandler,catalogDeptId
+			<![CDATA[
+	   			)VALUES(
+	   		]]>
+   			#code#,#name#,#catalogCode#,#version#,#departmentId#,#type#,#dataCode#,#feedback#,#deptCode#,#dataSource#,#dataType#,#active#,#createTime#,#keywords#,#cerNoParam#,#cerNameParam#,#resultHandler#,#requestHandler#,#catalogDeptId#
+   		)
+   		<selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+		</selectKey>
+   </insert>
+
+   <update id="update" parameterClass="certTemp">
+    <!-- <include refid="insert_history"/> -->
+    <!-- 移除了 creteTime = #createTime# -->
+    <!-- VERSION=VERSION+1, -->
+      <![CDATA[
+         UPDATE C_CERT_TEMP SET
+            NAME=#name#,
+            CODE=#code#,
+            catalogDeptId = #catalogDeptId#,
+            departmentId=#departmentId#,
+            TYPE = #type#,
+            dataCode = #dataCode#,
+            keywords = #keywords#,
+            dataSource = #dataSource#,
+            cerNoParam = #cerNoParam#,
+            cerNameParam = #cerNameParam#,
+            otherParams = #otherParams#,
+            requestHandler = #requestHandler#,
+            resultHandler = #resultHandler#
+      ]]>
+      <isNotNull property="image">,image=#image#</isNotNull>
+      <![CDATA[            
+         WHERE
+         	ID=#id#
+      ]]>
+   </update>
+
+    <update id="updateActive" parameterClass="java.util.HashMap">
+         UPDATE C_CERT_TEMP SET
+         	active = 1
+         WHERE
+         	ID=#id#
+   </update>
+   <delete id="remove" parameterClass="certTemp">
+   	  <!-- <include refid="insert_history"/> -->
+      <![CDATA[
+         DELETE FROM C_CERT_TEMP WHERE ID=#id#
+      ]]>
+   </delete>
+   
+   <!-- 原为select * 改为 查询除image, content的字段 -->
+   <select id="findById" parameterClass="java.lang.Long" resultMap="certTempResult">
+      <![CDATA[
+         SELECT
+            id,
+			code,
+			name,
+			catalogCode,
+			version,
+			catalogDeptId,
+			departmentId,
+			type,
+			dataCode,
+			feedback,
+			deptCode,
+			dataSource,
+			dataType,
+			active,
+			createTime,
+			content,
+			image,
+			updateTime,
+			htmlContent,
+			keywords,
+			cerNoParam,
+			cerNameParam,
+			requestHandler,
+			resultHandler,
+			otherParams
+          FROM C_CERT_TEMP WHERE ID=#id#
+      ]]>
+   </select>
+	
+   <!-- 原为select * 改为 查询除image, content的字段 -->
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="certTempResult1">
+      <![CDATA[
+      SELECT CT.*,(select name from C_DEPARTMENT d where d.id = CT.catalogDeptId) AS cataLogDeptName,(select name from C_DEPARTMENT d where d.id = CT.departmentId) AS deptName FROM
+      (SELECT id,`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,createTime,keywords,requestHandler,catalogDeptId FROM C_CERT_TEMP WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>) 
+      
+   </select>
+   
+   <select id="findAll" resultMap="certTempResult">
+      <![CDATA[ SELECT id,`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,createTime,keywords,cerNoParam,cerNameParam,resultHandler,otherParams,catalogDeptId,requestHandler from c_cert_temp
+      where active = 1
+      order by id desc]]>
+   </select>
+
+    <select id="findAllVo" resultClass="com.fline.form.vo.CertTempVo">
+        <![CDATA[ SELECT * FROM C_CERT_TEMP WHERE active != 2]]>
+    </select>
+   
+   <!-- 原为C.* 现改为查询除了 image 字段和 content字段 -->
+   <select id="findByInnerCode" resultMap="certTempResult">
+	   <![CDATA[
+		SELECT C.id,C.`code`,C.`name`,C.catalogCode,C.version,C.departmentId,C.type,C.dataCode,C.feedback,C.deptCode,C.dataSource,C.dataType,C.active,C.createTime,C.otherParams,C.resultHandler,C.cerNoParam,C.cerNameParam,C.requestHandler,C.catalogDeptId
+		R.isMust,C.keywords FROM C_CERT_TEMP C,R_ITEM_TEMP R,C_ITEM I
+		where R.tempId = C.ID
+		and I.ID = R.itemId
+		and I.innerCode=#innerCode# and c.active = 1]]>
+   </select>
+   
+   <!-- 原为select * 现改为查询除了 image 字段和 content字段 -->
+    <select id="findCropCertTempList" resultMap="certTempResult" parameterClass="java.util.Map">
+	   <![CDATA[
+		select id,`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,createTime,keywords,cerNoParam,cerNameParam,resultHandler,otherParams,requestHandler,catalogDeptId from C_CERT_TEMP where TYPE=2
+		]]>
+   </select>
+   
+   <update id="updateContent" parameterClass="java.util.Map">
+         UPDATE C_CERT_TEMP 
+         <dynamic prepend="SET">
+         </dynamic>
+         WHERE ID=#id#
+   </update>
+   
+   <select id="loadCertContent" resultMap="certTempResult">
+	   <![CDATA[
+			SELECT
+			id,
+			code,
+			name,
+			catalogCode,
+			version,
+			catalogDeptId,
+			departmentId,
+			type,
+			dataCode,
+			feedback,
+			deptCode,
+			dataSource,
+			dataType,
+			active,
+			createTime,
+			content,
+			image,
+			updateTime,
+			htmlContent,
+			keywords,
+			cerNoParam,
+			cerNameParam,
+			requestHandler,
+			resultHandler,
+			otherParams
+			 FROM c_cert_temp WHERE id=#id#
+	   ]]>
+   </select>
+
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> CT."ID"==#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="code"> CODE=#code#</isNotNull>
+         <isNotNull prepend="AND" property="codes"> CODE IN
+         	<iterate property="codes" open="(" conjunction="," close=")">
+         		#codes[]#
+         	</iterate>
+         </isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> (upper(`NAME`) like upper('%$nameLike$%') or upper(code) like upper('%$nameLike$%')) </isNotNull>
+         <isNotNull prepend="AND" property="name"> "NAME"=#name# </isNotNull>
+         <isNotNull prepend="AND" property="catalogCode"> catalogCode=#catalogCode# </isNotNull>
+         <isNotNull prepend="AND" property="type"> `type` =#type#</isNotNull>
+         <isNotNull prepend="AND" property="departmentId">
+          	departmentId in (
+          		select id from C_DEPARTMENT where uniquecoding like 
+          		CONCAT('%',(select uniquecoding from C_DEPARTMENT where id = #departmentId#),'%')
+          	)
+		 </isNotNull>
+      	 <isNotNull prepend="AND" property="deptIds">
+         	catalogDeptId IN
+         	<iterate property="deptIds" open="(" conjunction="," close=")">
+         		#deptIds[]#
+         	</iterate>
+         </isNotNull>
+         <isNotEmpty property="findByActive">
+          	<isNotNull prepend="AND" property="active"> active=#active#</isNotNull>
+         </isNotEmpty>
+         <isNotNull prepend="AND" property="dataFrom"> dataFrom=#dataFrom# </isNotNull>
+         <isNotEmpty prepend="AND" property="deptIdLike">
+              catalogDeptId IN (
+              select id from C_DEPARTMENT
+              where code like CONCAT((SELECT code from c_department where id = #deptIdLike#) ,'%')
+              )
+         </isNotEmpty>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_CERT_TEMP CT 
+      <include refid="sql_where" />
+   </sql>
+	
+	<!-- 原为 select * 现在查询非 content 和 image 字段的数据 -->
+   <select id="find" resultMap="certTempResult1">
+		SELECT CT.id,CT.`code`,CT.`name`,CT.catalogCode,CT.version,CT.departmentId,CT.catalogDeptId,CT.type,CT.dataCode,CT.feedback,CT.deptCode,CT.dataSource,CT.dataType,CT.active,CT.createTime,CT.cerNoParam,CT.cerNameParam,CT.requestHandler,CT.resultHandler,
+		CT.keywords,CT.otherParams,(select name from C_DEPARTMENT d where d.id = CT.catalogDeptId) AS cataLogDeptName,(select name from C_DEPARTMENT d where d.id = CT.departmentId) AS deptName
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(*) ]]>
+      <include refid="sql_from" />
+   </select>
+    
+    
+    <!-- 更新版本或删除时将数据插入到cert_history表中 -->
+   <insert id="insertHistory" parameterClass="certTemp">
+   		<!-- <include refid="insert_history"/> -->
+   		INSERT INTO c_cert_temp_history (`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,certId,createTime,content,image,htmlContent,cerNoParam,cerNameParam,resultHandler,otherParams,appContent,onlineContent,offlineContent,packageId,interfaceId,postType,payType)
+		VALUES(#code#,#name#,#catalogCode#,#version#,#departmentId#,#type#,#dataCode#,#feedback#,#deptCode#,#dataSource#,#dataType#,#active#,#id#,now(),#content#,#image#,#htmlContent#,#cerNoParam#,#cerNameParam#,#resultHandler#,#otherParams#,#appContent#,#onlineContent#,#offlineContent#,#packageId#,#interfaceId#,#postType#,#payType#);
+   </insert>
+   
+   <!-- 查找与当前模板关联的印章 -->
+   <!-- <select id="findRSeal" parameterClass="java.util.Map" resultClass="java.lang.String">
+   		SELECT sealId from R_CERT_SEAL where certId = #certId#
+   </select> -->
+   
+   <!-- 原为 select * 现在查询非 content 和 image 字段的数据 -->
+   <select id="findRelateVersion" resultMap="certTempResult1" parameterClass="java.util.Map">
+   		SELECT CT.id,CT.`code`,CT.`name`,CT.catalogCode,CT.version,CT.departmentId,CT.type,CT.dataCode,CT.feedback,CT.deptCode,CT.dataSource,CT.dataType,CT.active,CT.createTime,CT.keywords,CT.cerNoParam,CT.cerNameParam,CT.resultHandler,CT.otherParams,CT.catalogDeptId,CT.requestHandler,
+        (select name from C_DEPARTMENT d where d.id = CT.catalogDeptId) AS cataLogDeptName,(select name from C_DEPARTMENT d where d.id = CT.departmentId) AS deptName
+        from c_cert_temp CT 
+   		<dynamic prepend="WHERE">
+   			<isNotNull property="code" prepend="AND"> CT.code = #code# </isNotNull>
+   			<isEqual property="active" compareValue="1" prepend="AND">
+   			<![CDATA[ 
+   				CT.version > #version#
+   			]]>
+   			</isEqual>
+   			<isNotEqual property="active" compareValue="1" prepend="AND">
+   			<![CDATA[ 
+   				CT.version < #version#
+   			]]>
+   			</isNotEqual>
+   		</dynamic>
+   </select> 
+   
+   <select id="findHistoryVersion" resultMap="certTempResult1" parameterClass="java.util.Map">
+   	SELECT CT.id,CT.`code`,CT.`name`,CT.catalogCode,CT.version,CT.departmentId,CT.type,CT.dataCode,CT.feedback,CT.deptCode,CT.dataSource,CT.dataType,CT.active,CT.createTime,CT.keywords,CT.cerNoParam,CT.cerNameParam,CT.resultHandler,CT.otherParams,CT.requestHandler,CT.catalogDeptId,
+   		(select name from C_DEPARTMENT d where d.id = CT.catalogDeptId) AS cataLogDeptName,(select name from C_DEPARTMENT d where d.id = CT.departmentId) AS deptName
+        from c_cert_temp_history CT 
+   		<dynamic prepend="WHERE">
+   			<isNotNull property="code" prepend="AND"> CT.code = #code# </isNotNull>
+   		</dynamic>
+   		order by version;
+   </select>
+   <!-- 生成草稿对应的关联表 -->
+   <insert id="copyToRelations" parameterClass="java.util.Map">
+		INSERT r_cert_resource (tempId,tempCode,resourceCode,resourceType,fieldName,fieldCode,fieldPath) 
+		(SELECT 
+			CASE WHEN tempId = #sourceId# THEN #destId# END as tempId,
+			tempCode,
+			resourceCode,
+			resourceType,
+			fieldName,
+			fieldCode,
+			fieldPath
+			FROM r_cert_resource WHERE tempId = #sourceId#);
+   </insert>
+    
+    <select id="findByCode" parameterClass="java.util.Map" resultMap="certTempResult" >
+        select
+			 id,
+			code,
+			name,
+			catalogCode,
+			version,
+			catalogDeptId,
+			departmentId,
+			type,
+			dataCode,
+			feedback,
+			deptCode,
+			dataSource,
+			dataType,
+			active,
+			createTime,
+			content,
+			image,
+			updateTime,
+			htmlContent,
+			keywords,
+			cerNoParam,
+			cerNameParam,
+			requestHandler,
+			resultHandler,
+			otherParams
+         from C_CERT_TEMP where code = #code#
+    </select>
+    
+    <!-- 模糊关键词关联  首次关联-->
+   	<insert id="createRmaterialTempByKey" parameterClass="java.util.Map">
+		INSERT INTO r_material_temp (materialId, tempId) SELECT id, #id#
+			FROM c_material WHERE NAME LIKE '%$name$%' AND id NOT IN (SELECT materialId from r_material_temp )
+	</insert>
+	
+	<update id="updateRmaterialTempByNewId" parameterClass="java.util.Map" >
+		update r_material_temp set tempId = #newID# 
+			where tempId = #oldID#
+	</update>
+	
+	<!-- 查找所有已经发布的模板 -->
+	<select id="findAllActive"  resultMap="certTempResult1">
+		SELECT CT.*,(select name from C_DEPARTMENT d where d.id = CT.catalogDeptId) AS cataLogDeptName, (select name from C_DEPARTMENT d where d.id = CT.departmentId) AS deptName from c_cert_temp CT where CT.active = 1 order By CT.catalogDeptId
+	</select>
+	
+	<select id="findByMaterial" parameterClass="java.util.Map" resultMap="certTempResult">
+		SELECT c.id,c.`code`,c.`name`,c.catalogCode,c.version,c.departmentId,c.type,c.dataCode,c.feedback,c.deptCode,c.dataSource,c.dataType,c.active,c.createTime,c.cerNoParam,c.cerNameParam,c.resultHandler,c.keywords,c.otherParams,c.catalogDeptId,c.requestHandler from c_cert_temp c join (select tempId from r_material_temp
+		<dynamic prepend="WHERE">
+			<isNotNull property="materialId" prepend="AND"> materialId = #materialId#</isNotNull>
+			<isNotNull property="isMust" prepend="AND"> isMust = #isMust#</isNotNull>
+		</dynamic>
+		) r on c.id = r.tempId
+	</select>
+	
+	<delete id="removeRelationByTempId" parameterClass="java.util.HashMap">
+		delete from r_material_temp where tempId = #tempId#
+	</delete>
+	
+	<select id="findAllByType" resultMap="certTempResult" parameterClass="java.util.Map">
+		 <![CDATA[
+		select id,`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,createTime,keywords,cerNoParam,cerNameParam,resultHandler,otherParams from C_CERT_TEMP where TYPE=5
+		]]>
+	</select>
+	
+	<insert id="createTempList" parameterClass="java.util.HashMap">
+		INSERT INTO c_cert_temp (
+	   		`code`,`name`,catalogCode,version,departmentId,type,dataCode,feedback,deptCode,dataSource,dataType,active,createTime,keywords,cerNoParam,cerNameParam,resultHandler,requestHandler,catalogDeptId	,
+	   		content,htmlContent,image,appContent,onlineContent,offlineContent,packageId,interfaceId,postType ,payType,otherParams
+			<![CDATA[
+	   			)VALUES
+	   		]]>
+	   		<iterate conjunction="," property="deptIds">
+	   			(CONCAT(CONCAT('yc_',(SELECT IFNULL((CONCAT(memo,'_')),'') from c_department where id = #certTemp.departmentId#),'cer_'),lpad(nextval('SEQ_C_CERT_TEMP_CODE'),3,'0')),
+	   			#certTemp.name#,#certTemp.catalogCode#,#certTemp.version#,#certTemp.departmentId#,#certTemp.type#,#certTemp.dataCode#,#certTemp.feedback#,
+	   			(SELECT code from c_department where id = #deptIds[]# ),
+	   			#certTemp.dataSource#,#certTemp.dataType#,#certTemp.active#,#certTemp.createTime#,#certTemp.keywords#,
+	   			#certTemp.cerNoParam#,#certTemp.cerNameParam#,#certTemp.resultHandler#,
+	   			CONCAT(CONCAT((SELECT IFNULL((CONCAT(memo,'_')),'') from c_department where id = #deptIds[]#),'RequestHandlerService')),
+	   			#deptIds[]#,#certTemp.content#,#certTemp.htmlContent#,#certTemp.image#,#certTemp.appContent#,#certTemp.onlineContent#,#certTemp.offlineContent#,
+	   			#certTemp.packageId#,#certTemp.interfaceId#,#certTemp.postType#,#certTemp.payType#,#certTemp.otherParams#)
+	   		</iterate>
+	</insert>
+
+    <select id="findByForm" parameterClass="java.util.HashMap"  resultClass="java.lang.String">
+         select temp_code from r_form_temp where form_code = #formCode#
+	</select>
+</sqlMap>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	    <link rel="stylesheet" href="../plugins/mui/css/mui.min.css">
+	    <link rel="stylesheet" href="../plugins/mui/css/mui.picker.css">
+	    <link rel="stylesheet" href="../plugins/mui/css/mui.poppicker.css">
+	    <link rel="stylesheet" href="../build/css/app.css">
+	    <title>机动车所有人联系方式变更</title>
+	</head>
+	<body>
+		<div class='header'>
+			<div class="step">        	
+                <ul>
+                   <li class="col-xs-4 on">
+                       <span class="num"><em class="f-r5"></em></span>                	
+                       <span class="line_bg lbg-r"></span>
+                       <p class="lbg-txt">用户须知</p>
+                   </li>
+                   <li class="col-xs-4">
+                       <span class="num"><em class="f-r5"></em></span>
+                       <span class="line_bg lbg-l"></span>
+                       <span class="line_bg lbg-r"></span>
+                       <p class="lbg-txt">在线填表</p>
+                   </li>
+                   <li class="col-xs-4">
+                       <span class="num"><em class="f-r5"></em></span>
+                       <span class="line_bg lbg-l"></span>
+                       <span class="line_bg lbg-r"></span>
+                       <p class="lbg-txt">材料申报</p>
+                   </li>
+                   <li class="col-xs-4">
+                       <span class="num"><em class="f-r5"></em></span>
+                       <span class="line_bg lbg-l"></span>
+                       <p class="lbg-txt">确认提交</p>
+                   </li>
+                </ul>
+            </div>
+		</div>
+		<div class='content'>
+			<form class="mui-input-group">
+				<div id='step1'>
+					<div>
+						<p>温馨提示：</p>
+						<p>1、您所修改的联系号码、联系地址是您留存在交管部门档案内的重要信息，请您务必填写正确，以便我们在必要时及时与您取得联系；</p>
+						<p>2、您在系统使用过程中遇到任何问题，都可拨打交管部门咨询电话：12123（工作时间在线）。</p>
+					</div>
+					<div class='bgF1F5F8'>
+						<div class="mui-input-row mui-radio">
+							<label class='f_pl60'>我已阅读或确认授权等操作</label>
+							<input name="radio1" class='itemRadio' type="radio" value='item1'>
+						</div>
+					</div>
+				</div>
+				<div id='step2'>
+					<div class='bgF1F5F8 f_h10'></div>
+					<div class='contentTitle'>机动车所有人联系方式变更登记表</div>
+					<div class='f_p10'>
+						<div class='formTitle'><span></span>车辆信息</div>
+						<div class="mui-input-row">
+					        <label>办理车辆</label>
+					    	<input type='text' id='showUserPicker' class="mui-input-clear" placeholder="请选择办理车辆"/>
+					    </div>
+						<div class="mui-input-row">
+					        <label>号牌种类</label>
+					        <div data-field='HPZL' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>号牌号码</label>
+					        <div data-field='HPHM' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>机动车状态</label>
+					        <div data-field='ZT' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label class='f_wp50'>机动车所有人名称</label>
+					        <div data-field='SYR' class='f_lh40'></div>
+					    </div>
+					    <div class='formTitle'><span></span>变更信息</div>
+						<div class="mui-input-row">
+					        <label>原手机号码</label>
+					        <div data-field='SJHM' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>新手机号码</label>
+					        <input id='sjhmInput' type="text" class="mui-input-clear" placeholder="请输入新手机号码"/>
+					    	<!-- <button class='pull-right ' type='button'>获取验证码</button> -->
+					    </div>
+					    <div id="l-map" style='display:none;'></div>
+					    <div class="mui-input-row">
+					        <label>原联系地址</label>
+					        <div data-field='zsxxdz' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>新联系地址</label>
+					        <input type="text" id='newAddress' class="mui-input-clear" placeholder="请输入新联系地址"/>
+					    </div>
+					</div>
+				</div>
+				<div id='step3'>
+					暂无数据
+				</div>
+				<div id='step4'>
+					<div class='bgF1F5F8 f_h10'></div>
+					<div class='f_p10'>
+						<div class='formTitle'><span></span>变更后信息</div>
+						<div class="mui-input-row">
+					        <label>号牌种类</label>
+					        <div data-field='HPZL' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>号牌号码</label>
+					        <div data-field='HPHM' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>机动车状态</label>
+					        <div data-field='ZT' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label class='f_wp50'>机动车所有人名称</label>
+					        <div data-field='SYR' class='f_lh40'></div>
+					    </div>
+						<div class="mui-input-row">
+					        <label>手机号码</label>
+					        <div id='sjhm' class='f_lh40'></div>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>联系地址</label>
+					        <div id='zsxxdz' class='f_lh40'></div>
+					    </div>
+					</div>
+				</div>
+				<div id='step5'>
+					<div class='f_pt60 f_pb15'>
+						<div class='completeBox'><span class='mui-icon mui-icon-checkmarkempty'></span></div>
+						<div class='f_te20 f_lh40 text-center'>申报完成</div>
+						<div class='text-center f_lh40'>您申报的办件已申报成功！</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class='footer'>
+			<button type='button' id='stepBtn1' class='f_btnBlock stepBtn'>下一步</button>
+			<button type='button' id='stepBtn2' class='f_btnBlock stepBtn'>下一步</button>
+			<button type='button' id='stepBtn3' class='f_btnBlock stepBtn'>下一步</button>
+			<button type='button' id='stepBtn4' class='f_btnBlock stepBtn'>确&nbsp;&nbsp;认</button>
+		</div>
+        <script src='../jquery/3.2.1/jquery-3.2.1.min.js'></script>
+        <script src='../plugins/mui/js/mui.min.js'></script>
+        <script src='../plugins/mui/js/mui.picker.js'></script>
+        <script src='../plugins/mui/js/mui.poppicker.js'></script>
+        <script type="text/javascript" src="../js/jquery-form.js"></script>
+        <!--引入表单提交js-->
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KyKYGhKT1DYisflH6Lk8OeGxEUYrFKRS"></script>
+        <script type="text/javascript">
+        	mui.init();
+        	$(function(){
+        		var windowHeight=window.innerHeight;
+		    	$(".content").css("height",windowHeight-130);
+		    	$('#stepBtn1').siblings().hide();
+		    	$('#step1').siblings().hide();
+		    	getInfo();
+        	})
+        	$('.stepBtn').each(function(i){
+        		$(this).click(function(){
+        			if(i==1){
+        				var material=getMaterial();
+        				if(material){
+        					next($(this));
+        				}else{
+        					next($(this));
+        					mui.toast('无需提交材料，为您直接办理！'); 
+        					$('#stepBtn3').click();
+        				}
+        			}else if(i==0){
+        				var res=getRadioRes('itemRadio')
+                		if(res!=null){
+                			next($(this));
+                		}else{
+                			mui.toast('请阅读须知！'); 
+                		}
+        			}else if(i==2){
+        				next($(this));
+        				if($('#sjhmInput').val()!=''){
+        					$('#sjhm').text($('#sjhmInput').val());
+        				}else{
+        					$('#sjhm').text($('div[data-field="SJHM"]').text());
+        				}
+        				if($('#newAddress').val()!=''){
+        					$('#zsxxdz').text($('#newAddress').val());
+        				}else{
+        					$('#zsxxdz').text($('div[data-field="zsxxdz"]').text());
+        				}
+        			}else{
+        				$('.footer').hide();
+        				next($(this));
+        			}
+            	});
+        	})
+        	$('#sjhmInput').blur(function(){
+        		checkPhone($(this).val(),$(this));
+        	});
+        	function getInfo(){
+        		var url='tempInfoAction!getCertData.action?itemCode=111&sfId=331004199308022518&sfName=梁益&certCode=zjs_cer_006';
+        		$.ajax({
+					url:url,
+					type:"get",
+					dataType:"json",
+					error:function(request,textStatus, errorThrown){
+					},
+					success:function(data){
+						if(data.returnCode==0){
+							var datas=data.data;
+							var selectArry=[];
+							if(datas.length>0){
+								for(var i=0;i<datas.length;i++){
+									var selectObj={};
+									selectObj['value']=datas[i].HPHM;
+									selectObj['text']=datas[i].HPZL+datas[i].HPHM;
+									selectArry.push(selectObj);
+									for(var item in datas[0]){
+										$('div[data-field="'+item+'"]').text(datas[0][item]);
+									}
+								}
+								getAddress(datas[0].HPZLCODE,datas[0].HPHM);
+								var userPicker = new mui.PopPicker();
+								userPicker.setData(selectArry);
+								$('#showUserPicker').val(selectArry[0].text);
+								$('#showUserPicker').click(function(event) {
+									userPicker.show(function(items) {
+										$('#showUserPicker').val(items[0].text);
+										for(var i=0;i<datas.length;i++){
+											for(var item in datas[i]){
+												if(datas[i].HPHM==items[0].text){
+													$('div[data-field="'+item+'"]').text(datas[i][item]);
+												}
+											}
+										}
+									});
+								});
+							}
+						}else{
+							mui.toast(data.returnMessage); 
+						}
+					}
+				});
+        	}
+        	function getAddress(HPZL,HPHM){
+        		var url='tempInfoAction!checkXsz.action?sfId=331004199308022518&sfName=梁益&certCode=zjs_cer_006&hpzl='+HPZL+'&hphm=' + encodeURI(encodeURI("浙"))+HPHM;
+        		$.ajax({
+					url:url,
+					type:"get",
+					dataType:"json",
+					error:function(request,textStatus, errorThrown){
+					},
+					success:function(data){
+						if(data.returnCode==0){
+							var datas=data.data;
+							$('div[data-field="zsxxdz"]').text(datas[0].zsxxdz).attr('title',datas[0].zsxxdz);
+						}else{
+							mui.toast(data.returnMessage); 
+						}
+					}
+				});
+        	}
+        	function checkPhone(phone,obj){ 
+        	    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+        	        mui.toast('手机号码有误，请重填！'); 
+        	        $(obj).val('');
+        	    } 
+        	}
+        	function next(obj){
+        		$(obj).hide();
+    			$(obj).siblings().hide();
+    			$(obj).next().show();
+    			var idStr=$(obj).attr('id');
+    			var idNum=Number(idStr.substring(idStr.length-1));
+    			$('#step'+idNum).hide();
+    			$('#step'+idNum).siblings().hide();
+    			$('#step'+idNum).next().show();
+    			$(".step li").eq(idNum).addClass("on");
+        	}
+        	function getMaterial(){
+        		return false;
+        	}
+        	function getRadioRes(className) {
+        		var rdsObj = document.getElementsByClassName(className);
+        		var chackVal = null;
+        		for(i = 0; i < rdsObj.length; i++) {
+        			if (rdsObj[i].checked) {
+        				chackVal = rdsObj[i].value;
+        			}
+        		}
+        		return chackVal;
+        	}
+            (function() {
+                // 百度地图API功能
+                function G(id) {
+                    return document.getElementById(id);
+                }
+                var map = new BMap.Map("l-map");
+                var lng = G('lng');
+                var lat = G('lat');
+                var searchBtn = G('search-btn');
+                var myValue;
+                var fromValue;
+                var toValue;
+                var local = null;
+                var from = null;
+                var to = null;
+                var geolocation = new BMap.Geolocation();
+                //获取当前位置
+                geolocation.getCurrentPosition(function(r) {
+                    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                        mk = new BMap.Marker(r.point);
+                        mk.addEventListener("dragend", showInfo);
+                        mk.enableDragging(); //可拖拽
+                        getAddress(r.point);
+                        map.addOverlay(mk); //把点添加到地图上  
+                        map.panTo(r.point);
+                    } else {
+                        alert('failed' + this.getStatus());
+                    }
+                });
+                //获取地址信息，设置地址label
+                function getAddress(point) {
+                    var gc = new BMap.Geocoder();
+                    gc.getLocation(point, function(rs) {
+                        var addComp = rs.addressComponents;
+                        var address = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber; //获取地址
+                        //画图 ---》显示地址信息
+                        var label = new BMap.Label(address, {
+                            offset: new BMap.Size(20, -10)
+                        });
+                        map.removeOverlay(mk.getLabel()); //删除之前的label 
+                        mk.setLabel(label);
+                    });
+                }
+                to = new BMap.Autocomplete({
+                    "input": "newAddress",
+                    "location": map
+                });
+                geolocation.getCurrentPosition(function(r) {
+                    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                        point = new BMap.Point(r.point.lng, +r.point.lat);
+                        map.centerAndZoom(point, 15);
+                    }
+                })
+                function myFun() {
+                    var pp = local.getResults().getPoi(0).point; //获取第一个智能搜索的结果
+                    map.centerAndZoom(pp, 18);
+                    map.addOverlay(new BMap.Marker(pp)); //添加标注
+                }
+
+                function setPlace(value) {
+                	console.log(value)
+                    map.clearOverlays(); //清除地图上所有覆盖物
+                    local = new BMap.LocalSearch(map, { //智能搜索
+                        onSearchComplete: myFun
+                    });
+                    local.search(value);
+                }
+                function showInfo(e) {
+                    lng.value = e.point.lng;
+                    lat.value = e.point.lat;
+                }
+                to.addEventListener("onconfirm", function(e) { //鼠标点击下拉列表后的事件
+                    var _value = e.item.value;
+                    myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+                    getPostcode(_value.province, _value.city, myValue, 2);
+                });
+                map.addEventListener("click", showInfo); //搜索事件
+                function getPostcode(_province, city, areaname, type) {
+                    var url = 'http://api.k780.com/?app=life.postcode&areaname=' + _province + city + areaname + '&appkey=43059&sign=50c6d74aaefca5f6a37f8c3e38f6f528&format=json&jsoncallback=data'
+                    $.ajax({
+                        type: 'get',
+                        async: false,
+                        url: url,
+                        dataType: 'jsonp',
+                        jsonp: 'callback',
+                        jsonpCallback: 'data',
+                        success: function(data) {
+                            if (data.success != '1') {
+                                alert(data.msgid + ' ' + data.msg);
+                                exit;
+                            }
+                            //遍历
+                            var description = "";
+                            var result = data.result.lists[0];
+                            postCode = result.postcode;
+                            province = result.areanm.split(',')[1];
+                            var tvalue = "";
+                            if (_province == "" && city != province) {
+                                tvalue = province + areaname;
+                            }else if(city == province){
+                                tvalue = areaname;
+                            }
+                            if (type == 1) {
+                            	$("#oldAddress").val(tvalue);
+                                newProvince = province;
+                            } else {
+                                $("#newAddress").val(tvalue);
+                                newProvince1 = province;
+                            }
+                        },
+                        error: function() {
+                            alert('fail');
+                        }
+                    });
+                }
+            })()
+        </script>
+	</body>
+</html>

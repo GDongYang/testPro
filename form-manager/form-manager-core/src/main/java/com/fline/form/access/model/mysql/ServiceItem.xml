@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ServiceItem">
+   <typeAlias alias="serviceItem" type="com.fline.form.access.model.ServiceItem" />
+   <resultMap id="serviceItemResult" class="serviceItem">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <!-- ServiceItem -->
+      <result property="departmentName" column="DEPTNAME" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   
+   <resultMap id="serviceItemResultTable" class="serviceItem">
+      <!-- NamespaceModel -->
+      <result property="id" column="ID" javaType="long" jdbcType="NUMERIC" nullValue="0" />
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="code" column="CODE" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <!-- ServiceItem -->
+      <result property="departmentName" column="departmentName" javaType="string" jdbcType="VARCHAR" />
+      <!-- <result property="positionId" column="position_id" javaType="string" jdbcType="NUMBER" />
+      <result property="positionName" column="positionName" javaType="string" jdbcType="VARCHAR" /> -->
+   </resultMap>
+   
+   <resultMap id="serviceItemPageResult" class="serviceItem">
+      <!-- NamespaceModel -->
+	  <result property="name" column="NAME" javaType="string" jdbcType="VARCHAR"/>
+      <result property="memo" column="MEMO" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+
+   <insert id="create" parameterClass="serviceItem">
+      <![CDATA[
+         INSERT INTO C_SERVICE_ITEM (
+            ID, CODE, NAME, MEMO, DEPTNAME
+         ) 
+         values (#id#,#code#, #name#, #memo#,  #departmentName#)
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="serviceItem">
+      <![CDATA[
+         UPDATE C_SERVICE_ITEM SET
+            NAME=#name#,
+            MEMO=#memo#
+         WHERE
+         	ID=#id# 
+      ]]>
+   </update>
+   <delete id="remove" parameterClass="serviceItem">
+      <![CDATA[
+         DELETE FROM C_SERVICE_ITEM WHERE ID=#id#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="serviceItemResult">
+      <![CDATA[
+         SELECT
+          id,
+            NAME,
+            CODE,
+            MEMO,
+            DEPTNAME
+          FROM C_SERVICE_ITEM WHERE ID=#id#
+      ]]>
+   </select>
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="serviceItemResult">
+      <![CDATA[
+         SELECT
+          id,
+        NAME,
+        CODE,
+        MEMO,
+        DEPTNAME
+          FROM C_SERVICE_ITEM WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   
+   <select id="findAll" resultMap="serviceItemResult">
+      <![CDATA[ SELECT * FROM C_SERVICE_ITEM ]]>
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+   </select>
+	
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> ID=#id#</isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(NAME) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="name"> NAME=#name# </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_tablewhere">
+      <dynamic prepend="HAVING">
+         <isNotEmpty prepend="AND" property="name"> 
+            upper(NAME) like upper('%$name$%') 
+         </isNotEmpty>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_SERVICE_ITEM
+      <include refid="sql_where" />
+   </sql>
+	<select id="findTable" resultMap="serviceItemPageResult">
+		<![CDATA[ select NAME, MEMO from C_SERVICE_ITEM where 1=1 ]]>
+		<isNotNull prepend="AND" property="departmentName"> DEPTNAME=#departmentName# </isNotNull>
+		<![CDATA[
+		GROUP BY NAME, MEMO ]]>
+		<include refid="sql_tablewhere" />
+		<![CDATA[ order by MEMO ASC ]]>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+		
+	</select>
+	
+   <select id="findRTemp" resultClass="java.lang.String" parameterClass="java.util.Map">
+      <![CDATA[ select TEMP_ID from R_SERVICEITEM_TEMP where ITEM_MEMO=#memo# ]]>
+   </select>
+	<insert id="deleteServiceItemTemp" parameterClass="java.util.Map">
+      <![CDATA[
+      	DELETE FROM R_SERVICEITEM_TEMP 
+         WHERE
+         	ITEM_MEMO=#memo# 
+      ]]>
+    </insert>
+    
+   <!-- <sql id="temp_sequence">
+   	SELECT SEQ_R_SERVICEITEM_TEMP.nextval FROM dual
+   </sql> -->
+    
+   <insert id="createServiceItemTemp" parameterClass="java.util.Map">
+   	  <!-- <selectKey keyProperty="id" resultClass="long">
+         <include refid="temp_sequence" />
+      </selectKey> -->
+      <![CDATA[
+         INSERT INTO R_SERVICEITEM_TEMP (
+            ITEM_MEMO,TEMP_ID
+         ) VALUES (
+            #memo#, #tempId#
+         )
+      ]]>
+   </insert>
+	<select id="findTable_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[
+		select COUNT(1) from (select NAME, MEMO from C_SERVICE_ITEM
+		where 1=1 ]]>
+		<isNotNull prepend="AND" property="departmentName"> DEPTNAME=#departmentName# </isNotNull>
+		<![CDATA[
+		 GROUP BY NAME, MEMO
+	  ]]>
+		<include refid="sql_tablewhere" />
+	   <![CDATA[
+		)t 
+	  ]]>
+   </select>
+   
+   <select id="findPositionName" parameterClass="java.util.Map" resultClass="String">
+      <![CDATA[
+	   select CP."NAME" from R_POSITION_ITEM rpi left join C_POSITION cp on RPI.positionId=CP."ID"
+		where RPI.itemId=#ITEM_ID#
+	]]>
+	<include refid="sql_tablewhere" />
+   </select>
+   
+   <select id="find" resultMap="serviceItemResult">
+		<![CDATA[ SELECT
+             id,
+            NAME,
+            CODE,
+            MEMO,
+            DEPTNAME
+          ]]>
+		<include refid="sql_from" />
+		<isNotNull property="_orderBy"><![CDATA[ ORDER BY $_orderBy$ ]]></isNotNull>
+		<isGreaterThan property="_maxResult" compareValue="0">
+			<![CDATA[ limit #_skipResult#, #_pageSize#]]>
+		</isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+   
+   <select id="findServiceItemCount" parameterClass="java.util.Map" resultMap="serviceItemResult">
+   	SELECT
+   	C.id,
+    C.NAME,
+    C.CODE,
+    C.MEMO,
+    C.DEPTNAME
+	FROM C_SERVICE_ITEM C,
+	R_POSITION_ITEM PI
+	WHERE C.ID = PI.itemId AND
+		PI.positionId = #positionId#
+		AND PI.itemId = (
+		SELECT
+			CI."ID"
+		FROM
+			C_SERVICE_ITEM CI
+		WHERE
+			CI.CODE = #serviceItemCode#
+		)
+   </select>
+   
+   
+    <insert id="createNanWeiServiceItem" parameterClass="serviceItem">
+      <![CDATA[
+         INSERT INTO C_SERVICE_ITEM (
+             CODE, NAME, MEMO
+         ) VALUES (#code#, #name#, #memo#)
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+   
+   <select id="findByCode" resultMap="serviceItemResult">
+   	 <![CDATA[ SELECT
+              id,
+            NAME,
+            CODE,
+            MEMO,
+            DEPTNAME
+      FROM C_SERVICE_ITEM WHERE CODE = #code#  ]]>
+   </select>
+
+</sqlMap>

@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+.base_fs-0in,.base_fs-0in * { font-size:0in; }
+.base_fs-1in,.base_fs-1in * { font-size:1in; }
+.base_fs-2in,.base_fs-2in * { font-size:2in; }
+.base_fs-3in,.base_fs-3in * { font-size:3in; }
+.base_fs-4in,.base_fs-4in * { font-size:4in; }
+.base_fs-5in,.base_fs-5in * { font-size:5in; }
+.base_fs-6in,.base_fs-6in * { font-size:6in; }
+.base_fs-7in,.base_fs-7in * { font-size:7in; }
+.base_fs-8in,.base_fs-8in * { font-size:8in; }
+.base_fs-9in,.base_fs-9in * { font-size:9in; }
+.base_fs-10in,.base_fs-10in * { font-size:10in; }
+.base_fs-11in,.base_fs-11in * { font-size:11in; }
+.base_fs-12in,.base_fs-12in * { font-size:12in; }
+.base_fs-13in,.base_fs-13in * { font-size:13in; }
+.base_fs-14in,.base_fs-14in * { font-size:14in; }
+.base_fs-15in,.base_fs-15in * { font-size:15in; }
+.base_fs-16in,.base_fs-16in * { font-size:16in; }
+.base_fs-17in,.base_fs-17in * { font-size:17in; }
+.base_fs-18in,.base_fs-18in * { font-size:18in; }
+.base_fs-19in,.base_fs-19in * { font-size:19in; }
+.base_fs-20in,.base_fs-20in * { font-size:20in; }
+.base_fs-21in,.base_fs-21in * { font-size:21in; }
+.base_fs-22in,.base_fs-22in * { font-size:22in; }
+.base_fs-23in,.base_fs-23in * { font-size:23in; }
+.base_fs-24in,.base_fs-24in * { font-size:24in; }
+.base_fs-25in,.base_fs-25in * { font-size:25in; }
+.base_fs-26in,.base_fs-26in * { font-size:26in; }
+.base_fs-27in,.base_fs-27in * { font-size:27in; }
+.base_fs-28in,.base_fs-28in * { font-size:28in; }
+.base_fs-29in,.base_fs-29in * { font-size:29in; }
+.base_fs-30in,.base_fs-30in * { font-size:30in; }
+.base_fs-31in,.base_fs-31in * { font-size:31in; }
+.base_fs-32in,.base_fs-32in * { font-size:32in; }
+.base_fs-33in,.base_fs-33in * { font-size:33in; }
+.base_fs-34in,.base_fs-34in * { font-size:34in; }
+.base_fs-35in,.base_fs-35in * { font-size:35in; }
+.base_fs-36in,.base_fs-36in * { font-size:36in; }
+.base_fs-37in,.base_fs-37in * { font-size:37in; }
+.base_fs-38in,.base_fs-38in * { font-size:38in; }
+.base_fs-39in,.base_fs-39in * { font-size:39in; }
+.base_fs-40in,.base_fs-40in * { font-size:40in; }
+.base_fs-41in,.base_fs-41in * { font-size:41in; }
+.base_fs-42in,.base_fs-42in * { font-size:42in; }
+.base_fs-43in,.base_fs-43in * { font-size:43in; }
+.base_fs-44in,.base_fs-44in * { font-size:44in; }
+.base_fs-45in,.base_fs-45in * { font-size:45in; }
+.base_fs-46in,.base_fs-46in * { font-size:46in; }
+.base_fs-47in,.base_fs-47in * { font-size:47in; }
+.base_fs-48in,.base_fs-48in * { font-size:48in; }
+.base_fs-49in,.base_fs-49in * { font-size:49in; }
+.base_fs-50in,.base_fs-50in * { font-size:50in; }
+.base_fs-51in,.base_fs-51in * { font-size:51in; }
+.base_fs-52in,.base_fs-52in * { font-size:52in; }
+.base_fs-53in,.base_fs-53in * { font-size:53in; }
+.base_fs-54in,.base_fs-54in * { font-size:54in; }
+.base_fs-55in,.base_fs-55in * { font-size:55in; }
+.base_fs-56in,.base_fs-56in * { font-size:56in; }
+.base_fs-57in,.base_fs-57in * { font-size:57in; }
+.base_fs-58in,.base_fs-58in * { font-size:58in; }
+.base_fs-59in,.base_fs-59in * { font-size:59in; }
+.base_fs-60in,.base_fs-60in * { font-size:60in; }
+.base_fs-61in,.base_fs-61in * { font-size:61in; }
+.base_fs-62in,.base_fs-62in * { font-size:62in; }
+.base_fs-63in,.base_fs-63in * { font-size:63in; }
+.base_fs-64in,.base_fs-64in * { font-size:64in; }
+.base_fs-65in,.base_fs-65in * { font-size:65in; }
+.base_fs-66in,.base_fs-66in * { font-size:66in; }
+.base_fs-67in,.base_fs-67in * { font-size:67in; }
+.base_fs-68in,.base_fs-68in * { font-size:68in; }
+.base_fs-69in,.base_fs-69in * { font-size:69in; }
+.base_fs-70in,.base_fs-70in * { font-size:70in; }
+.base_fs-71in,.base_fs-71in * { font-size:71in; }
+.base_fs-72in,.base_fs-72in * { font-size:72in; }
+.base_fs-73in,.base_fs-73in * { font-size:73in; }
+.base_fs-74in,.base_fs-74in * { font-size:74in; }
+.base_fs-75in,.base_fs-75in * { font-size:75in; }
+.base_fs-76in,.base_fs-76in * { font-size:76in; }
+.base_fs-77in,.base_fs-77in * { font-size:77in; }
+.base_fs-78in,.base_fs-78in * { font-size:78in; }
+.base_fs-79in,.base_fs-79in * { font-size:79in; }
+.base_fs-80in,.base_fs-80in * { font-size:80in; }
+.base_fs-81in,.base_fs-81in * { font-size:81in; }
+.base_fs-82in,.base_fs-82in * { font-size:82in; }
+.base_fs-83in,.base_fs-83in * { font-size:83in; }
+.base_fs-84in,.base_fs-84in * { font-size:84in; }
+.base_fs-85in,.base_fs-85in * { font-size:85in; }
+.base_fs-86in,.base_fs-86in * { font-size:86in; }
+.base_fs-87in,.base_fs-87in * { font-size:87in; }
+.base_fs-88in,.base_fs-88in * { font-size:88in; }
+.base_fs-89in,.base_fs-89in * { font-size:89in; }
+.base_fs-90in,.base_fs-90in * { font-size:90in; }
+.base_fs-91in,.base_fs-91in * { font-size:91in; }
+.base_fs-92in,.base_fs-92in * { font-size:92in; }
+.base_fs-93in,.base_fs-93in * { font-size:93in; }
+.base_fs-94in,.base_fs-94in * { font-size:94in; }
+.base_fs-95in,.base_fs-95in * { font-size:95in; }
+.base_fs-96in,.base_fs-96in * { font-size:96in; }
+.base_fs-97in,.base_fs-97in * { font-size:97in; }
+.base_fs-98in,.base_fs-98in * { font-size:98in; }
+.base_fs-99in,.base_fs-99in * { font-size:99in; }
+.base_fs-100in,.base_fs-100in * { font-size:100in; }
+
+.base_fs-imp-0in,.base_fs-imp-0in * { font-size:0in !important; }
+.base_fs-imp-1in,.base_fs-imp-1in * { font-size:1in !important; }
+.base_fs-imp-2in,.base_fs-imp-2in * { font-size:2in !important; }
+.base_fs-imp-3in,.base_fs-imp-3in * { font-size:3in !important; }
+.base_fs-imp-4in,.base_fs-imp-4in * { font-size:4in !important; }
+.base_fs-imp-5in,.base_fs-imp-5in * { font-size:5in !important; }
+.base_fs-imp-6in,.base_fs-imp-6in * { font-size:6in !important; }
+.base_fs-imp-7in,.base_fs-imp-7in * { font-size:7in !important; }
+.base_fs-imp-8in,.base_fs-imp-8in * { font-size:8in !important; }
+.base_fs-imp-9in,.base_fs-imp-9in * { font-size:9in !important; }
+.base_fs-imp-10in,.base_fs-imp-10in * { font-size:10in !important; }
+.base_fs-imp-11in,.base_fs-imp-11in * { font-size:11in !important; }
+.base_fs-imp-12in,.base_fs-imp-12in * { font-size:12in !important; }
+.base_fs-imp-13in,.base_fs-imp-13in * { font-size:13in !important; }
+.base_fs-imp-14in,.base_fs-imp-14in * { font-size:14in !important; }
+.base_fs-imp-15in,.base_fs-imp-15in * { font-size:15in !important; }
+.base_fs-imp-16in,.base_fs-imp-16in * { font-size:16in !important; }
+.base_fs-imp-17in,.base_fs-imp-17in * { font-size:17in !important; }
+.base_fs-imp-18in,.base_fs-imp-18in * { font-size:18in !important; }
+.base_fs-imp-19in,.base_fs-imp-19in * { font-size:19in !important; }
+.base_fs-imp-20in,.base_fs-imp-20in * { font-size:20in !important; }
+.base_fs-imp-21in,.base_fs-imp-21in * { font-size:21in !important; }
+.base_fs-imp-22in,.base_fs-imp-22in * { font-size:22in !important; }
+.base_fs-imp-23in,.base_fs-imp-23in * { font-size:23in !important; }
+.base_fs-imp-24in,.base_fs-imp-24in * { font-size:24in !important; }
+.base_fs-imp-25in,.base_fs-imp-25in * { font-size:25in !important; }
+.base_fs-imp-26in,.base_fs-imp-26in * { font-size:26in !important; }
+.base_fs-imp-27in,.base_fs-imp-27in * { font-size:27in !important; }
+.base_fs-imp-28in,.base_fs-imp-28in * { font-size:28in !important; }
+.base_fs-imp-29in,.base_fs-imp-29in * { font-size:29in !important; }
+.base_fs-imp-30in,.base_fs-imp-30in * { font-size:30in !important; }
+.base_fs-imp-31in,.base_fs-imp-31in * { font-size:31in !important; }
+.base_fs-imp-32in,.base_fs-imp-32in * { font-size:32in !important; }
+.base_fs-imp-33in,.base_fs-imp-33in * { font-size:33in !important; }
+.base_fs-imp-34in,.base_fs-imp-34in * { font-size:34in !important; }
+.base_fs-imp-35in,.base_fs-imp-35in * { font-size:35in !important; }
+.base_fs-imp-36in,.base_fs-imp-36in * { font-size:36in !important; }
+.base_fs-imp-37in,.base_fs-imp-37in * { font-size:37in !important; }
+.base_fs-imp-38in,.base_fs-imp-38in * { font-size:38in !important; }
+.base_fs-imp-39in,.base_fs-imp-39in * { font-size:39in !important; }
+.base_fs-imp-40in,.base_fs-imp-40in * { font-size:40in !important; }
+.base_fs-imp-41in,.base_fs-imp-41in * { font-size:41in !important; }
+.base_fs-imp-42in,.base_fs-imp-42in * { font-size:42in !important; }
+.base_fs-imp-43in,.base_fs-imp-43in * { font-size:43in !important; }
+.base_fs-imp-44in,.base_fs-imp-44in * { font-size:44in !important; }
+.base_fs-imp-45in,.base_fs-imp-45in * { font-size:45in !important; }
+.base_fs-imp-46in,.base_fs-imp-46in * { font-size:46in !important; }
+.base_fs-imp-47in,.base_fs-imp-47in * { font-size:47in !important; }
+.base_fs-imp-48in,.base_fs-imp-48in * { font-size:48in !important; }
+.base_fs-imp-49in,.base_fs-imp-49in * { font-size:49in !important; }
+.base_fs-imp-50in,.base_fs-imp-50in * { font-size:50in !important; }
+.base_fs-imp-51in,.base_fs-imp-51in * { font-size:51in !important; }
+.base_fs-imp-52in,.base_fs-imp-52in * { font-size:52in !important; }
+.base_fs-imp-53in,.base_fs-imp-53in * { font-size:53in !important; }
+.base_fs-imp-54in,.base_fs-imp-54in * { font-size:54in !important; }
+.base_fs-imp-55in,.base_fs-imp-55in * { font-size:55in !important; }
+.base_fs-imp-56in,.base_fs-imp-56in * { font-size:56in !important; }
+.base_fs-imp-57in,.base_fs-imp-57in * { font-size:57in !important; }
+.base_fs-imp-58in,.base_fs-imp-58in * { font-size:58in !important; }
+.base_fs-imp-59in,.base_fs-imp-59in * { font-size:59in !important; }
+.base_fs-imp-60in,.base_fs-imp-60in * { font-size:60in !important; }
+.base_fs-imp-61in,.base_fs-imp-61in * { font-size:61in !important; }
+.base_fs-imp-62in,.base_fs-imp-62in * { font-size:62in !important; }
+.base_fs-imp-63in,.base_fs-imp-63in * { font-size:63in !important; }
+.base_fs-imp-64in,.base_fs-imp-64in * { font-size:64in !important; }
+.base_fs-imp-65in,.base_fs-imp-65in * { font-size:65in !important; }
+.base_fs-imp-66in,.base_fs-imp-66in * { font-size:66in !important; }
+.base_fs-imp-67in,.base_fs-imp-67in * { font-size:67in !important; }
+.base_fs-imp-68in,.base_fs-imp-68in * { font-size:68in !important; }
+.base_fs-imp-69in,.base_fs-imp-69in * { font-size:69in !important; }
+.base_fs-imp-70in,.base_fs-imp-70in * { font-size:70in !important; }
+.base_fs-imp-71in,.base_fs-imp-71in * { font-size:71in !important; }
+.base_fs-imp-72in,.base_fs-imp-72in * { font-size:72in !important; }
+.base_fs-imp-73in,.base_fs-imp-73in * { font-size:73in !important; }
+.base_fs-imp-74in,.base_fs-imp-74in * { font-size:74in !important; }
+.base_fs-imp-75in,.base_fs-imp-75in * { font-size:75in !important; }
+.base_fs-imp-76in,.base_fs-imp-76in * { font-size:76in !important; }
+.base_fs-imp-77in,.base_fs-imp-77in * { font-size:77in !important; }
+.base_fs-imp-78in,.base_fs-imp-78in * { font-size:78in !important; }
+.base_fs-imp-79in,.base_fs-imp-79in * { font-size:79in !important; }
+.base_fs-imp-80in,.base_fs-imp-80in * { font-size:80in !important; }
+.base_fs-imp-81in,.base_fs-imp-81in * { font-size:81in !important; }
+.base_fs-imp-82in,.base_fs-imp-82in * { font-size:82in !important; }
+.base_fs-imp-83in,.base_fs-imp-83in * { font-size:83in !important; }
+.base_fs-imp-84in,.base_fs-imp-84in * { font-size:84in !important; }
+.base_fs-imp-85in,.base_fs-imp-85in * { font-size:85in !important; }
+.base_fs-imp-86in,.base_fs-imp-86in * { font-size:86in !important; }
+.base_fs-imp-87in,.base_fs-imp-87in * { font-size:87in !important; }
+.base_fs-imp-88in,.base_fs-imp-88in * { font-size:88in !important; }
+.base_fs-imp-89in,.base_fs-imp-89in * { font-size:89in !important; }
+.base_fs-imp-90in,.base_fs-imp-90in * { font-size:90in !important; }
+.base_fs-imp-91in,.base_fs-imp-91in * { font-size:91in !important; }
+.base_fs-imp-92in,.base_fs-imp-92in * { font-size:92in !important; }
+.base_fs-imp-93in,.base_fs-imp-93in * { font-size:93in !important; }
+.base_fs-imp-94in,.base_fs-imp-94in * { font-size:94in !important; }
+.base_fs-imp-95in,.base_fs-imp-95in * { font-size:95in !important; }
+.base_fs-imp-96in,.base_fs-imp-96in * { font-size:96in !important; }
+.base_fs-imp-97in,.base_fs-imp-97in * { font-size:97in !important; }
+.base_fs-imp-98in,.base_fs-imp-98in * { font-size:98in !important; }
+.base_fs-imp-99in,.base_fs-imp-99in * { font-size:99in !important; }
+.base_fs-imp-100in,.base_fs-imp-100in * { font-size:100in !important; }

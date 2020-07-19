@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+/** []内是可变参数，其用法是只要[]内参数。&是并且的意思。|是或者的意思。...是更多的意思。写法上都是不需要的添加的,只是注明作用.
+	根据引入不同的样式来定义(px：像素|pct：%|pt：点|...)，带imp关键字的是带有强制属性 **/
+/** ◆透明度：数值越小越透明。
+	注意：参数1：[transparent]：(-webkit-opacity&-moz-opacity&-khtml-opacity&opacity&filter&-ms-filter)透明度
+		参数2：[10|...|100]：5进制递增
+	用法：base_[参数1]-[参数2]
+	◆背景颜色：
+	注意：参数1：[bgc]：(background-color)背景颜色
+		参数2：[inherit|transparent|white|...]：关键字
+		参数3：[ffffff|000000|2b2b2b|...]：十六进制颜色码
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆文本颜色：
+	注意：参数1：[c]：(color)文本颜色
+		参数2：[inherit|white|...]：关键字
+		参数3：[ffffff|000000|2b2b2b|...]：十六进制颜色码
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆文本大小：
+	注意：参数1：[fs]：(font-size)文本字号
+		参数2：[xx-small|x-small|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素宽度：
+	注意：参数1：[w]：(width)宽度
+		参数2：[auto|inherit|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素最小宽度：
+	注意：参数1：[minw]：(min-width)最小宽度
+		参数2：[none|inherit|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素最大宽度：
+	注意：参数1：[maxw]：(max-width)最大宽度
+		参数2：[none|inherit|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素高度：
+	注意：参数1：[h]：(height)高度
+		参数2：[auto|inherit|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素最小高度：
+	注意：参数1：[minh]：(min-height)最小高度
+		参数2：[none|inherit|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素最大高度：
+	注意：参数1：[maxh]：(max-height)最大高度
+		参数2：[none|inherit|...]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆行间距离：
+	注意：参数1：[lh]：(line-height)行间距高
+		参数2(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2]|base_[参数1]-imp-[参数2]
+	◆元素等分分布：
+	注意：参数1：[col]：(列)横向分布
+		参数2：[row]：(行)纵向分布
+		参数3：[w]：(width)宽度
+		参数4：[h]：(height)高度
+		参数5：[1|...|12]：1进制递增
+	用法：base_[参数1]-[参数3]-[参数5]|base_[参数1]-imp-[参数3]-[参数5]|base_[参数2]-[参数4]-[参数5]|base_[参数2]-imp-[参数4]-[参数5]
+	◆元素内边距：
+	注意：参数1：[pt]：(padding-top)元素内上边距、[pb]：(padding-bottom)元素内下边距、[pl]：(padding-left)元素内左边距、[pr]：(padding-right)元素内右边距、[ptb]：(padding-top&padding-bottom)元素内上下边距、[plr]：(padding-left&padding-right)元素内左右边距、[p]：(padding-top&padding-bottom&padding-left&padding-right)元素内上下左右边距
+		参数2：[auto]：关键字
+		参数3(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素外边距：
+	注意：参数1：[mt]：(margin-top)元素的上外边距、[mb]：(margin-bottom)元素的下外边距、[ml]：(margin-left)元素的左外边距、[mr]：(margin-right)元素的右外边距、[mtb]：(margin-top&margin-bottom)元素的上下外边距、[mlr]：(margin-left&margin-right)元素的左右外边距、[m]：(margin-top&margin-bottom&margin-left&margin-right)元素的上下左右外边距
+		参数2：[auto]：关键字
+		参数3(如：(px)像素)：[-1000px|...|-500px]：50进制递增、[-500px|...|-100px]：5进制递增、[-100px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素边框颜色：
+	注意：参数1：[bc]：(border-color)边框颜色
+		参数2：[inherit|transparent|white|...]：关键字
+		参数3：[ffffff|000000|2b2b2b|...]：十六进制颜色码
+	用法：base_[参数1]-[参数2|参数3]|base_[参数1]-imp-[参数2|参数3]
+	◆元素边框样式和大小：
+	注意：参数1：[bts]：(border-top-style)元素上边框线样式、[bbs]：(border-bottom-style)元素下边框线样式、[bls]：(border-left-style)元素左边框线样式、[brs]：(border-right-style)元素右边框线样式、[btbs]：(border-top-style&border-bottom-style)元素上下边框线样式、[blrs]：(border-left-style&border-right-style)元素左右边框线样式、[bs]：(border-style)元素上下左右边框线样式
+		参数2：[none|hidden|dotted|...]：关键字
+		参数3：[btw]：(border-top-width)元素上边框线宽度、[bbw]：(border-bottom-width)元素下边框线宽度、[blw]：(border-left-width)元素左边框线宽度、[brw]：(border-right-width)元素右边框线宽度、[btbw]：(border-top-width&border-bottom-width)元素上下边框线宽度、[blrw]：(border-left-width&border-right-width)元素左右边框线宽度、[bw]：(border-width)元素上下左右边框线宽度
+		参数4(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2]|base_[参数1]-imp-[参数2]|base_[参数3]-[参数4]|base_[参数3]-imp-[参数4]
+	◆元素位置定位、堆叠顺序：
+	注意：参数1：[posz]：(z-index)元素堆叠顺序
+		参数2：[-1000|...|-500]：50进制递增、[-500|...|-100]：5进制递增、[-100|...|100]：1进制递增、[100|...|500]：5进制递增、[500|...|1000]：50进制递增
+		参数3：[post]：(top)元素靠上边间距、[posb]：(bottom)元素靠下边间距、[posl]：(left)元素靠左边间距、[posr]：(right)元素靠右边间距、[postb]：(top&bottom)元素靠上下边间距、[poslr]：(left&right)元素靠左右边间距、[pos]：(top&bottom&left&right)元素靠上下左右边间距
+		参数4(如：(px)像素)：[-1000px|...|-500px]：50进制递增、[-500px|...|-100px]：5进制递增、[-100px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+		参数5：[absolute|fixed|relative|...]：关键字
+	用法：base_pos-[参数5]|base_pos-imp-[参数5]|base_[参数1]-[参数2]|base_[参数1]-imp-[参数2]|base_[参数3]-[参数4]|base_[参数3]-imp-[参数4]
+	◆元素边框圆角：
+	注意：	参数1：[btlr]：(border-top-left-radius)边框左上角弧度、[btrr]：(border-top-right-radius)边框右上角弧度、[bblr]：(border-bottom-left-radius)边框左下角弧度、[bbrr]：(border-bottom-right-radius)边框右下角弧度、[btlrr]：(border-top-left-radius&border-top-right-radius)边框左右上角弧度、[bblrr]：(border-bottom-left-radius&border-bottom-right-radius)边框左右下角弧度、[br]：(border-top-left-radius&border-top-right-radius&border-bottom-left-radius&border-bottom-right-radius)边框上下左右角弧度
+		参数2(如：(px)像素)：[0px|...|100px]：1进制递增、[100px|...|500px]：5进制递增、[500px|...|1000px]：50进制递增
+	用法：base_[参数1]-[参数2]|base_[参数1]-imp-[参数2]
+	◆表格边框样式和大小：
+	注意：参数1：[T]：(table)表格
+		参数2：[Tinner]：(table)表格内部
+		参数3：[Bts]：(border-top-style)表格首行上边框线样式、[Bbs]：(border-bottom-style)表格尾行下边框线样式、[Bls]：(border-left-style)表格首列左边框线样式、[Brs]：(border-right-style)表格尾列右边框线样式、[Btbs]：(border-top-style&border-bottom-style)表格首行上边框尾行下边框线样式、[Blrs]：(border-left-style&border-right-style)表格首列左边框尾列右边框线样式、[Bs]：(border-style)表格上下左右边框线样式
+		参数4：[none|hidden|dotted|...]：关键字
+		参数5：[Btw]：(border-top-width)表格首行上边框线宽度、[Bbw]：(border-bottom-width)表格尾行下边框线宽度、[Blw]：(border-left-width)表格首列左边框线宽度、[Brw]：(border-right-width)表格尾列右边框线宽度、[Btbw]：(border-top-width&border-bottom-width)表格首行上边框尾行下边框线宽度、[Blrw]：(border-left-width&border-right-width)表格首列左边框尾列右边框线宽度、[Bw]：(border-width)表格上下左右边框线宽度
+		参数6(如：(px)像素)：[0px|...|10px]：1进制递增
+	用法：base_[参数1]-[参数3]-[参数4]|base_[参数1]-[参数3]-imp-[参数4]|base_[参数1]-[参数5]-[参数6]|base_[参数1]-[参数5]-imp-[参数6]|base_[参数2]-Bw-[参数6]|base_[参数2]-Bw-imp-[参数6]
+	◆通用：预见样式链接文件
+ **/
+
+/** ◆透明度 **/
+@import url("common-group/min/transparent.css");
+/** ◆背景颜色 **/
+@import url("common-group/min/backgroundColor.css");
+/** ◆文本颜色 **/
+@import url("common-group/min/color.css");
+/** ◆文本大小 **/
+@import url("common-group/min/fontSize_px.css");
+@import url("common-group/min/fontSize_pct.css");
+@import url("common-group/min/fontSize_special.css");
+/** ◆元素宽度 **/
+@import url("common-group/min/width_px.css");
+@import url("common-group/min/width_pct.css");
+@import url("common-group/min/width_special.css");
+/** ◆元素最小宽度 **/
+@import url("common-group/min/minWidth_px.css");
+@import url("common-group/min/minWidth_pct.css");
+@import url("common-group/min/minWidth_special.css");
+/** ◆元素最大宽度 **/
+@import url("common-group/min/maxWidth_px.css");
+@import url("common-group/min/maxWidth_pct.css");
+@import url("common-group/min/maxWidth_special.css");
+/** ◆元素高度 **/
+@import url("common-group/min/height_px.css");
+@import url("common-group/min/height_pct.css");
+@import url("common-group/min/height_special.css");
+/** ◆元素最小高度 **/
+@import url("common-group/min/minHeight_px.css");
+@import url("common-group/min/minHeight_pct.css");
+@import url("common-group/min/minHeight_special.css");
+/** ◆元素最大高度 **/
+@import url("common-group/min/maxHeight_px.css");
+@import url("common-group/min/maxHeight_pct.css");
+@import url("common-group/min/maxHeight_special.css");
+/** ◆行间距离 **/
+@import url("common-group/min/lineHeight_px.css");
+@import url("common-group/min/lineHeight_pct.css");
+@import url("common-group/min/lineHeight_special.css");
+/** ◆元素等分分布 **/
+@import url("common-group/min/colWidthHeight.css");

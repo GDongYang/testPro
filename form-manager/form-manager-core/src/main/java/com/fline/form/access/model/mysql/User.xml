@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="User">
+   <typeAlias alias="user" type="com.fline.form.access.model.User" />
+   <resultMap id="userResult" class="user">
+      <!-- NamespaceModel -->
+      <result property="id" column="id" javaType="long" jdbcType="NUMBER" nullValue="0" />
+      <result property="name" column="name" javaType="string" jdbcType="VARCHAR" />
+      <result property="code" column="code" javaType="string" jdbcType="VARCHAR" />
+      <result property="memo" column="memo" javaType="string" jdbcType="VARCHAR" />
+      <result property="version" column="version" javaType="long" jdbcType="NUMBER" nullValue="0" />
+      <result property="mobilePhone" column="mobilePhone" javaType="string" jdbcType="VARCHAR" />
+      <result property="email" column="email" javaType="string" jdbcType="VARCHAR" />
+      <result property="officePhone" column="officePhone" javaType="string" jdbcType="VARCHAR" />
+      <result property="virtualMobilePhone" column="virtualMobilePhone" javaType="string" jdbcType="VARCHAR" />
+      <result property="fax" column="fax" javaType="string" jdbcType="VARCHAR" />
+      <result property="workNo" column="workNo" javaType="string" jdbcType="VARCHAR" />
+      <result property="sex" column="sex" javaType="int" jdbcType="NUMBER" nullValue="3"/>
+      <result property="orgId" column="orgId" javaType="long" jdbcType="NUMBER" nullValue="0"/>
+      <result property="orgName" column="orgName" javaType="string" jdbcType="VARCHAR" />
+      <!-- LifecycleModel -->
+      <result property="createDate" column="createDate" javaType="date" />
+      <result property="creator" column="creator" javaType="string" jdbcType="VARCHAR" />
+      <result property="updateDate" column="modifyDate" javaType="date" />
+      <result property="updater" column="modificator" javaType="string" jdbcType="VARCHAR" />
+      <!-- SystemModel -->
+      <!-- User -->
+      <result property="username" column="username" javaType="string" jdbcType="VARCHAR" />
+      <result property="password" column="password" javaType="string" jdbcType="VARCHAR" />
+	  <result property="active" column="active" javaType="boolean" jdbcType="NUMERIC" nullValue="0"/>
+	  <result property="certNo" column="certNo" javaType="string" jdbcType="VARCHAR" />
+	  <result property="positionId" column="positionId" javaType="long" jdbcType="NUMBER" nullValue="0"/>
+	  
+	  <result property="userId" column="syncuserId" javaType="string" jdbcType="VARCHAR" />
+	  <result property="orgCode" column="orgCode" javaType="string" jdbcType="VARCHAR" />
+	  <result property="cardNo" column="cardNo" javaType="string" jdbcType="VARCHAR" />
+   </resultMap>
+   <resultMap id="userWithRole" class="user" extends="userResult">
+   	  <result property="rCount" column="R_COUNT" javaType="long" jdbcType="NUMBER" nullValue="0"/>
+   </resultMap>
+   <insert id="create" parameterClass="user">
+      <![CDATA[
+         INSERT INTO C_USER (
+            NAME,CODE, MEMO, VERSION,
+            createDate, CREATOR,
+            USERNAME, PASSWORD, ACTIVE, MOBILEPHONE, EMAIL, OFFICEPHONE, 
+            VIRTUALMOBILEPHONE, FAX, WORKNO, SEX, orgId, orgName,syncuserId, certNo, orgCode,cardNo,
+            positionId
+         ) VALUES (
+            #name#, #code#, #memo#, #version#,
+            now(), #creator#, 
+            #username#, #password#, #active#, #mobilePhone#, #email#, #officePhone#, 
+            #virtualMobilePhone#, #fax#, #workNo#, #sex#, #orgId#, #orgName#,#userId#, #certNo#, #orgCode#,#cardNo#,
+            #positionId#
+         )
+      ]]>
+      <selectKey resultClass="long" keyProperty="id">
+		select last_insert_id() as ID
+	  </selectKey>
+   </insert>
+
+   <update id="update" parameterClass="user">
+      <![CDATA[
+         UPDATE C_USER SET
+            NAME=#name#,
+            CODE=#code#,
+            MEMO=#memo#,
+            ACTIVE=#active#,
+            modifyDate=now(),
+            MODIFICATOR=#updater#,
+            USERNAME=#username#,
+            MOBILEPHONE=#mobilePhone#,
+            EMAIL=#email#,
+            OFFICEPHONE=#officePhone#,
+            VIRTUALMOBILEPHONE=#virtualMobilePhone#,
+            FAX=#fax#,
+            WORKNO=#workNo#,
+            SEX=#sex#,
+            orgId=#orgId#,
+            orgName=#orgName#,
+            positionId=#positionId#,
+            certNo=#certNo#,
+            orgCode=#orgCode#,
+            cardNo = #cardNo#
+         WHERE ID=#id#
+      ]]>
+   </update>
+   
+	<update id="updateDetail" parameterClass="java.util.Map">
+         <![CDATA[
+         UPDATE C_USER set
+         ]]>
+         	<isNotNull property="name">NAME=#name#,</isNotNull>
+			<isNotNull property="code">CODE=#code#,</isNotNull>
+			<isNotNull property="memo">MEMO=#memo#,</isNotNull>
+			<isNotNull property="updater">MODIFICATOR=#updater#,</isNotNull>
+			<isNotNull property="username">USERNAME=#username#,</isNotNull>
+			<isNotNull property="password">PASSWORD=#password#,</isNotNull>
+		<![CDATA[
+			MODIFIED=now(),
+			VERSION=VERSION+1
+         WHERE ID=#id#
+        ]]>
+   </update>
+   
+   <update id="updateCertNo" parameterClass="java.util.Map">
+         <![CDATA[
+         UPDATE C_USER set
+        	certNo=#certNo#
+         WHERE ID=#id#
+        ]]>
+   </update>
+
+
+   <update id="authorize" parameterClass="java.util.Map">
+      <![CDATA[
+         UPDATE C_USER SET
+            ACTIVE=#active#
+         WHERE ID=#id#
+      ]]>
+   </update>
+   
+   <update id="assignPosition" parameterClass="java.util.Map">
+        UPDATE C_USER set
+       		positionId=#position#
+        WHERE ID IN    
+	       <iterate property="ids" conjunction="," open="(" close=")">
+	       		#ids[]#
+	       </iterate>
+   </update>
+   
+   <update id="removePosition" parameterClass="java.util.Map">
+         <![CDATA[
+         UPDATE C_USER set
+        	positionId = 0
+         WHERE positionId = #position#
+        ]]>
+   </update>
+
+   <update id="passWordReset" parameterClass="java.util.Map">
+      <![CDATA[
+         UPDATE C_USER SET
+            PASSWORD=#passWord#
+         WHERE ID=#id#
+      ]]>
+   </update>
+
+   <delete id="remove" parameterClass="user">
+      <![CDATA[
+         DELETE FROM C_USER WHERE ID=#id#
+      ]]>
+   </delete>
+ 
+   <insert id="saveUserRole" parameterClass="java.util.Map">
+      <![CDATA[
+         INSERT INTO R_USER_ROLE (
+             roleId, userId
+         ) VALUES (
+             #roleId#, #userId#
+         )
+      ]]>
+   </insert>
+
+   <delete id="removeUserRole" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_USER_ROLE WHERE userId=#userId#
+      ]]>
+   </delete>
+   
+   <delete id="removeURByRole" parameterClass="java.util.Map">
+      <![CDATA[
+         DELETE FROM R_USER_ROLE WHERE roleId=#roleId#
+      ]]>
+   </delete>
+
+   <select id="findById" parameterClass="long" resultMap="userResult">
+      <![CDATA[
+         SELECT
+          id,
+            username,
+            password,
+            active,
+            name,
+            code,
+            memo,
+            version,
+            createDate,
+            creator,
+            modifyDate,
+            modificator,
+            mobilePhone,
+            email,
+            officePhone,
+            virtualMobilePhone,
+            fax,
+            workNo,
+            sex,
+            orgId,
+            orgName,
+            positionId,
+            certNo,
+            syncuserId,
+            orgCode,
+            cardNo
+          FROM C_USER A WHERE ID=#value#
+      ]]>
+   </select>
+
+
+   <select id="findByIds" parameterClass="java.util.Map" resultMap="userResult">
+      <![CDATA[
+         SELECT
+          id,
+            username,
+            password,
+            active,
+            name,
+            code,
+            memo,
+            version,
+            createDate,
+            creator,
+            modifyDate,
+            modificator,
+            mobilePhone,
+            email,
+            officePhone,
+            virtualMobilePhone,
+            fax,
+            workNo,
+            sex,
+            orgId,
+            orgName,
+            positionId,
+            certNo,
+            syncuserId,
+            orgCode,
+            cardNo
+          FROM C_USER WHERE ID IN
+      ]]>
+      <iterate property="ids" open="(" close=")" conjunction=","> #ids[]#</iterate>
+   </select>
+   <select id="findAll" resultMap="userResult">
+      <![CDATA[ SELECT
+              id,
+            username,
+            password,
+            active,
+            name,
+            code,
+            memo,
+            version,
+            createDate,
+            creator,
+            modifyDate,
+            modificator,
+            mobilePhone,
+            email,
+            officePhone,
+            virtualMobilePhone,
+            fax,
+            workNo,
+            sex,
+            orgId,
+            orgName,
+            positionId,
+            certNo,
+            syncuserId,
+            orgCode,
+            cardNo
+     FROM C_USER ORDER BY ID]]>
+   </select>
+   <sql id="sql_where">
+      <dynamic prepend="WHERE">
+         <isNotNull property="id">
+            <isGreaterThan prepend="AND" property="id" compareValue="0"> U.ID=#id#</isGreaterThan>
+         </isNotNull>
+         
+         <isNotNull prepend="AND" property="urId"> RU.USER_ID = #urId# </isNotNull>
+         
+         <isNotNull prepend="AND" property="username"> (U.USERNAME=#username#) </isNotNull>
+         <isNotNull prepend="AND" property="usernameLike"> upper(U.USERNAME) like upper('%$usernameLike$%') </isNotNull>
+         <isNotNull prepend="AND" property="name"> U.NAME=#name# </isNotNull>
+         <isNotNull prepend="AND" property="cardNo"> U.cardNo=#cardNo# </isNotNull>
+         <isNotNull prepend="AND" property="nameLike"> upper(U.NAME) like upper('%$nameLike$%') </isNotNull>
+         <isNotNull property="userSessionId">
+            <isGreaterThan prepend="AND" property="userSessionId" compareValue="0">
+               U.ID in (SELECT USER_ID FROM C_USERSESSION WHERE C_USERSESSION.ID=#userSessionId#)
+            </isGreaterThan>
+         </isNotNull>
+         <isNotNull prepend="AND" property="certNo"> U.certNo=#certNo# </isNotNull>
+         <isNotNull prepend="AND" property="userId"> U.syncuserId=#userId# </isNotNull>
+         
+         <isNotNull prepend="AND" property="department"> 
+         	U.orgId=#department#
+         	<!-- <![CDATA[ U.orgId in (select ID from c_department where ORGCODING like concat('',(select ORGCODING from c_department where ID = #department#),'%') and length(ORGCODING) < 16)]]> -->
+         </isNotNull>
+         <isNotNull prepend="AND" property="positionOr">
+         	(U.positionId = #positionOr# OR U.positionId = 0 OR  U.positionId IS NULL) 
+         </isNotNull>
+         <isNotNull property="position">
+         	<isEqual prepend="AND" property="position" compareValue="0">
+         	 	(U.positionId = 0 OR  U.positionId IS NULL) 
+         	</isEqual>
+         	<isNotEqual prepend="AND" property="position" compareValue="0">
+         	 	U.positionId=#position# 
+         	</isNotEqual>
+         </isNotNull>
+         <isNotNull prepend="AND" property="deptIds">
+         	U.orgId IN
+         	<iterate property="deptIds" open="(" conjunction="," close=")">
+         		#deptIds[]#
+         	</iterate>
+         </isNotNull>
+         <isNotNull prepend="AND" property="deptId"> U.orgId=#deptId# </isNotNull>
+      </dynamic>
+   </sql>
+   <sql id="sql_from">
+      FROM C_USER U
+      <include refid="sql_where" />
+   </sql>
+   <select id="find" resultMap="userWithRole">
+	  <![CDATA[ SELECT
+             U.id,
+            U.username,
+            U.password,
+            U.active,
+            U.name,
+            U.code,
+            U.memo,
+            U.version,
+            U.createDate,
+            U.creator,
+            U.modifyDate,
+            U.modificator,
+            U.mobilePhone,
+            U.email,
+            U.officePhone,
+            U.virtualMobilePhone,
+            U.fax,
+            U.workNo,
+            U.sex,
+            U.orgId,
+            U.orgName,
+            U.positionId,
+            U.certNo,
+            U.syncuserId,
+            U.orgCode,
+            U.cardNo,
+        (SELECT COUNT(*) FROM R_USER_ROLE R WHERE R.userId = U.ID) AS R_COUNT ]]>
+	  <include refid="sql_from" />
+      <isNotNull property="_orderBy"><![CDATA[ ORDER BY U.$_orderBy$ ]]></isNotNull>
+	  <isGreaterThan property="_maxResult" compareValue="0">
+	     <![CDATA[ limit #_skipResult#, #_pageSize#]]>
+	  </isGreaterThan>
+   </select>
+   <select id="find_count" parameterClass="java.util.Map" resultClass="int">
+      <![CDATA[ SELECT COUNT(1) ]]>
+      <include refid="sql_from" />
+   </select>
+	
+   <select id="findByUserName" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            U.id,
+            U.username,
+            U.password,
+            U.active,
+            U.name,
+            U.code,
+            U.memo,
+            U.version,
+            U.createDate,
+            U.creator,
+            U.modifyDate,
+            U.modificator,
+            U.mobilePhone,
+            U.email,
+            U.officePhone,
+            U.virtualMobilePhone,
+            U.fax,
+            U.workNo,
+            U.sex,
+            U.orgId,
+            U.orgName,
+            U.positionId,
+            U.certNo,
+            U.syncuserId,
+            U.orgCode,
+            U.cardNo
+         FROM
+            C_USER u
+          WHERE
+            u.USERNAME=#username#
+          AND
+          	u.ACTIVE=1
+      ]]>
+   </select>
+   
+   <select id="findByCode" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            U.id,
+            U.username,
+            U.password,
+            U.active,
+            U.name,
+            U.code,
+            U.memo,
+            U.version,
+            U.createDate,
+            U.creator,
+            U.modifyDate,
+            U.modificator,
+            U.mobilePhone,
+            U.email,
+            U.officePhone,
+            U.virtualMobilePhone,
+            U.fax,
+            U.workNo,
+            U.sex,
+            U.orgId,
+            U.orgName,
+            U.positionId,
+            U.certNo,
+            U.syncuserId,
+            U.orgCode,
+            U.cardNo
+         FROM
+            C_USER u
+          WHERE
+            u.code=#code# AND u.username<>'admin'
+      ]]>
+   </select>
+    <!--C_USER不存在user_dept字段-->
+   <select id="findByDeptCode" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            U.id,
+            U.username,
+            U.password,
+            U.active,
+            U.name,
+            U.code,
+            U.memo,
+            U.version,
+            U.createDate,
+            U.creator,
+            U.modifyDate,
+            U.modificator,
+            U.mobilePhone,
+            U.email,
+            U.officePhone,
+            U.virtualMobilePhone,
+            U.fax,
+            U.workNo,
+            U.sex,
+            U.orgId,
+            U.orgName,
+            U.positionId,
+            U.certNo,
+            U.syncuserId,
+            U.orgCode,
+            U.cardNo
+         FROM
+            C_USER u
+          WHERE
+            u.user_dept=#code# AND u.username<>'admin'
+      ]]>
+   </select>
+    <!--不存在C_DEPT表和u.DEPT_ID字段-->
+   <select id="findByDeptId" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            u.id,
+            u.username,
+            u.password,
+            u.active,
+            u.name,
+            u.code,
+            u.memo,
+            u.version,
+            u.createDate,
+            u.creator,
+            u.modifyDate,
+            u.modificator,
+            u.mobilePhone,
+            u.email,
+            u.officePhone,
+            u.virtualMobilePhone,
+            u.fax,
+            u.workNo,
+            u.sex,
+            u.orgId,
+            u.orgName,
+            u.positionId,
+            u.certNo,
+            u.syncuserId,
+            u.orgCode,
+            u.cardNo
+         FROM
+            C_DEPT d,
+            C_USER u
+          WHERE
+             u.DEPT_ID=d.ID
+             AND
+             d.ID=#deptId#
+             AND
+             u.username <> 'admin'
+          ORDER BY u.ID
+      ]]>
+   </select>
+
+   <select id="findByRoleId" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            u.id,
+            u.username,
+            u.password,
+            u.active,
+            u.name,
+            u.code,
+            u.memo,
+            u.version,
+            u.createDate,
+            u.creator,
+            u.modifyDate,
+            u.modificator,
+            u.mobilePhone,
+            u.email,
+            u.officePhone,
+            u.virtualMobilePhone,
+            u.fax,
+            u.workNo,
+            u.sex,
+            u.orgId,
+            u.orgName,
+            u.positionId,
+            u.certNo,
+            u.syncuserId,
+            u.orgCode,
+            u.cardNo
+         FROM
+            C_ROLE g,
+            r_user_role r,
+            C_USER u
+          WHERE
+             r.roleId=g.ID
+             AND
+             r.userId=u.ID
+             AND
+             g.ID=#roleId#
+         ORDER BY u.ID
+      ]]>
+   </select>
+   
+   <select id="findByUserAndKey" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            u.id,
+            u.username,
+            u.password,
+            u.active,
+            u.name,
+            u.code,
+            u.memo,
+            u.version,
+            u.createDate,
+            u.creator,
+            u.modifyDate,
+            u.modificator,
+            u.mobilePhone,
+            u.email,
+            u.officePhone,
+            u.virtualMobilePhone,
+            u.fax,
+            u.workNo,
+            u.sex,
+            u.orgId,
+            u.orgName,
+            u.positionId,
+            u.certNo,
+            u.syncuserId,
+            u.orgCode,
+            u.cardNo
+          FROM C_USER u
+         WHERE u.USERNAME=#userName#
+         AND u.certNo=#key#
+      ]]>
+   </select>
+   
+   <select id="findByNameAndKey" resultMap="userResult">
+      <![CDATA[
+         SELECT
+            u.id,
+            u.username,
+            u.password,
+            u.active,
+            u.name,
+            u.code,
+            u.memo,
+            u.version,
+            u.createDate,
+            u.creator,
+            u.modifyDate,
+            u.modificator,
+            u.mobilePhone,
+            u.email,
+            u.officePhone,
+            u.virtualMobilePhone,
+            u.fax,
+            u.workNo,
+            u.sex,
+            u.orgId,
+            u.orgName,
+            u.positionId,
+            u.certNo,
+            u.syncuserId,
+            u.orgCode,
+            u.cardNo
+          FROM C_USER u
+         WHERE upper(u.NAME) like upper('%$nameLike$%')
+         AND u.certNo=#key#
+      ]]>
+   </select>
+</sqlMap>

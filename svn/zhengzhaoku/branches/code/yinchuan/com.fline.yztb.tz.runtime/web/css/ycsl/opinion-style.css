@@ -1,0 +1,14 @@
+.contains{border: 1px solid;border-top:none;font-size: 18px;}
+		
+.title-opinions{height:50px;font-family: "ËÎÌו"; font-weight: bold;}
+  	
+.parent-opinions {width:100%;border-top: 1px solid;height:170px;}
+.data-opinions .index-opinions{float:left;width:8%;height:100%;line-height:170px;font-family: "ËÎÌו"; font-weight: bold;border-right:#000000 solid 0.5px;}
+.data-opinions .acivity-opinions{float:left;width:17%;height:100%;padding-top:73px;word-wrap: break-word;word-break: break-all;font-family: "ËÎÌו"; font-weight: bold;border-right:#000000 solid 0.5px;}
+
+.data-opinions .content-sign-opinions{float:left;width:75%;padding-top: 10px; padding-left: 9px;}
+.content-sign-opinions .content-opinions{float:left;width:100%;WORD-WRAP: break-word}
+.content-sign-opinions .sign-opinions{float:right;width:100%;clear:both;padding-right:20px}
+.sign-opinions .sign-time-opinions{ float:right; }
+.sign-opinions .sign-person-opinions{ float:right; width:120px; }
+.clear-opinions {clear:both;}

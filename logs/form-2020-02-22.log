@@ -1,0 +1,346 @@
+[form] 2020-02-22 00:35:19.123 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 19244 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:35:19.125 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:35:20.173 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:35:20.180 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:35:20.180 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:35:20.186 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:35:20.186 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:35:20.187 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:35:20.187 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:35:21.265 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:35:22.264 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:35:22.473 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:35:22.547 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:35:26.023 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:35:26.046 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:35:26.053 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 7.361 seconds (JVM running for 8.658)
+[form] 2020-02-22 00:35:33.624 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:35:33.972 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}200
+[form] 2020-02-22 00:35:34.062 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:37:58.899 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 5076 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:37:58.901 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:37:59.855 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:37:59.860 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:37:59.861 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:37:59.865 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:37:59.865 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:37:59.865 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:37:59.865 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:38:00.916 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:38:00.988 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:38:01.045 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:38:01.077 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:38:02.766 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:38:02.788 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:38:02.794 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.224 seconds (JVM running for 5.586)
+[form] 2020-02-22 00:38:25.377 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:38:26.689 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:38:26.720 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 状态码为：1
+[form] 2020-02-22 00:38:26.775 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:44:35.178 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 18180 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:44:35.179 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:44:36.107 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:44:36.113 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:44:36.113 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:44:36.118 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:44:36.118 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:44:36.118 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:44:36.118 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:44:37.169 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:44:37.241 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:44:37.305 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:44:37.340 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:44:38.894 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:44:38.915 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:44:38.921 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.056 seconds (JVM running for 5.134)
+[form] 2020-02-22 00:44:45.934 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:44:46.196 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:44:46.254 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:46:35.442 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 2160 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:46:35.443 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:46:36.365 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:46:36.371 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:46:36.372 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:46:36.377 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:46:36.377 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:46:36.377 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:46:36.377 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:47:57.929 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 19812 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:47:57.930 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:47:58.873 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:47:58.880 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:47:58.880 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:47:58.885 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:47:58.885 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:47:58.885 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:47:58.885 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:47:59.932 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:48:00.007 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:48:00.066 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:48:00.098 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:48:01.673 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:48:01.694 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:48:01.700 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.095 seconds (JVM running for 5.208)
+[form] 2020-02-22 00:48:08.480 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:48:08.769 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:48:08.832 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:48:27.112 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 5972 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:48:27.114 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:48:28.166 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:48:28.172 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:48:28.173 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:48:28.177 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:48:28.178 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:48:28.178 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:48:28.178 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:48:29.231 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:48:29.302 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:48:29.361 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:48:29.393 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:48:30.924 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:48:30.946 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:48:31.088 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.454 seconds (JVM running for 6.03)
+[form] 2020-02-22 00:48:36.112 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:48:36.385 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:48:36.445 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:49:39.272 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 16248 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:49:39.273 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:49:40.215 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:49:40.221 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:49:40.221 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:49:40.226 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:49:40.226 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:49:40.226 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:49:40.226 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:49:41.280 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:49:41.358 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:49:41.428 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:49:41.460 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:49:43.061 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:49:43.082 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:49:43.088 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.158 seconds (JVM running for 5.247)
+[form] 2020-02-22 00:49:47.228 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:49:47.617 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:49:47.719 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:50:28.556 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 3008 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:50:28.558 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:50:29.455 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:50:29.461 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:50:29.461 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:50:29.465 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:50:29.465 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:50:29.465 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:50:29.465 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:50:30.513 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:50:30.586 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:50:30.657 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:50:30.693 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:50:32.573 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:50:32.594 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:50:32.600 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.497 seconds (JVM running for 5.75)
+[form] 2020-02-22 00:50:32.770 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:50:33.085 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:50:33.148 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:50:35.566 [INFO ] [http-nio-8000-exec-2] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:50:35.819 [INFO ] [http-nio-8000-exec-2] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:50:35.821 [INFO ] [http-nio-8000-exec-2] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:53:03.156 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 19608 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:53:03.158 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:53:04.056 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:53:04.062 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:53:04.063 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:53:04.067 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:53:04.068 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:53:04.068 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:53:04.068 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:53:05.117 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:53:05.203 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:53:05.284 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:53:05.317 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:53:07.397 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:53:07.418 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:53:07.424 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.601 seconds (JVM running for 5.847)
+[form] 2020-02-22 00:53:11.443 [INFO ] [http-nio-8000-exec-2] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:53:11.737 [INFO ] [http-nio-8000-exec-2] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:53:11.815 [INFO ] [http-nio-8000-exec-2] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:55:29.780 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 4424 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:55:29.781 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:55:30.652 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:55:30.659 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:55:30.659 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:55:30.664 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:55:30.665 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:55:30.665 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:55:30.665 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:55:31.715 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:55:31.787 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:55:31.845 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:55:31.877 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:55:33.464 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:55:33.485 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:55:33.490 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.009 seconds (JVM running for 5.183)
+[form] 2020-02-22 00:55:33.988 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:55:34.259 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:55:34.306 [ERROR] [http-nio-8000-exec-1] com.fline.form.handler.GlobalExceptionHandler -  - java.lang.Integer cannot be cast to java.lang.String
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+	at com.fline.form.mgmt.service.impl.FormMgmtServiceImpl.createFormByIdNum(FormMgmtServiceImpl.java:88)
+	at com.fline.form.controller.FormController.createFormById(FormController.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alipay.atgbusmng.api.filter.http.AtgBusSignFilter.doFilter(AtgBusSignFilter.java:52)
+	at com.fline.form.filter.AtgBusSignAdapterFilter.doFilter(AtgBusSignAdapterFilter.java:23)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[form] 2020-02-22 00:55:34.412 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:59:10.654 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 20180 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:59:10.655 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:59:11.595 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:59:11.600 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:59:11.601 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:59:11.605 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:59:11.605 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:59:11.605 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:59:11.605 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:59:12.654 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:59:12.730 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:59:12.792 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:59:12.824 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:59:14.787 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:59:14.809 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:59:14.815 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.526 seconds (JVM running for 5.843)
+[form] 2020-02-22 00:59:15.226 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 00:59:15.516 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 00:59:15.607 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
+[form] 2020-02-22 00:59:56.206 [INFO ] [main] com.fline.form.FormApplication -  - Starting FormApplication on Guo with PID 10900 (D:\workspace\form-yinchuan\form-server\target\classes started by 郭东洋 in D:\workspace\form-yinchuan)
+[form] 2020-02-22 00:59:56.209 [INFO ] [main] com.fline.form.FormApplication -  - No active profile set, falling back to default profiles: default
+[form] 2020-02-22 00:59:57.155 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Initializing ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:59:57.161 [INFO ] [main] org.apache.catalina.core.StandardService -  - Starting service [Tomcat]
+[form] 2020-02-22 00:59:57.161 [INFO ] [main] org.apache.catalina.core.StandardEngine -  - Starting Servlet engine: [Apache Tomcat/9.0.22]
+[form] 2020-02-22 00:59:57.165 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+[form] 2020-02-22 00:59:57.165 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+[form] 2020-02-22 00:59:57.165 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[form] 2020-02-22 00:59:57.166 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[form] 2020-02-22 00:59:58.214 [INFO ] [main] org.apache.catalina.core.AprLifecycleListener -  - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+[form] 2020-02-22 00:59:58.308 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring embedded WebApplicationContext
+[form] 2020-02-22 00:59:58.383 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:59:58.418 [INFO ] [main] com.fline.fdp.client.AbstractSpringRMIClient -  - TEMP FILE PATH:D:\workspace\form-yinchuan\.\tmp.fdp.context.xml
+[form] 2020-02-22 00:59:59.960 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol -  - Starting ProtocolHandler ["http-nio-8000"]
+[form] 2020-02-22 00:59:59.981 [INFO ] [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/formCenter] -  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[form] 2020-02-22 00:59:59.987 [INFO ] [main] com.fline.form.FormApplication -  - Started FormApplication in 4.144 seconds (JVM running for 5.416)
+[form] 2020-02-22 01:00:00.675 [INFO ] [http-nio-8000-exec-1] com.fline.form.interceptor.FormBizInterceptor -  - request uri:/formCenter/rest/form/createFormById/item/db9da0b3-35f9-4374-85d4-279a249940f1/1, parameter:{"idNum":["92640103MA764Q45J"]}
+[form] 2020-02-22 01:00:01.023 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormMgmtServiceImpl -  - 获取到用户信息：{"code":1,"msg":"没有查到用户信息","data":null}
+[form] 2020-02-22 01:00:01.043 [ERROR] [http-nio-8000-exec-1] com.fline.form.handler.GlobalExceptionHandler -  - 校验用户信息失败
+com.fline.form.exception.BaseException: 校验用户信息失败
+	at com.fline.form.mgmt.service.impl.FormMgmtServiceImpl.createFormByIdNum(FormMgmtServiceImpl.java:92)
+	at com.fline.form.controller.FormController.createFormById(FormController.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alipay.atgbusmng.api.filter.http.AtgBusSignFilter.doFilter(AtgBusSignFilter.java:52)
+	at com.fline.form.filter.AtgBusSignAdapterFilter.doFilter(AtgBusSignAdapterFilter.java:23)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[form] 2020-02-22 01:00:01.097 [INFO ] [http-nio-8000-exec-1] com.fline.form.mgmt.service.impl.FormInfoContext -  - removeFormInfoContext
